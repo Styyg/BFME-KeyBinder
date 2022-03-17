@@ -2,7 +2,7 @@ let rawDataIn;
 let currentShortcuts = { controls: {} };
 let newShortcuts = { controls: {} };
 const arrayFaction = ["men",  "elves", "dwarves", "isengard", "mordor", "goblins", "angmar", "misc"];
-// const arrayType = ["buildings", "units", "abilities", "heroes", "misc"];
+const arrayType = ["buildings", "units", "abilities", "heroes", "misc"];
 let fileName;
 
 function init() {   
@@ -14,7 +14,7 @@ async function setEventListeners() {
   const btnTest = document.getElementById("btn-de-mort")
   const btnDownload = document.getElementById("btn-download")
   const selectFaction = document.getElementById("select-faction")
-  // const selectType = document.getElementById("select-type")
+  const selectType = document.getElementById("select-type")
 
   inputFile.addEventListener("change", function selectedFileChanged() {
     if (!testFile(this.files)) return;
@@ -62,55 +62,33 @@ async function setEventListeners() {
   })
 
   selectFaction.addEventListener('change', function factionChange() {
-    const currentFaction = this.value;
-    arrayFaction.forEach(faction => {
-      if(currentFaction == faction) {
-        document.getElementById(faction).hidden = false
-      } else {
-        document.getElementById(faction).hidden = true
-      }
-    })
-    // const children = document.getElementById("div-faction").children;
-    // Array.from(children).forEach((element) => {
-    //     if (element.id != faction) {
-    //       element.style.display = "none";
-    //     }
-    // });
-    // document.getElementById(faction).style.display = "inline";
+    const faction = this.value;
+    const children = document.getElementById("div-faction").children;
+    Array.from(children).forEach((element) => {
+        if (element.id != faction) {
+          element.style.display = "none";
+        }
+    });
+  
+    document.getElementById(faction).style.display = "inline";
   })
 
-  // selectType.addEventListener('change', function typeChange() {
-  //   const currentFaction = document.getElementById("select-faction").value;
-  //   arrayFaction.forEach((faction) => {
-  //     arrayType.forEach((type) => {
-  //       const divElements = document.getElementsByName(faction + "-" + type);
+  selectType.addEventListener('change', function typeChange() {
+    const currentFaction = document.getElementById("select-faction").value;
+    arrayFaction.forEach((faction) => {
+      arrayType.forEach((type) => {
+        const divElements = document.getElementsByName(faction + "-" + type);
   
-  //       divElements.forEach((divElement) => {
-  //         if (this.value == type) {
-  //           divElement.style.display = "flex";
-  //         } else {
-  //           divElement.style.display = "none";
-  //         }
-  //       });
-  //     });
-  //   });
-  // })
-}
-
-function toggleHiddenChildsAfterMe(me) {
-  parent = me.parentNode
-  arrayChildren = Array.from(parent.children)
-  let i
-  for (i = 0; i < arrayChildren.length; i++) {
-    if(arrayChildren[i].id == me.id) {
-      break;
-    }
-  }
-  i++
-  hidden = arrayChildren[i].hidden
-  for (k = i; k < arrayChildren.length; k++) {
-    arrayChildren[k].hidden = !hidden
-  }
+        divElements.forEach((divElement) => {
+          if (this.value == type) {
+            divElement.style.display = "flex";
+          } else {
+            divElement.style.display = "none";
+          }
+        });
+      });
+    });
+  })
 }
 
 function testToggle(me, toShow) {
@@ -128,117 +106,97 @@ async function extractDataAndCreateHTMLComponents(arrayData) {
   // all controls from input file
   const jsonAllControls = getAllControlsWithShortcuts(arrayData)
   // controls from csv controls file (list of all controls)
-  // const fileControls = await readFileFromServer("../assets/data/controlsList.json");
-  // const jsonControls = JSON.parse(fileControls);
+  const fileControls = await readFileFromServer("../assets/data/controlsList.json");
+  const jsonCsvControls = JSON.parse(fileControls);
   // controls from csv faction file (splited by faction, faction splited by type: buildings, units etc)
-  const fileControlsFact = await readFileFromServer("../assets/data/controlsFaction.json");
-  const jsonControlsFact = JSON.parse(fileControlsFact);
+  const fileControlsByFact = await readFileFromServer("../assets/data/controlsListFaction.json");
+  const jsonCsvControlsByFact = JSON.parse(fileControlsByFact);
   // arrays of controls
-  // const arrayCsvControlsNames = Object.keys(jsonControls);
-  const arrayControlsFaction = Object.keys(jsonControlsFact);
-  // const arrayAllControlsNames = Object.keys(jsonAllControls)
+  const arrayCsvControlsNames = Object.keys(jsonCsvControls.controls);
+  const arrayAllControlsNames = Object.keys(jsonAllControls)
   // div that contains all uncategorized controls (not from csv but presents in input file)
   const divUncategorized = document.getElementById('uncategorized').innerHTML = ''
 
-  arrayControlsFaction.forEach(faction => {
-    const arrayGen = Object.keys(jsonControlsFact[faction])
 
-    arrayGen.forEach(generation => {
-      const arrayRank = Object.keys(jsonControlsFact[faction][generation])
+  arrayAllControlsNames.forEach((control) => {
+    const key = getShortcut(jsonAllControls[control])
+    const desc = jsonAllControls[control].replace('&', '')
+    const titre = control.split(":")[1];
 
-      arrayRank.forEach(rank => {
-        const control = jsonControlsFact[faction][generation][rank]['name']
-        const parent = jsonControlsFact[faction][generation][rank]['parent']
-        const key = getShortcut(jsonAllControls[control])
-        var desc
-        if(jsonAllControls[control] === undefined) {
-          desc = ''
-        } else {        
-          desc = jsonAllControls[control].replace('&', '')
-        }
-        const titre = control.split(":")[1];
+    var faction, type, src, name, divId;
     
-        var src, name, divId, hidden;
-      
-        // store keys in a json object
-        currentShortcuts.controls[control] = { 'key': key };
-    
-        // type = jsonControls[control]['type']
-        // name = faction + "-" + type
-        name = faction + "-" + generation
-        src = "./assets/images/" + faction + "/" + generation + "/" + titre + ".png";
-        
-        if(parent == '') {
-          divId = faction
-          // hidden = ''
-        } else {
-          divId = parent
-          // hidden = 'hidden'
-        }
-    
-        // console.log(control);
-        // console.log(divId);
-    
-        // div format for each controls
-        const divControlRow = 
-        `<div id="${control}" class="mt-2 border border-secondary border-3 rounded-3" name="${name}" ${hidden}>
-          <div class="row align-items-center" >
-            <div class="col-md-1">
-                <img class="icon" src="${src}">
+    // store keys in a json object
+    currentShortcuts.controls[control] = { 'key': key };
+
+    // separation of uncategorized and categorized (found in csv file) controls
+    if(arrayCsvControlsNames.includes(control)) {
+      faction = jsonCsvControls.controls[control]['faction']
+      type = jsonCsvControls.controls[control]['type']
+      name = faction + "-" + type
+      src = "./assets/images/" + faction + "/" + type + "/" + titre + ".png";
+      divId = faction
+    } else {
+      name = 'uncategorized'
+      src = './assets/images/uncategorized.png';
+      divId = 'uncategorized'
+    }
+
+    // div format for each controls
+    const divRow = 
+    `
+    <div class="row my-1 p-1 align-items-center border rounded-3" id="${control}" name="${name}">
+        <div class="col-md-1">
+            <img class="icon" src="${src}">
+        </div>
+        <div class="col-md-3">
+            <label class="form-label" id="${control}-label">${titre}</label>
+        </div>
+        <div class="col-md-3 text-center">
+            <div class="row">
+                <label class="form-label">Shortcut</label>
             </div>
-            <div class="col-md-3">
-                <label class="form-label" id="${control}-label">${titre}</label>
-            </div>
-            <div class="col-md-3 text-center">
-                <div class="row">
-                    <label class="form-label">Shortcut</label>
+            <div class="row align-items-center">
+                <div class="col">
+                    <label>current : </label> 
+                    <output id="${control}-current">${key}</output>
                 </div>
-                <div class="row align-items-center">
-                    <div class="col">
-                        <label>current : </label> 
-                        <output id="${control}-current">${key}</output>
-                    </div>
-                    <div class="col">
-                        <label>new : </label> 
-                        <input class="form-control small-input" id="${control}-new" pattern="[A-Za-z]" title="Only letters [A-Z a-z]" maxlength="1" type="text"></input>
-                    </div>
+                <div class="col">
+                    <label>new : </label> 
+                    <input class="form-control small-input" id="${control}-new" pattern="[A-Za-z]" title="Only letters [A-Z a-z]" maxlength="1" type="text"></input>
                 </div>
             </div>
-            <div class="col">
-                <div class="row text-center">
-                    <label class="form-label" id="${control}-desc">${desc}</label>
-                </div>
+        </div>
+        <div class="col">
+            <div class="row text-center">
+                <label class="form-label" id="${control}-desc">${desc}</label>
             </div>
-          </div>
-        </div>`;
+        </div>
+    </div>
+    `;
+
+    // add html element
+    document.getElementById(divId).insertAdjacentHTML("beforeend", divRow);
+    // document.getElementById(control + "-new").disabled = false;
+
+
+    if(arrayCsvControlsNames.includes(control)) {
+      const selectedFaction = document.getElementById("select-faction").value
+      const selectedType = document.getElementById("select-type").value
     
-        // if(arrayCsvControlsNames.includes(control)) {
-          // if(jsonControls[control]['hasChild']) {
-          if(document.getElementById(parent+ '-toggle') === null && generation != 'gen0') {
-            const divFleche = 
-            `<div id="${parent}-toggle" class="text-center border border-warning border-3" onclick="toggleHiddenChildsAfterMe(this)">
-              ->
-            </div>`
-            //onclick="testToggle(this, document.getElementById('child1'))"
-            document.getElementById(parent).insertAdjacentHTML("beforeend", divFleche);
-          }
-        // }
-
-        // add html element
-        document.getElementById(divId).insertAdjacentHTML("beforeend", divControlRow);
-        
-        const selectedFaction = document.getElementById("select-faction").value
-        if(selectedFaction == faction) {
-            document.getElementById(faction).hidden = false
-        } else {
-            document.getElementById(faction).hidden = true
-        }
-
-
-      })
-    })
-      
-  })
+      // set default display of elements
+      if(selectedFaction == faction) {
+          document.getElementById(faction).style.display = 'block'
+      } else {
+          document.getElementById(faction).style.display = 'none'
+      }
+  
+      if (selectedType == type) {
+          document.getElementById(control).style.display = "flex";
+      } else {
+          document.getElementById(control).style.display = "none";
+      }
+    }
+  });
 }
 
 function downloadFile() {
@@ -327,13 +285,11 @@ function getLineBreakFormat(str) {
 }
 
 function getShortcut(str) {
-  if(str === undefined)
-    return ''
-  const searchPos = str.search("&");
-  if((searchPos > -1) && isLetter(str.charAt(searchPos + 1)))
-      return str.charAt(searchPos + 1).toUpperCase()
-  else
-      return ''
+    const searchPos = str.search("&");
+    if(isLetter(str.charAt(searchPos + 1)))
+        return str.charAt(searchPos + 1).toUpperCase()
+    else
+        return ''
 }
 
 function getFileWithNewShortcuts() {

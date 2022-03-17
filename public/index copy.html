@@ -73,6 +73,17 @@
                     <option value="misc">Misc</option>
                 </select>
             </div>
+            
+            <div class="col col-md-2">
+                <select id="select-type" class="form-select">
+                    <option value="buildings" selected>Buildings</option>
+                    <option value="units">Units</option>
+                    <option value="abilities">Abilities</option>
+                    <option value="heroes">Heores</option>
+                    <option value="misc">Misc</option>
+                </select>
+            </div>
+            
 
             <div class="col">                
                 <!-- <button id="btn-download" class="btn btn-primary" type="submit">Submit</button> -->
@@ -84,34 +95,14 @@
             </div>
         </div>
 
-        
-        <div id="faction" class="row">
-            men
-            <div id="caserne" class="mt-2 border border-primary border-3">
-                caserne
-                <div class="row align-items-center">
+        <div class="row my-3 justify-content-center border border-primary border-3">
+            <div class="row">                
+                <div class="row m-2 border border-secondary border-2 rounded-3">
                     <div class="col-md-1">
-                        <img class="icon" src="./assets/images/men/gen0/ConstructMenBarracks.png">
-                    </div>
-                </div>
-                <div>
-                    <div id="soldat">  
-                        soldat
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- <div id="faction" class="row border border-danger border-3"> -->
-        <div id="faction" class="row">
-            div men
-            <div id="caserne" class="mt-2 border border-primary border-3">
-                <div class="row align-items-center">
-                    <div class="col-md-1">
-                        <img class="icon" src="./assets/images/men/gen0/ConstructMenBarracks.png">
+                        <img class="icon" src="${src}">
                     </div>
                     <div class="col-md-3">
-                        <label class="form-label" id="{control}-label">Caserne TEMPLATE</label>
+                        <label class="form-label" id="${control}-label">Caserne</label>
                     </div>
                     <div class="col-md-3 text-center">
                         <div class="row">
@@ -124,84 +115,27 @@
                             </div>
                             <div class="col">
                                 <label>new : </label> 
-                                <input class="form-control small-input" id="{control}-new" pattern="[A-Za-z]" title="Only letters [A-Z a-z]" maxlength="1" type="text"></input>
+                                <input class="form-control small-input" id="${control}-new" pattern="[A-Za-z]" title="Only letters [A-Z a-z]" maxlength="1" type="text"></input>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="row text-center">
-                            <label class="form-label" id="{control}-desc">${desc}</label>
+                            <label class="form-label" id="${control}-desc">${desc}</label>
                         </div>
                     </div>
-                    <!-- div fleche -->
-                    <div id="div-fleche" class="mt-1 text-center border border-warning border-3" onclick="testToggle(this, document.getElementById('soldat'))">
-                        ->
-                    </div>
-                </div>
-
-                <div class="row">     
-                    <div id="soldat" class="ms-2 border border-success border-3">
-                        <div class="row align-items-center ">
-                            <div class="col-md-1">
-                                <img class="icon" src="./assets/images/men/gen1/ConstructGondorFighterHorde.png">
-                            </div>
-                        </div>
-                        <div class="row ms-4 align-items-center border border-success border-3">
-                            <div>     
-                                <div class="row ms-4 border border-secondary border-3">
-                                    div porte étendars
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Div principal genre, div faction  -->
-        <div class="row my-3 justify-content-center" style="background-color: rgb(160, 0, 0)">
-            <!-- <div class="row border border-danger border-3">              -->
-                   <!-- div caserne -->
-                <div class="row m-2" style="background-color: rgb(70, 155, 0)">
-                    <div class="col-md-1">
-                        <img class="icon" src="./assets/images/uncategorized.png">
-                    </div>
-                    <div class="col-md-3">
-                        <label class="form-label" id="{control}-label">Caserne TEMPLATE</label>
-                    </div>
-                    <div class="col-md-3 text-center">
-                        <div class="row">
-                            <label class="form-label">Shortcut</label>
-                        </div>
-                        <div class="row align-items-center">
-                            <div class="col">
-                                <label>current : </label> 
-                                <output id="current">${key}</output>
-                            </div>
-                            <div class="col">
-                                <label>new : </label> 
-                                <input class="form-control small-input" id="{control}-new" pattern="[A-Za-z]" title="Only letters [A-Z a-z]" maxlength="1" type="text"></input>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="row text-center">
-                            <label class="form-label" id="{control}-desc">${desc}</label>
-                        </div>
-                    </div>
-                    <!-- div fleche -->
                     <div id="div-fleche" class="row justify-content-center mt-1 border" onclick="testToggle(this, document.getElementById('child1'))">
                         ->
                     </div>
                 
-                    <!-- soldat du gondor -->
-                    <div id="child1" class="row m-1 p-2 align-items-center" style="background-color: rgb(151, 151, 151)" hidden>
+                
+                    <div id="child1" class="row m-1 p-2 align-items-center border border-success border-2 rounded-3" hidden>
                         <div class="row">
                             <div class="col-md-1">
-                                <img class="icon" src="./assets/images/uncategorized.png">
+                                <img class="icon" src="${src}">
                             </div>
                             <div class="col-md-3">
-                                <label class="form-label" id="${control}-label">Soldats du Gondor TEMPLATE</label>
+                                <label class="form-label" id="${control}-label">Soldats du Gondor</label>
                             </div>
                             <div class="col-md-3 text-center">
                                 <div class="row">
@@ -232,7 +166,7 @@
                         <div id="child2" class="row my-1 p-1 align-items-center border rounded-3" hidden>
                             <div class="row">
                                 <div class="col-md-1">
-                                    <img class="icon" src="./assets/images/uncategorized.png">
+                                    <img class="icon" src="${src}">
                                 </div>
                                 <div class="col-md-3">
                                     <label class="form-label" id="${control}-label">Formation bloc</label>
@@ -261,23 +195,49 @@
                         </div>
                             
                     </div>
+                    <div id="child4" class="row m-1 p-2 align-items-center border border-success border-2 rounded-3">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <img class="icon" src="${src}">
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label" id="${control}-label">Piquiers du Rohan</label>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <div class="row">
+                                    <label class="form-label">Shortcut</label>
+                                </div>
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <label>current : </label> 
+                                        <output id="current">${key}</output>
+                                    </div>
+                                    <div class="col">
+                                        <label>new : </label> 
+                                        <input class="form-control small-input" id="${control}-new" pattern="[A-Za-z]" title="Only letters [A-Z a-z]" maxlength="1" type="text"></input>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="row text-center">
+                                    <label class="form-label" id="${control}-desc">${desc}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            <!-- </div> -->
+            </div>
         </div>
 
         <div id="div-faction">
-            <div id="men" class="row" hidden>faction</div>
-            <div id="elves" class="row" hidden></div>
-            <div id="dwarves" class="row" hidden></div>
-            <div id="isengard" class="row" hidden></div>
-            <div id="mordor" class="row" hidden></div>
-            <div id="goblins" class="row" hidden></div>
-            <div id="angmar" class="row" hidden></div>
-            <div id="misc" class="row" hidden></div>
-        </div>
-
-        <div id="duplicated">
-
+            <div id="men"></div>
+            <div id="elves"></div>
+            <div id="dwarves"></div>
+            <div id="isengard"></div>
+            <div id="mordor"></div>
+            <div id="goblins"></div>
+            <div id="angmar"></div>
+            <div id="misc"></div>
         </div>
 
         <div id="div-uncategorized" style="display: none;">

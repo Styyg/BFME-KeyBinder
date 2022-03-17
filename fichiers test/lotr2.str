@@ -20,3 +20,11 @@ END
 APT:Bases&UnitsTitle
 "Bases et unités"
 END
+
+CONTROLBAR:ConstructElvenMallornTree
+"Construire Mallo&rn"
+END
+
+CONTROLBAR:ConstructMordorMumakilPen
+"construire un enclos à Mûmakil"
+END
