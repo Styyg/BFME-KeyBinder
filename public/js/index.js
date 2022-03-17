@@ -11,8 +11,9 @@ function init() {
 
 async function setEventListeners() {
   const inputFile = document.getElementById("inputFile")
-  const btnTest = document.getElementById("btn-de-mort")
   const btnDownload = document.getElementById("btn-download")
+  const btnTest = document.getElementById("test")
+  const inputTest = document.getElementById("inputTest")
   const selectFaction = document.getElementById("select-faction")
   // const selectType = document.getElementById("select-type")
 
@@ -44,21 +45,17 @@ async function setEventListeners() {
     document.getElementById("main-div").style.display = "block";
   });
 
-  btnTest.addEventListener('click', () => {
-    const div = document.getElementById('div-uncategorized')
-    const display = div.style.display
-    if (display == 'none') {
-      div.style.display = 'block'
-      btnTest.innerText = 'Hide uncategorized controls'
-    } else { 
-      div.style.display = 'none'
-      btnTest.innerText = 'Show uncategorized controls'
-    }
-  })
-
   btnDownload.addEventListener('click', () => {
     // need to run some test before accepting keys
     downloadFile()
+  })
+
+  btnTest.addEventListener('click', () => {
+    inputTest.value = 'esygh'
+  })
+
+  inputTest.addEventListener('change', () => {
+    console.log('youpi');
   })
 
   selectFaction.addEventListener('change', function factionChange() {
@@ -70,31 +67,7 @@ async function setEventListeners() {
         document.getElementById(faction).hidden = true
       }
     })
-    // const children = document.getElementById("div-faction").children;
-    // Array.from(children).forEach((element) => {
-    //     if (element.id != faction) {
-    //       element.style.display = "none";
-    //     }
-    // });
-    // document.getElementById(faction).style.display = "inline";
   })
-
-  // selectType.addEventListener('change', function typeChange() {
-  //   const currentFaction = document.getElementById("select-faction").value;
-  //   arrayFaction.forEach((faction) => {
-  //     arrayType.forEach((type) => {
-  //       const divElements = document.getElementsByName(faction + "-" + type);
-  
-  //       divElements.forEach((divElement) => {
-  //         if (this.value == type) {
-  //           divElement.style.display = "flex";
-  //         } else {
-  //           divElement.style.display = "none";
-  //         }
-  //       });
-  //     });
-  //   });
-  // })
 }
 
 function toggleHiddenChildsAfterMe(me) {
@@ -140,6 +113,7 @@ async function extractDataAndCreateHTMLComponents(arrayData) {
   // div that contains all uncategorized controls (not from csv but presents in input file)
   const divUncategorized = document.getElementById('uncategorized').innerHTML = ''
 
+  var duplicatedNames = []
   arrayControlsFaction.forEach(faction => {
     const arrayGen = Object.keys(jsonControlsFact[faction])
 
@@ -149,6 +123,7 @@ async function extractDataAndCreateHTMLComponents(arrayData) {
       arrayRank.forEach(rank => {
         const control = jsonControlsFact[faction][generation][rank]['name']
         const parent = jsonControlsFact[faction][generation][rank]['parent']
+        const duplicated = jsonControlsFact[faction][generation][rank]['duplicated']
         const key = getShortcut(jsonAllControls[control])
         var desc
         if(jsonAllControls[control] === undefined) {
@@ -158,15 +133,36 @@ async function extractDataAndCreateHTMLComponents(arrayData) {
         }
         const titre = control.split(":")[1];
     
-        var src, name, divId, hidden;
+        var src, name, id, idNew, divId, hidden;
       
         // store keys in a json object
         currentShortcuts.controls[control] = { 'key': key };
     
         // type = jsonControls[control]['type']
         // name = faction + "-" + type
-        name = faction + "-" + generation
         src = "./assets/images/" + faction + "/" + generation + "/" + titre + ".png";
+        if(duplicated == true) {
+          id = ''
+          idNew = ''
+          name = control
+          if (!duplicatedNames.includes(control)) {            
+            duplicatedNames.push(control)
+          }
+          if(document.getElementById(control + '-new') === null) {
+            const inputControl = 
+            `<input class="form-control small-input" 
+                id="${control}-new" 
+                maxlength="1" 
+                type="text">
+            </input>`
+            document.getElementById('duplicated').insertAdjacentHTML("beforeend", inputControl);
+          }
+        } else {
+          id = control
+          // id = 'id="' + control + '"'
+          idNew = control + '-new'
+          name = ''
+        }
         
         if(parent == '') {
           divId = faction
@@ -176,18 +172,15 @@ async function extractDataAndCreateHTMLComponents(arrayData) {
           // hidden = 'hidden'
         }
     
-        // console.log(control);
-        // console.log(divId);
-    
         // div format for each controls
         const divControlRow = 
-        `<div id="${control}" class="mt-2 border border-secondary border-3 rounded-3" name="${name}" ${hidden}>
+        `<div id="${id}" class="mt-2 border border-secondary border-3 rounded-3" ${hidden}>
           <div class="row align-items-center" >
             <div class="col-md-1">
                 <img class="icon" src="${src}">
             </div>
             <div class="col-md-3">
-                <label class="form-label" id="${control}-label">${titre}</label>
+                <label class="form-label">${titre}</label>
             </div>
             <div class="col-md-3 text-center">
                 <div class="row">
@@ -196,11 +189,11 @@ async function extractDataAndCreateHTMLComponents(arrayData) {
                 <div class="row align-items-center">
                     <div class="col">
                         <label>current : </label> 
-                        <output id="${control}-current">${key}</output>
+                        <output>${key}</output>
                     </div>
                     <div class="col">
                         <label>new : </label> 
-                        <input class="form-control small-input" id="${control}-new" pattern="[A-Za-z]" title="Only letters [A-Z a-z]" maxlength="1" type="text"></input>
+                        <input class="form-control small-input" id="${idNew}" name="${name}" pattern="[A-Za-z]" title="Only letters [A-Z a-z]" maxlength="1" type="text"></input>
                     </div>
                 </div>
             </div>
@@ -239,6 +232,25 @@ async function extractDataAndCreateHTMLComponents(arrayData) {
     })
       
   })
+
+  duplicatedNames.forEach(name => {
+
+    arrayElements = document.getElementsByName(name)
+    const input = document.getElementById(name + '-new')
+  
+    arrayElements.forEach(element => {
+      element.addEventListener('input', () => {
+        input.value = element.value
+        
+        sameNameElements = document.getElementsByName(name)
+        sameNameElements.forEach(elem => {
+          if(elem != element) {
+            elem.value = element.value
+          }
+        })
+      })
+    })
+  })
 }
 
 function downloadFile() {
@@ -246,14 +258,18 @@ function downloadFile() {
   // newShortcuts.controls = {}
   arrayControlsName.forEach((element) => {
     inputNewKey = document.getElementById(element + "-new");
-    key = inputNewKey.value.toUpperCase();
-
-    if (isLetter(key)) {
-      newShortcuts.controls[element] = {};
-      newShortcuts.controls[element]["key"] = key;
-    } else if (key) {
-      // console.log(inputNewKey.parentNode);
-      // inputNewKey.classList.add("is-invalid");
+    if(inputNewKey !== null) {
+      key = inputNewKey.value.toUpperCase();
+  
+      if (isLetter(key)) {
+        newShortcuts.controls[element] = {};
+        newShortcuts.controls[element]["key"] = key;
+      } else if (key) {
+        // console.log(inputNewKey.parentNode);
+        // inputNewKey.classList.add("is-invalid");
+      }
+    } else {
+      console.log('getElementById(' + element + '-new)' + ' not found');
     }
   });
 

@@ -1,1 +1,34 @@
-{"CONTROLBAR:TheodenMount":{"0":{"parent":"CONTROLBAR:ElvenArwenHotkey","rank":1,"faction":"elves"},"1":{"parent":"CONTROLBAR:ElvenGlorfindelHotkey","rank":1,"faction":"elves"}},"CONTROLBAR:ElvenGrace":{"0":{"parent":"CONTROLBAR:ElvenArwenHotkey","rank":2,"faction":"elves"},"1":{"parent":"CONTROLBAR:ElvenElrondHotkey","rank":2,"faction":"elves"}}}
+{
+  "CONTROLBAR:TheodenMount": {
+    "0": {
+      "parent": "CONTROLBAR:ElvenArwenHotkey",
+      "rank": 1,
+      "faction": "elves",
+      "gen": 3,
+      "duplicated": true
+    },
+    "1": {
+      "parent": "CONTROLBAR:ElvenGlorfindelHotkey",
+      "rank": 1,
+      "faction": "elves",
+      "gen": 3,
+      "duplicated": true
+    }
+  },
+  "CONTROLBAR:ElvenGrace": {
+    "0": {
+      "parent": "CONTROLBAR:ElvenArwenHotkey",
+      "rank": 2,
+      "faction": "elves",
+      "gen": 3,
+      "duplicated": true
+    },
+    "1": {
+      "parent": "CONTROLBAR:ElvenElrondHotkey",
+      "rank": 2,
+      "faction": "elves",
+      "gen": 3,
+      "duplicated": true
+    }
+  }
+}

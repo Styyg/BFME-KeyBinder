@@ -1,1 +1,218 @@
-{"CONTROLBAR:ConstructElvenFortress":{"parent":"","rank":10,"faction":"elves","gen":0},"CONTROLBAR:SelectRevivablesElvenFortress":{"parent":"CONTROLBAR:ConstructElvenFortress","rank":2,"faction":"elves","gen":1},"CONTROLBAR:ElvenArwenHotkey":{"parent":"CONTROLBAR:SelectRevivablesElvenFortress","rank":1,"faction":"elves","gen":2},"CONTROLBAR:ElvenHaldirHotkey":{"parent":"CONTROLBAR:SelectRevivablesElvenFortress","rank":2,"faction":"elves","gen":2},"CONTROLBAR:ElvenGlorfindelHotkey":{"parent":"CONTROLBAR:SelectRevivablesElvenFortress","rank":3,"faction":"elves","gen":2},"CONTROLBAR:ElvenElrondHotkey":{"parent":"CONTROLBAR:SelectRevivablesElvenFortress","rank":4,"faction":"elves","gen":2},"CONTROLBAR:RohanLegolasHotkey":{"parent":"CONTROLBAR:SelectRevivablesElvenFortress","rank":5,"faction":"elves","gen":2},"CONTROLBAR:ElvenThranduilHotkey":{"parent":"CONTROLBAR:SelectRevivablesElvenFortress","rank":6,"faction":"elves","gen":2},"CONTROLBAR:ConstructElvenPorter":{"parent":"CONTROLBAR:ConstructElvenFortress","rank":1,"faction":"elves","gen":1},"CONTROLBAR:SelectUpgradeElvenFortress":{"parent":"CONTROLBAR:ConstructElvenFortress","rank":3,"faction":"elves","gen":1},"CONTROLBAR:PurchaseUpgradeElvenFortressEnchantedAnvil":{"parent":"CONTROLBAR:SelectUpgradeElvenFortress","rank":1,"faction":"elves","gen":2},"CONTROLBAR:PurchaseUpgradeElvenFortressBlessedMist":{"parent":"CONTROLBAR:SelectUpgradeElvenFortress","rank":2,"faction":"elves","gen":2},"CONTROLBAR:PurchaseUpgradeElvenFortressCystalMoat":{"parent":"CONTROLBAR:SelectUpgradeElvenFortress","rank":3,"faction":"elves","gen":2},"CONTROLBAR:PurchaseUpgradeElvenFortressMysticFountains":{"parent":"CONTROLBAR:SelectUpgradeElvenFortress","rank":4,"faction":"elves","gen":2},"CONTROLBAR:PurchaseUpgradeElvenFortressFlamingMunitions":{"parent":"CONTROLBAR:SelectUpgradeElvenFortress","rank":5,"faction":"elves","gen":2},"CONTROLBAR:PurchaseUpgradeElvenFortressEncasingVines":{"parent":"CONTROLBAR:SelectUpgradeElvenFortress","rank":6,"faction":"elves","gen":2},"CONTROLBAR:PurchaseUpgradeElvenFortressEaglesNest":{"parent":"CONTROLBAR:SelectUpgradeElvenFortress","rank":7,"faction":"elves","gen":2},"CONTROLBAR:PurchaseElvenEagle":{"parent":"CONTROLBAR:ConstructElvenFortress","rank":4,"faction":"elves","gen":1},"CONTROLBAR:PersonalFlood":{"parent":"CONTROLBAR:ElvenArwenHotkey","rank":3,"faction":"elves","gen":3},"CONTROLBAR:ToggleElvenWarriorWeapon":{"parent":"CONTROLBAR:ElvenHaldirHotkey","rank":1,"faction":"elves","gen":3},"CONTROLBAR:HaldirGoldenArrow":{"parent":"CONTROLBAR:ElvenHaldirHotkey","rank":2,"faction":"elves","gen":3},"CONTROLBAR:GlorfindelBladeOfPurity":{"parent":"CONTROLBAR:ElvenGlorfindelHotkey","rank":2,"faction":"elves","gen":3},"CONTROLBAR:GlorfindelWindRider":{"parent":"CONTROLBAR:ElvenGlorfindelHotkey","rank":3,"faction":"elves","gen":3},"CONTROLBAR:GlorfindelStarlight":{"parent":"CONTROLBAR:ElvenGlorfindelHotkey","rank":4,"faction":"elves","gen":3},"CONTROLBAR:ElrondFarsight":{"parent":"CONTROLBAR:ElvenElrondHotkey","rank":1,"faction":"elves","gen":3},"CONTROLBAR:ElrondRestoration":{"parent":"CONTROLBAR:ElvenElrondHotkey","rank":3,"faction":"elves","gen":3},"CONTROLBAR:ElrondWhirlwind":{"parent":"CONTROLBAR:ElvenElrondHotkey","rank":4,"faction":"elves","gen":3},"CONTROLBAR:HawkStrike":{"parent":"CONTROLBAR:RohanLegolasHotkey","rank":1,"faction":"elves","gen":3},"CONTROLBAR:TrainArchers":{"parent":"CONTROLBAR:RohanLegolasHotkey","rank":2,"faction":"elves","gen":3},"CONTROLBAR:KnifeFighter":{"parent":"CONTROLBAR:RohanLegolasHotkey","rank":3,"faction":"elves","gen":3},"CONTROLBAR:ArrowWind":{"parent":"CONTROLBAR:RohanLegolasHotkey","rank":4,"faction":"elves","gen":3},"CONTROLBAR:MoveUnseen":{"parent":"CONTROLBAR:ElvenThranduilHotkey","rank":1,"faction":"elves","gen":3},"CONTROLBAR:DeadEye":{"parent":"CONTROLBAR:ElvenThranduilHotkey","rank":2,"faction":"elves","gen":3},"CONTROLBAR:ThornofVengeance":{"parent":"CONTROLBAR:ElvenThranduilHotkey","rank":3,"faction":"elves","gen":3},"CONTROLBAR:SpecialAbilityWingBlast":{"parent":"CONTROLBAR:PurchaseElvenEagle","rank":1,"faction":"elves","gen":2},"OBJECT:ElvenBuildingFoundation":{"parent":"CONTROLBAR:ConstructElvenFortress","rank":5,"faction":"elves","gen":1}}
+{
+  "CONTROLBAR:ConstructElvenFortress": {
+    "parent": "",
+    "rank": 10,
+    "faction": "elves",
+    "gen": 0
+  },
+  "CONTROLBAR:SelectRevivablesElvenFortress": {
+    "parent": "CONTROLBAR:ConstructElvenFortress",
+    "rank": 2,
+    "faction": "elves",
+    "gen": 1
+  },
+  "CONTROLBAR:ElvenArwenHotkey": {
+    "parent": "CONTROLBAR:SelectRevivablesElvenFortress",
+    "rank": 1,
+    "faction": "elves",
+    "gen": 2
+  },
+  "CONTROLBAR:ElvenHaldirHotkey": {
+    "parent": "CONTROLBAR:SelectRevivablesElvenFortress",
+    "rank": 2,
+    "faction": "elves",
+    "gen": 2
+  },
+  "CONTROLBAR:ElvenGlorfindelHotkey": {
+    "parent": "CONTROLBAR:SelectRevivablesElvenFortress",
+    "rank": 3,
+    "faction": "elves",
+    "gen": 2
+  },
+  "CONTROLBAR:ElvenElrondHotkey": {
+    "parent": "CONTROLBAR:SelectRevivablesElvenFortress",
+    "rank": 4,
+    "faction": "elves",
+    "gen": 2
+  },
+  "CONTROLBAR:RohanLegolasHotkey": {
+    "parent": "CONTROLBAR:SelectRevivablesElvenFortress",
+    "rank": 5,
+    "faction": "elves",
+    "gen": 2
+  },
+  "CONTROLBAR:ElvenThranduilHotkey": {
+    "parent": "CONTROLBAR:SelectRevivablesElvenFortress",
+    "rank": 6,
+    "faction": "elves",
+    "gen": 2
+  },
+  "CONTROLBAR:ConstructElvenPorter": {
+    "parent": "CONTROLBAR:ConstructElvenFortress",
+    "rank": 1,
+    "faction": "elves",
+    "gen": 1
+  },
+  "CONTROLBAR:SelectUpgradeElvenFortress": {
+    "parent": "CONTROLBAR:ConstructElvenFortress",
+    "rank": 3,
+    "faction": "elves",
+    "gen": 1
+  },
+  "CONTROLBAR:PurchaseUpgradeElvenFortressEnchantedAnvil": {
+    "parent": "CONTROLBAR:SelectUpgradeElvenFortress",
+    "rank": 1,
+    "faction": "elves",
+    "gen": 2
+  },
+  "CONTROLBAR:PurchaseUpgradeElvenFortressBlessedMist": {
+    "parent": "CONTROLBAR:SelectUpgradeElvenFortress",
+    "rank": 2,
+    "faction": "elves",
+    "gen": 2
+  },
+  "CONTROLBAR:PurchaseUpgradeElvenFortressCystalMoat": {
+    "parent": "CONTROLBAR:SelectUpgradeElvenFortress",
+    "rank": 3,
+    "faction": "elves",
+    "gen": 2
+  },
+  "CONTROLBAR:PurchaseUpgradeElvenFortressMysticFountains": {
+    "parent": "CONTROLBAR:SelectUpgradeElvenFortress",
+    "rank": 4,
+    "faction": "elves",
+    "gen": 2
+  },
+  "CONTROLBAR:PurchaseUpgradeElvenFortressFlamingMunitions": {
+    "parent": "CONTROLBAR:SelectUpgradeElvenFortress",
+    "rank": 5,
+    "faction": "elves",
+    "gen": 2
+  },
+  "CONTROLBAR:PurchaseUpgradeElvenFortressEncasingVines": {
+    "parent": "CONTROLBAR:SelectUpgradeElvenFortress",
+    "rank": 6,
+    "faction": "elves",
+    "gen": 2
+  },
+  "CONTROLBAR:PurchaseUpgradeElvenFortressEaglesNest": {
+    "parent": "CONTROLBAR:SelectUpgradeElvenFortress",
+    "rank": 7,
+    "faction": "elves",
+    "gen": 2
+  },
+  "CONTROLBAR:PurchaseElvenEagle": {
+    "parent": "CONTROLBAR:ConstructElvenFortress",
+    "rank": 4,
+    "faction": "elves",
+    "gen": 1
+  },
+  "CONTROLBAR:PersonalFlood": {
+    "parent": "CONTROLBAR:ElvenArwenHotkey",
+    "rank": 3,
+    "faction": "elves",
+    "gen": 3
+  },
+  "CONTROLBAR:ToggleElvenWarriorWeapon": {
+    "parent": "CONTROLBAR:ElvenHaldirHotkey",
+    "rank": 1,
+    "faction": "elves",
+    "gen": 3
+  },
+  "CONTROLBAR:HaldirGoldenArrow": {
+    "parent": "CONTROLBAR:ElvenHaldirHotkey",
+    "rank": 2,
+    "faction": "elves",
+    "gen": 3
+  },
+  "CONTROLBAR:GlorfindelBladeOfPurity": {
+    "parent": "CONTROLBAR:ElvenGlorfindelHotkey",
+    "rank": 2,
+    "faction": "elves",
+    "gen": 3
+  },
+  "CONTROLBAR:GlorfindelWindRider": {
+    "parent": "CONTROLBAR:ElvenGlorfindelHotkey",
+    "rank": 3,
+    "faction": "elves",
+    "gen": 3
+  },
+  "CONTROLBAR:GlorfindelStarlight": {
+    "parent": "CONTROLBAR:ElvenGlorfindelHotkey",
+    "rank": 4,
+    "faction": "elves",
+    "gen": 3
+  },
+  "CONTROLBAR:ElrondFarsight": {
+    "parent": "CONTROLBAR:ElvenElrondHotkey",
+    "rank": 1,
+    "faction": "elves",
+    "gen": 3
+  },
+  "CONTROLBAR:ElrondRestoration": {
+    "parent": "CONTROLBAR:ElvenElrondHotkey",
+    "rank": 3,
+    "faction": "elves",
+    "gen": 3
+  },
+  "CONTROLBAR:ElrondWhirlwind": {
+    "parent": "CONTROLBAR:ElvenElrondHotkey",
+    "rank": 4,
+    "faction": "elves",
+    "gen": 3
+  },
+  "CONTROLBAR:HawkStrike": {
+    "parent": "CONTROLBAR:RohanLegolasHotkey",
+    "rank": 1,
+    "faction": "elves",
+    "gen": 3
+  },
+  "CONTROLBAR:TrainArchers": {
+    "parent": "CONTROLBAR:RohanLegolasHotkey",
+    "rank": 2,
+    "faction": "elves",
+    "gen": 3
+  },
+  "CONTROLBAR:KnifeFighter": {
+    "parent": "CONTROLBAR:RohanLegolasHotkey",
+    "rank": 3,
+    "faction": "elves",
+    "gen": 3
+  },
+  "CONTROLBAR:ArrowWind": {
+    "parent": "CONTROLBAR:RohanLegolasHotkey",
+    "rank": 4,
+    "faction": "elves",
+    "gen": 3
+  },
+  "CONTROLBAR:MoveUnseen": {
+    "parent": "CONTROLBAR:ElvenThranduilHotkey",
+    "rank": 1,
+    "faction": "elves",
+    "gen": 3
+  },
+  "CONTROLBAR:DeadEye": {
+    "parent": "CONTROLBAR:ElvenThranduilHotkey",
+    "rank": 2,
+    "faction": "elves",
+    "gen": 3
+  },
+  "CONTROLBAR:ThornofVengeance": {
+    "parent": "CONTROLBAR:ElvenThranduilHotkey",
+    "rank": 3,
+    "faction": "elves",
+    "gen": 3
+  },
+  "CONTROLBAR:SpecialAbilityWingBlast": {
+    "parent": "CONTROLBAR:PurchaseElvenEagle",
+    "rank": 1,
+    "faction": "elves",
+    "gen": 2
+  },
+  "OBJECT:ElvenBuildingFoundation": {
+    "parent": "CONTROLBAR:ConstructElvenFortress",
+    "rank": 5,
+    "faction": "elves",
+    "gen": 1
+  }
+}
