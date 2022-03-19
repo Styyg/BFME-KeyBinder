@@ -1,0 +1,108 @@
+{
+  "men": {
+    "basic": {
+      "CONTROLBAR:ConstructMenFarm": {},
+      "CONTROLBAR:ConstructMenBarracks": {
+        "CONTROLBAR:ConstructGondorFighterHorde": {
+          "CONTROLBAR:ToggleBlockFormation": {},
+          "CONTROLBAR:PurchaseUpgradeGondorForgedBlades": {},
+          "CONTROLBAR:PurchaseUpgradeGondorHeavyArmor": {},
+          "CONTROLBAR:PurchaseUpgradeGondorBasicTraining": {}
+        },
+        "CONTROLBAR:ConstructRohanSpearmenHorde": {
+          "CONTROLBAR:TogglePorcupineFormation": {},
+          "CONTROLBAR:PurchaseUpgradeGondorForgedBlades": {},
+          "CONTROLBAR:PurchaseUpgradeGondorHeavyArmor": {},
+          "CONTROLBAR:PurchaseUpgradeRohanBasicTraining": {}
+        },
+        "CONTROLBAR:ConstructGondorShieldGuardHorde": {
+          "CONTROLBAR:TogglePorcupineFormation": {},
+          "CONTROLBAR:PurchaseUpgradeGondorForgedBlades": {},
+          "CONTROLBAR:PurchaseUpgradeGondorHeavyArmor": {},
+          "CONTROLBAR:PurchaseUpgradeGondorBasicTraining": {}
+        },
+        "CONTROLBAR:ConstructGondorBarracks2Upgrade": {},
+        "CONTROLBAR:ConstructGondorBarracksLevel3Upgrade": {}
+      },
+      "CONTROLBAR:ConstructMenArcheryRange": {
+        "CONTROLBAR:ConstructGondorArcherHorde": {},
+        "CONTROLBAR:ConstructGondorRangerHorde": {},
+        "CONTROLBAR:PurchaseTechnologyGondorFireArrows": {},
+        "CONTROLBAR:ConstructGondorArcheryRangeLevel2Upgrade": {},
+        "CONTROLBAR:ConstructGondorArcheryRangeLevel3Upgrade": {}
+      },
+      "CONTROLBAR:ConstructMenStable": {
+        "CONTROLBAR:ConstructGondorKnightHorde": {},
+        "CONTROLBAR:ConstructRohanRohirrimHorde": {},
+        "CONTROLBAR:ConstructGondorKnightsofDolHorde": {},
+        "CONTROLBAR:ConstructGondorStable2Upgrade": {},
+        "CONTROLBAR:ConstructGondorStableLevel3Upgrade": {}
+      },
+      "CONTROLBAR:ConstructMenWorkshop": {
+        "CONTROLBAR:ConstructGondorTrebuchet": {},
+        "CONTROLBAR:PurchaseTechnologyGondorFireStones": {},
+        "CONTROLBAR:ConstructGondorWorkshop2Upgrade": {},
+        "CONTROLBAR:ConstructGondorWorkshopLevel3Upgrade": {}
+      },
+      "CONTROLBAR:ConstructMenSentryTower": {
+        "CONTROLBAR:GarrisonExit": {},
+        "CONTROLBAR:PurchaseUpgradeSentryTowerFireArrows": {}
+      },
+      "CONTROLBAR:ConstructMenWell": {},
+      "CONTROLBAR:ConstructMenStatue": {},
+      "CONTROLBAR:ConstructMenBlacksmith": {
+        "CONTROLBAR:PurchaseTechnologyGondorBasicTraining": {},
+        "CONTROLBAR:PurchaseTechnologyGondorForgedBlades": {},
+        "CONTROLBAR:PurchaseTechnologyGondorHeavyArmor": {},
+        "CONTROLBAR:ConstructGondorForgeLevel2Upgrade": {},
+        "CONTROLBAR:ConstructGondorForgeLevel3Upgrade": {}
+      },
+      "CONTROLBAR:ConstructMenMarketPlace": {
+        "CONTROLBAR:ConstructSiegeMaterialsUpgrade": {},
+        "CONTROLBAR:ConstructIronOreUpgrade": {},
+        "CONTROLBAR:ConstructGrandHarvestUpgrade": {}
+      },
+      "CONTROLBAR:GondorCastleWallHub": {
+        "CONTROLBAR:Command_GondorCastleWallHub_BeginWallSpan": {},
+        "CONTROLBAR:Command_MenWallUpgradeToHub": {},
+        "CONTROLBAR:Command_MenWallUpgradeToRegularGate": {},
+        "CONTROLBAR:Command_MenWallUpgradeToPosternGate": {},
+        "CONTROLBAR:Command_MenWallUpgradeToTower": {},
+        "CONTROLBAR:Command_MenWallUpgradeToTrebuchet": {}
+      },
+      "CONTROLBAR:ConstructMenFortress": {
+        "CONTROLBAR:ConstructMenPorter": {},
+        "CONTROLBAR:SelectRevivablesMenFortress": {
+          "CONTROLBAR:RohanEowynHotkey": {},
+          "CONTROLBAR:RohanEomerHotkey": {},
+          "CONTROLBAR:RohanTheodenHotkey": {},
+          "CONTROLBAR:GondorFaramirHotkey": {},
+          "CONTROLBAR:GondorBoromirHotkey": {},
+          "CONTROLBAR:GondorAragornHotkey": {},
+          "CONTROLBAR:GandalfTheWhiteHotkey": {}
+        },
+        "CONTROLBAR:SelectUpgradesMenFortress": {
+          "CONTROLBAR:PurchaseUpgradeMenFortressBanners": {},
+          "CONTROLBAR:PurchaseUpgradeMenFortressHouseOfHealing": {},
+          "CONTROLBAR:PurchaseUpgradeMenFortressBoilingOil": {},
+          "CONTROLBAR:PurchaseUpgradeMenFortressFlamingMunitions": {},
+          "CONTROLBAR:PurchaseUpgradeMenFortressNumenorStonework": {},
+          "CONTROLBAR:PurchaseUpgradeMenFortressIvoryTower": {}
+        },
+        "CONTROLBAR:FireWeaponMenFortressBoilingOil": {},
+        "CONTROLBAR:IvoryTowerVision": {},
+        "OBJECT:MenBuildingFoundation": {}
+      }
+    },
+    "power": {},
+    "inn": {},
+    "port": {}
+  },
+  "elves": { "basic": {}, "power": {}, "inn": {}, "port": {} },
+  "dwarves": { "basic": {}, "power": {}, "inn": {}, "port": {} },
+  "isengard": { "basic": {}, "power": {}, "inn": {}, "port": {} },
+  "mordor": { "basic": {}, "power": {}, "inn": {}, "port": {} },
+  "goblins": { "basic": {}, "power": {}, "inn": {}, "port": {} },
+  "angmar": { "basic": {}, "power": {}, "inn": {}, "port": {} },
+  "misc": { "basic": {}, "power": {}, "inn": {}, "port": {} }
+}

@@ -48,7 +48,7 @@
                             <label id="errInputFile" style="visibility: hidden;" class="text-danger fs-4">erreur</label>
                         </div>
                         <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-                            <label id="warningText" style="visibility: visible;" class="text-warning fs-4">/!\ Please keep a backup of your previous file in case of problems /!\</label>
+                            <label id="warningText" style="visibility: visible;" class="text-warning fs-4">⚠ Please keep a backup of your previous file in case of problems ⚠</label>
                             <!-- <button id="btn-test" class="btn btn-primary btn-lg px-4 me-sm-3">Download test</button>
                             <a class="btn btn-outline-light btn-lg px-4" href="#!">Learn More</a> -->
                         </div>
@@ -80,25 +80,62 @@
             </div>
             
             <div class="col">
-                <button id="btn-de-mort" class="btn btn-secondary">Show uncategorized controls</button>
+                <button id="btn-uncategorized" class="btn btn-secondary">Show uncategorized controls</button>
             </div>
         </div>
 
         <div id="div-faction">
-            <div id="men" class="row" hidden></div>
-            <div id="elves" class="row" hidden></div>
-            <div id="dwarves" class="row" hidden></div>
-            <div id="isengard" class="row" hidden></div>
-            <div id="mordor" class="row" hidden></div>
-            <div id="goblins" class="row" hidden></div>
-            <div id="angmar" class="row" hidden></div>
-            <div id="misc" class="row" hidden></div>
+            <div id="men">
+                <div id="men-basic" name="branch" class="row"></div>
+                <div id="men-power" name="branch" class="row"></div>
+                <div id="men-inn" name="branch" class="row"></div>
+                <div id="men-port" name="branch" class="row"></div>
+            </div>
+            <div id="elves" class="row" hidden>
+                <div id="elves-basic" name="branch" class="row"></div>
+                <div id="elves-power" name="branch" class="row"></div>
+                <div id="elves-inn" name="branch" class="row"></div>
+                <div id="elves-port" name="branch" class="row"></div>
+            </div>
+            <div id="dwarves" class="row" hidden>
+                <div id="dwarves-basic" name="branch" class="row"></div>
+                <div id="dwarves-power" name="branch" class="row"></div>
+                <div id="dwarves-inn" name="branch" class="row"></div>
+                <div id="dwarves-port" name="branch" class="row"></div>
+            </div>
+            <div id="isengard" class="row" hidden>
+                <div id="isengard-basic" name="branch" class="row"></div>
+                <div id="isengard-power" name="branch" class="row"></div>
+                <div id="isengard-inn" name="branch" class="row"></div>
+                <div id="isengard-port" name="branch" class="row"></div>
+            </div>
+            <div id="mordor" class="row" hidden>
+                <div id="mordor-basic" name="branch" class="row"></div>
+                <div id="mordor-power" name="branch" class="row"></div>
+                <div id="mordor-inn" name="branch" class="row"></div>
+                <div id="mordor-port" name="branch" class="row"></div>
+            </div>
+            <div id="goblins" class="row" hidden>
+                <div id="goblins-basic" name="branch" class="row"></div>
+                <div id="goblins-power" name="branch" class="row"></div>
+                <div id="goblins-inn" name="branch" class="row"></div>
+                <div id="goblins-port" name="branch" class="row"></div>
+            </div>
+            <div id="angmar" class="row" hidden>
+                <div id="angmar-basic" name="branch" class="row"></div>
+                <div id="angmar-power" name="branch" class="row"></div>
+                <div id="angmar-inn" name="branch" class="row"></div>
+                <div id="angmar-port" name="branch" class="row"></div>
+            </div>
+            <div id="misc" class="row" hidden>
+                <div id="misc-basic" name="branch" class="row"></div>
+                <div id="misc-power" name="branch" class="row"></div>
+                <div id="misc-inn" name="branch" class="row"></div>
+                <div id="misc-port" name="branch" class="row"></div>
+            </div>
         </div>
 
-        <div id="duplicated" hidden>
-        </div>
-
-        <div id="div-uncategorized" style="display: none;">
+        <div id="div-uncategorized" hidden>
             <label>Uncategorized</label>
             <div id="uncategorized"></div>
         </div>
