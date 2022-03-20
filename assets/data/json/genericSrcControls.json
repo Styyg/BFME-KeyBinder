@@ -1,0 +1,17 @@
+{
+  "CONTROLBAR:ConstructGondorBarracks2Upgrade": "upgrade.png",
+  "CONTROLBAR:ConstructGondorBarracksLevel3Upgrade": "upgrade.png",
+  "CONTROLBAR:ConstructGondorArcheryRangeLevel2Upgrade": "upgrade.png",
+  "CONTROLBAR:ConstructGondorArcheryRangeLevel3Upgrade": "upgrade.png",
+  "CONTROLBAR:ConstructGondorStable2Upgrade": "upgrade.png",
+  "CONTROLBAR:ConstructGondorStableLevel3Upgrade": "upgrade.png",
+  "CONTROLBAR:ConstructGondorWorkshop2Upgrade": "upgrade.png",
+  "CONTROLBAR:ConstructGondorWorkshopLevel3Upgrade": "upgrade.png",
+  "CONTROLBAR:ConstructGondorForgeLevel2Upgrade": "upgrade2.png",
+  "CONTROLBAR:ConstructGondorForgeLevel3Upgrade": "upgrade2.png",
+  "CONTROLBAR:SelectUpgradesMenFortress": "upgrade.png",
+  "CONTROLBAR:ToggleLineFormation": {
+    "CONTROLBAR:ConstructGondorFighterHorde": "soldier_shieldwalloff.png",
+    "CONTROLBAR:ConstructRohanSpearmenHorde": "porcupine_off.png"
+  }
+}

@@ -85,7 +85,7 @@ function toggleDisplayChildsAfterMe(me) {
   }
 }
 
-function createRowControl(obj, faction, controlName, parent, gen) {
+async function createRowControl(obj, faction, controlName, HTMLparent, gen, parent) {
   const arrayNames = document.getElementsByName(controlName)
   const elementId = document.getElementById(controlName)
   const id = { idMain: "", idCurrent: "", idNew: "", idDesc: "" }
@@ -131,12 +131,13 @@ function createRowControl(obj, faction, controlName, parent, gen) {
     elementDesc.removeAttribute("id")
   }
 
-  const srcControl = controlName.split(":")[1]
+  const srcControl = await getSrcControl(controlName, faction, parent)
+
   // div = 1 control
   const newDiv = `<div id="${id["idMain"]}" name="${name["nameMain"]}" class="mt-2 border border-secondary border-3 rounded-3" ${hidden}>
     <div class="row align-items-center" >
       <div class="col-md-1">
-          <img class="icon" src="./assets/images/${faction}/${srcControl}.png">
+          <img class="icon" src="./assets/images/${srcControl}">
       </div>
       <div class="col-md-3">
           <label class="form-label">${controlName}</label>
@@ -165,8 +166,8 @@ function createRowControl(obj, faction, controlName, parent, gen) {
   </div>`
 
   // add html element to parent
-  parent.insertAdjacentHTML("beforeend", newDiv)
-  const currentDiv = parent.lastChild
+  HTMLparent.insertAdjacentHTML("beforeend", newDiv)
+  const currentDiv = HTMLparent.lastChild
 
   if (arrayNames.length > 0 || elementId !== null) {
     addInputForDuplicates(name["nameNew"])
@@ -233,34 +234,49 @@ async function createHTMLComponents() {
 
   for (const faction of arrayFaction) {
     for (const branch of arrayBranch) {
-      const parent0 = document.getElementById(faction + "-" + branch)
+      const HTMLparent0 = document.getElementById(faction + "-" + branch)
       // generation 0
       for (const controlName_0 in objControlsFactionTree[faction][branch]) {
         const gen = 0
-        createRowControl(objControlsFactionTree[faction][branch], faction, controlName_0, parent0, gen)
-        const parent1 = parent0.lastChild
+        await createRowControl(objControlsFactionTree[faction][branch], faction, controlName_0, HTMLparent0, gen)
+        const HTMLparent1 = HTMLparent0.lastChild
 
         // generation 1
         for (const controlName_1 in objControlsFactionTree[faction][branch][controlName_0]) {
           const gen = 1
-          createRowControl(objControlsFactionTree[faction][branch][controlName_0], faction, controlName_1, parent1, gen)
-          const parent2 = parent1.lastChild
+          await createRowControl(
+            objControlsFactionTree[faction][branch][controlName_0],
+            faction,
+            controlName_1,
+            HTMLparent1,
+            gen,
+            controlName_0
+          )
+          const HTMLparent2 = HTMLparent1.lastChild
 
           // generation 2
           for (const controlName_2 in objControlsFactionTree[faction][branch][controlName_0][controlName_1]) {
             const gen = 2
-            createRowControl(objControlsFactionTree[faction][branch][controlName_0][controlName_1], faction, controlName_2, parent2, gen)
-            const parent3 = parent2.lastChild
+            await createRowControl(
+              objControlsFactionTree[faction][branch][controlName_0][controlName_1],
+              faction,
+              controlName_2,
+              HTMLparent2,
+              gen,
+              controlName_1
+            )
+            const HTMLparent3 = HTMLparent2.lastChild
 
             // generation 3
             for (const controlName_3 in objControlsFactionTree[faction][branch][controlName_0][controlName_1][controlName_2]) {
               const gen = 3
-              createRowControl(
+              await createRowControl(
                 objControlsFactionTree[faction][branch][controlName_0][controlName_1][controlName_2],
                 faction,
                 controlName_3,
-                parent3,
-                gen
+                HTMLparent3,
+                gen,
+                controlName_2
               )
             }
           }
@@ -479,6 +495,23 @@ function downloadFile(fileName) {
 //   }
 //   return results
 // }
+
+async function getSrcControl(controlName, faction, parent) {
+  const readGenericSrc = await readFile("./assets/data/json/genericSrcControls.json")
+  const objGenericSrc = JSON.parse(readGenericSrc)
+  let srcControl
+  if (objGenericSrc[controlName] === undefined) {
+    srcControl = faction + "/" + controlName.split(":")[1] + ".png"
+  } else {
+    if (objGenericSrc[controlName][parent] === undefined) {
+      srcControl = "generic/" + objGenericSrc[controlName]
+    } else {
+      srcControl = "generic/" + objGenericSrc[controlName][parent]
+    }
+  }
+
+  return srcControl
+}
 
 function getControlsData(arrayDataIn, controlsList) {
   let controlsData = controlsList
