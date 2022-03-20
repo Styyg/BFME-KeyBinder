@@ -1,0 +1,43 @@
+{
+  "CONTROLBAR:ConstructGondorBarracks2Upgrade": "upgrade.png",
+  "CONTROLBAR:ConstructGondorBarracksLevel3Upgrade": "upgrade.png",
+  "CONTROLBAR:ConstructGondorArcheryRangeLevel2Upgrade": "upgrade.png",
+  "CONTROLBAR:ConstructGondorArcheryRangeLevel3Upgrade": "upgrade.png",
+  "CONTROLBAR:ConstructGondorStable2Upgrade": "upgrade.png",
+  "CONTROLBAR:ConstructGondorStableLevel3Upgrade": "upgrade.png",
+  "CONTROLBAR:ConstructGondorWorkshop2Upgrade": "upgrade.png",
+  "CONTROLBAR:ConstructGondorWorkshopLevel3Upgrade": "upgrade.png",
+  "CONTROLBAR:ConstructGondorForgeLevel2Upgrade": "upgrade2.png",
+  "CONTROLBAR:ConstructGondorForgeLevel3Upgrade": "upgrade2.png",
+  "CONTROLBAR:SelectUpgradesMenFortress": "upgrade.png",
+  "CONTROLBAR:ToggleLineFormation": {
+    "CONTROLBAR:ConstructGondorFighterHorde": "men_soldier_shieldwalloff.png",
+    "CONTROLBAR:ConstructRohanSpearmenHorde": "porcupine_off.png",
+    "CONTROLBAR:ConstructGondorShieldGuardHorde": "porcupine_off.png"
+  },
+  "CONTROLBAR:TogglePorcupineFormation": "porcupine.png",
+  "CONTROLBAR:PurchaseTechnologyGondorFireArrows": "fire_arrow.png",
+  "CONTROLBAR:FireArrowUpgrade": "fire_arrow.png",
+  "CONTROLBAR:PurchaseUpgradeMenFortressFlamingMunitions": "fire_arrow.png",
+  "CONTROLBAR:PurchaseUpgradeGondorFireStones": "fire_stones.png",
+  "CONTROLBAR:PurchaseTechnologyGondorFireStones": "fire_stones.png",
+  "CONTROLBAR:SelectRevivablesMenFortress": "select_revivable.png",
+  "CONTROLBAR:PurchaseUpgradeMenFortressIvoryTower": "men_IvoryTower.png",
+  "CONTROLBAR:IvoryTowerVision": "men_IvoryTower.png",
+  "CONTROLBAR:PurchaseUpgradeMenFortressBoilingOil": "men_BoilingOil.png",
+  "CONTROLBAR:FireWeaponMenFortressBoilingOil": "men_BoilingOil.png",
+  "CONTROLBAR:NoAutoAcquire": "acquire_off.png",
+  "CONTROLBAR:AutoAcquire": "acquire.png",
+  "CONTROLBAR:TheodenMount": "theoden_mount.png",
+  "CONTROLBAR:CaptainofGondor": {
+    "CONTROLBAR:GondorFaramirHotkey": "men_captainOfGondor_Faramir.png",
+    "CONTROLBAR:GondorBoromirHotkey": "men_captainOfGondor_Boromir.png"
+  },
+  "CONTROLBAR:Athelas": "athelas.png",
+  "CONTROLBAR:ArcherBarrage": "archer_barrage.png",
+  "CONTROLBAR:StopBombard": "stop_bombard.png",
+  "CONTROLBAR:ToggleTrebWeapon": "bombard.png",
+  "CONTROLBAR:GarrisonExit": "evacuate.png",
+  "CONTROLBAR:PurchaseUpgradeSentryTowerFireArrows": "fire_arrow2.png",
+  "CONTROLBAR:EvacuateAll": "evacuate_all.png"
+}

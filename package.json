@@ -4,13 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Styg",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.3",
-    "nodemon": "^2.0.15"
+  "devDependencies": {
+    "prettier": "^2.6.0"
   }
 }
