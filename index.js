@@ -5,11 +5,11 @@ const arrayFaction = ["men", "elves", "dwarves", "isengard", "mordor", "goblins"
 const arrayBranch = ["basic", "power", "inn", "port"]
 
 function init() {
-  createHTMLComponents()
+  // createHTMLComponents()
   setEventListeners()
 }
 
-async function setEventListeners() {
+function setEventListeners() {
   const inputFile = document.getElementById("inputFile")
   const selectFaction = document.getElementById("select-faction")
   const btnDownload = document.getElementById("btn-download")
@@ -37,10 +37,11 @@ async function setEventListeners() {
       }
       document.getElementById("uncategorized").innerHTML = ""
 
-      createHTMLComponents()
+      createHTMLComponents().then(() => {
+        extractData(arrayData)
+      })
 
       // read data
-      extractData(arrayData)
     }
     reader.readAsText(file, "windows-1252")
     // document.getElementById("main-div").style.display = "block"
@@ -93,7 +94,7 @@ async function createRowControl(obj, faction, controlName, HTMLparent, gen, pare
   let hidden
 
   if (gen > 0) {
-    // hidden = "hidden"
+    hidden = "hidden"
   } else {
     hidden = ""
   }
@@ -215,22 +216,9 @@ function addInputForDuplicates(id) {
   })
 }
 
-// extract data from file content, store current shortcuts and create html
 async function createHTMLComponents() {
-  // all controls from input file
-  // const jsonAllControls = getAllControlsWithShortcuts(arrayData)
-  // controls from csv controls file (list of all controls)
-  // const fileControls = await readFileFromServer("./assets/data/controlsList.json");
-  // const jsonControls = JSON.parse(fileControls);
-  // controls from csv faction file (splited by faction, faction splited by type: buildings, units etc)
   const readControlsFactionTree = await readFile("./assets/data/json/controlsFactionTree.json")
   const objControlsFactionTree = JSON.parse(readControlsFactionTree)
-  // arrays of controls
-  // const arrayCsvControlsNames = Object.keys(jsonControls);
-  // const arrayControlsFaction = Object.keys(jsonControlsFact)
-  // const arrayAllControlsNames = Object.keys(jsonAllControls)
-  // div that contains all uncategorized controls (not from csv but presents in input file)
-  // const divUncategorized = (document.getElementById("uncategorized").innerHTML = "")
 
   for (const faction of arrayFaction) {
     for (const branch of arrayBranch) {
@@ -284,146 +272,11 @@ async function createHTMLComponents() {
       }
     }
   }
-
-  // let duplicatedNames = []
-  // for (const faction in jsonControlsFact) {
-  //   // arrayControlsFaction.forEach((faction) => {
-  //   const arrayGen = Object.keys(jsonControlsFact[faction])
-
-  //   arrayGen.forEach((generation) => {
-  //     const arrayRank = Object.keys(jsonControlsFact[faction][generation])
-
-  //     arrayRank.forEach((rank) => {
-  //       const control = jsonControlsFact[faction][generation][rank]["name"]
-  //       const parent = jsonControlsFact[faction][generation][rank]["parent"]
-  //       const duplicated = jsonControlsFact[faction][generation][rank]["duplicated"]
-  //       const key = getShortcut(jsonAllControls[control])
-  //       let desc
-  //       if (jsonAllControls[control] === undefined) {
-  //         desc = ""
-  //       } else {
-  //         desc = jsonAllControls[control].replace("&", "")
-  //       }
-  //       const titre = control.split(":")[1]
-
-  //       let src, name, id, idNew, divId, hidden
-
-  //       // store keys in a json object
-  //       currentShortcuts.controls[control] = { key: key }
-
-  //       // type = jsonControls[control]['type']
-  //       // name = faction + "-" + type
-  //       src = "./assets/images/" + faction + "/" + generation + "/" + titre + ".png"
-  //       if (duplicated == true) {
-  //         id = ""
-  //         idNew = ""
-  //         name = control
-  //         if (!duplicatedNames.includes(control)) {
-  //           duplicatedNames.push(control)
-  //         }
-  //         if (document.getElementById(control + "-new") === null) {
-  //           const inputControl = `<input class="form-control small-input"
-  //               id="${control}-new"
-  //               maxlength="1"
-  //               type="text">
-  //           </input>`
-  //           document.getElementById("duplicated").insertAdjacentHTML("beforeend", inputControl)
-  //         }
-  //       } else {
-  //         id = control
-  //         // id = 'id="' + control + '"'
-  //         idNew = control + "-new"
-  //         name = ""
-  //       }
-
-  //       if (parent == "") {
-  //         divId = faction
-  //         // hidden = ''
-  //       } else {
-  //         divId = parent
-  //         // hidden = 'hidden'
-  //       }
-
-  //       // div format for each controls
-  //       const divControlRow = `<div id="${id}" class="mt-2 border border-secondary border-3 rounded-3" ${hidden}>
-  //         <div class="row align-items-center" >
-  //           <div class="col-md-1">
-  //               <img class="icon" src="${src}">
-  //           </div>
-  //           <div class="col-md-3">
-  //               <label class="form-label">${titre}</label>
-  //           </div>
-  //           <div class="col-md-3 text-center">
-  //               <div class="row">
-  //                   <label class="form-label">Shortcut</label>
-  //               </div>
-  //               <div class="row align-items-center">
-  //                   <div class="col">
-  //                       <label>current : </label>
-  //                       <output>${key}</output>
-  //                   </div>
-  //                   <div class="col">
-  //                       <label>new : </label>
-  //                       <input class="form-control small-input" id="${idNew}" name="${name}" maxlength="1" type="text"></input>
-  //                   </div>
-  //               </div>
-  //           </div>
-  //           <div class="col">
-  //               <div class="row text-center">
-  //                   <label class="form-label" id="${control}-desc">${desc}</label>
-  //               </div>
-  //           </div>
-  //         </div>
-  //       </div>`
-
-  //       // if(arrayCsvControlsNames.includes(control)) {
-  //       // if(jsonControls[control]['hasChild']) {
-  //       if (document.getElementById(parent + "-toggle") === null && generation != "gen0") {
-  //         const divFleche = `<div id="${parent}-toggle" class="text-center border border-warning border-3" onclick="toggleHiddenChildsAfterMe(this)">
-  //             ->
-  //           </div>`
-  //         //onclick="testToggle(this, document.getElementById('child1'))"
-  //         document.getElementById(parent).insertAdjacentHTML("beforeend", divFleche)
-  //       }
-  //       // }
-
-  //       // add html element
-  //       document.getElementById(divId).insertAdjacentHTML("beforeend", divControlRow)
-
-  //       const selectedFaction = document.getElementById("select-faction").value
-  //       if (selectedFaction == faction) {
-  //         document.getElementById(faction).hidden = false
-  //       } else {
-  //         document.getElementById(faction).hidden = true
-  //       }
-  //     })
-  //   })
-  //   // });
-  // }
-
-  // duplicatedNames.forEach((name) => {
-  //   const arrayElements = document.getElementsByName(name)
-  //   const input = document.getElementById(name + "-new")
-
-  //   arrayElements.forEach((element) => {
-  //     element.addEventListener("input", () => {
-  //       input.value = element.value
-
-  //       sameNameElements = document.getElementsByName(name)
-  //       sameNameElements.forEach((elem) => {
-  //         if (elem != element) {
-  //           elem.value = element.value
-  //         }
-  //       })
-  //     })
-  //   })
-  // })
 }
 
 async function extractData(arrayData) {
   const readControlsList = await readFile("./assets/data/json/controlsList.json")
   const objControlsList = JSON.parse(readControlsList)
-  // const arrayControlsList = Object.keys(objControlsList)
 
   const controlsData = getControlsData(arrayData, objControlsList)
 
@@ -480,22 +333,6 @@ function downloadFile(fileName) {
   }
 }
 
-// function getAllControlsWithShortcuts(array) {
-//   let results = {}
-
-//   for (let i = 1; i < array.length; i++) {
-//     const element = array[i]
-//     if (element.trim().startsWith('"') && element.includes("&") && isLetter(element.charAt(element.search("&") + 1))) {
-//       let offset = 1
-//       while (array[i - offset].trim().startsWith('"') || array[i - offset].trim().startsWith("//")) {
-//         offset++
-//       }
-//       results[array[i - offset].trim()] = array[i].trim()
-//     }
-//   }
-//   return results
-// }
-
 async function getSrcControl(controlName, faction, parent) {
   const readGenericSrc = await readFile("./assets/data/json/genericSrcControls.json")
   const objGenericSrc = JSON.parse(readGenericSrc)
@@ -526,16 +363,6 @@ function getControlsData(arrayDataIn, controlsList) {
       controlsData[controlName] = arrayDataIn[index + offset]
     }
   }
-  // for (let i = 1; i < arrayDataIn.length; i++) {
-  //   const element = arrayDataIn[i]
-  //   if (element.trim().startsWith('"') && element.includes("&") && isLetter(element.charAt(element.search("&") + 1))) {
-  //     let offset = 1
-  //     while (arrayDataIn[i - offset].trim().startsWith('"') || arrayDataIn[i - offset].trim().startsWith("//")) {
-  //       offset++
-  //     }
-  //     controlsData[arrayDataIn[i - offset].trim()] = arrayDataIn[i].trim()
-  //   }
-  // }
   return controlsData
 }
 

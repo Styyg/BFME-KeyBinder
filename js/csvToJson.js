@@ -3,7 +3,7 @@ const arrayFaction = ["men", "elves", "dwarves", "isengard", "mordor", "goblins"
 const arrayBranch = ["basic", "power", "inn", "port"]
 const controlsList = {}
 const controlsFactionTree = {}
-const csvPath = "./assets/data/csv/controls.csv"
+const csvPath = "./assets/data/csv/controls test.csv"
 const jsonPath = "./assets/data/json/"
 
 function createFactionTreeStructure() {

@@ -140,7 +140,7 @@
         "CONTROLBAR:IvoryTowerVision": {},
         "OBJECT:MenBuildingFoundation": {
           "CONTROLBAR:Command_ConstructMenWallHubExpansion": {},
-          "CONTROLBAR:ConstructMenDormitory": { "CONTROLBAR:EvacuateAll": {} },
+          "CONTROLBAR:ConstructMenDormitory": { "CONTROLBAR:GarrisonExit": {}, "CONTROLBAR:EvacuateAll": {} },
           "CONTROLBAR:ConstructMenArrowTowerExpansion": {},
           "CONTROLBAR:ConstructMenTrebuchetExpansion": {}
         }
