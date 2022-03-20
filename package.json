@@ -8,7 +8,6 @@
   },
   "author": "Styg",
   "license": "ISC",
-  "dependencies": {},
   "devDependencies": {
     "prettier": "^2.6.0"
   }

@@ -1,6 +1,6 @@
 let rawDataIn
-let currentShortcuts = { controls: {} }
-let newShortcuts = { controls: {} }
+let currentShortcuts = {}
+let newShortcuts = {}
 const arrayFaction = ["men", "elves", "dwarves", "isengard", "mordor", "goblins", "angmar", "misc"]
 const arrayBranch = ["basic", "power", "inn", "port"]
 
@@ -37,8 +37,10 @@ async function setEventListeners() {
       }
       document.getElementById("uncategorized").innerHTML = ""
 
+      createHTMLComponents()
+
       // read data
-      // extractData(arrayData)
+      extractData(arrayData)
     }
     reader.readAsText(file, "windows-1252")
     // document.getElementById("main-div").style.display = "block"
@@ -86,29 +88,55 @@ function toggleDisplayChildsAfterMe(me) {
 function createRowControl(obj, faction, controlName, parent, gen) {
   const arrayNames = document.getElementsByName(controlName)
   const elementId = document.getElementById(controlName)
-  let id = "",
-    name = ""
-  // if controlName is already an id, it's deleted and set to name attribute for both old and new element (to avoid duplicated id)
-  // if controlName is already a name, it's set to currentDiv's name
-  // if controlName is not affected anywhere, it's set to currentDiv's id
-  if (arrayNames.length > 0) {
-    name = controlName
+  const id = { idMain: "", idCurrent: "", idNew: "", idDesc: "" }
+  const name = { nameMain: "", nameCurrent: "", nameNew: "", nameDesc: "" }
+  let hidden
+
+  if (gen > 0) {
+    // hidden = "hidden"
   } else {
-    if (elementId === null) {
-      id = controlName
-    } else {
-      name = controlName
-      elementId.setAttribute("name", controlName)
-      elementId.removeAttribute("id")
-    }
+    hidden = ""
+  }
+
+  // neither id or name found, id is set
+  if (arrayNames.length == 0 && elementId === null) {
+    id["idMain"] = controlName
+    id["idCurrent"] = controlName + "-current"
+    id["idNew"] = controlName + "-new"
+    id["idDesc"] = controlName + "-desc"
+  }
+
+  // elements with name are found OR id is found, name is set
+  if (arrayNames.length > 0 || elementId !== null) {
+    name["nameMain"] = controlName
+    name["nameCurrent"] = controlName + "-current"
+    name["nameNew"] = controlName + "-new"
+    name["nameDesc"] = controlName + "-desc"
+  }
+
+  // element with id is found, delete id as name is now set
+  if (elementId !== null) {
+    const elementCurrent = document.getElementById(controlName + "-current")
+    const elementNew = document.getElementById(controlName + "-new")
+    const elementDesc = document.getElementById(controlName + "-desc")
+
+    elementId.setAttribute("name", name["nameMain"])
+    elementCurrent.setAttribute("name", name["nameCurrent"])
+    elementNew.setAttribute("name", name["nameNew"])
+    elementDesc.setAttribute("name", name["nameDesc"])
+
+    elementId.removeAttribute("id")
+    elementCurrent.removeAttribute("id")
+    elementNew.removeAttribute("id")
+    elementDesc.removeAttribute("id")
   }
 
   const srcControl = controlName.split(":")[1]
   // div = 1 control
-  const newDiv = `<div id="${id}" name="${name}" class="mt-2 border border-secondary border-3 rounded-3">
+  const newDiv = `<div id="${id["idMain"]}" name="${name["nameMain"]}" class="mt-2 border border-secondary border-3 rounded-3" ${hidden}>
     <div class="row align-items-center" >
       <div class="col-md-1">
-          <img class="icon" src="./assets/images/${faction}/gen${gen}/${srcControl}.png">
+          <img class="icon" src="./assets/images/${faction}/${srcControl}.png">
       </div>
       <div class="col-md-3">
           <label class="form-label">${controlName}</label>
@@ -120,17 +148,17 @@ function createRowControl(obj, faction, controlName, parent, gen) {
           <div class="row align-items-center">
               <div class="col">
                   <label>current : </label>
-                  <output id="${id}-current" name="${name}-current" ></output>
+                  <output id="${id["idCurrent"]}" name="${name["nameCurrent"]}" ></output>
               </div>
               <div class="col">
                   <label>new : </label>
-                  <input id="${id}-new" name="${name}-new" class="form-control small-input" maxlength="1" type="text"></input>
+                  <input id="${id["idNew"]}" name="${name["nameNew"]}" class="form-control small-input" maxlength="1" type="text"></input>
               </div>
           </div>
       </div>
       <div class="col">
           <div class="row text-center">
-              <label id="${id}-desc" name="${name}-desc class="form-label">Description</label>
+              <label id="${id["idDesc"]}" name="${name["nameDesc"]} class="form-label">Description</label>
           </div>
       </div>
     </div>
@@ -139,6 +167,10 @@ function createRowControl(obj, faction, controlName, parent, gen) {
   // add html element to parent
   parent.insertAdjacentHTML("beforeend", newDiv)
   const currentDiv = parent.lastChild
+
+  if (arrayNames.length > 0 || elementId !== null) {
+    addInputForDuplicates(name["nameNew"])
+  }
 
   // add button to toggle display of childs elements
   const numberOfChilds = Object.keys(obj[controlName]).length
@@ -152,6 +184,34 @@ function createRowControl(obj, faction, controlName, parent, gen) {
       toggleDisplayChildsAfterMe(addedDiv)
     })
   }
+}
+
+function addInputForDuplicates(id) {
+  // add new input
+  let input
+  if (document.getElementById(id) === null) {
+    const newInput = `<input id="${id}" maxlength="1" type="text"></input>`
+    const divDuplicates = document.getElementById("duplicates")
+    divDuplicates.insertAdjacentHTML("beforeend", newInput)
+    input = divDuplicates.lastChild
+  } else {
+    input = document.getElementById(id)
+  }
+
+  // add event listeners, so all components with same name get same value when changed
+  const elements = document.getElementsByName(id)
+  elements.forEach((element) => {
+    element.addEventListener("input", () => {
+      input.value = element.value
+
+      const sameNameElements = document.getElementsByName(element.getAttribute("name"))
+      sameNameElements.forEach((elem) => {
+        if (elem != element) {
+          elem.value = element.value
+        }
+      })
+    })
+  })
 }
 
 // extract data from file content, store current shortcuts and create html
@@ -345,49 +405,48 @@ async function createHTMLComponents() {
 }
 
 async function extractData(arrayData) {
-  const readControlsFactionTree = await readFile("./assets/data/json/controlsFactionTree.json")
-  const objControlsFactionTree = JSON.parse(readControlsFactionTree)
+  const readControlsList = await readFile("./assets/data/json/controlsList.json")
+  const objControlsList = JSON.parse(readControlsList)
+  // const arrayControlsList = Object.keys(objControlsList)
 
-  for (const faction of arrayFaction) {
-    for (const branch of arrayBranch) {
-      const parent0 = document.getElementById(faction + "-" + branch)
-      // generation 0
-      for (const controlName_0 in objControlsFactionTree[faction][branch]) {
-        createRowControl(objControlsFactionTree[faction][branch], controlName_0, parent0)
-        const parent1 = parent0.lastChild
+  const controlsData = getControlsData(arrayData, objControlsList)
 
-        // generation 1
-        for (const controlName_1 in objControlsFactionTree[faction][branch][controlName_0]) {
-          createRowControl(objControlsFactionTree[faction][branch][controlName_0], controlName_1, parent1)
-          const parent2 = parent1.lastChild
+  for (const controlName in controlsData) {
+    const elementMain = document.getElementById(controlName)
+    const elementCurrent = document.getElementById(controlName + "-current")
+    const elementDesc = document.getElementById(controlName + "-desc")
 
-          // generation 2
-          for (const controlName_2 in objControlsFactionTree[faction][branch][controlName_0][controlName_1]) {
-            createRowControl(objControlsFactionTree[faction][branch][controlName_0][controlName_1], controlName_2, parent2)
-            const parent3 = parent2.lastChild
+    const shortcut = getShortcut(controlsData[controlName])
+    const desc = controlsData[controlName]
 
-            // generation 3
-            for (const controlName_3 in objControlsFactionTree[faction][branch][controlName_0][controlName_1][controlName_2]) {
-              createRowControl(objControlsFactionTree[faction][branch][controlName_0][controlName_1][controlName_2], controlName_3, parent3)
-            }
-          }
-        }
-      }
+    currentShortcuts[controlName] = shortcut
+
+    if (elementMain !== null) {
+      elementCurrent.innerText = shortcut
+      elementDesc.innerText = desc.replace("&", "")
+    } else {
+      const elementsCurrent = document.getElementsByName(controlName + "-current")
+      const elementsDesc = document.getElementsByName(controlName + "-desc")
+
+      elementsCurrent.forEach((element) => {
+        element.innerText = shortcut
+      })
+      elementsDesc.forEach((element) => {
+        element.innerText = desc.replace("&", "")
+      })
     }
   }
 }
 
 function downloadFile(fileName) {
-  arrayControlsName = Object.keys(currentShortcuts.controls)
-  // newShortcuts.controls = {}
-  arrayControlsName.forEach((element) => {
+  for (const element in currentShortcuts) {
     inputNewKey = document.getElementById(element + "-new")
     if (inputNewKey !== null) {
       key = inputNewKey.value.toUpperCase()
 
       if (isLetter(key)) {
-        newShortcuts.controls[element] = {}
-        newShortcuts.controls[element]["key"] = key
+        newShortcuts[element] = {}
+        newShortcuts[element]["key"] = key
       } else if (key) {
         // console.log(inputNewKey.parentNode);
         // inputNewKey.classList.add("is-invalid");
@@ -395,30 +454,56 @@ function downloadFile(fileName) {
     } else {
       console.log("getElementById(" + element + "-new)" + " not found")
     }
-  })
+  }
 
-  const lengthControls = Object.keys(newShortcuts.controls).length
-  if (lengthControls) {
+  const lengthControls = Object.keys(newShortcuts).length
+  if (lengthControls > 0) {
     const newFile = getFileWithNewShortcuts()
     const encoded = new TextEncoder("windows-1252", { NONSTANDARD_allowLegacyEncoding: true }).encode(newFile)
     download(encoded, fileName)
   }
 }
 
-function getAllControlsWithShortcuts(array) {
-  let results = {}
+// function getAllControlsWithShortcuts(array) {
+//   let results = {}
 
-  for (let i = 1; i < array.length; i++) {
-    const element = array[i]
-    if (element.trim().startsWith('"') && element.includes("&") && isLetter(element.charAt(element.search("&") + 1))) {
+//   for (let i = 1; i < array.length; i++) {
+//     const element = array[i]
+//     if (element.trim().startsWith('"') && element.includes("&") && isLetter(element.charAt(element.search("&") + 1))) {
+//       let offset = 1
+//       while (array[i - offset].trim().startsWith('"') || array[i - offset].trim().startsWith("//")) {
+//         offset++
+//       }
+//       results[array[i - offset].trim()] = array[i].trim()
+//     }
+//   }
+//   return results
+// }
+
+function getControlsData(arrayDataIn, controlsList) {
+  let controlsData = controlsList
+
+  for (const controlName in controlsList) {
+    if (arrayDataIn.includes(controlName)) {
+      const index = arrayDataIn.indexOf(controlName)
       let offset = 1
-      while (array[i - offset].trim().startsWith('"') || array[i - offset].trim().startsWith("//")) {
+      while (arrayDataIn[index + offset].trim().startsWith("//")) {
         offset++
       }
-      results[array[i - offset].trim()] = array[i].trim()
+      controlsData[controlName] = arrayDataIn[index + offset]
     }
   }
-  return results
+  // for (let i = 1; i < arrayDataIn.length; i++) {
+  //   const element = arrayDataIn[i]
+  //   if (element.trim().startsWith('"') && element.includes("&") && isLetter(element.charAt(element.search("&") + 1))) {
+  //     let offset = 1
+  //     while (arrayDataIn[i - offset].trim().startsWith('"') || arrayDataIn[i - offset].trim().startsWith("//")) {
+  //       offset++
+  //     }
+  //     controlsData[arrayDataIn[i - offset].trim()] = arrayDataIn[i].trim()
+  //   }
+  // }
+  return controlsData
 }
 
 function testFile(files) {
@@ -473,7 +558,7 @@ function getShortcut(str) {
 }
 
 function getFileWithNewShortcuts() {
-  const arrayControlsNames = Object.keys(newShortcuts.controls)
+  const arrayControlsNames = Object.keys(newShortcuts)
   // split data by line break
   const regexp = getLineBreakFormat(rawDataIn)
   dataIn = rawDataIn.split(regexp)
@@ -483,7 +568,7 @@ function getFileWithNewShortcuts() {
 
     // if we get the ControlBar
     if (index > -1) {
-      key = newShortcuts.controls[name]["key"]
+      key = newShortcuts[name]["key"]
       offset = 1
       // need to avoid to change shortcuts in commented lines
       while (dataIn[index + offset].startsWith("//")) {

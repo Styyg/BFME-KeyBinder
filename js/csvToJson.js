@@ -1,6 +1,7 @@
 const fs = require("fs")
 const arrayFaction = ["men", "elves", "dwarves", "isengard", "mordor", "goblins", "angmar", "misc"]
 const arrayBranch = ["basic", "power", "inn", "port"]
+const controlsList = {}
 const controlsFactionTree = {}
 const csvPath = "./assets/data/csv/controls.csv"
 const jsonPath = "./assets/data/json/"
@@ -26,6 +27,8 @@ function createFactionTreeStructure() {
     const branch = columns[4]
     const gen = parseInt(columns[5])
 
+    controlsList[name] = ""
+
     switch (gen) {
       case 0:
         storeParent0 = name
@@ -47,6 +50,7 @@ function createFactionTreeStructure() {
     }
   }
 
+  fs.writeFileSync(jsonPath + "controlsList.json", JSON.stringify(controlsList))
   fs.writeFileSync(jsonPath + "controlsFactionTree.json", JSON.stringify(controlsFactionTree))
 }
 

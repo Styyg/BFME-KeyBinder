@@ -25,29 +25,52 @@
         "CONTROLBAR:ConstructGondorBarracksLevel3Upgrade": {}
       },
       "CONTROLBAR:ConstructMenArcheryRange": {
-        "CONTROLBAR:ConstructGondorArcherHorde": {},
-        "CONTROLBAR:ConstructGondorRangerHorde": {},
+        "CONTROLBAR:ConstructGondorArcherHorde": {
+          "CONTROLBAR:ArcherBarrage": {},
+          "CONTROLBAR:FireArrowUpgrade": {},
+          "CONTROLBAR:PurchaseUpgradeGondorHeavyArmor": {},
+          "CONTROLBAR:PurchaseUpgradeGondorBasicTraining": {}
+        },
+        "CONTROLBAR:ConstructGondorRangerHorde": {
+          "CONTROLBAR:ArcherBarrage": {},
+          "CONTROLBAR:MenLongShotAbility": {},
+          "CONTROLBAR:FireArrowUpgrade": {},
+          "CONTROLBAR:PurchaseUpgradeGondorBasicTraining": {}
+        },
         "CONTROLBAR:PurchaseTechnologyGondorFireArrows": {},
         "CONTROLBAR:ConstructGondorArcheryRangeLevel2Upgrade": {},
         "CONTROLBAR:ConstructGondorArcheryRangeLevel3Upgrade": {}
       },
       "CONTROLBAR:ConstructMenStable": {
-        "CONTROLBAR:ConstructGondorKnightHorde": {},
-        "CONTROLBAR:ConstructRohanRohirrimHorde": {},
-        "CONTROLBAR:ConstructGondorKnightsofDolHorde": {},
+        "CONTROLBAR:ConstructGondorKnightHorde": {
+          "CONTROLBAR:PurchaseUpgradeGondorForgedBlades": {},
+          "CONTROLBAR:PurchaseUpgradeGondorHeavyArmor": {},
+          "CONTROLBAR:PurchaseUpgradeGondorBasicTraining": {}
+        },
+        "CONTROLBAR:ConstructRohanRohirrimHorde": {
+          "CONTROLBAR:ToggleRohirrimWeapons": {},
+          "CONTROLBAR:FireArrowUpgrade": {},
+          "CONTROLBAR:PurchaseUpgradeGondorForgedBlades": {},
+          "CONTROLBAR:PurchaseUpgradeGondorHeavyArmor": {},
+          "CONTROLBAR:PurchaseUpgradeRohanBasicTraining": {}
+        },
+        "CONTROLBAR:ConstructGondorKnightsofDolHorde": { "CONTROLBAR:KnightsofDolChargeofGlory": {} },
         "CONTROLBAR:ConstructGondorStable2Upgrade": {},
         "CONTROLBAR:ConstructGondorStableLevel3Upgrade": {}
       },
       "CONTROLBAR:ConstructMenWorkshop": {
-        "CONTROLBAR:ConstructGondorTrebuchet": {},
+        "CONTROLBAR:ConstructGondorTrebuchet": {
+          "CONTROLBAR:NoAutoAcquire": {},
+          "CONTROLBAR:AutoAcquire": {},
+          "CONTROLBAR:PurchaseUpgradeGondorFireStones": {},
+          "CONTROLBAR:ToggleTrebWeapon": {},
+          "CONTROLBAR:StopBombard": {}
+        },
         "CONTROLBAR:PurchaseTechnologyGondorFireStones": {},
         "CONTROLBAR:ConstructGondorWorkshop2Upgrade": {},
         "CONTROLBAR:ConstructGondorWorkshopLevel3Upgrade": {}
       },
-      "CONTROLBAR:ConstructMenSentryTower": {
-        "CONTROLBAR:GarrisonExit": {},
-        "CONTROLBAR:PurchaseUpgradeSentryTowerFireArrows": {}
-      },
+      "CONTROLBAR:ConstructMenSentryTower": { "CONTROLBAR:GarrisonExit": {}, "CONTROLBAR:PurchaseUpgradeSentryTowerFireArrows": {} },
       "CONTROLBAR:ConstructMenWell": {},
       "CONTROLBAR:ConstructMenStatue": {},
       "CONTROLBAR:ConstructMenBlacksmith": {
@@ -73,13 +96,34 @@
       "CONTROLBAR:ConstructMenFortress": {
         "CONTROLBAR:ConstructMenPorter": {},
         "CONTROLBAR:SelectRevivablesMenFortress": {
-          "CONTROLBAR:RohanEowynHotkey": {},
-          "CONTROLBAR:RohanEomerHotkey": {},
-          "CONTROLBAR:RohanTheodenHotkey": {},
-          "CONTROLBAR:GondorFaramirHotkey": {},
-          "CONTROLBAR:GondorBoromirHotkey": {},
-          "CONTROLBAR:GondorAragornHotkey": {},
-          "CONTROLBAR:GandalfTheWhiteHotkey": {}
+          "CONTROLBAR:RohanEowynHotkey": {
+            "CONTROLBAR:TheodenMount": {},
+            "CONTROLBAR:Smite": {},
+            "CONTROLBAR:Disguise": {},
+            "CONTROLBAR:ShieldMaiden": {}
+          },
+          "CONTROLBAR:RohanEomerHotkey": { "CONTROLBAR:TheodenMount": {}, "CONTROLBAR:ThrowSpear": {} },
+          "CONTROLBAR:RohanTheodenHotkey": { "CONTROLBAR:TheodenMount": {}, "CONTROLBAR:KingsFavor": {}, "CONTROLBAR:GloriousCharge": {} },
+          "CONTROLBAR:GondorFaramirHotkey": {
+            "CONTROLBAR:ToggleFaramirWeapons": {},
+            "CONTROLBAR:WoundingArrow": {},
+            "CONTROLBAR:FaramirKnightRanger": {},
+            "CONTROLBAR:CaptainofGondor": {}
+          },
+          "CONTROLBAR:GondorBoromirHotkey": { "CONTROLBAR:HornofGondor": {}, "CONTROLBAR:CaptainofGondor": {} },
+          "CONTROLBAR:GondorAragornHotkey": {
+            "CONTROLBAR:Athelas": {},
+            "CONTROLBAR:BladeMaster": {},
+            "CONTROLBAR:Elendil": {},
+            "CONTROLBAR:Oathbreakers": {}
+          },
+          "CONTROLBAR:GandalfTheWhiteHotkey": {
+            "CONTROLBAR:WizardBlast": {},
+            "CONTROLBAR:LightningSword": {},
+            "CONTROLBAR:Shadowfax": {},
+            "CONTROLBAR:IstariLight": {},
+            "CONTROLBAR:WordofPower": {}
+          }
         },
         "CONTROLBAR:SelectUpgradesMenFortress": {
           "CONTROLBAR:PurchaseUpgradeMenFortressBanners": {},
@@ -91,7 +135,12 @@
         },
         "CONTROLBAR:FireWeaponMenFortressBoilingOil": {},
         "CONTROLBAR:IvoryTowerVision": {},
-        "OBJECT:MenBuildingFoundation": {}
+        "OBJECT:MenBuildingFoundation": {
+          "CONTROLBAR:Command_ConstructMenWallHubExpansion": {},
+          "CONTROLBAR:ConstructMenDormitory": { "CONTROLBAR:EvacuateAll": {} },
+          "CONTROLBAR:ConstructMenArrowTowerExpansion": {},
+          "CONTROLBAR:ConstructMenTrebuchetExpansion": {}
+        }
       }
     },
     "power": {},
