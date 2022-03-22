@@ -5,7 +5,7 @@ const arrayFaction = ["men", "elves", "dwarves", "isengard", "mordor", "goblins"
 const arrayBranch = ["basic", "power", "inn", "port"]
 
 function init() {
-  // createHTMLComponents()
+  createHTMLComponents()
   setEventListeners()
 }
 
@@ -133,37 +133,42 @@ async function createRowControl(obj, faction, controlName, HTMLparent, gen, pare
   }
 
   const srcControl = await getSrcControl(controlName, faction, parent)
+  const label = controlName.split(":")[1]
 
-  // div = 1 control
-  const newDiv = `<div id="${id["idMain"]}" name="${name["nameMain"]}" class="mt-2 border border-secondary border-3 rounded-3" ${hidden}>
-    <div class="row align-items-center" >
-      <div class="col-md-1">
-          <img class="icon" src="./assets/images/${srcControl}">
+  const numberOfChilds = Object.keys(obj[controlName]).length
+  let divRow = ""
+  if (numberOfChilds > 0) {
+    divRow = `<div class="arrow-container">
+      <div class="arrow"></div>
+    </div>`
+  }
+
+  const newDiv = `<div id="${id["idMain"]}" name="${name["nameMain"]}" class="control-main ${faction}" ${hidden}>
+    <div class="control">
+      <img class="icon" src="./assets/images/${srcControl}">
+
+      <div class="description" id="${id["idDesc"]}" name="${name["nameDesc"]}" >
+        Description
       </div>
-      <div class="col-md-3">
-          <label class="form-label">${controlName}</label>
+
+      <div class="shortcuts">
+        <label>Shortcut</label>
+
+        <div class="current-new">
+            <div>
+                current : <label id="${id["idCurrent"]}" name="${name["nameCurrent"]}" ></label>
+            </div>
+            <div>
+                new : <input id="${id["idNew"]}" name="${name["nameNew"]}" class="small-input" maxlength="1"></input>
+            </div>
+        </div>
       </div>
-      <div class="col-md-3 text-center">
-          <div class="row">
-              <label class="form-label">Shortcut</label>
-          </div>
-          <div class="row align-items-center">
-              <div class="col">
-                  <label>current : </label>
-                  <output id="${id["idCurrent"]}" name="${name["nameCurrent"]}" ></output>
-              </div>
-              <div class="col">
-                  <label>new : </label>
-                  <input id="${id["idNew"]}" name="${name["nameNew"]}" class="form-control small-input" maxlength="1" type="text"></input>
-              </div>
-          </div>
-      </div>
-      <div class="col">
-          <div class="row text-center">
-              <label id="${id["idDesc"]}" name="${name["nameDesc"]} class="form-label">Description</label>
-          </div>
+
+      <div class="control-name">
+        ${label}
       </div>
     </div>
+    ${divRow}
   </div>`
 
   // add html element to parent
@@ -173,17 +178,17 @@ async function createRowControl(obj, faction, controlName, HTMLparent, gen, pare
   if (arrayNames.length > 0 || elementId !== null) {
     addInputForDuplicates(name["nameNew"])
   }
+}
 
-  // add button to toggle display of childs elements
-  const numberOfChilds = Object.keys(obj[controlName]).length
-  if (numberOfChilds > 0) {
-    const divRow = `<div class="text-center border border-warning border-3">
-      ->
-    </div>`
-    currentDiv.insertAdjacentHTML("beforeend", divRow)
-    const addedDiv = currentDiv.lastChild
-    addedDiv.addEventListener("click", () => {
-      toggleDisplayChildsAfterMe(addedDiv)
+// function () {
+
+// }
+
+function addArrowsEventListeners() {
+  const arrowContainers = document.querySelectorAll(".arrow-container")
+  for (const element of arrowContainers) {
+    element.addEventListener("click", () => {
+      toggleDisplayChildsAfterMe(element)
     })
   }
 }
@@ -272,6 +277,8 @@ async function createHTMLComponents() {
       }
     }
   }
+
+  addArrowsEventListeners()
 }
 
 async function extractData(arrayData) {

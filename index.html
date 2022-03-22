@@ -57,9 +57,47 @@
             </div>
         </div>
     </header>
+
     
     <div id="main-div" class="container-xxl" style="display: block">
     <!-- <div id="main-div" class="container-xxl" style="display: block" hidden> -->
+        <!-- <div class="faction"> -->
+            <div class="control-main">
+                <div class="control">
+                    <img src="./assets/images/men/ConstructMenBarracks.png" class="icon">
+                
+                    <div class="description">
+                        desc
+                    </div>
+                    
+                    <div class="shortcuts">
+                        <label>Shortcuts</label>
+
+                        <div class="current-new">
+                            <div>
+                                Current : <label>R</label>
+                            </div>
+                            <div>
+                                New : <input class="small-input" maxlength="1"></input>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="preview">                        
+                        <img src="./assets/images/men/ConstructGondorFighterHorde.png" class="icon-preview">
+                        <img src="./assets/images/men/ConstructRohanSpearmenHorde.png" class="icon-preview">
+                        <img src="./assets/images/men/ConstructGondorShieldGuardHorde.png" class="icon-preview">
+                        <img src="./assets/images/men/ConstructGondorFighterHorde.png" class="icon-preview">
+                        <img src="./assets/images/men/ConstructGondorFighterHorde.png" class="icon-preview">
+                    </div>
+                </div>
+
+                <div class="arrow-container">
+                    <div class="arrow"></div>
+                </div>
+            </div>
+        <!-- </div> -->
+
         <div class="row mt-3 mb-5">
             <div class="col col-md-2">
                 <select id="select-faction" class="form-select">
@@ -86,52 +124,52 @@
 
         <div id="div-faction">
             <div id="men">
-                <div id="men-basic" name="branch" class="row"></div>
-                <div id="men-power" name="branch" class="row"></div>
-                <div id="men-inn" name="branch" class="row"></div>
-                <div id="men-port" name="branch" class="row"></div>
+                <div id="men-basic" name="branch"></div>
+                <div id="men-power" name="branch"></div>
+                <div id="men-inn" name="branch"></div>
+                <div id="men-port" name="branch"></div>
             </div>
-            <div id="elves" class="row" hidden>
-                <div id="elves-basic" name="branch" class="row"></div>
-                <div id="elves-power" name="branch" class="row"></div>
-                <div id="elves-inn" name="branch" class="row"></div>
-                <div id="elves-port" name="branch" class="row"></div>
+            <div id="elves" hidden>
+                <div id="elves-basic" name="branch"></div>
+                <div id="elves-power" name="branch"></div>
+                <div id="elves-inn" name="branch"></div>
+                <div id="elves-port" name="branch"></div>
             </div>
-            <div id="dwarves" class="row" hidden>
-                <div id="dwarves-basic" name="branch" class="row"></div>
-                <div id="dwarves-power" name="branch" class="row"></div>
-                <div id="dwarves-inn" name="branch" class="row"></div>
-                <div id="dwarves-port" name="branch" class="row"></div>
+            <div id="dwarves" hidden>
+                <div id="dwarves-basic" name="branch"></div>
+                <div id="dwarves-power" name="branch"></div>
+                <div id="dwarves-inn" name="branch"></div>
+                <div id="dwarves-port" name="branch"></div>
             </div>
-            <div id="isengard" class="row" hidden>
-                <div id="isengard-basic" name="branch" class="row"></div>
-                <div id="isengard-power" name="branch" class="row"></div>
-                <div id="isengard-inn" name="branch" class="row"></div>
-                <div id="isengard-port" name="branch" class="row"></div>
+            <div id="isengard" hidden>
+                <div id="isengard-basic" name="branch"></div>
+                <div id="isengard-power" name="branch"></div>
+                <div id="isengard-inn" name="branch"></div>
+                <div id="isengard-port" name="branch"></div>
             </div>
-            <div id="mordor" class="row" hidden>
-                <div id="mordor-basic" name="branch" class="row"></div>
-                <div id="mordor-power" name="branch" class="row"></div>
-                <div id="mordor-inn" name="branch" class="row"></div>
-                <div id="mordor-port" name="branch" class="row"></div>
+            <div id="mordor" hidden>
+                <div id="mordor-basic" name="branch"></div>
+                <div id="mordor-power" name="branch"></div>
+                <div id="mordor-inn" name="branch"></div>
+                <div id="mordor-port" name="branch"></div>
             </div>
-            <div id="goblins" class="row" hidden>
-                <div id="goblins-basic" name="branch" class="row"></div>
-                <div id="goblins-power" name="branch" class="row"></div>
-                <div id="goblins-inn" name="branch" class="row"></div>
-                <div id="goblins-port" name="branch" class="row"></div>
+            <div id="goblins" hidden>
+                <div id="goblins-basic" name="branch"></div>
+                <div id="goblins-power" name="branch"></div>
+                <div id="goblins-inn" name="branch"></div>
+                <div id="goblins-port" name="branch"></div>
             </div>
-            <div id="angmar" class="row" hidden>
-                <div id="angmar-basic" name="branch" class="row"></div>
-                <div id="angmar-power" name="branch" class="row"></div>
-                <div id="angmar-inn" name="branch" class="row"></div>
-                <div id="angmar-port" name="branch" class="row"></div>
+            <div id="angmar" hidden>
+                <div id="angmar-basic" name="branch"></div>
+                <div id="angmar-power" name="branch"></div>
+                <div id="angmar-inn" name="branch"></div>
+                <div id="angmar-port" name="branch"></div>
             </div>
-            <div id="misc" class="row" hidden>
-                <div id="misc-basic" name="branch" class="row"></div>
-                <div id="misc-power" name="branch" class="row"></div>
-                <div id="misc-inn" name="branch" class="row"></div>
-                <div id="misc-port" name="branch" class="row"></div>
+            <div id="misc" hidden>
+                <div id="misc-basic" name="branch"></div>
+                <div id="misc-power" name="branch"></div>
+                <div id="misc-inn" name="branch"></div>
+                <div id="misc-port" name="branch"></div>
             </div>
         </div>
 

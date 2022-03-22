@@ -1,8 +1,205 @@
+.faction {
+  margin: 5px;
+  border: 1px;
+  border-radius: 10px;
+  border-style: solid;
+}
+
+.control-main {
+  margin: 0px 0px 20px 0px;
+  border: solid 1px;
+  border-radius: 10px;
+  box-shadow: 0px 3px 10px;
+  /* background-color: rgba(43, 78, 153, 0.2); */
+  /* background-color: rgba(11, 74, 168, 0.25); */
+}
+
+.control-main > .control-main {
+  margin: 0px 5px 5px 35px;
+  box-shadow: 0px 0px 10px;
+}
+
+.control-main.men {
+  /* background-color: rgba(0, 102, 255, 0.1); */
+  background-color: rgb(136, 174, 255);
+}
+
+.control-main.men > .control-main.men {
+  background-color: rgb(161, 199, 255);
+}
+
+.control-main.men > .control-main.men > .control-main.men {
+  background-color: rgb(180, 210, 255);
+}
+
+.control-main.elves {
+  background-color: rgba(11, 168, 32, 0.3);
+}
+
+.control-main.dwarves {
+  background-color: rgba(255, 230, 0, 0.3);
+}
+
+.control-main.isengard {
+  background-color: rgba(83, 83, 83, 0.3);
+}
+
+.control-main.mordor {
+  background-color: rgba(255, 30, 0, 0.3);
+}
+
+.control-main.goblins {
+  background-color: rgba(255, 102, 0, 0.3);
+}
+
+.control-main.angmar {
+  background-color: rgba(153, 0, 255, 0.3);
+}
+
+.control-main.misc {
+  background-color: rgba(189, 189, 189, 0.3);
+}
+
+.control {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px 10px 0px 0px;
+}
+
 .icon {
-  width: 60px;
+  width: 70px;
+  height: 70px;
+  border: 1px solid #000;
+  border-radius: 100%;
+  transition-duration: 0.2s;
+}
+
+.preview {
+  display: flex;
+  width: 35%;
+  justify-content: center;
+}
+
+.icon-preview {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #000;
+  border-radius: 100%;
+  margin: 0 5px 0 5px;
+}
+
+.control:hover > .icon {
+  width: 80px;
+  height: 80px;
+  transition-duration: 0.2s;
+}
+
+.description {
+  width: 30%;
+  text-align: start;
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
+.shortcuts {
+  width: 30%;
+  max-width: 300px;
+  text-align: center;
+  /* border: solid 1px; */
+}
+
+.current-new {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .small-input {
-  width: 42px;
-  display: inline-block;
+  width: 30px;
+  text-align: center;
+}
+
+.current-new div {
+  width: 50%;
+}
+
+.control-name {
+  width: 30%;
+  text-align: center;
+  overflow-wrap: break-word;
+}
+
+.arrow-container {
+  width: 100%;
+  height: 30px;
+  border-top: solid 1px;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.arrow {
+  position: absolute;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  /* margin: 10px 0px 0px 0px; */
+  transform: rotate(45deg);
+  border-left: none;
+  border-top: none;
+  border-right: 2px rgb(8, 38, 102) solid;
+  border-bottom: 2px rgb(8, 38, 102) solid;
+  transition-duration: 0.2s;
+}
+
+.arrow-container:hover > .arrow {
+  /* transform: rotate(405deg); */
+  animation-name: floating;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes floating {
+  0% {
+    transform: scale(1) rotate(45deg);
+  }
+  25% {
+    transform: scale(1.3) rotate(45deg);
+  }
+  50% {
+    transform: scale(1) rotate(45deg);
+  }
+}
+
+.arrow:before {
+  position: absolute;
+  left: 50%;
+  content: "";
+  width: 14px;
+  height: 14px;
+  margin: -4px 0px 0px -4px;
+  top: 50%;
+  border-left: none;
+  border-top: none;
+  border-right: 1px #000 solid;
+  border-bottom: 1px #000 solid;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: arrow;
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+    transform: translate(-10px, -10px);
+  }
+  100% {
+    opacity: 0;
+  }
 }
