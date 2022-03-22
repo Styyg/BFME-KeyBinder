@@ -3,7 +3,6 @@ let arrayDataIn
 let arrayDataInWithoutsTabs
 let regexp
 let currentShortcuts = {}
-let newShortcuts = {}
 const arrayFaction = ["men", "elves", "dwarves", "isengard", "mordor", "goblins", "angmar", "misc"]
 const arrayBranch = ["basic", "power", "inn", "port"]
 
@@ -138,7 +137,7 @@ async function createRowControl(obj, faction, controlName, HTMLparent, gen, pare
   }
 
   const srcControl = await getSrcControl(controlName, faction, parent)
-  const label = controlName.split(":")[1]
+  // const label = controlName.split(":")[1]
 
   const numberOfChilds = Object.keys(obj[controlName]).length
   let divRow = ""
@@ -168,10 +167,6 @@ async function createRowControl(obj, faction, controlName, HTMLparent, gen, pare
             </div>
         </div>
       </div>
-
-      <div class="control-name">
-        ${label}
-      </div>
     </div>
     ${divRow}
   </div>`
@@ -185,9 +180,34 @@ async function createRowControl(obj, faction, controlName, HTMLparent, gen, pare
   }
 }
 
-// function () {
+function addPreviewChilds() {
+  const allControlRowElements = document.querySelectorAll(".control-main")
 
-// }
+  for (const controlElement of allControlRowElements) {
+    const allChildrenControls = controlElement.querySelectorAll(":scope > .control-main")
+
+    let src = []
+    for (const child of allChildrenControls) {
+      const source = child.querySelector("img.icon").src
+      if (source !== undefined && !src.includes(source)) {
+        src.push(source)
+      }
+    }
+
+    let divImg = ""
+    for (const item of src) {
+      divImg += `<img src="${item}" class="icon-preview">`
+    }
+    if (divImg !== "") {
+      const divPreview = `<div class="preview">
+        ${divImg}
+      </div>`
+
+      const control = controlElement.querySelector(":scope > .control")
+      control.insertAdjacentHTML("beforeend", divPreview)
+    }
+  }
+}
 
 function addArrowsEventListeners() {
   const arrowContainers = document.querySelectorAll(".arrow-container")
@@ -284,6 +304,7 @@ async function createHTMLComponents() {
   }
 
   addArrowsEventListeners()
+  addPreviewChilds()
 }
 
 async function extractData(arrayData) {
@@ -320,6 +341,7 @@ async function extractData(arrayData) {
 }
 
 function downloadFile(fileName) {
+  const newShortcuts = {}
   for (const element in currentShortcuts) {
     inputNewKey = document.getElementById(element + "-new")
     if (inputNewKey !== null) {
@@ -339,7 +361,7 @@ function downloadFile(fileName) {
 
   const lengthControls = Object.keys(newShortcuts).length
   if (lengthControls > 0) {
-    const newFile = getFileWithNewShortcuts()
+    const newFile = getFileWithNewShortcuts(newShortcuts)
     const encoded = new TextEncoder("windows-1252", { NONSTANDARD_allowLegacyEncoding: true }).encode(newFile)
     download(encoded, fileName)
   }
@@ -433,9 +455,6 @@ function getShortcut(str) {
 
 function getFileWithNewShortcuts(newShortcuts) {
   const arrayControlsNames = Object.keys(newShortcuts)
-  // split data by line break
-  const regexp = getLineBreakFormat(rawDataIn)
-  dataIn = rawDataIn.split(regexp)
 
   arrayControlsNames.forEach((name) => {
     index = arrayDataInWithoutsTabs.indexOf(name) // get ControlBar index
