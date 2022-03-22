@@ -1,4 +1,7 @@
-let rawDataIn
+let arrayDataIn
+// used for better treatment, but will send a broken file
+let arrayDataInWithoutsTabs
+let regexp
 let currentShortcuts = {}
 let newShortcuts = {}
 const arrayFaction = ["men", "elves", "dwarves", "isengard", "mordor", "goblins", "angmar", "misc"]
@@ -28,8 +31,11 @@ function setEventListeners() {
       // console.log(rawDataIn)
       // console.log(JSON.stringify(rawDataIn)) // used to see \n and \r in console
 
-      const regexp = getLineBreakFormat(rawDataIn)
-      const arrayData = rawDataIn.split(regexp)
+      regexp = getLineBreakFormat(rawDataIn)
+
+      // \t = tab, got some problems with tab at the end of control's name
+      arrayDataInWithoutsTabs = rawDataIn.replaceAll("\t", "").split(regexp)
+      arrayDataIn = rawDataIn.split(regexp)
 
       // reset factions div to avoid duplication
       for (const element of document.getElementsByName("branch")) {
@@ -38,11 +44,10 @@ function setEventListeners() {
       document.getElementById("uncategorized").innerHTML = ""
 
       createHTMLComponents().then(() => {
-        extractData(arrayData)
+        extractData(arrayDataIn)
       })
-
-      // read data
     }
+    // read data
     reader.readAsText(file, "windows-1252")
     // document.getElementById("main-div").style.display = "block"
     document.getElementById("main-div").hidden = false
@@ -361,10 +366,12 @@ function getControlsData(arrayDataIn, controlsList) {
   let controlsData = controlsList
 
   for (const controlName in controlsList) {
-    if (arrayDataIn.includes(controlName)) {
-      const index = arrayDataIn.indexOf(controlName)
+    // if (arrayDataIn.includes(controlName)) {
+    if (arrayDataInWithoutsTabs.includes(controlName)) {
+      // const index = arrayDataIn.indexOf(controlName)
+      const index = arrayDataInWithoutsTabs.indexOf(controlName)
       let offset = 1
-      while (arrayDataIn[index + offset].trim().startsWith("//")) {
+      while (arrayDataInWithoutsTabs[index + offset].trim().startsWith("//")) {
         offset++
       }
       controlsData[controlName] = arrayDataIn[index + offset]
@@ -424,37 +431,38 @@ function getShortcut(str) {
   else return ""
 }
 
-function getFileWithNewShortcuts() {
+function getFileWithNewShortcuts(newShortcuts) {
   const arrayControlsNames = Object.keys(newShortcuts)
   // split data by line break
   const regexp = getLineBreakFormat(rawDataIn)
   dataIn = rawDataIn.split(regexp)
 
   arrayControlsNames.forEach((name) => {
-    index = dataIn.indexOf(name) // get ControlBar index
+    index = arrayDataInWithoutsTabs.indexOf(name) // get ControlBar index
 
     // if we get the ControlBar
     if (index > -1) {
       key = newShortcuts[name]["key"]
       offset = 1
       // need to avoid to change shortcuts in commented lines
-      while (dataIn[index + offset].startsWith("//")) {
+      // while (arrayDataIn[index + offset].startsWith("//")) {
+      while (!arrayDataIn[index + offset].startsWith('"')) {
         offset++
       }
-      dataIn[index + offset] = dataIn[index + offset].replaceAll("&", "")
-      searchPos = dataIn[index + offset].toUpperCase().search(key)
+      arrayDataIn[index + offset] = arrayDataIn[index + offset].replaceAll("&", "")
+      searchPos = arrayDataIn[index + offset].toUpperCase().search(key)
 
       if (searchPos > -1) {
-        if (searchPos < dataIn[index + offset].length - 2) {
-          dataIn[index + offset] = dataIn[index + offset].replace(" [" + key + "]", "")
+        if (searchPos < arrayDataIn[index + offset].length - 2) {
+          arrayDataIn[index + offset] = arrayDataIn[index + offset].replace(" [" + key + "]", "")
         }
-        dataIn[index + offset] = dataIn[index + offset].slice(0, searchPos) + "&" + dataIn[index + offset].slice(searchPos)
+        arrayDataIn[index + offset] = arrayDataIn[index + offset].slice(0, searchPos) + "&" + arrayDataIn[index + offset].slice(searchPos)
       } else {
-        // console.log(dataIn[index + offset]);
-        if (dataIn[index + offset].endsWith(']"')) {
-          dataIn[index + offset] = dataIn[index + offset].slice(0, -3) + "&" + key + dataIn[index + offset].slice(-2)
+        // console.log(arrayDataIn[index + offset]);
+        if (arrayDataIn[index + offset].endsWith(']"')) {
+          arrayDataIn[index + offset] = arrayDataIn[index + offset].slice(0, -3) + "&" + key + arrayDataIn[index + offset].slice(-2)
         } else {
-          dataIn[index + offset] = dataIn[index + offset].slice(0, -1) + " [&" + key + "]" + dataIn[index + offset].slice(-1)
+          arrayDataIn[index + offset] = arrayDataIn[index + offset].slice(0, -1) + " [&" + key + "]" + arrayDataIn[index + offset].slice(-1)
         }
       }
     } else {
@@ -463,8 +471,8 @@ function getFileWithNewShortcuts() {
   })
 
   let newFile
-  if (regexp.source == "\\r\\n") newFile = dataIn.join("\r\n")
-  else newFile = dataIn.join("\n")
+  if (regexp.source == "\\r\\n") newFile = arrayDataIn.join("\r\n")
+  else newFile = arrayDataIn.join("\n")
 
   return newFile
 }
