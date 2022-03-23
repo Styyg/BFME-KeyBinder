@@ -160,7 +160,7 @@ async function createRowControl(obj, faction, controlName, HTMLparent, gen, pare
 
         <div class="current-new">
             <div>
-                current : <label id="${id["idCurrent"]}" name="${name["nameCurrent"]}" ></label>
+                current : <label class="current" id="${id["idCurrent"]}" name="${name["nameCurrent"]}" ></label>
             </div>
             <div>
                 new : <input id="${id["idNew"]}" name="${name["nameNew"]}" class="small-input" maxlength="1"></input>
@@ -393,7 +393,7 @@ function getControlsData(arrayDataIn, controlsList) {
       // const index = arrayDataIn.indexOf(controlName)
       const index = arrayDataInWithoutsTabs.indexOf(controlName)
       let offset = 1
-      while (arrayDataInWithoutsTabs[index + offset].trim().startsWith("//")) {
+      while (!arrayDataInWithoutsTabs[index + offset].trim().startsWith('"')) {
         offset++
       }
       controlsData[controlName] = arrayDataIn[index + offset]
@@ -456,36 +456,47 @@ function getShortcut(str) {
 function getFileWithNewShortcuts(newShortcuts) {
   const arrayControlsNames = Object.keys(newShortcuts)
 
-  arrayControlsNames.forEach((name) => {
-    index = arrayDataInWithoutsTabs.indexOf(name) // get ControlBar index
+  arrayControlsNames.forEach((controlName) => {
+    index = arrayDataInWithoutsTabs.indexOf(controlName) // get ControlBar index
 
     // if we get the ControlBar
     if (index > -1) {
-      key = newShortcuts[name]["key"]
+      key = newShortcuts[controlName]["key"]
       offset = 1
       // need to avoid to change shortcuts in commented lines
       // while (arrayDataIn[index + offset].startsWith("//")) {
-      while (!arrayDataIn[index + offset].startsWith('"')) {
+      while (!arrayDataIn[index + offset].trim().startsWith('"')) {
         offset++
       }
-      arrayDataIn[index + offset] = arrayDataIn[index + offset].replaceAll("&", "")
-      searchPos = arrayDataIn[index + offset].toUpperCase().search(key)
 
-      if (searchPos > -1) {
-        if (searchPos < arrayDataIn[index + offset].length - 2) {
-          arrayDataIn[index + offset] = arrayDataIn[index + offset].replace(" [" + key + "]", "")
-        }
-        arrayDataIn[index + offset] = arrayDataIn[index + offset].slice(0, searchPos) + "&" + arrayDataIn[index + offset].slice(searchPos)
-      } else {
-        // console.log(arrayDataIn[index + offset]);
-        if (arrayDataIn[index + offset].endsWith(']"')) {
-          arrayDataIn[index + offset] = arrayDataIn[index + offset].slice(0, -3) + "&" + key + arrayDataIn[index + offset].slice(-2)
-        } else {
-          arrayDataIn[index + offset] = arrayDataIn[index + offset].slice(0, -1) + " [&" + key + "]" + arrayDataIn[index + offset].slice(-1)
-        }
+      let row = arrayDataIn[index + offset]
+      // row = row.replaceAll("&", "")
+      searchPos = row.toUpperCase().search(key)
+
+      // searching for '(&.)' or '[&.]' with . as a single character
+      const regexpParenthesis = new RegExp("(\\[|\\()&.(\\]|\\))")
+      const searchPosParenthesis = row.search(regexpParenthesis)
+
+      // delete old '(&key)'
+      if (searchPosParenthesis > -1) {
+        // slice and trim to remove space before '[&key]'
+        row = row.replace(regexpParenthesis, "").slice(0, -1).trim() + row.slice(-1)
       }
+
+      // new shortcut found in row
+      if (searchPos > -1) {
+        // add & before new shortcut's key
+        row = row.slice(0, searchPos) + "&" + row.slice(searchPos)
+
+        // new shortcut NOT found in row
+      } else {
+        // slice are used to keep the \" at the beginning and the end of line
+        row = row.slice(0, -1).trim() + " [&" + key + "]" + row.slice(-1)
+      }
+
+      arrayDataIn[index + offset] = row
     } else {
-      console.log(name + " was not found")
+      console.log(controlName + " was not found")
     }
   })
 

@@ -109,6 +109,10 @@
   /* border: solid 1px; */
 }
 
+.current {
+  font-size: large;
+}
+
 .current-new {
   display: flex;
   justify-content: center;
