@@ -50,6 +50,19 @@
   box-shadow: 0px 0px 10px #000;
 }
 
+.disabled {
+  background-color: rgb(165, 165, 165);
+  border-color: red;
+}
+
+.disabled img {
+  filter: grayscale(100%);
+}
+
+input:disabled {
+  background: rgb(228, 228, 228);
+}
+
 .control {
   padding: 10px;
   display: flex;

@@ -1,13 +1,14 @@
 let arrayDataIn
 // used for better treatment, but will send a broken file
-let arrayDataInWithoutsTabs
+let arrayDataInWithoutSpaces
 let regexp
 let currentShortcuts = {}
 const arrayFaction = ["men", "elves", "dwarves", "isengard", "mordor", "goblins", "angmar", "misc"]
 const arrayBranch = ["basic", "power", "inn", "port"]
 
 function init() {
-  createHTMLComponents()
+  document.getElementById("main-div").hidden = false
+  // createHTMLComponents()
   setEventListeners()
 }
 
@@ -35,8 +36,12 @@ function setEventListeners() {
 
       regexp = getLineBreakFormat(rawDataIn)
 
-      // \t = tab, got some problems with tab at the end of control's name
-      arrayDataInWithoutsTabs = rawDataIn.replaceAll("\t", "").split(regexp)
+      // \t = tab, got some problems with tab at the end of control's name. map is used to trim all elements
+      arrayDataInWithoutSpaces = rawDataIn
+        .replaceAll("\t", "")
+        .split(regexp)
+        .map((element) => element.trim())
+
       arrayDataIn = rawDataIn.split(regexp)
 
       // reset factions div to avoid duplication
@@ -140,7 +145,7 @@ async function createRowControl(obj, faction, controlName, HTMLparent, gen, pare
   }
 
   const srcControl = await getSrcControl(controlName, faction, parent)
-  const label = controlName.split(":")[1]
+  // const label = controlName.split(":")[1]
 
   const numberOfChilds = Object.keys(obj[controlName]).length
   let divArrow = ""
@@ -155,7 +160,7 @@ async function createRowControl(obj, faction, controlName, HTMLparent, gen, pare
       <img class="icon" src="./assets/images/${srcControl}">
 
       <div class="description" id="${id["idDesc"]}" name="${name["nameDesc"]}" >
-        ${label}
+        ${controlName}
       </div>
       <div class="shortcuts">
         <label>Shortcut</label>
@@ -264,14 +269,7 @@ async function createHTMLComponents() {
         // generation 1
         for (const controlName_1 in objControlsFactionTree[faction][branch][controlName_0]) {
           const gen = 1
-          await createRowControl(
-            objControlsFactionTree[faction][branch][controlName_0],
-            faction,
-            controlName_1,
-            HTMLparent1,
-            gen,
-            controlName_0
-          )
+          await createRowControl(objControlsFactionTree[faction][branch][controlName_0], faction, controlName_1, HTMLparent1, gen, controlName_0)
           const HTMLparent2 = HTMLparent1.lastChild
 
           // generation 2
@@ -309,35 +307,65 @@ async function createHTMLComponents() {
   addPreviewChilds()
 }
 
+// extract data from file and apply them to HTML components
 async function extractData(arrayData) {
-  const readControlsList = await readFile("./assets/data/json/controlsList.json")
-  const objControlsList = JSON.parse(readControlsList)
-
-  const controlsData = getControlsData(arrayData, objControlsList)
+  const controlsData = await getControlsData(arrayData)
 
   for (const controlName in controlsData) {
     const elementMain = document.getElementById(controlName)
-    const elementCurrent = document.getElementById(controlName + "-current")
-    const elementDesc = document.getElementById(controlName + "-desc")
+    const desc = controlsData[controlName]["desc"]
 
-    const shortcut = getShortcut(controlsData[controlName])
-    const desc = controlsData[controlName]
+    // if the control is found in file
+    if (controlsData[controlName]["found"]) {
+      const shortcut = getShortcut(desc)
 
-    currentShortcuts[controlName] = shortcut
+      currentShortcuts[controlName] = shortcut
 
-    if (elementMain !== null) {
-      elementCurrent.innerText = shortcut
-      elementDesc.innerText = desc.replace("&", "")
+      // if id give nothing, start searching for names
+      if (elementMain !== null) {
+        const elementCurrent = document.getElementById(controlName + "-current")
+        const elementDesc = document.getElementById(controlName + "-desc")
+
+        elementCurrent.innerText = shortcut
+        elementDesc.innerText = desc.replace("&", "")
+      } else {
+        const elementsCurrent = document.getElementsByName(controlName + "-current")
+        const elementsDesc = document.getElementsByName(controlName + "-desc")
+
+        elementsCurrent.forEach((element) => {
+          element.innerText = shortcut
+        })
+        elementsDesc.forEach((element) => {
+          element.innerText = desc.replace("&", "")
+        })
+      }
+
+      // when the control is not found, inputs are disabled
     } else {
-      const elementsCurrent = document.getElementsByName(controlName + "-current")
-      const elementsDesc = document.getElementsByName(controlName + "-desc")
+      // console.log(controlName)
 
-      elementsCurrent.forEach((element) => {
-        element.innerText = shortcut
-      })
-      elementsDesc.forEach((element) => {
-        element.innerText = desc.replace("&", "")
-      })
+      if (elementMain !== null) {
+        const elementNew = document.getElementById(controlName + "-new")
+        const elementDesc = document.getElementById(controlName + "-desc")
+
+        elementMain.classList = "control-main disabled"
+        elementNew.setAttribute("disabled", true)
+        elementDesc.innerHTML = "MISSING: " + elementDesc.innerHTML
+      } else {
+        const elementsMain = document.getElementsByName(controlName)
+        const elementsNew = document.getElementsByName(controlName + "-new")
+        const elementsDesc = document.getElementsByName(controlName + "-desc")
+
+        elementsMain.forEach((elem) => {
+          elem.classList = "control-main disabled"
+        })
+        elementsNew.forEach((elem) => {
+          elem.setAttribute("disabled", true)
+        })
+        elementsDesc.forEach((elem) => {
+          elem.innerHTML = "MISSING: " + elem.innerHTML
+        })
+      }
     }
   }
 }
@@ -386,22 +414,29 @@ async function getSrcControl(controlName, faction, parent) {
   return srcControl
 }
 
-function getControlsData(arrayDataIn, controlsList) {
-  let controlsData = controlsList
+// { 'controlName': 'control description'}
+async function getControlsData(arrayDataIn) {
+  const readControlsList = await readFile("./assets/data/json/controlsList.json")
+  let objControlsList = JSON.parse(readControlsList)
+  // let controlsData = objControlsList
 
-  for (const controlName in controlsList) {
+  for (const controlName in objControlsList) {
+    objControlsList[controlName] = {}
     // if (arrayDataIn.includes(controlName)) {
-    if (arrayDataInWithoutsTabs.includes(controlName)) {
+    if (arrayDataInWithoutSpaces.includes(controlName)) {
       // const index = arrayDataIn.indexOf(controlName)
-      const index = arrayDataInWithoutsTabs.indexOf(controlName)
+      objControlsList[controlName]["found"] = true
+      const index = arrayDataInWithoutSpaces.indexOf(controlName)
       let offset = 1
-      while (!arrayDataInWithoutsTabs[index + offset].trim().startsWith('"')) {
+      while (!arrayDataInWithoutSpaces[index + offset].startsWith('"')) {
         offset++
       }
-      controlsData[controlName] = arrayDataIn[index + offset]
+      objControlsList[controlName]["desc"] = arrayDataIn[index + offset]
+    } else {
+      objControlsList[controlName]["found"] = false
     }
   }
-  return controlsData
+  return objControlsList
 }
 
 function testFile(files) {
@@ -449,17 +484,22 @@ function getLineBreakFormat(str) {
 }
 
 function getShortcut(str) {
-  if (str === undefined) return ""
+  if (str === undefined) {
+    return ""
+  }
   const searchPos = str.search("&")
-  if (searchPos > -1 && isLetter(str.charAt(searchPos + 1))) return str.charAt(searchPos + 1).toUpperCase()
-  else return ""
+  if (searchPos > -1 && isLetter(str.charAt(searchPos + 1))) {
+    return str.charAt(searchPos + 1).toUpperCase()
+  } else {
+    return ""
+  }
 }
 
 function getFileWithNewShortcuts(newShortcuts) {
   const arrayControlsNames = Object.keys(newShortcuts)
 
   arrayControlsNames.forEach((controlName) => {
-    index = arrayDataInWithoutsTabs.indexOf(controlName) // get ControlBar index
+    index = arrayDataInWithoutSpaces.indexOf(controlName) // get ControlBar index
 
     // if we get the ControlBar
     if (index > -1) {
