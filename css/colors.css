@@ -1,0 +1,88 @@
+.control-main.men {
+  /* background-color: rgba(0, 102, 255, 0.1); */
+  background-color: rgb(136, 174, 255);
+}
+
+.control-main.men > .control-main.men {
+  background-color: rgb(161, 199, 255);
+}
+
+.control-main.men > .control-main.men > .control-main.men {
+  background-color: rgb(180, 210, 255);
+}
+
+.control-main.elves {
+  background-color: rgb(97, 230, 115);
+}
+
+.control-main.elves > .control-main.elves {
+  background-color: rgb(133, 255, 149);
+}
+
+.control-main.elves > .control-main.elves > .control-main.elves {
+  background-color: rgb(168, 255, 179);
+}
+
+.control-main.dwarves {
+  background-color: rgb(255, 238, 85);
+}
+
+.control-main.dwarves > .control-main.dwarves {
+  background-color: rgb(255, 242, 126);
+}
+
+.control-main.dwarves > .control-main.dwarves > .control-main.dwarves {
+  background-color: rgb(255, 244, 150);
+}
+
+.control-main.isengard {
+  background-color: rgb(129, 129, 129);
+}
+
+.control-main.isengard > .control-main.isengard {
+  background-color: rgb(165, 165, 165);
+}
+
+.control-main.isengard > .control-main.isengard > .control-main.isengard {
+  background-color: rgb(196, 196, 196);
+}
+
+.control-main.mordor {
+  background-color: rgb(255, 72, 72);
+}
+
+.control-main.mordor > .control-main.mordor {
+  background-color: rgb(255, 102, 102);
+}
+
+.control-main.mordor > .control-main.mordor > .control-main.mordor {
+  background-color: rgb(255, 133, 133);
+}
+
+.control-main.goblins {
+  background-color: rgb(255, 141, 65);
+}
+
+.control-main.goblins > .control-main.goblins {
+  background-color: rgb(255, 161, 99);
+}
+
+.control-main.goblins > .control-main.goblins > .control-main.goblins {
+  background-color: rgb(255, 180, 129);
+}
+
+.control-main.angmar {
+  background-color: rgb(193, 101, 255);
+}
+
+.control-main.angmar > .control-main.angmar {
+  background-color: rgb(209, 139, 255);
+}
+
+.control-main.angmar > .control-main.angmar > .control-main.angmar {
+  background-color: rgb(217, 161, 255);
+}
+
+.control-main.misc {
+  background-color: rgb(202, 202, 202);
+}
