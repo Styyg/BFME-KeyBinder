@@ -13,13 +13,16 @@ function init() {
 
 function setEventListeners() {
   const inputFile = document.getElementById("inputFile")
-  const selectFaction = document.getElementById("select-faction")
   const btnDownload = document.getElementById("btn-download")
   const btnUncategorized = document.getElementById("btn-uncategorized")
   let fileName
 
   inputFile.addEventListener("change", function selectedFileChanged() {
     if (!testFile(this.files)) return
+
+    document.getElementById("main-div").hidden = true
+    const loadingRoller = document.querySelector(".lds-roller")
+    loadingRoller.hidden = false
 
     const file = this.files[0]
     fileName = file.name
@@ -43,24 +46,14 @@ function setEventListeners() {
       document.getElementById("uncategorized").innerHTML = ""
 
       createHTMLComponents().then(() => {
-        extractData(arrayDataIn)
+        extractData(arrayDataIn).then(() => {
+          document.getElementById("main-div").hidden = false
+          loadingRoller.hidden = true
+        })
       })
     }
     // read data
     reader.readAsText(file, "windows-1252")
-    // document.getElementById("main-div").style.display = "block"
-    document.getElementById("main-div").hidden = false
-  })
-
-  selectFaction.addEventListener("change", function factionChange() {
-    const currentFaction = this.value
-    arrayFaction.forEach((faction) => {
-      if (currentFaction == faction) {
-        document.getElementById(faction).hidden = false
-      } else {
-        document.getElementById(faction).hidden = true
-      }
-    })
   })
 
   btnDownload.addEventListener("click", () => {
@@ -78,6 +71,16 @@ function setEventListeners() {
       btnUncategorized.innerText = "Show uncategorized controls"
     }
   })
+}
+
+function displayFaction(faction) {
+  for (const fact of arrayFaction) {
+    if (fact == faction) {
+      document.getElementById(fact).hidden = false
+    } else {
+      document.getElementById(fact).hidden = true
+    }
+  }
 }
 
 function toggleDisplayChildsAfterMe(me) {
@@ -137,12 +140,12 @@ async function createRowControl(obj, faction, controlName, HTMLparent, gen, pare
   }
 
   const srcControl = await getSrcControl(controlName, faction, parent)
-  // const label = controlName.split(":")[1]
+  const label = controlName.split(":")[1]
 
   const numberOfChilds = Object.keys(obj[controlName]).length
-  let divRow = ""
+  let divArrow = ""
   if (numberOfChilds > 0) {
-    divRow = `<div class="arrow-container">
+    divArrow = `<div class="arrow-container">
       <div class="arrow"></div>
     </div>`
   }
@@ -152,15 +155,14 @@ async function createRowControl(obj, faction, controlName, HTMLparent, gen, pare
       <img class="icon" src="./assets/images/${srcControl}">
 
       <div class="description" id="${id["idDesc"]}" name="${name["nameDesc"]}" >
-        Description
+        ${label}
       </div>
-
       <div class="shortcuts">
         <label>Shortcut</label>
 
         <div class="current-new">
             <div>
-                current : <label class="current" id="${id["idCurrent"]}" name="${name["nameCurrent"]}" ></label>
+                current : <label class="current" id="${id["idCurrent"]}" name="${name["nameCurrent"]}"></label>
             </div>
             <div>
                 new : <input id="${id["idNew"]}" name="${name["nameNew"]}" class="small-input" maxlength="1"></input>
@@ -168,7 +170,7 @@ async function createRowControl(obj, faction, controlName, HTMLparent, gen, pare
         </div>
       </div>
     </div>
-    ${divRow}
+    ${divArrow}
   </div>`
 
   // add html element to parent
