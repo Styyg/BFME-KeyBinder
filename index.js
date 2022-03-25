@@ -507,13 +507,11 @@ function getFileWithNewShortcuts(newShortcuts) {
       offset = 1
       // need to avoid to change shortcuts in commented lines
       // while (arrayDataIn[index + offset].startsWith("//")) {
-      while (!arrayDataIn[index + offset].trim().startsWith('"')) {
+      while (!arrayDataInWithoutSpaces[index + offset].startsWith('"')) {
         offset++
       }
 
-      let row = arrayDataIn[index + offset]
-      // row = row.replaceAll("&", "")
-      searchPos = row.toUpperCase().search(key)
+      let row = arrayDataInWithoutSpaces[index + offset]
 
       // searching for '(&.)' or '[&.]' with . as a single character
       const regexpParenthesis = new RegExp("(\\[|\\()&.(\\]|\\))")
@@ -524,6 +522,9 @@ function getFileWithNewShortcuts(newShortcuts) {
         // slice and trim to remove space before '[&key]'
         row = row.replace(regexpParenthesis, "").slice(0, -1).trim() + row.slice(-1)
       }
+
+      row = row.replaceAll("&", "")
+      searchPos = row.toUpperCase().search(key)
 
       // new shortcut found in row
       if (searchPos > -1) {
