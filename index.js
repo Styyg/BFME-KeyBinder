@@ -158,7 +158,7 @@ async function createRowControl(obj, faction, controlName, HTMLparent, gen, pare
   }
 
   const newDiv = `<div id="${id["idMain"]}" name="${name["nameMain"]}" class="control-main ${faction}" ${hidden}>
-    <div class="control">
+    <div class="control-row">
       <img class="icon" src="./assets/images/${srcControl}">
 
       <div class="description" id="${id["idDesc"]}" name="${name["nameDesc"]}" >
@@ -212,7 +212,7 @@ function addPreviewChilds() {
         ${divImg}
       </div>`
 
-      const control = controlElement.querySelector(":scope > .control")
+      const control = controlElement.querySelector(":scope > .control-row")
       control.insertAdjacentHTML("beforeend", divPreview)
     }
   }

@@ -91,38 +91,44 @@
     <!-- <div id="main-div" class="container-xxl" style="display: block"> -->
     <div id="main-div" class="container-xxl" style="display: block" hidden>
       <div class="header">
-        <div class="div-icon-faction">
-          <img class="icon-faction" src="./assets/images/men/ConstructMenFarm.png" alt="" onclick="displayFaction('men')" />
-        </div>
-        <div class="div-icon-faction">
-          <img class="icon-faction" src="./assets/images/elves/ConstructElvenMallornTree.png" alt="" onclick="displayFaction('elves')" />
-        </div>
-        <div class="div-icon-faction">
-          <img class="icon-faction" src="./assets/images/dwarves/ConstructDwarvenMineShaft.png" alt="" onclick="displayFaction('dwarves')" />
-        </div>
-        <div class="div-icon-faction">
-          <img class="icon-faction" src="./assets/images/isengard/ConstructFurnace.png" alt="" onclick="displayFaction('isengard')" />
-        </div>
-        <div class="div-icon-faction">
-          <img class="icon-faction" src="./assets/images/mordor/ConstructSlaughterhouse.png" alt="" onclick="displayFaction('mordor')" />
-        </div>
-        <div class="div-icon-faction">
-          <img class="icon-faction" src="./assets/images/goblins/ConstructWildMineShaft.png" alt="" onclick="displayFaction('goblins')" />
-        </div>
-        <div class="div-icon-faction">
-          <img class="icon-faction" src="./assets/images/angmar/ConstructAngmarMill.png" alt="" onclick="displayFaction('angmar')" />
-        </div>
-        <div class="div-icon-faction">
-          <img class="icon-faction" src="./assets/images/misc/AttackMove.png" alt="" onclick="displayFaction('misc')" />
+        <label>Select a faction:</label>
+   
+        <div>          
+          <div class="icon-faction center">
+            <img src="./assets/images/faction/gondor.webp" alt="" onclick="displayFaction('men')"/>
+          </div>
+  
+          <div class="icon-faction center">
+            <img src="./assets/images/faction/elfe.webp" alt="" onclick="displayFaction('elves')" />
+          </div>
+  
+          <div class="icon-faction center">
+            <img src="./assets/images/faction/nain.webp" alt="" onclick="displayFaction('dwarves')" />
+          </div>
+  
+          <div class="icon-faction center">
+            <img src="./assets/images/faction/isengard.webp" alt="" onclick="displayFaction('isengard')" />
+          </div>
+  
+          <div class="icon-faction center">
+            <img src="./assets/images/faction/mordor.webp" alt="" onclick="displayFaction('mordor')" />
+          </div>
+  
+          <div class="icon-faction center">
+            <img src="./assets/images/faction/gobelin.webp" alt="" onclick="displayFaction('goblins')" />
+          </div>
+  
+          <div class="icon-faction center">
+            <img src="./assets/images/faction/angmar.webp" alt="" onclick="displayFaction('angmar')" />
+          </div>
+  
+          <div class="icon-faction center">
+            <img src="./assets/images/misc/AttackMove.png" alt="" onclick="displayFaction('misc')" />
+          </div>
         </div>
 
-        <div class="center">
-          <button id="btn-download" class="btn btn-primary">Download</button>
-        </div>
-
-        <div class="center">
-          <button id="btn-uncategorized" class="btn btn-secondary">Show uncategorized controls</button>
-        </div>
+        <button id="btn-download" class="btn btn-primary">Download</button>
+        <button id="btn-uncategorized" class="btn btn-secondary">Show uncategorized controls</button>
       </div>
 
       <div id="div-faction">
@@ -178,7 +184,10 @@
 
     <!-- Footer-->
     <footer class="py-5 bg-dark">
-      <div class="container px-5"><p class="m-0 text-center text-white">&copy; Made by Styg</p></div>
+      <div class="container px-5">
+        <p class="m-0 text-center text-white">&copy; Made by Styg</p> <br>
+        <p class="m-0 text-center text-white">Special thanks to: Eldar, Froldoom, Elrohir, Jaque, Werbo45, MrleNUL</p>
+      </div>
     </footer>
 
     <script

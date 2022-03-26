@@ -6,7 +6,20 @@
 
 .header {
   display: flex;
-  margin: 10px;
+  align-items: center;
+  margin: 30px 0px 30px 0px;
+}
+
+.header > * {
+  margin-right: 15px;
+}
+
+.header > div {
+  display: flex;
+}
+
+.header > label {
+  font-size: larger;
 }
 
 .center {
@@ -15,44 +28,42 @@
   align-items: center;
 }
 
-.div-icon-faction {
-  height: 80px;
-  width: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.icon-faction,
+.icon-faction img:hover {
+  width: 85px;
+  height: 85px;
 }
 
-.icon-faction {
-  width: 60px;
-  height: 60px;
+.icon-faction img {
+  width: 65px;
+  height: 65px;
   border: 1px solid #000;
   border-radius: 100%;
+  cursor: pointer;
   transition-duration: 0.1s;
-}
-
-.icon-faction:hover {
-  width: 70px;
-  height: 70px;
 }
 
 .control-main {
   margin: 0px 0px 20px 0px;
+  font-size: large;
   border: solid 1px;
   border-radius: 10px;
-  box-shadow: 0px 3px 10px #000;
-  /* background-color: rgba(43, 78, 153, 0.2); */
-  /* background-color: rgba(11, 74, 168, 0.25); */
+  transition-duration: 0.2s;
 }
 
 .control-main > .control-main {
-  margin: 0px 5px 5px 35px;
-  box-shadow: 0px 0px 10px #000;
+  margin: 0px 30px 10px 30px;
+}
+
+.control-main:hover {
+  box-shadow: 0px 3px 25px #000;
+  /* transition-duration: 0.2s; */
 }
 
 .disabled {
   background-color: rgb(165, 165, 165);
   border-color: red;
+  border-width: 2px;
 }
 
 .disabled img {
@@ -61,13 +72,23 @@
 
 input:disabled {
   background: rgb(228, 228, 228);
+  cursor: not-allowed;
 }
 
-.control {
+.control-row {
   padding: 10px;
   display: flex;
   align-items: center;
   border-radius: 10px 10px 0px 0px;
+  cursor: pointer;
+}
+
+.control-main:hover .arrow {
+  /* transform: rotate(405deg); */
+  animation-name: floating;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
 }
 
 .icon {
@@ -75,7 +96,7 @@ input:disabled {
   height: 70px;
   border: 1px solid #000;
   border-radius: 100%;
-  transition-duration: 0.2s;
+  /* transition-duration: 0.2s; */
 }
 
 .preview {
@@ -92,11 +113,11 @@ input:disabled {
   margin: 0 5px 0 5px;
 }
 
-.control:hover > .icon {
+/* .control:hover > .icon {
   width: 80px;
   height: 80px;
   transition-duration: 0.2s;
-}
+} */
 
 .description {
   width: 30%;
