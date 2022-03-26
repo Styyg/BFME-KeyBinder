@@ -306,7 +306,7 @@ async function createHTMLComponents() {
   }
 
   addArrowsEventListeners()
-  // addPreviewChilds()
+  addPreviewChilds()
 }
 
 // extract data from file and apply them to HTML components
