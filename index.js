@@ -7,7 +7,7 @@ const arrayFaction = ["men", "elves", "dwarves", "isengard", "mordor", "goblins"
 const arrayBranch = ["basic", "power", "inn", "port"]
 
 function init() {
-  document.getElementById("main-div").hidden = false
+  // document.getElementById("main-div").hidden = false
   // createHTMLComponents()
   setEventListeners()
 }
