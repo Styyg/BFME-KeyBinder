@@ -775,6 +775,7 @@ CONTROLBAR:PurchaseWildFireDrake,goblins,4,CONTROLBAR:ConstructWildFortress,basi
 CONTROLBAR:SpecialAbilityFireDrakeInferno,goblins,1,CONTROLBAR:PurchaseWildFireDrake,basic,2
 OBJECT:WildBuildingFoundation,goblins,,CONTROLBAR:ConstructWildFortress,basic,1
 CONTROLBAR:ConstructWildBurrowsExpansion,goblins,1,OBJECT:WildBuildingFoundation,basic,2
+CONTROLBAR:GarrisonExit,goblins,1,CONTROLBAR:ConstructWildBurrowsExpansion,basic,3
 CONTROLBAR:EvacuateAll,goblins,1,CONTROLBAR:ConstructWildBurrowsExpansion,basic,3
 CONTROLBAR:ConstructWildArrowDenExpansion,goblins,2,OBJECT:WildBuildingFoundation,basic,2
 CONTROLBAR:ConstructWildSpiderHolesExpansion,goblins,3,OBJECT:WildBuildingFoundation,basic,2

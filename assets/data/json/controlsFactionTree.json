@@ -841,7 +841,7 @@
         },
         "CONTROLBAR:PurchaseWildFireDrake": { "CONTROLBAR:SpecialAbilityFireDrakeInferno": {} },
         "OBJECT:WildBuildingFoundation": {
-          "CONTROLBAR:ConstructWildBurrowsExpansion": { "CONTROLBAR:EvacuateAll": {} },
+          "CONTROLBAR:ConstructWildBurrowsExpansion": { "CONTROLBAR:GarrisonExit": {}, "CONTROLBAR:EvacuateAll": {} },
           "CONTROLBAR:ConstructWildArrowDenExpansion": {},
           "CONTROLBAR:ConstructWildSpiderHolesExpansion": {},
           "CONTROLBAR:ConstructWildGiantSentryExpansion": {}
