@@ -4,10 +4,11 @@ let arrayDataInWithoutSpaces
 let regexp
 let currentShortcuts = {}
 const arrayFaction = ["men", "elves", "dwarves", "isengard", "mordor", "goblins", "angmar", "misc"]
-const arrayBranch = ["basic", "power", "inn", "port"]
+const arrayBranch = ["basic", "power", "inn"]
+let objGenericSrc
 
 function init() {
-  document.getElementById("main-div").hidden = false
+  // document.getElementById("main-div").hidden = false
   // createHTMLComponents()
   setEventListeners()
 }
@@ -21,8 +22,9 @@ function setEventListeners() {
   inputFile.addEventListener("change", function selectedFileChanged() {
     if (!testFile(this.files)) return
 
-    document.getElementById("main-div").hidden = true
+    const mainDiv = document.getElementById("main-div")
     const loadingRoller = document.querySelector(".lds-roller")
+    mainDiv.hidden = true
     loadingRoller.hidden = false
 
     const file = this.files[0]
@@ -52,7 +54,7 @@ function setEventListeners() {
 
       createHTMLComponents().then(() => {
         extractData(arrayDataIn).then(() => {
-          document.getElementById("main-div").hidden = false
+          mainDiv.hidden = false
           loadingRoller.hidden = true
         })
       })
@@ -156,7 +158,7 @@ async function createRowControl(obj, faction, controlName, HTMLparent, gen, pare
   }
 
   const newDiv = `<div id="${id["idMain"]}" name="${name["nameMain"]}" class="control-main ${faction}" ${hidden}>
-    <div class="control">
+    <div class="control-row">
       <img class="icon" src="./assets/images/${srcControl}">
 
       <div class="description" id="${id["idDesc"]}" name="${name["nameDesc"]}" >
@@ -210,7 +212,7 @@ function addPreviewChilds() {
         ${divImg}
       </div>`
 
-      const control = controlElement.querySelector(":scope > .control")
+      const control = controlElement.querySelector(":scope > .control-row")
       control.insertAdjacentHTML("beforeend", divPreview)
     }
   }
@@ -398,8 +400,10 @@ function downloadFile(fileName) {
 }
 
 async function getSrcControl(controlName, faction, parent) {
-  const readGenericSrc = await readFile("./assets/data/json/genericSrcControls.json")
-  const objGenericSrc = JSON.parse(readGenericSrc)
+  if (objGenericSrc === undefined) {
+    const readGenericSrc = await readFile("./assets/data/json/genericSrcControls.json")
+    objGenericSrc = JSON.parse(readGenericSrc)
+  }
   let srcControl
   if (objGenericSrc[controlName] === undefined) {
     srcControl = faction + "/" + controlName.split(":")[1] + ".png"
@@ -443,10 +447,11 @@ function testFile(files) {
   const maxFileSize = 2 * 1024 * 1024 //2MB
   const allowedExtension = ["str", "big"]
   const file = files[0]
+  const errLabel = document.getElementById("errInputFile")
 
   // no file
   if (files.length === 0) {
-    document.getElementById("errInputFile").style.visibility = "hidden"
+    errLabel.style.visibility = "hidden"
     return
   }
 
@@ -454,20 +459,20 @@ function testFile(files) {
   const array = file.name.split(".")
   const extensionName = array[array.length - 1]
   if (!allowedExtension.includes(extensionName)) {
-    document.getElementById("errInputFile").textContent = "Invalid format, .str or .big is required"
-    document.getElementById("errInputFile").style.visibility = "visible"
+    errLabel.textContent = "Invalid format, .str or .big is required"
+    errLabel.style.visibility = "visible"
     return
   }
 
   // wrong file size
   if (file.size > maxFileSize) {
     console.log("File selected is too big : " + file.size + "o, max is : " + maxFileSize + "o")
-    document.getElementById("errInputFile").textContent = "File selected is too big, 2Mo max"
-    document.getElementById("errInputFile").style.visibility = "visible"
+    errLabel.textContent = "File selected is too big, 2Mo max"
+    errLabel.style.visibility = "visible"
     return
   }
 
-  document.getElementById("errInputFile").style.visibility = "hidden"
+  errLabel.style.visibility = "hidden"
   return true
 }
 
