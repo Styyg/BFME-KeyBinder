@@ -8,8 +8,8 @@ const arrayBranch = ["basic", "power", "inn"]
 let objGenericSrc
 
 function init() {
-  // document.getElementById("main-div").hidden = false
-  // createHTMLComponents()
+  document.getElementById("main-div").hidden = false
+  createHTMLComponents()
   setEventListeners()
 }
 
@@ -315,7 +315,10 @@ async function extractData(arrayData) {
 
   for (const controlName in controlsData) {
     const elementMain = document.getElementById(controlName)
-    const desc = controlsData[controlName]["desc"]
+    let desc = controlsData[controlName]["desc"]
+    if (desc !== undefined) {
+      desc = desc.replaceAll('"', "")
+    }
 
     // if the control is found in file
     if (controlsData[controlName]["found"]) {

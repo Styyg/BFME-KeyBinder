@@ -124,6 +124,7 @@ input:disabled {
   text-align: start;
   margin-left: 20px;
   margin-right: 10px;
+  overflow-wrap: break-word;
 }
 
 .shortcuts {
@@ -155,7 +156,6 @@ input:disabled {
 .control-name {
   width: 30%;
   text-align: center;
-  overflow-wrap: break-word;
 }
 
 .arrow-container {
