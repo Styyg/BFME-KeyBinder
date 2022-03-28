@@ -91,8 +91,9 @@
     "CONTROLBAR:ConstructRohanElvenWarriorHorde": "fire_arrow.png",
     "CONTROLBAR:ConstructDwarvenMenOfDale": "fire_arrow.png",
     "CONTROLBAR:ConstructIsengardCrossbowmen": "fire_arrow2.png",
-    "CONTROLBAR:ConstructMordorOrcArcherHorde": "",
-    "CONTROLBAR:ConstructMordorHaradrimArcherHorde": ""
+    "CONTROLBAR:ConstructMordorOrcArcherHorde": "Mordor_FireArrows.png",
+    "CONTROLBAR:ConstructMordorHaradrimArcherHorde": "Mordor_FireArrows.png",
+    "CONTROLBAR:ConstructMordorMumakil": "Mordor_FireArrows.png"
   },
   "CONTROLBAR:PurchaseUpgradeMenFortressFlamingMunitions": "fire_arrow.png",
   "CONTROLBAR:PurchaseTechnologyRohanFireArrows": "fire_arrow.png",
@@ -101,6 +102,8 @@
   "CONTROLBAR:PurchaseUpgradeWildFortressFireArrows": "fire_arrow2.png",
   "CONTROLBAR:PurchaseTechnologyWildFireArrows": "fire_arrow2.png",
   "CONTROLBAR:PurchaseUpgradeWildFireArrows": "fire_arrow2.png",
+  "CONTROLBAR:PurchaseUpgradeSentryTowerFireArrows": "fire_arrow2.png",
+  "CONTROLBAR:PurchaseTechnologyMordorFireArrows": "Mordor_FireArrows.png",
   "CONTROLBAR:PurchaseUpgradeGondorFireStones": "fire_stones.png",
   "CONTROLBAR:PurchaseTechnologyGondorFireStones": "fire_stones.png",
   "CONTROLBAR:PurchaseTechnologyDwarvenFlamingShot": "fire_stones.png",
@@ -127,7 +130,10 @@
     "CONTROLBAR:ConstructIsengardSiegeBallista": "stop_bombard2.png",
     "CONTROLBAR:ConstructMordorCatapult": "stop_bombard2.png",
     "CONTROLBAR:ConstructAngmarTrollSling": "stop_bombard2.png",
-    "CONTROLBAR:ConstructMordorMountainTroll": "stop_bombard2.png"
+    "CONTROLBAR:ConstructMordorMountainTroll": "stop_bombard2.png",
+    "CONTROLBAR:ConstructGoblinCaveTroll": "stop_bombard2.png",
+    "CONTROLBAR:ConstructWildMountainGiant": "stop_bombard2.png",
+    "CONTROLBAR:SummonGiants": "stop_bombard2.png"
   },
   "CONTROLBAR:NoAutoAcquire": {
     "CONTROLBAR:ConstructIsengardSiegeBallista": "acquire_off_ballista.png",
@@ -162,7 +168,6 @@
   "CONTROLBAR:Athelas": "athelas.png",
   "CONTROLBAR:ArcherBarrage": "archer_barrage.png",
   "CONTROLBAR:GarrisonExit": "evacuate.png",
-  "CONTROLBAR:PurchaseUpgradeSentryTowerFireArrows": "fire_arrow2.png",
   "CONTROLBAR:EvacuateAll": "evacuate_all.png",
   "CONTROLBAR:SummonHobbitAllies": "SummonHobbitAllies.png",
   "OBJECT:HordeHobbits": "HordeHobbits.png",
@@ -188,7 +193,7 @@
   "CONTROLBAR:SonicSong": "SonicSong.png",
   "CONTROLBAR:MenLongShotAbility": {
     "CONTROLBAR:ConstructGondorRangerHorde": "MenLongShotAbility.png",
-    "CONTROLBAR:ConstructAngmarDarkRangerHorde": ""
+    "CONTROLBAR:ConstructAngmarDarkRangerHorde": "Angmar_LongShot.png"
   },
   "CONTROLBAR:MenLongShotAbilitySummoned": "MenLongShotAbility.png",
   "CONTROLBAR:PurchaseUpgradeAngmarDarkIronBlades": "Angmar_PurchaseUpgradeAngmarDarkIronBlades.png",
@@ -219,18 +224,25 @@
   "CONTROLBAR:PurchaseTechnologyAngmarIceArrows": "Angmar_PurchaseUpgradeAngmarIceArrows.png",
   "CONTROLBAR:PurchaseTechnologyAngmarIceArrowsForBattleTower": "Angmar_PurchaseUpgradeAngmarIceArrows.png",
   "CONTROLBAR:ConstructAngmarBattleTower": "Angmar_BattleTower.png",
-  "CONTROLBAR:Command_ConstructAngmarBattleTowerExpansion": "Angmar_BattleTower.png",
+  "CONTROLBAR:ConstructAngmarBattleTowerExpansion": "Angmar_BattleTower.png",
   "CONTROLBAR:Command_AngmarWallUpgradeToCatapult": "Angmar_WallUpgradeToCatapult.png",
+  "CONTROLBAR:ConstructAngmarStoneThrowerExpansion": "Angmar_WallUpgradeToCatapult.png",
   "CONTROLBAR:Command_ConstructAngmarStoneThrowerExpansion": "Angmar_WallUpgradeToCatapult.png",
   "CONTROLBAR:SiegeRetract": {
-    "CONTROLBAR:ConstructIsengardSiegeLadder": "Isengard_LadderRetract.png"
+    "CONTROLBAR:ConstructIsengardSiegeLadder": "Isengard_LadderRetract.png",
+    "CONTROLBAR:ConstructMordorSiegeTower": "Mordor_SiegeTowerRetract.png"
   },
   "CONTROLBAR:PurchaseUpgradeIsengardForgedBlades": {
     "CONTROLBAR:ConstructIsengardUrukHai": "PurchaseUpgradeIsengardForgedBlades.png",
     "CONTROLBAR:ConstructIsengardPikemen": "PurchaseUpgradeIsengardForgedBlades.png",
     "CONTROLBAR:ConstructIsengardWildmanAxeHorde": "PurchaseUpgradeIsengardForgedBlades.png",
     "CONTROLBAR:ConstructIsengardWargRider": "PurchaseUpgradeIsengardForgedBlades.png",
-    "CONTROLBAR:ConstructMordorBlackOrcHorde": ""
+    "CONTROLBAR:ConstructMordorOrcFighterHorde": "Mordor_ForgedBlades.png",
+    "CONTROLBAR:ConstructMordorBlackOrcHorde": "Mordor_ForgedBlades.png",
+    "CONTROLBAR:ConstructMordorEasterlingHorde": "Mordor_ForgedBlades.png",
+    "CONTROLBAR:ConstructMordorCorsairsOfUmbarHorde": "Mordor_ForgedBlades.png",
+    "CONTROLBAR:ConstructMordorHaradrimRiderHorde": "Mordor_ForgedBlades.png",
+    "CONTROLBAR:ConstructMordorHaradrimLancerHorde": "Mordor_ForgedBlades.png"
   },
   "CONTROLBAR:PurchaseTechnologyIsengardHeavyArmor": "Evil_HeavyArmor.png",
   "CONTROLBAR:PurchaseUpgradeIsengardHeavyArmor": "Evil_HeavyArmor.png",
@@ -294,5 +306,65 @@
   "CONTROLBAR:PurchaseTechnologyWildForgedBlades": "Goblins_ForgedBlades.png",
   "CONTROLBAR:PurchaseUpgradeWildForgedBlade": "Goblins_ForgedBlades.png",
   "CONTROLBAR:PurchaseTechnologyWildHeavyArmor": "Goblins_HeavyArmor.png",
-  "CONTROLBAR:PurchaseUpgradeWildHeavyArmor": "Goblins_HeavyArmor.png"
+  "CONTROLBAR:PurchaseUpgradeWildHeavyArmor": "Goblins_HeavyArmor.png",
+  "CONTROLBAR:AngmarTrollChargeAttack": {
+    "CONTROLBAR:ConstructWildMarauderSwordHorde": "Angmar_ChargeAttack.png",
+    "CONTROLBAR:ConstructAngmarSnowTrollHorde": "Angmar_TrollChargeAttack.png"
+  },
+  "CONTROLBAR:AngmarChargeAttack": "Angmar_ChargeAttack.png",
+
+  "CONTROLBAR:KickAndPunch": {
+    "CONTROLBAR:ConstructMordorMountainTroll": "KickAndPunch.png",
+    "CONTROLBAR:ConstructGoblinCaveTroll": "KickAndPunch.png",
+    "CONTROLBAR:ConstructWildMountainGiant": "Goblins_GiantKick.png",
+    "CONTROLBAR:SummonGiants": "Goblins_GiantKick.png",
+    "CONTROLBAR:ConstructEnt": "Elves_KickAndPunch.png",
+    "CONTROLBAR:ConstructTreebeard": "Elves_KickAndPunch.png"
+  },
+  "CONTROLBAR:ThrowRocks": {
+    "CONTROLBAR:ConstructMordorMountainTroll": "ThrowRocks.png",
+    "CONTROLBAR:ConstructGoblinCaveTroll": "ThrowRocks.png",
+    "CONTROLBAR:ConstructWildMountainGiant": "Goblins_GiantThrowRocks.png",
+    "CONTROLBAR:SummonGiants": "Goblins_GiantThrowRocks.png",
+    "CONTROLBAR:ConstructEnt": "Elves_ThrowRocks.png",
+    "CONTROLBAR:ConstructTreebeard": "Elves_ThrowRocks.png"
+  },
+  "CONTROLBAR:TrollFindTree": "TrollFindTree.png",
+  "CONTROLBAR:TrollFindTastyOrc": "TrollFindTastyOrc.png",
+  "CONTROLBAR:Trollfindunittothrow": "TrollFindTastyOrc.png",
+  "CONTROLBAR:ConstructWildMountainGiant": "Goblins_MountainGiant.png",
+  "CONTROLBAR:ConstructWildGiantSentryExpansion": "Goblins_MountainGiant.png",
+  "CONTROLBAR:WildMountainGiantStomp": "WildMountainGiantStomp.png",
+  "CONTROLBAR:ConstructMordorCorsairsOfUmbarHorde": "Mordor_CorsairsOfUmbar.png",
+  "CONTROLBAR:ThrowFireBombs": "ThrowFireBombs.png",
+  "CONTROLBAR:Knife": "Knife.png",
+  "CONTROLBAR:GoblinKingPoisonedStinger": "Goblins_PoisonedStinger.png",
+  "CONTROLBAR:WildShelobPoisonedStinger": "Goblins_PoisonedStinger.png",
+  "CONTROLBAR:HwaldarSummonHillmen2": "Angmar_Hillmen.png",
+  "CONTROLBAR:ConstructAngmarWildmanHorde": "Angmar_Hillmen.png",
+  "CONTROLBAR:PurchaseUpgradeIsengardTorches": "Isengard_Torches.png",
+  "CONTROLBAR:MordorWitchkingMorgulCorruption": "WitchKingMorgulCorruption.png",
+  "CONTROLBAR:WitchkingMorgulCorruption": "WitchKingMorgulCorruption.png",
+  "CONTROLBAR:ConstructElvenBattleTower": "Elves_BattleTower.png",
+  "CONTROLBAR:ConstructElvenWatchtowerExpansion": "Elves_BattleTower.png",
+  "CONTROLBAR:ConstructDwarvenWallHub": "Dwarves_WallHub.png",
+  "CONTROLBAR:Command_DwarvenWallUpgradeToHub": "Dwarves_WallHub.png",
+  "CONTROLBAR:Command_ConstructDwarvenWallHubExpansion": "Dwarves_WallHub.png",
+  "CONTROLBAR:SpecialAbilityFireDrakeInferno": "Goblins_DrakeInferno.png",
+  "CONTROLBAR:PurchaseWildFireDrake": "Goblins_Drake.png",
+  "CONTROLBAR:GoblinKingSpawnFireDrakes": "Goblins_Drake.png",
+  "CONTROLBAR:PurchaseTechnologyMordorForgedBlades": "Mordor_ForgedBlades.png",
+  "CONTROLBAR:ElrondWhirlwind": "Tornado.png",
+  "CONTROLBAR:GaladrielTornado": "Tornado.png",
+  "CONTROLBAR:PurchaseUpgradeShipArmor": {
+    "CONTROLBAR:ConstructGoodShip": "PurchaseUpgradeShipArmorGood.png",
+    "CONTROLBAR:ConstructGoodFireShip": "PurchaseUpgradeShipArmorGood.png",
+    "CONTROLBAR:ConstructGoodBombardShip": "PurchaseUpgradeShipArmorGood.png",
+    "CONTROLBAR:ConstructEvilShip": "PurchaseUpgradeShipArmorEvil.png",
+    "CONTROLBAR:ConstructEvilFireShip": "PurchaseUpgradeShipArmorEvil.png",
+    "CONTROLBAR:ConstructEvilBombardShip": "PurchaseUpgradeShipArmorEvil.png"
+  },
+  "OBJECT:InnTavern": "InnTavern.png",
+  "CONTROLBAR:GoodPlayerExperienceMenu": "One_Ring.png",
+  "CONTROLBAR:EvilPlayerExperienceMenu": "One_Ring.png"
 }
