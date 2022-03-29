@@ -51,7 +51,7 @@
     </nav>
 
     <!-- Header-->
-    <header class="bg-dark py-5">
+    <header class="py-5">
       <div class="container px-4">
         <div class="row gx-5 justify-content-center">
           <div class="col-lg-10">
@@ -88,105 +88,108 @@
       </div>
     </header>
 
-    <!-- <div id="main-div" class="container-xxl" style="display: block"> -->
-    <div id="main-div" class="container-xxl" style="display: block" hidden>
-      <div class="header">
-        <label>Select a faction:</label>
-   
-        <div>          
-          <div class="icon-faction center">
-            <img src="./assets/images/faction/gondor.webp" alt="" onclick="displayFaction('men')"/>
+    <div id="main-div" hidden>
+      <div class="container-xxl header">
+        <h5>Select a faction:</h5>
+
+        <div>
+          <div class="icon-faction center men">
+            <img src="./assets/images/faction/gondor.webp" alt="" onclick="displayFaction('men')" />
           </div>
-  
+
           <div class="icon-faction center">
             <img src="./assets/images/faction/elfe.webp" alt="" onclick="displayFaction('elves')" />
           </div>
-  
+
           <div class="icon-faction center">
             <img src="./assets/images/faction/nain.webp" alt="" onclick="displayFaction('dwarves')" />
           </div>
-  
+
           <div class="icon-faction center">
             <img src="./assets/images/faction/isengard.webp" alt="" onclick="displayFaction('isengard')" />
           </div>
-  
+
           <div class="icon-faction center">
             <img src="./assets/images/faction/mordor.webp" alt="" onclick="displayFaction('mordor')" />
           </div>
-  
+
           <div class="icon-faction center">
             <img src="./assets/images/faction/gobelin.webp" alt="" onclick="displayFaction('goblins')" />
           </div>
-  
+
           <div class="icon-faction center">
             <img src="./assets/images/faction/angmar.webp" alt="" onclick="displayFaction('angmar')" />
           </div>
-  
+
           <div class="icon-faction center">
             <img src="./assets/images/misc/AttackMove.png" alt="" onclick="displayFaction('misc')" />
           </div>
         </div>
 
         <button id="btn-download" class="btn btn-primary">Download</button>
-        <button id="btn-uncategorized" class="btn btn-secondary">Show uncategorized controls</button>
+        <!-- <button id="btn-uncategorized" class="btn btn-secondary">Show uncategorized controls</button> -->
       </div>
 
-      <div id="div-faction">
-        <div id="men">
-          <div id="men-basic" name="branch"></div>
-          <div id="men-power" name="branch"></div>
-          <div id="men-inn" name="branch"></div>
+      <!-- <div id="main-faction" class="container-xxl" style="display: block"> -->
+      <div id="main-faction" class="container-xxl">
+        <div id="div-faction">
+          <div id="men">
+            <div id="men-basic" name="branch"></div>
+            <div id="men-power" name="branch"></div>
+            <div id="men-inn" name="branch"></div>
+          </div>
+          <div id="elves" hidden>
+            <div id="elves-basic" name="branch"></div>
+            <div id="elves-power" name="branch"></div>
+            <div id="elves-inn" name="branch"></div>
+          </div>
+          <div id="dwarves" hidden>
+            <div id="dwarves-basic" name="branch"></div>
+            <div id="dwarves-power" name="branch"></div>
+            <div id="dwarves-inn" name="branch"></div>
+          </div>
+          <div id="isengard" hidden>
+            <div id="isengard-basic" name="branch"></div>
+            <div id="isengard-power" name="branch"></div>
+            <div id="isengard-inn" name="branch"></div>
+          </div>
+          <div id="mordor" hidden>
+            <div id="mordor-basic" name="branch"></div>
+            <div id="mordor-power" name="branch"></div>
+            <div id="mordor-inn" name="branch"></div>
+          </div>
+          <div id="goblins" hidden>
+            <div id="goblins-basic" name="branch"></div>
+            <div id="goblins-power" name="branch"></div>
+            <div id="goblins-inn" name="branch"></div>
+          </div>
+          <div id="angmar" hidden>
+            <div id="angmar-basic" name="branch"></div>
+            <div id="angmar-power" name="branch"></div>
+            <div id="angmar-inn" name="branch"></div>
+          </div>
+          <div id="misc" hidden>
+            <div id="misc-basic" name="branch"></div>
+            <div id="misc-power" name="branch"></div>
+            <div id="misc-inn" name="branch"></div>
+          </div>
         </div>
-        <div id="elves" hidden>
-          <div id="elves-basic" name="branch"></div>
-          <div id="elves-power" name="branch"></div>
-          <div id="elves-inn" name="branch"></div>
-        </div>
-        <div id="dwarves" hidden>
-          <div id="dwarves-basic" name="branch"></div>
-          <div id="dwarves-power" name="branch"></div>
-          <div id="dwarves-inn" name="branch"></div>
-        </div>
-        <div id="isengard" hidden>
-          <div id="isengard-basic" name="branch"></div>
-          <div id="isengard-power" name="branch"></div>
-          <div id="isengard-inn" name="branch"></div>
-        </div>
-        <div id="mordor" hidden>
-          <div id="mordor-basic" name="branch"></div>
-          <div id="mordor-power" name="branch"></div>
-          <div id="mordor-inn" name="branch"></div>
-        </div>
-        <div id="goblins" hidden>
-          <div id="goblins-basic" name="branch"></div>
-          <div id="goblins-power" name="branch"></div>
-          <div id="goblins-inn" name="branch"></div>
-        </div>
-        <div id="angmar" hidden>
-          <div id="angmar-basic" name="branch"></div>
-          <div id="angmar-power" name="branch"></div>
-          <div id="angmar-inn" name="branch"></div>
-        </div>
-        <div id="misc" hidden>
-          <div id="misc-basic" name="branch"></div>
-          <div id="misc-power" name="branch"></div>
-          <div id="misc-inn" name="branch"></div>
-        </div>
-      </div>
 
-      <div id="div-uncategorized" hidden>
-        <label>Uncategorized</label>
-        <div id="uncategorized"></div>
-      </div>
+        <div id="div-uncategorized" hidden>
+          <div id="uncategorized"></div>
+        </div>
 
-      <div id="duplicates" hidden></div>
+        <div id="duplicates" hidden></div>
+      </div>
     </div>
 
     <!-- Footer-->
     <footer class="py-5 bg-dark">
       <div class="container px-5">
-        <p class="m-0 text-center text-white">&copy; Made by Styg</p> <br>
-        <p class="m-0 text-center text-white">Special thanks to: Eldar, Froldoom, Elrohir, Jaque, Werbo45, MrleNUL</p>
+        <h5 class="m-0 text-center text-white">&copy; Made by Styg</h5>
+        <br />
+        <p class="m-0 text-center text-white">Special thanks to:</p>
+        <h6 class="m-0 text-center text-white">Eldar - Froldoom - Elrohir - Jaque - Werbo45 - MrleNUL</h6>
       </div>
     </footer>
 

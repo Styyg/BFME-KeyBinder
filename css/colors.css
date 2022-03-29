@@ -1,38 +1,38 @@
 .control-main.men {
   /* background-color: rgba(0, 102, 255, 0.1); */
-  background-color: rgb(136, 174, 255);
+  background-color: rgb(87, 125, 207);
 }
 
 .control-main.men > .control-main.men {
-  background-color: rgb(161, 199, 255);
+  background-color: rgb(129, 157, 219);
 }
 
 .control-main.men > .control-main.men > .control-main.men {
-  background-color: rgb(180, 210, 255);
+  background-color: rgb(171, 193, 241);
 }
 
 .control-main.elves {
-  background-color: rgb(97, 230, 115);
+  background-color: rgb(75, 192, 91);
 }
 
 .control-main.elves > .control-main.elves {
-  background-color: rgb(133, 255, 149);
+  background-color: rgb(124, 209, 135);
 }
 
 .control-main.elves > .control-main.elves > .control-main.elves {
-  background-color: rgb(168, 255, 179);
+  background-color: rgb(155, 228, 165);
 }
 
 .control-main.dwarves {
-  background-color: rgb(255, 238, 85);
+  background-color: rgb(233, 216, 66);
 }
 
 .control-main.dwarves > .control-main.dwarves {
-  background-color: rgb(255, 242, 126);
+  background-color: rgb(248, 235, 119);
 }
 
 .control-main.dwarves > .control-main.dwarves > .control-main.dwarves {
-  background-color: rgb(255, 244, 150);
+  background-color: rgb(255, 245, 152);
 }
 
 .control-main.isengard {
@@ -40,7 +40,7 @@
 }
 
 .control-main.isengard > .control-main.isengard {
-  background-color: rgb(165, 165, 165);
+  background-color: rgb(168, 168, 168);
 }
 
 .control-main.isengard > .control-main.isengard > .control-main.isengard {
@@ -48,41 +48,45 @@
 }
 
 .control-main.mordor {
-  background-color: rgb(255, 72, 72);
+  background-color: rgb(199, 50, 50);
 }
 
 .control-main.mordor > .control-main.mordor {
-  background-color: rgb(255, 102, 102);
+  background-color: rgb(253, 87, 87);
 }
 
 .control-main.mordor > .control-main.mordor > .control-main.mordor {
-  background-color: rgb(255, 133, 133);
+  background-color: rgb(255, 117, 117);
 }
 
 .control-main.goblins {
-  background-color: rgb(255, 141, 65);
+  background-color: rgb(247, 126, 45);
 }
 
 .control-main.goblins > .control-main.goblins {
-  background-color: rgb(255, 161, 99);
+  background-color: rgb(255, 154, 87);
 }
 
 .control-main.goblins > .control-main.goblins > .control-main.goblins {
-  background-color: rgb(255, 180, 129);
+  background-color: rgb(255, 177, 126);
 }
 
 .control-main.angmar {
-  background-color: rgb(193, 101, 255);
+  background-color: rgb(138, 64, 187);
 }
 
 .control-main.angmar > .control-main.angmar {
-  background-color: rgb(209, 139, 255);
+  background-color: rgb(170, 99, 218);
 }
 
 .control-main.angmar > .control-main.angmar > .control-main.angmar {
-  background-color: rgb(217, 161, 255);
+  background-color: rgb(189, 129, 230);
 }
 
 .control-main.misc {
-  background-color: rgb(202, 202, 202);
+  background-color: rgb(204, 204, 204);
+}
+
+.control-main.misc > .control-main.misc {
+  background-color: rgb(241, 241, 241);
 }

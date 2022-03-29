@@ -16,7 +16,6 @@ function init() {
 function setEventListeners() {
   const inputFile = document.getElementById("inputFile")
   const btnDownload = document.getElementById("btn-download")
-  const btnUncategorized = document.getElementById("btn-uncategorized")
   let fileName
 
   inputFile.addEventListener("change", function selectedFileChanged() {
@@ -67,17 +66,17 @@ function setEventListeners() {
     // need to run some test before accepting keys
     downloadFile(fileName)
   })
+}
 
-  btnUncategorized.addEventListener("click", () => {
-    div = document.getElementById("div-uncategorized")
-    if (div.hidden) {
-      div.hidden = false
-      btnUncategorized.innerText = "Hide uncategorized controls"
-    } else {
-      div.hidden = true
-      btnUncategorized.innerText = "Show uncategorized controls"
-    }
-  })
+function getNavigatorLanguage() {
+  let language
+  if (navigator.browserLanguage) {
+    language = navigator.browserLanguage
+  } else {
+    language = navigator.language
+  }
+
+  return language
 }
 
 function displayFaction(faction) {
@@ -90,13 +89,14 @@ function displayFaction(faction) {
   }
 }
 
-function toggleDisplayChildsAfterMe(me) {
-  const arrayChildren = Array.from(me.parentNode.children)
-  const index = arrayChildren.indexOf(me)
-  const hidden = arrayChildren[index + 1].hidden
+function toggleDisplayChilds(element) {
+  const children = element.querySelectorAll(":scope > .control-main")
+  if (children.length > 0) {
+    const hidden = children[0].hidden
 
-  for (i = index + 1; i < arrayChildren.length; i++) {
-    arrayChildren[i].hidden = !hidden
+    for (const child of children) {
+      child.hidden = !hidden
+    }
   }
 }
 
@@ -151,33 +151,37 @@ async function createRowControl(obj, faction, controlName, HTMLparent, gen, pare
 
   const numberOfChilds = Object.keys(obj[controlName]).length
   let divArrow = ""
+  let toggleClick = ""
   if (numberOfChilds > 0) {
     divArrow = `<div class="arrow-container">
       <div class="arrow"></div>
     </div>`
+    toggleClick = "toggleClick"
   }
 
   const newDiv = `<div id="${id["idMain"]}" name="${name["nameMain"]}" class="control-main ${faction}" ${hidden}>
-    <div class="control-row">
-      <img class="icon" src="./assets/images/${srcControl}">
+    <div class="${toggleClick}">
+      <div class="control-row">
+        <img class="icon" src="./assets/images/${srcControl}">
 
-      <div class="description" id="${id["idDesc"]}" name="${name["nameDesc"]}" >
-        ${controlName}
-      </div>
-      <div class="shortcuts">
-        <label>Shortcut</label>
+        <div class="description" id="${id["idDesc"]}" name="${name["nameDesc"]}" >
+          ${controlName}
+        </div>
+        <div class="shortcuts">
+          <label>Shortcut</label>
 
-        <div class="current-new">
-            <div>
-                current : <label class="current" id="${id["idCurrent"]}" name="${name["nameCurrent"]}"></label>
-            </div>
-            <div>
-                new : <input id="${id["idNew"]}" name="${name["nameNew"]}" class="small-input" maxlength="1"></input>
-            </div>
+          <div class="current-new">
+              <div>
+                  current : <label class="current" id="${id["idCurrent"]}" name="${name["nameCurrent"]}"></label>
+              </div>
+              <div>
+                  new : <input id="${id["idNew"]}" name="${name["nameNew"]}" class="small-input" maxlength="1"></input>
+              </div>
+          </div>
         </div>
       </div>
-    </div>
-    ${divArrow}
+      ${divArrow}
+      </div>
   </div>`
 
   // add html element to parent
@@ -209,21 +213,51 @@ function addPreviewChilds() {
     }
     if (divImg !== "") {
       const divPreview = `<div class="preview">
-        ${divImg}
+        <div>
+          ${divImg}
+        </div>
       </div>`
 
-      const control = controlElement.querySelector(":scope > .control-row")
+      const control = controlElement.querySelector(".control-row")
       control.insertAdjacentHTML("beforeend", divPreview)
     }
   }
 }
 
-function addArrowsEventListeners() {
-  const arrowContainers = document.querySelectorAll(".arrow-container")
-  for (const element of arrowContainers) {
-    element.addEventListener("click", () => {
-      toggleDisplayChildsAfterMe(element)
+// add toggle display on click
+function addToggleEventListeners() {
+  const elements = document.querySelectorAll(".toggleClick")
+  for (const el of elements) {
+    el.addEventListener("click", (e) => {
+      if (e.target.nodeName != "INPUT") {
+        toggleDisplayChilds(el.parentElement)
+      }
     })
+  }
+}
+
+// some controls can't have shortcuts like inn, power menu etc, shortcuts elements are disabled for thoses
+async function deleteShortcutsForExceptions() {
+  const exceptions = await readFile("./assets/data/json/exceptions.json")
+  const objExceptions = JSON.parse(exceptions)
+
+  for (const controlName in objExceptions) {
+    const elementById = document.getElementById(controlName)
+
+    if (elementById !== null) {
+      elementById.querySelector(".shortcuts").innerHTML = ""
+    } else {
+      const elementsByNames = document.getElementsByName(controlName)
+
+      for (const element of elementsByNames) {
+        element.querySelector(".shortcuts").innerHTML = ""
+      }
+    }
+
+    const elements = getElementsByIdAndNames(controlName + "-new")
+    for (const elem of elements) {
+      elem.remove()
+    }
   }
 }
 
@@ -305,74 +339,83 @@ async function createHTMLComponents() {
     }
   }
 
-  addArrowsEventListeners()
+  deleteShortcutsForExceptions()
+  addToggleEventListeners()
   addPreviewChilds()
 }
 
 // extract data from file and apply them to HTML components
 async function extractData(arrayData) {
-  const controlsData = await getControlsData(arrayData)
+  const controlsDesc = await getControlsDesc(arrayData)
+  const exceptions = await readFile("./assets/data/json/exceptions.json")
+  const objExceptions = JSON.parse(exceptions)
 
-  for (const controlName in controlsData) {
-    const elementMain = document.getElementById(controlName)
-    let desc = controlsData[controlName]["desc"]
-    if (desc !== undefined) {
-      desc = desc.replaceAll('"', "")
-    }
+  for (const controlName in controlsDesc) {
+    const elementsDesc = getElementsByIdAndNames(controlName + "-desc")
 
-    // if the control is found in file
-    if (controlsData[controlName]["found"]) {
-      const shortcut = getShortcut(desc)
-
-      currentShortcuts[controlName] = shortcut
-
-      // if id give nothing, start searching for names
-      if (elementMain !== null) {
-        const elementCurrent = document.getElementById(controlName + "-current")
-        const elementDesc = document.getElementById(controlName + "-desc")
-
-        elementCurrent.innerText = shortcut
-        elementDesc.innerText = desc.replace("&", "")
-      } else {
-        const elementsCurrent = document.getElementsByName(controlName + "-current")
-        const elementsDesc = document.getElementsByName(controlName + "-desc")
-
-        elementsCurrent.forEach((element) => {
-          element.innerText = shortcut
-        })
-        elementsDesc.forEach((element) => {
-          element.innerText = desc.replace("&", "")
-        })
+    // if the control is found in the input file
+    if (controlsDesc[controlName]["found"]) {
+      // apply description for all same elements
+      let desc = controlsDesc[controlName]["desc"]
+      if (desc !== undefined) {
+        desc = desc.replaceAll('"', "")
+      }
+      for (const elemDesc of elementsDesc) {
+        elemDesc.innerText = desc.replace("&", "")
       }
 
-      // when the control is not found, inputs are disabled
-    } else {
-      // console.log(controlName)
-
-      if (elementMain !== null) {
-        const elementNew = document.getElementById(controlName + "-new")
-        const elementDesc = document.getElementById(controlName + "-desc")
-
-        elementMain.classList = "control-main disabled"
-        elementNew.setAttribute("disabled", true)
-        elementDesc.innerHTML = "MISSING: " + elementDesc.innerHTML
+      // if the element can have a shortcut (even if there isn't any)
+      if (objExceptions[controlName] === undefined) {
+        // apply current shortcut
+        const shortcut = getShortcut(desc)
+        currentShortcuts[controlName] = shortcut
+        const elementsCurrent = getElementsByIdAndNames(controlName + "-current")
+        for (const elemCurrent of elementsCurrent) {
+          elemCurrent.innerText = shortcut
+        }
       } else {
-        const elementsMain = document.getElementsByName(controlName)
-        const elementsNew = document.getElementsByName(controlName + "-new")
-        const elementsDesc = document.getElementsByName(controlName + "-desc")
+        // inputs are disabled
+        const elementsNew = getElementsByIdAndNames(controlName + "-new")
+        for (const elemNew of elementsNew) {
+          elemNew.disabled = true
+        }
+      }
+    } else {
+      // description with MISSING
+      for (const elemDesc of elementsDesc) {
+        elemDesc.innerHTML = "MISSING: " + elemDesc.innerHTML
+      }
 
-        elementsMain.forEach((elem) => {
-          elem.classList = "control-main disabled"
-        })
-        elementsNew.forEach((elem) => {
-          elem.setAttribute("disabled", true)
-        })
-        elementsDesc.forEach((elem) => {
-          elem.innerHTML = "MISSING: " + elem.innerHTML
-        })
+      // control-main elements are disabled
+      const elementsMain = getElementsByIdAndNames(controlName)
+      for (const elemMain of elementsMain) {
+        elemMain.classList = "control-main disabled"
+      }
+
+      // inputs are disabled
+      const elementsNew = getElementsByIdAndNames(controlName + "-new")
+      for (const elemNew of elementsNew) {
+        elemNew.disabled = true
       }
     }
   }
+}
+
+function getElementsByIdAndNames(name) {
+  let elements = []
+  const byId = document.getElementById(name)
+  // get element by Id
+  if (byId !== null) {
+    elements.push(byId)
+  }
+
+  // get elements by name
+  const byName = document.getElementsByName(name)
+  for (const el of byName) {
+    elements.push(el)
+  }
+
+  return elements
 }
 
 function downloadFile(fileName) {
@@ -422,7 +465,7 @@ async function getSrcControl(controlName, faction, parent) {
 }
 
 // { 'controlName': 'control description'}
-async function getControlsData(arrayDataIn) {
+async function getControlsDesc(arrayDataIn) {
   const readControlsList = await readFile("./assets/data/json/controlsList.json")
   let objControlsList = JSON.parse(readControlsList)
   // let controlsData = objControlsList
