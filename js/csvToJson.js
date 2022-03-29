@@ -22,10 +22,9 @@ function createFactionTreeStructure() {
     const columns = row.split(",")
     const name = columns[0]
     const faction = columns[1]
-    // const rank = parseInt(columns[2])
-    const parent = columns[3]
-    const branch = columns[4]
-    const gen = parseInt(columns[5])
+    const parent = columns[2]
+    const branch = columns[3]
+    const gen = parseInt(columns[4])
 
     controlsList[name] = ""
 

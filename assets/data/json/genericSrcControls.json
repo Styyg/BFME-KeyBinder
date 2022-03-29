@@ -127,13 +127,15 @@
     "CONTROLBAR:ConstructGondorTrebuchet": "stop_bombard.png",
     "CONTROLBAR:ConstructTreebeard": "stop_bombard.png",
     "CONTROLBAR:ConstructDwarvenCatapult": "stop_bombard.png",
+    "CONTROLBAR:ConstructGoodBombardShip": "stop_bombard.png",
     "CONTROLBAR:ConstructIsengardSiegeBallista": "stop_bombard2.png",
     "CONTROLBAR:ConstructMordorCatapult": "stop_bombard2.png",
     "CONTROLBAR:ConstructAngmarTrollSling": "stop_bombard2.png",
     "CONTROLBAR:ConstructMordorMountainTroll": "stop_bombard2.png",
     "CONTROLBAR:ConstructGoblinCaveTroll": "stop_bombard2.png",
     "CONTROLBAR:ConstructWildMountainGiant": "stop_bombard2.png",
-    "CONTROLBAR:SummonGiants": "stop_bombard2.png"
+    "CONTROLBAR:SummonGiants": "stop_bombard2.png",
+    "CONTROLBAR:ConstructEvilBombardShip": "stop_bombard2.png"
   },
   "CONTROLBAR:NoAutoAcquire": {
     "CONTROLBAR:ConstructIsengardSiegeBallista": "acquire_off_ballista.png",
@@ -347,7 +349,6 @@
   "CONTROLBAR:WitchkingMorgulCorruption": "WitchKingMorgulCorruption.png",
   "CONTROLBAR:ConstructElvenBattleTower": "Elves_BattleTower.png",
   "CONTROLBAR:ConstructElvenWatchtowerExpansion": "Elves_BattleTower.png",
-  "CONTROLBAR:ConstructDwarvenWallHub": "Dwarves_WallHub.png",
   "CONTROLBAR:Command_DwarvenWallUpgradeToHub": "Dwarves_WallHub.png",
   "CONTROLBAR:Command_ConstructDwarvenWallHubExpansion": "Dwarves_WallHub.png",
   "CONTROLBAR:SpecialAbilityFireDrakeInferno": "Goblins_DrakeInferno.png",
