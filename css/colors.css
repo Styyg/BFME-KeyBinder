@@ -90,3 +90,7 @@
 .control-main.misc > .control-main.misc {
   background-color: rgb(241, 241, 241);
 }
+
+.bgdark {
+  background-color: rgb(65, 65, 65);
+}
