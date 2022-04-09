@@ -111,6 +111,7 @@
           "CONTROLBAR:GondorBoromirHotkey": { "CONTROLBAR:HornofGondor": {}, "CONTROLBAR:CaptainofGondor": {} },
           "CONTROLBAR:GondorAragornHotkey": { "CONTROLBAR:Athelas": {}, "CONTROLBAR:BladeMaster": {}, "CONTROLBAR:Elendil": {}, "CONTROLBAR:Oathbreakers": {} },
           "CONTROLBAR:GandalfTheWhiteHotkey": {
+            "CONTROLBAR:SpecialAbilityShieldBubble": {},
             "CONTROLBAR:WizardBlast": {},
             "CONTROLBAR:LightningSword": {},
             "CONTROLBAR:Shadowfax": {},

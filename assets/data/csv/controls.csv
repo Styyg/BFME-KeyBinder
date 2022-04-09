@@ -111,6 +111,7 @@ CONTROLBAR:BladeMaster,men,CONTROLBAR:GondorAragornHotkey,basic,3
 CONTROLBAR:Elendil,men,CONTROLBAR:GondorAragornHotkey,basic,3
 CONTROLBAR:Oathbreakers,men,CONTROLBAR:GondorAragornHotkey,basic,3
 CONTROLBAR:GandalfTheWhiteHotkey,men,CONTROLBAR:SelectRevivablesMenFortress,basic,2
+CONTROLBAR:SpecialAbilityShieldBubble,men,CONTROLBAR:GandalfTheWhiteHotkey,basic,3
 CONTROLBAR:WizardBlast,men,CONTROLBAR:GandalfTheWhiteHotkey,basic,3
 CONTROLBAR:LightningSword,men,CONTROLBAR:GandalfTheWhiteHotkey,basic,3
 CONTROLBAR:Shadowfax,men,CONTROLBAR:GandalfTheWhiteHotkey,basic,3
