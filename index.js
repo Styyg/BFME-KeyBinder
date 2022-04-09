@@ -114,37 +114,41 @@ async function createRowControl(obj, faction, controlName, HTMLparent, gen, pare
   }
 
   // neither id or name found, id is set
-  if (arrayNames.length == 0 && elementId === null) {
-    id["idMain"] = controlName
-    id["idCurrent"] = controlName + "-current"
-    id["idNew"] = controlName + "-new"
-    id["idDesc"] = controlName + "-desc"
-  }
+  // if (arrayNames.length == 0 && elementId === null) {
+  //   id["idMain"] = controlName
+  //   id["idCurrent"] = controlName + "-current"
+  //   id["idNew"] = controlName + "-new"
+  //   id["idDesc"] = controlName + "-desc"
+  // }
 
   // elements with name are found OR id is found, name is set
-  if (arrayNames.length > 0 || elementId !== null) {
-    name["nameMain"] = controlName
-    name["nameCurrent"] = controlName + "-current"
-    name["nameNew"] = controlName + "-new"
-    name["nameDesc"] = controlName + "-desc"
-  }
+  // if (arrayNames.length > 0 || elementId !== null) {
+  // name["nameMain"] = controlName
+  // name["nameCurrent"] = controlName + "-current"
+  // name["nameNew"] = controlName + "-new"
+  // name["nameDesc"] = controlName + "-desc"
+  const nameMain = controlName
+  const nameCurrent = nameMain + "-current"
+  const nameNew = nameMain + "-new"
+  const nameDesc = nameMain + "-desc"
+  // }
 
   // element with id is found, delete id as name is now set
-  if (elementId !== null) {
-    const elementCurrent = document.getElementById(controlName + "-current")
-    const elementNew = document.getElementById(controlName + "-new")
-    const elementDesc = document.getElementById(controlName + "-desc")
+  // if (elementId !== null) {
+  //   const elementCurrent = document.getElementById(controlName + "-current")
+  //   const elementNew = document.getElementById(controlName + "-new")
+  //   const elementDesc = document.getElementById(controlName + "-desc")
 
-    elementId.setAttribute("name", name["nameMain"])
-    elementCurrent.setAttribute("name", name["nameCurrent"])
-    elementNew.setAttribute("name", name["nameNew"])
-    elementDesc.setAttribute("name", name["nameDesc"])
+  //   elementId.setAttribute("name", name["nameMain"])
+  //   elementCurrent.setAttribute("name", name["nameCurrent"])
+  //   elementNew.setAttribute("name", name["nameNew"])
+  //   elementDesc.setAttribute("name", name["nameDesc"])
 
-    elementId.removeAttribute("id")
-    elementCurrent.removeAttribute("id")
-    elementNew.removeAttribute("id")
-    elementDesc.removeAttribute("id")
-  }
+  //   elementId.removeAttribute("id")
+  //   elementCurrent.removeAttribute("id")
+  //   elementNew.removeAttribute("id")
+  //   elementDesc.removeAttribute("id")
+  // }
 
   const srcControl = await getSrcControl(controlName, faction, parent)
   // const label = controlName.split(":")[1]
@@ -159,12 +163,12 @@ async function createRowControl(obj, faction, controlName, HTMLparent, gen, pare
     toggleClick = "toggleClick"
   }
 
-  const newDiv = `<div id="${id["idMain"]}" name="${name["nameMain"]}" class="control-main ${faction}" ${hidden}>
+  const newDiv = `<div name="${nameMain}" class="control-main ${faction}" ${hidden}>
     <div class="${toggleClick}">
       <div class="control-row">
         <img class="icon" src="./assets/images/${srcControl}">
 
-        <div class="description" id="${id["idDesc"]}" name="${name["nameDesc"]}" >
+        <div class="description" name="${nameDesc}" >
           ${controlName}
         </div>
         <div class="shortcuts">
@@ -172,10 +176,10 @@ async function createRowControl(obj, faction, controlName, HTMLparent, gen, pare
 
           <div class="current-new">
               <div>
-                  current : <label class="current" id="${id["idCurrent"]}" name="${name["nameCurrent"]}"></label>
+                  current : <label class="current" name="${nameCurrent}"></label>
               </div>
               <div>
-                  new : <input id="${id["idNew"]}" name="${name["nameNew"]}" class="small-input" maxlength="1"></input>
+                  new : <input name="${nameNew}" class="small-input" maxlength="1"></input>
               </div>
           </div>
         </div>
@@ -186,11 +190,12 @@ async function createRowControl(obj, faction, controlName, HTMLparent, gen, pare
 
   // add html element to parent
   HTMLparent.insertAdjacentHTML("beforeend", newDiv)
-  const currentDiv = HTMLparent.lastChild
+  // const currentDiv = HTMLparent.lastChild
 
-  if (arrayNames.length > 0 || elementId !== null) {
-    addInputForDuplicates(name["nameNew"])
-  }
+  // if (arrayNames.length > 0 || elementId !== null) {
+  //   addInputForDuplicates(nameNew)
+  addIdInput(nameNew)
+  // }
 }
 
 function addPreviewChilds() {
@@ -261,14 +266,14 @@ async function deleteShortcutsForExceptions() {
   }
 }
 
-function addInputForDuplicates(id) {
+function addIdInput(id) {
   // add new input
   let input
   if (document.getElementById(id) === null) {
     const newInput = `<input id="${id}" maxlength="1" type="text"></input>`
-    const divDuplicates = document.getElementById("duplicates")
-    divDuplicates.insertAdjacentHTML("beforeend", newInput)
-    input = divDuplicates.lastChild
+    const divShortcuts = document.getElementById("new-shortcuts")
+    divShortcuts.insertAdjacentHTML("beforeend", newInput)
+    input = divShortcuts.lastChild
   } else {
     input = document.getElementById(id)
   }
