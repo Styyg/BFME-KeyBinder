@@ -1,10 +1,13 @@
 let arrayDataIn
 // used for better treatment, but will send a broken file
 let arrayDataInWithoutSpaces
-let regexp
+let bufferData
+const newFileData = {}
 let currentShortcuts = {}
 const arrayFaction = ["men", "elves", "dwarves", "isengard", "mordor", "goblins", "angmar", "misc"]
 const arrayBranch = ["basic", "power", "inn"]
+const fileToExtract = "data\\lotr.str"
+const sizePosInBigHeader = 4
 let objGenericSrc
 
 function init() {
@@ -31,19 +34,18 @@ function setEventListeners() {
 
     const reader = new FileReader()
     reader.onload = function fileReadCompleted() {
-      rawDataIn = reader.result
-      // console.log(rawDataIn)
-      // console.log(JSON.stringify(rawDataIn)) // used to see \n and \r in console
+      bufferData = reader.result
+      const extractedFile = extractFileFromBIG(fileToExtract, bufferData)
 
-      regexp = getLineBreakFormat(rawDataIn)
+      const regexp = getLineBreakFormat(extractedFile)
 
       // \t = tab, got some problems with tab at the end of control's name. map is used to trim all elements
-      arrayDataInWithoutSpaces = rawDataIn
+      arrayDataInWithoutSpaces = extractedFile
         .replaceAll("\t", "")
         .split(regexp)
         .map((element) => element.trim())
 
-      arrayDataIn = rawDataIn.split(regexp)
+      arrayDataIn = extractedFile.split(regexp)
 
       // reset factions div to avoid duplication
       for (const element of document.getElementsByName("branch")) {
@@ -59,13 +61,132 @@ function setEventListeners() {
       })
     }
     // read data
-    reader.readAsText(file, "windows-1252")
+    reader.readAsArrayBuffer(file)
   })
 
   btnDownload.addEventListener("click", () => {
     // need to run some test before accepting keys
     downloadFile(fileName)
   })
+}
+
+// extract specified file as binary from the BIGF archive
+function extractFileFromBIG(fileToExtract, BIG_File) {
+  // type of big file, so far i've seen only BIGF or BIG4 for BFME files
+  // const decoder = new TextDecoder("utf-8")
+  // const type = decoder.decode(new DataView(BIG_File, 0, 4))
+
+  // size of the whole big archive file
+  // const archiveSize = new DataView(BIG_File).getUint32(4, true)
+  // number of files present in big file
+  const nbFiles = new DataView(BIG_File).getUint32(8)
+  // size of the header, right before files data
+  // const headerSize = new DataView(BIG_File).getUint32(12)
+
+  newFileData["allFiles"] = []
+
+  let dataStartPos = 0
+  let dataSize = 0
+  // files header start at byte n°16
+  let readOffset = 16
+  // for each file in archive, header data are stored
+  for (let i = 0; i < nbFiles; i++) {
+    const headerStartPos = readOffset
+    const fDataStartPos = new DataView(BIG_File).getUint32(readOffset)
+    readOffset += 4
+    const fDataSize = new DataView(BIG_File).getUint32(readOffset)
+    readOffset += 4
+
+    // console.log(fDataStartPos)
+    // console.log(fDataSize)
+
+    let fileName = ""
+    let dataView = new DataView(BIG_File).getInt8(readOffset)
+    while (dataView != "") {
+      fileName += String.fromCharCode(dataView)
+      readOffset++
+      dataView = new DataView(BIG_File).getInt8(readOffset)
+    }
+
+    readOffset += 1 // +1 to skip the null byte
+
+    newFileData["allFiles"].push({
+      dataStartPos: fDataStartPos,
+      dataSize: fDataSize,
+      headerStartPos: headerStartPos,
+      fileName: fileName,
+    })
+
+    if (fileName == fileToExtract) {
+      // newFileData["dataStartPos"] = fDataStartPos
+      // newFileData["dataSize"] = fDataSize
+      // newFileData["headerStartPos"] = headerStartPos
+      dataStartPos = fDataStartPos
+      dataSize = fDataSize
+      break
+    }
+  }
+
+  console.log(newFileData)
+  // return null if file is not found
+  if (dataSize == 0) {
+    console.log("Err: file " + fileToExtract + " not found")
+    return null
+  }
+
+  // encoding: lotr.str is windows-1252 (latin1 also works), commandmap.ini is utf-8
+  const decoderWindows1252 = new TextDecoder("windows-1252")
+  const fileData = new DataView(BIG_File, dataStartPos, dataSize)
+  const fileDataStr = decoderWindows1252.decode(fileData)
+  newFileData["dataStr"] = fileDataStr
+
+  return fileDataStr
+}
+
+function replaceFileInBigArchive(newFile) {
+  const arrayFiles = newFileData["allFiles"]
+
+  let startIndex = 0
+  // get index of file to modify
+  while (startIndex < arrayFiles.length && arrayFiles[startIndex]["fileName"] != fileToExtract) {
+    startIndex++
+  }
+
+  const pos = arrayFiles[startIndex]["dataStartPos"]
+  const size = arrayFiles[startIndex]["dataSize"]
+  const headerSizePos = arrayFiles[startIndex]["headerStartPos"] + 4
+  const encoded = new TextEncoder("windows-1252", { NONSTANDARD_allowLegacyEncoding: true }).encode(newFile)
+
+  // append buffers to make the new big archive
+  const newData = appendBuffer(appendBuffer(bufferData.slice(0, pos), encoded), bufferData.slice(pos + size))
+
+  // overwrite whole archive size in header
+  const dataView = new DataView(newData)
+  dataView.setUint32(sizePosInBigHeader, newData.byteLength, true)
+
+  const newFileSize = newFile.length
+
+  // overwrite file's size in global header
+  dataView.setUint32(headerSizePos, newFileSize)
+  arrayFiles[startIndex]["dataSize"] = newFileSize
+
+  // update start postion of all files after the one modified (because of the size change)
+  for (let i = startIndex + 1; i < arrayFiles.length; i++) {
+    const headerPos = arrayFiles[i]["headerStartPos"]
+    const newStartPos = arrayFiles[i - 1]["dataStartPos"] + arrayFiles[i - 1]["dataSize"]
+
+    dataView.setUint32(headerPos, newStartPos)
+    arrayFiles[i]["dataStartPos"] = newStartPos
+  }
+
+  return newData
+}
+
+function appendBuffer(buffer1, buffer2) {
+  let tmp = new Uint8Array(buffer1.byteLength + buffer2.byteLength)
+  tmp.set(new Uint8Array(buffer1), 0)
+  tmp.set(new Uint8Array(buffer2), buffer1.byteLength)
+  return tmp.buffer
 }
 
 function getNavigatorLanguage() {
@@ -445,8 +566,9 @@ function downloadFile(fileName) {
   const lengthControls = Object.keys(newShortcuts).length
   if (lengthControls > 0) {
     const newFile = getFileWithNewShortcuts(newShortcuts)
-    const encoded = new TextEncoder("windows-1252", { NONSTANDARD_allowLegacyEncoding: true }).encode(newFile)
-    download(encoded, fileName)
+    // const encoded = new TextEncoder("windows-1252", { NONSTANDARD_allowLegacyEncoding: true }).encode(newFile)
+    // download(encoded, fileName)
+    download(newFile, fileName)
   }
 }
 
@@ -495,7 +617,7 @@ async function getControlsDesc(arrayDataIn) {
 }
 
 function testFile(files) {
-  const maxFileSize = 2 * 1024 * 1024 //2MB
+  const maxFileSize = 10 * (1024 * 1024) //10MB
   const allowedExtension = ["str", "big"]
   const file = files[0]
   const errLabel = document.getElementById("errInputFile")
@@ -517,8 +639,8 @@ function testFile(files) {
 
   // wrong file size
   if (file.size > maxFileSize) {
-    console.log("File selected is too big : " + file.size + "o, max is : " + maxFileSize + "o")
-    errLabel.textContent = "File selected is too big, 2Mo max"
+    console.log("File selected is too big : " + parseInt(file.size / (1024 * 1024)) + "Mo, max is : " + maxFileSize / (1024 * 1024) + "Mo")
+    errLabel.textContent = "File selected is too big, " + maxFileSize / (1024 * 1024) + "Mo max"
     errLabel.style.visibility = "visible"
     return
   }
@@ -552,9 +674,7 @@ function getShortcut(str) {
 }
 
 function getFileWithNewShortcuts(newShortcuts) {
-  const arrayControlsNames = Object.keys(newShortcuts)
-
-  arrayControlsNames.forEach((controlName) => {
+  for (const controlName in newShortcuts) {
     index = arrayDataInWithoutSpaces.indexOf(controlName) // get ControlBar index
 
     // if we get the ControlBar
@@ -597,13 +717,13 @@ function getFileWithNewShortcuts(newShortcuts) {
     } else {
       console.log(controlName + " was not found")
     }
-  })
+    // })
+  }
 
-  let newFile
-  if (regexp.source == "\\r\\n") newFile = arrayDataIn.join("\r\n")
-  else newFile = arrayDataIn.join("\n")
+  const newFile = arrayDataIn.join("\n")
+  const bigFile = replaceFileInBigArchive(newFile)
 
-  return newFile
+  return bigFile
 }
 
 function isLetter(str) {
