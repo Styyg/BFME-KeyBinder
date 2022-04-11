@@ -398,6 +398,9 @@ CONTROLBAR:UseStick,dwarves,CONTROLBAR:ConstructElvenHobbitShirrif,inn,2
 CONTROLBAR:PurchaseUpgradeDwarvenBasicTraining,dwarves,CONTROLBAR:ConstructElvenHobbitShirrif,inn,2
 CONTROLBAR:GoodPlayerExperienceMenu,dwarves,,power,0
 CONTROLBAR:SummonHobbitAllies,dwarves,CONTROLBAR:GoodPlayerExperienceMenu,power,1
+OBJECT:HordeHobbits,dwarves,CONTROLBAR:SummonHobbitAllies,power,2
+CONTROLBAR:tooltipCommand_ToggleEntRockThrow,dwarves,OBJECT:HordeHobbits,power,3
+CONTROLBAR:UseStick,dwarves,OBJECT:HordeHobbits,power,3
 OBJECT:RohanFrodo,dwarves,CONTROLBAR:SummonHobbitAllies,power,2
 CONTROLBAR:tooltipCommand_ToggleEntRockThrow,dwarves,OBJECT:RohanFrodo,power,3
 CONTROLBAR:UseSword,dwarves,OBJECT:RohanFrodo,power,3

@@ -414,6 +414,7 @@
     "power": {
       "CONTROLBAR:GoodPlayerExperienceMenu": {
         "CONTROLBAR:SummonHobbitAllies": {
+          "OBJECT:HordeHobbits": { "CONTROLBAR:tooltipCommand_ToggleEntRockThrow": {}, "CONTROLBAR:UseStick": {} },
           "OBJECT:RohanFrodo": {
             "CONTROLBAR:tooltipCommand_ToggleEntRockThrow": {},
             "CONTROLBAR:UseSword": {},
