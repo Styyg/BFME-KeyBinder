@@ -35,6 +35,12 @@ function setEventListeners() {
       if (extensionName == "big") {
         // need to extract file from big archive
         extractedFile = File.extractFileFromBIG(data)
+
+        if (extractedFile == null) {
+          errFileNotFound()
+          loadingRoller.hidden = true
+          return
+        }
       } else {
         // not need to extract file
         extractedFile = data
@@ -81,6 +87,13 @@ function setEventListeners() {
       displayFaction(faction)
     })
   }
+}
+
+function errFileNotFound() {
+  console.log("file not found")
+  const errLabel = document.getElementById("errInputFile")
+  errLabel.innerText = "data\\lotr.str was not found in big archive"
+  errLabel.hidden = false
 }
 
 function displayFaction(faction) {

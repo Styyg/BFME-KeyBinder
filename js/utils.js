@@ -8,7 +8,7 @@ export function testFile(files) {
 
   // no file
   if (files.length === 0) {
-    errLabel.style.visibility = "hidden"
+    errLabel.hidden = true
     return
   }
 
@@ -17,7 +17,7 @@ export function testFile(files) {
   const extensionName = array[array.length - 1]
   if (!allowedExtension.includes(extensionName)) {
     errLabel.textContent = "Invalid format, .str or .big is required"
-    errLabel.style.visibility = "visible"
+    errLabel.hidden = false
     return
   }
 
@@ -25,11 +25,11 @@ export function testFile(files) {
   if (file.size > maxFileSize) {
     console.log("File selected is too big : " + parseInt(file.size / (1024 * 1024)) + "Mo, max is : " + maxFileSize / (1024 * 1024) + "Mo")
     errLabel.textContent = "File selected is too big, " + maxFileSize / (1024 * 1024) + "Mo max"
-    errLabel.style.visibility = "visible"
+    errLabel.hidden = false
     return
   }
 
-  errLabel.style.visibility = "hidden"
+  errLabel.hidden = true
   return true
 }
 

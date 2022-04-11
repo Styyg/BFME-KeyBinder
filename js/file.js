@@ -4,7 +4,7 @@ const newFileData = {}
 const sizePosInBigHeader = 4
 const fileToExtract = "data\\lotr.str"
 let BIGbufferData
-let startIndex = 0
+let startIndex
 
 // extract specified file as binary from the BIGF archive
 export function extractFileFromBIG(BIG_File) {
@@ -24,6 +24,7 @@ export function extractFileFromBIG(BIG_File) {
 
   // files header start at byte n°16
   let readOffset = 16
+  startIndex = -1
   // for each file in archive, header data are stored
   for (let i = 0; i < nbFiles; i++) {
     const headerStartPos = readOffset
@@ -54,14 +55,14 @@ export function extractFileFromBIG(BIG_File) {
     }
   }
 
-  const dataStartPos = newFileData["allFiles"][startIndex]["dataStartPos"]
-  const dataSize = newFileData["allFiles"][startIndex]["dataSize"]
-
   // return null if file is not found
-  if (dataSize == 0) {
+  if (startIndex == -1) {
     console.log("Err: file " + fileToExtract + " not found")
     return null
   }
+
+  const dataStartPos = newFileData["allFiles"][startIndex]["dataStartPos"]
+  const dataSize = newFileData["allFiles"][startIndex]["dataSize"]
 
   // encoding: lotr.str is windows-1252 (latin1 also works), commandmap.ini is utf-8
   const decoderWindows1252 = new TextDecoder("windows-1252")
