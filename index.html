@@ -74,36 +74,36 @@
         <h5>Select a faction:</h5>
 
         <div>
-          <div class="icon-faction center men">
-            <img src="./assets/images/faction/gondor.webp" alt="" onclick="displayFaction('men')" />
+          <div class="icon-faction center">
+            <img id="displayMen" src="./assets/images/faction/gondor.webp" alt="" />
           </div>
 
           <div class="icon-faction center">
-            <img src="./assets/images/faction/elfe.webp" alt="" onclick="displayFaction('elves')" />
+            <img id="displayElves" src="./assets/images/faction/elfe.webp" alt="" />
           </div>
 
           <div class="icon-faction center">
-            <img src="./assets/images/faction/nain.webp" alt="" onclick="displayFaction('dwarves')" />
+            <img id="displayDwarves" src="./assets/images/faction/nain.webp" alt="" />
           </div>
 
           <div class="icon-faction center">
-            <img src="./assets/images/faction/isengard.webp" alt="" onclick="displayFaction('isengard')" />
+            <img id="displayIsengard" src="./assets/images/faction/isengard.webp" alt="" />
           </div>
 
           <div class="icon-faction center">
-            <img src="./assets/images/faction/mordor.webp" alt="" onclick="displayFaction('mordor')" />
+            <img id="displayMordor" src="./assets/images/faction/mordor.webp" alt="" />
           </div>
 
           <div class="icon-faction center">
-            <img src="./assets/images/faction/gobelin.webp" alt="" onclick="displayFaction('goblins')" />
+            <img id="displayGoblins" src="./assets/images/faction/gobelin.webp" alt="" />
           </div>
 
           <div class="icon-faction center">
-            <img src="./assets/images/faction/angmar.webp" alt="" onclick="displayFaction('angmar')" />
+            <img id="displayAngmar" src="./assets/images/faction/angmar.webp" alt="" />
           </div>
 
           <div class="icon-faction center">
-            <img src="./assets/images/misc/AttackMove.png" alt="" onclick="displayFaction('misc')" />
+            <img id="displayMisc" src="./assets/images/misc/AttackMove.png" alt="" />
           </div>
         </div>
 
@@ -160,7 +160,7 @@
           <div id="uncategorized"></div>
         </div>
 
-        <div id="new-shortcuts"></div>
+        <div id="new-shortcuts" hidden></div>
       </div>
     </div>
 
@@ -184,6 +184,6 @@
     </script>
     <script src="https://cdn.jsdelivr.net/gh/inexorabletash/text-encoding/lib/encoding-indexes.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/inexorabletash/text-encoding/lib/encoding.js"></script>
-    <script src="./index.js"></script>
+    <script src="./index.js" type="module"></script>
   </body>
 </html>
