@@ -1,5 +1,5 @@
-import * as Utils from "./js/utils.js"
-import * as File from "./js/file.js"
+import * as Utils from "./utils.js"
+import * as File from "./file.js"
 
 function init() {
   // document.getElementById("main-div").hidden = false
@@ -154,7 +154,7 @@ async function createRowControl(obj, faction, controlName, HTMLparent, gen, pare
   const newDiv = `<div name="${nameMain}" class="control-main ${faction}" ${hidden}>
     <div class="${toggleClick}">
       <div class="control-row">
-        <img class="icon" src="./assets/images/${srcControl}">
+        <img class="icon" src="${srcControl}">
 
         <div class="description" name="${nameDesc}" >
           ${controlName}
@@ -227,7 +227,7 @@ function addToggleEventListeners() {
 
 // some controls can't have shortcuts like inn, power menu etc, shortcuts elements are disabled for thoses
 async function deleteShortcutsForExceptions() {
-  const exceptions = await File.readFile("./assets/data/json/exceptions.json")
+  const exceptions = await File.readFile("../assets/data/json/exceptions.json")
   const objExceptions = JSON.parse(exceptions)
 
   for (const controlName in objExceptions) {
@@ -282,9 +282,10 @@ function addNewShortcutsInput(id) {
 async function createHTMLComponents() {
   const arrayFaction = ["men", "elves", "dwarves", "isengard", "mordor", "goblins", "angmar", "misc"]
   const arrayBranch = ["basic", "power", "inn"]
-  const readControlsFactionTree = await File.readFile("./assets/data/json/controlsFactionTree.json")
+  const readControlsFactionTree = await File.readFile("../assets/data/json/controlsFactionTree.json")
   const objControlsFactionTree = JSON.parse(readControlsFactionTree)
 
+  // create all rows for shortcurts
   for (const faction of arrayFaction) {
     for (const branch of arrayBranch) {
       const HTMLparent0 = document.getElementById(faction + "-" + branch)
@@ -339,7 +340,7 @@ async function createHTMLComponents() {
 // extract data from file and apply them to HTML components
 async function extractData(arrayData, arrayDataInWithoutSpaces) {
   const controlsDesc = await getControlsDesc(arrayData, arrayDataInWithoutSpaces)
-  const exceptions = await File.readFile("./assets/data/json/exceptions.json")
+  const exceptions = await File.readFile("../assets/data/json/exceptions.json")
   const objExceptions = JSON.parse(exceptions)
 
   for (const controlName in controlsDesc) {
@@ -384,7 +385,8 @@ async function extractData(arrayData, arrayDataInWithoutSpaces) {
       // const elementsMain = getElementsByIdAndNames(controlName)
       const elementsMain = document.getElementsByName(controlName)
       for (const elemMain of elementsMain) {
-        elemMain.classList = "control-main disabled"
+        // elemMain.classList = "control-main disabled"
+        elemMain.querySelector(".control-row").classList = "control-row disabled"
       }
 
       // inputs are disabled
@@ -402,7 +404,7 @@ async function extractData(arrayData, arrayDataInWithoutSpaces) {
 
 // { 'controlName': 'control description'}
 async function getControlsDesc(arrayDataIn, arrayDataInWithoutSpaces) {
-  const readControlsList = await File.readFile("./assets/data/json/controlsList.json")
+  const readControlsList = await File.readFile("../assets/data/json/controlsList.json")
   let objControlsList = JSON.parse(readControlsList)
   // let controlsData = objControlsList
 

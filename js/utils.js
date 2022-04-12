@@ -82,18 +82,19 @@ export function getNavigatorLanguage() {
 let objGenericSrc
 // get the string of the src of image matching the controlName
 export async function getSrcControl(controlName, faction, parent) {
+  const path = "../assets/images/"
   if (objGenericSrc === undefined) {
-    const readGenericSrc = await readFile("./assets/data/json/genericSrcControls.json")
+    const readGenericSrc = await readFile("../assets/data/json/genericSrcControls.json")
     objGenericSrc = JSON.parse(readGenericSrc)
   }
   let srcControl
   if (objGenericSrc[controlName] === undefined) {
-    srcControl = faction + "/" + controlName.split(":")[1] + ".png"
+    srcControl = path + faction + "/" + controlName.split(":")[1] + ".png"
   } else {
     if (objGenericSrc[controlName][parent] === undefined) {
-      srcControl = "generic/" + objGenericSrc[controlName]
+      srcControl = path + "generic/" + objGenericSrc[controlName]
     } else {
-      srcControl = "generic/" + objGenericSrc[controlName][parent]
+      srcControl = path + "generic/" + objGenericSrc[controlName][parent]
     }
   }
 
