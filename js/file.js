@@ -127,7 +127,7 @@ export function downloadStringsFile(fileName, arrayData, arrayDataWithoutSpaces,
     const controlName = input.id.split("-")[0]
 
     // if (Utils.isLetter(key)) {
-    if (key != "") {
+    if (key != "" && key != '"') {
       newShortcuts[controlName] = {}
       newShortcuts[controlName]["key"] = key
     }
