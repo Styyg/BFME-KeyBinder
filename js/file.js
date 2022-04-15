@@ -180,7 +180,7 @@ function getFileWithNewShortcuts(newShortcuts, arrayData, arrayDataWithoutSpaces
       }
 
       // new shortcut found in row
-      if (searchPos > -1) {
+      if (searchPos > 0) {
         // add & before new shortcut's key
         row = row.slice(0, searchPos) + "&" + row.slice(searchPos)
 
