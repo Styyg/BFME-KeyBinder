@@ -1,6 +1,8 @@
 import * as Utils from "./utils.js"
 import * as File from "./file.js"
 
+const fileToExtract = "data\\lotr.str"
+
 function init() {
   // document.getElementById("main-div").hidden = false
   // createHTMLComponents()
@@ -34,7 +36,7 @@ function setEventListeners() {
       let extractedFile
       if (extensionName == "big") {
         // need to extract file from big archive
-        extractedFile = File.extractFileFromBIG(data)
+        extractedFile = File.extractFileFromBIG(data, fileToExtract)
 
         if (extractedFile == null) {
           errFileNotFound()
@@ -42,7 +44,7 @@ function setEventListeners() {
           return
         }
       } else {
-        // not need to extract file
+        // no need to extract file
         extractedFile = data
       }
 
@@ -64,8 +66,8 @@ function setEventListeners() {
       })
     }
 
-    const array = file.name.split(".")
-    extensionName = array[array.length - 1]
+    const fileNameSplit = fileName.split(".")
+    extensionName = fileNameSplit[fileNameSplit.length - 1]
 
     // read data
     if (extensionName == "big") {
@@ -78,7 +80,7 @@ function setEventListeners() {
   btnDownload.addEventListener("click", () => {
     // need to run some test before accepting keys
     const isBigArchive = extensionName == "big"
-    File.downloadFile(fileName, arrayDataIn, arrayDataInWithoutSpaces, isBigArchive)
+    File.downloadStringsFile(fileName, arrayDataIn, arrayDataInWithoutSpaces, isBigArchive, fileToExtract)
   })
 
   for (const img of iconFaction) {
@@ -92,7 +94,7 @@ function setEventListeners() {
 function errFileNotFound() {
   console.log("file not found")
   const errLabel = document.getElementById("errInputFile")
-  errLabel.innerText = "data\\lotr.str was not found in big archive"
+  errLabel.innerText = fileToExtract + " was not found in big archive"
   errLabel.hidden = false
 }
 

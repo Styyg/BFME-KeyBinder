@@ -2,12 +2,11 @@ import * as Utils from "./utils.js"
 
 const newFileData = {}
 const sizePosInBigHeader = 4
-const fileToExtract = "data\\lotr.str"
 let BIGbufferData
 let startIndex
 
 // extract specified file as binary from the BIGF archive
-export function extractFileFromBIG(BIG_File) {
+export function extractFileFromBIG(BIG_File, fileToExtract) {
   BIGbufferData = BIG_File
   // type of big file, so far i've seen only BIGF or BIG4 for BFME files
   // const decoder = new TextDecoder("utf-8")
@@ -73,7 +72,7 @@ export function extractFileFromBIG(BIG_File) {
   return fileDataStr
 }
 
-export function replaceFileInBigArchive(newFile) {
+function replaceFileInBigArchive(newFile, fileToExtract) {
   const arrayFiles = newFileData["allFiles"]
 
   // get index of file to modify
@@ -118,16 +117,17 @@ export async function readFile(path) {
   return text_data
 }
 
-export function downloadFile(fileName, arrayData, arrayDataWithoutSpaces, isBigArchive) {
+export function downloadStringsFile(fileName, arrayData, arrayDataWithoutSpaces, isBigArchive, fileToExtract) {
   const newShortcuts = {}
   const divNewShortcuts = document.getElementById("new-shortcuts")
   const inputs = divNewShortcuts.querySelectorAll("input")
 
   for (const input of inputs) {
-    const key = input.value.toUpperCase()
+    const key = input.value
     const controlName = input.id.split("-")[0]
 
-    if (Utils.isLetter(key)) {
+    // if (Utils.isLetter(key)) {
+    if (key != "") {
       newShortcuts[controlName] = {}
       newShortcuts[controlName]["key"] = key
     }
@@ -135,18 +135,22 @@ export function downloadFile(fileName, arrayData, arrayDataWithoutSpaces, isBigA
 
   const lengthControls = Object.keys(newShortcuts).length
   if (lengthControls > 0) {
-    const newFile = getFileWithNewShortcuts(newShortcuts, arrayData, arrayDataWithoutSpaces, isBigArchive)
+    const newFile = getFileWithNewShortcuts(newShortcuts, arrayData, arrayDataWithoutSpaces, isBigArchive, fileToExtract)
     download(newFile, fileName)
   }
 }
 
-export function getFileWithNewShortcuts(newShortcuts, arrayData, arrayDataWithoutSpaces, isBigArchive) {
+function getFileWithNewShortcuts(newShortcuts, arrayData, arrayDataWithoutSpaces, isBigArchive, fileToExtract) {
   for (const controlName in newShortcuts) {
     const index = arrayDataWithoutSpaces.indexOf(controlName) // get ControlBar index
 
     // if we get the ControlBar
     if (index > -1) {
-      const key = newShortcuts[controlName]["key"]
+      // const key = newShortcuts[controlName]["key"]
+      let key = newShortcuts[controlName]["key"]
+      if (Utils.isAlphaNum(key)) {
+        key = key.toUpperCase()
+      }
       let offset = 1
       // need to avoid to change shortcuts in commented lines
       while (!arrayDataWithoutSpaces[index + offset].startsWith('"')) {
@@ -156,7 +160,8 @@ export function getFileWithNewShortcuts(newShortcuts, arrayData, arrayDataWithou
       let row = arrayDataWithoutSpaces[index + offset]
 
       // searching for '(&.)' or '[&.]' with . as a single character
-      const regexpParenthesis = new RegExp("(\\[|\\()&.(\\]|\\))")
+      // const regexpParenthesis = new RegExp("(\\[|\\()&.(\\]|\\))")
+      const regexpParenthesis = new RegExp(/(\[|\()&.(\]|\))/)
       const searchPosParenthesis = row.search(regexpParenthesis)
 
       // delete old '(&key)'
@@ -166,7 +171,13 @@ export function getFileWithNewShortcuts(newShortcuts, arrayData, arrayDataWithou
       }
 
       row = row.replaceAll("&", "")
-      const searchPos = row.toUpperCase().search(key)
+
+      let searchPos
+      if (Utils.isAlphaNum(key)) {
+        searchPos = row.toUpperCase().search(key)
+      } else {
+        searchPos = row.search("\\" + key)
+      }
 
       // new shortcut found in row
       if (searchPos > -1) {
@@ -188,7 +199,7 @@ export function getFileWithNewShortcuts(newShortcuts, arrayData, arrayDataWithou
 
   let newFile = arrayData.join("\n")
   if (isBigArchive) {
-    newFile = replaceFileInBigArchive(newFile)
+    newFile = replaceFileInBigArchive(newFile, fileToExtract)
   } else {
     newFile = new TextEncoder("windows-1252", { NONSTANDARD_allowLegacyEncoding: true }).encode(newFile)
   }

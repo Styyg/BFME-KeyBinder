@@ -40,8 +40,12 @@ export function appendBuffer(buffer1, buffer2) {
   return tmp.buffer
 }
 
-export function isLetter(str) {
-  return str.length === 1 && str.match(/[a-z]/i)
+// export function isLetter(str) {
+//   return str.length === 1 && str.match(/[a-z]/i)
+// }
+
+export function isAlphaNum(str) {
+  return str.length === 1 && str.match(/[a-z]|[0-9]/i)
 }
 
 // some files had different line break format varying between \n and \r\n
@@ -61,7 +65,7 @@ export function getShortcut(str) {
     return ""
   }
   const searchPos = str.search("&")
-  if (searchPos > -1 && isLetter(str.charAt(searchPos + 1))) {
+  if (searchPos > -1 && searchPos + 1 < str.length) {
     return str.charAt(searchPos + 1).toUpperCase()
   } else {
     return ""
