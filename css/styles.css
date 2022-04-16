@@ -45,6 +45,10 @@ h6,
   align-items: center;
 }
 
+.rounded-corner {
+  border-radius: 10px;
+}
+
 .disabled img {
   filter: grayscale(100%);
 }
