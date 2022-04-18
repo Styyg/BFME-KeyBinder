@@ -72,7 +72,7 @@ export function extractFileFromBIG(BIG_File, fileToExtract) {
   return fileDataStr
 }
 
-function replaceFileInBigArchive(newFile, fileToExtract) {
+export function replaceFileInBigArchive(newFile, fileToExtract) {
   const arrayFiles = newFileData["allFiles"]
 
   // get index of file to modify
@@ -115,103 +115,4 @@ export async function readFile(path) {
   // read response stream as text
   let text_data = await response.text()
   return text_data
-}
-
-export function downloadStringsFile(fileName, arrayData, arrayDataWithoutSpaces, isBigArchive, fileToExtract) {
-  const newShortcuts = {}
-  const divNewShortcuts = document.getElementById("new-shortcuts")
-  const inputs = divNewShortcuts.querySelectorAll("input")
-
-  for (const input of inputs) {
-    const key = input.value
-    const controlName = input.id.split("-")[0]
-
-    // if (Utils.isLetter(key)) {
-    if (key != "" && key != '"') {
-      newShortcuts[controlName] = {}
-      newShortcuts[controlName]["key"] = key
-    }
-  }
-
-  const lengthControls = Object.keys(newShortcuts).length
-  if (lengthControls > 0) {
-    const newFile = getFileWithNewShortcuts(newShortcuts, arrayData, arrayDataWithoutSpaces, isBigArchive, fileToExtract)
-    download(newFile, fileName)
-  }
-}
-
-function getFileWithNewShortcuts(newShortcuts, arrayData, arrayDataWithoutSpaces, isBigArchive, fileToExtract) {
-  for (const controlName in newShortcuts) {
-    const index = arrayDataWithoutSpaces.indexOf(controlName) // get ControlBar index
-
-    // if we get the ControlBar
-    if (index > -1) {
-      // const key = newShortcuts[controlName]["key"]
-      let key = newShortcuts[controlName]["key"]
-      if (Utils.isAlphaNum(key)) {
-        key = key.toUpperCase()
-      }
-      let offset = 1
-      // need to avoid to change shortcuts in commented lines
-      while (!arrayDataWithoutSpaces[index + offset].startsWith('"')) {
-        offset++
-      }
-
-      let row = arrayDataWithoutSpaces[index + offset]
-
-      // searching for '(&.)' or '[&.]' with . as a single character
-      // const regexpParenthesis = new RegExp("(\\[|\\()&.(\\]|\\))")
-      const regexpParenthesis = new RegExp(/(\[|\()&.(\]|\))/)
-      const searchPosParenthesis = row.search(regexpParenthesis)
-
-      // delete old '(&key)'
-      if (searchPosParenthesis > -1) {
-        // slice and trim to remove space before '[&key]'
-        row = row.replace(regexpParenthesis, "").slice(0, -1).trim() + row.slice(-1)
-      }
-
-      row = row.replaceAll("&", "")
-
-      let searchPos
-      if (Utils.isAlphaNum(key)) {
-        searchPos = row.toUpperCase().search(key)
-      } else {
-        searchPos = row.search("\\" + key)
-      }
-
-      // new shortcut found in row
-      if (searchPos > 0) {
-        // add & before new shortcut's key
-        row = row.slice(0, searchPos) + "&" + row.slice(searchPos)
-
-        // new shortcut NOT found in row
-      } else {
-        // slice are used to keep the \" at the beginning and the end of line
-        row = row.slice(0, -1).trim() + " [&" + key + "]" + row.slice(-1)
-      }
-
-      arrayData[index + offset] = row
-    } else {
-      console.log(controlName + " was not found")
-    }
-    // })
-  }
-
-  let newFile = arrayData.join("\n")
-  if (isBigArchive) {
-    newFile = replaceFileInBigArchive(newFile, fileToExtract)
-  } else {
-    newFile = new TextEncoder("windows-1252", { NONSTANDARD_allowLegacyEncoding: true }).encode(newFile)
-  }
-
-  return newFile
-}
-
-function download(content, filename) {
-  const contentType = "application/octet-stream"
-  const a = document.createElement("a")
-  const blob = new Blob([content], { type: contentType })
-  a.href = window.URL.createObjectURL(blob)
-  a.download = filename
-  a.click()
 }

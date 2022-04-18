@@ -104,3 +104,16 @@ export async function getSrcControl(controlName, faction, parent) {
 
   return srcControl
 }
+
+export function displayFaction(faction) {
+  const mainDivFact = document.getElementById("div-faction")
+  const divsFact = mainDivFact.children
+
+  for (const divFact of divsFact) {
+    if (divFact.id.toLowerCase() == faction.toLowerCase()) {
+      divFact.hidden = false
+    } else {
+      divFact.hidden = true
+    }
+  }
+}
