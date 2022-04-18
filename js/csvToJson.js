@@ -1,16 +1,31 @@
 const fs = require("fs")
-const arrayFaction = ["men", "elves", "dwarves", "isengard", "mordor", "goblins", "angmar", "misc"]
-const arrayBranch = ["basic", "power", "inn", "port"]
-const controlsList = {}
-const controlsFactionTree = {}
-const csvPath = "./assets/data/csv/controls.csv"
+
+const arrayFaction = {
+  rotwk: ["men", "elves", "dwarves", "isengard", "mordor", "goblins", "angmar", "misc"],
+  bfme2: ["men", "elves", "dwarves", "isengard", "mordor", "goblins", "misc"],
+  bfme1: ["men", "rohan", "isengard", "mordor", "misc"],
+}
+const arrayBranch = {
+  rotwk: ["basic", "power", "inn", "port"],
+  bfme2: ["basic", "power", "inn", "port"],
+  bfme1: ["basic", "power"],
+}
+const csvPath = {
+  rotwk: "./assets/data/csv/rotwk.csv",
+  bfme2: "./assets/data/csv/bfme2.csv",
+  bfme1: "./assets/data/csv/bfme1.csv",
+}
+
 const jsonPath = "./assets/data/json/"
 
-function createFactionTreeStructure() {
+function createFactionTreeStructure(game, arrayFile) {
+  const controlsList = {}
+  const controlsFactionTree = {}
+
   // set up the object
-  for (const faction of arrayFaction) {
+  for (const faction of arrayFaction[game]) {
     controlsFactionTree[faction] = {}
-    for (const branch of arrayBranch) {
+    for (const branch of arrayBranch[game]) {
       controlsFactionTree[faction][branch] = {}
     }
   }
@@ -49,14 +64,27 @@ function createFactionTreeStructure() {
     }
   }
 
-  fs.writeFileSync(jsonPath + "controlsList.json", JSON.stringify(controlsList))
-  fs.writeFileSync(jsonPath + "controlsFactionTree.json", JSON.stringify(controlsFactionTree))
+  const listFile = game.toUpperCase() + "-controlsList.json"
+  const treeStructFile = game.toUpperCase() + "-controlsTreeStruct.json"
+
+  fs.writeFileSync(jsonPath + listFile, JSON.stringify(controlsList))
+  fs.writeFileSync(jsonPath + treeStructFile, JSON.stringify(controlsFactionTree))
 }
 
-const file = fs.readFileSync(csvPath, "utf-8")
-const arrayFile = file.split(/\r\n/)
-// delete first row (headers) and store it
-const headers = arrayFile.shift()
+// const ROTWK = "rotwk"
+// const fileROTWK = fs.readFileSync(csvPath[ROTWK], "utf-8")
+// const arrayFileROTWK = fileROTWK.split(/\r\n/)
+// arrayFileROTWK.shift()
+// createFactionTreeStructure(ROTWK, arrayFileROTWK)
 
-// elements in file needs to be in the right order
-createFactionTreeStructure()
+const BFME2 = "bfme2"
+const fileBFME2 = fs.readFileSync(csvPath[BFME2], "utf-8")
+const arrayFileBFME2 = fileBFME2.split(/\r\n/)
+arrayFileBFME2.shift()
+createFactionTreeStructure(BFME2, arrayFileBFME2)
+
+// const BFME1 = "bfme1"
+// const fileBFME1 = fs.readFileSync(csvPath[BFME1], "utf-8")
+// const arrayFileBFME1 = fileBFME1.split(/\r\n/).shift()
+// arrayFileBFME1.shift()
+// createFactionTreeStructure(BFME1, arrayFileBFME1)

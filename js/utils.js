@@ -85,20 +85,33 @@ export function getNavigatorLanguage() {
 
 let objGenericSrc
 // get the string of the src of image matching the controlName
-export async function getSrcControl(controlName, faction, parent) {
+export async function getSrcControl(game, controlName, faction, parent) {
   const path = "../assets/images/"
   if (objGenericSrc === undefined) {
     const readGenericSrc = await readFile("../assets/data/json/genericSrcControls.json")
     objGenericSrc = JSON.parse(readGenericSrc)
   }
+
+  if (controlName == "CONTROLBAR:FireWorks") {
+    console.log()
+  }
+  let genericControl
+  if (objGenericSrc[game][controlName] !== undefined) {
+    genericControl = objGenericSrc[game][controlName]
+  } else {
+    if (objGenericSrc[controlName] !== undefined) {
+      genericControl = objGenericSrc[controlName]
+    }
+  }
+
   let srcControl
-  if (objGenericSrc[controlName] === undefined) {
+  if (genericControl === undefined) {
     srcControl = path + faction + "/" + controlName.split(":")[1] + ".png"
   } else {
-    if (objGenericSrc[controlName][parent] === undefined) {
-      srcControl = path + "generic/" + objGenericSrc[controlName]
+    if (genericControl[parent] === undefined) {
+      srcControl = path + genericControl
     } else {
-      srcControl = path + "generic/" + objGenericSrc[controlName][parent]
+      srcControl = path + genericControl[parent]
     }
   }
 

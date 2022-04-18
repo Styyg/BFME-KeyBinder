@@ -1,32 +1,43 @@
 import * as File from "./file.js"
 import * as Utils from "./utils.js"
 
-export async function createRows(arrayData, arrayDataInWithoutSpaces) {
-  const arrayFaction = ["men", "elves", "dwarves", "isengard", "mordor", "goblins", "angmar", "misc"]
-  const arrayBranch = ["basic", "power", "inn"]
-  const readControlsFactionTree = await File.readFile("../assets/data/json/controlsFactionTree.json")
+export async function createRows(game, arrayData, arrayDataInWithoutSpaces) {
+  const arrayFaction = {
+    rotwk: ["men", "elves", "dwarves", "isengard", "mordor", "goblins", "angmar", "misc"],
+    bfme2: ["men", "elves", "dwarves", "isengard", "mordor", "goblins", "misc"],
+    bfme1: ["men", "rohan", "isengard", "mordor", "misc"],
+  }
+  const arrayBranch = {
+    rotwk: ["basic", "power", "inn", "port"],
+    bfme2: ["basic", "power", "inn", "port"],
+    bfme1: ["basic", "power"],
+  }
+
+  const filePath = "../assets/data/json/" + game.toUpperCase() + "-controlsTreeStruct.json"
+  const readControlsFactionTree = await File.readFile(filePath)
   const objControlsFactionTree = JSON.parse(readControlsFactionTree)
 
   // create all rows for shortcurts
-  for (const faction of arrayFaction) {
-    for (const branch of arrayBranch) {
+  for (const faction of arrayFaction[game]) {
+    for (const branch of arrayBranch[game]) {
       const HTMLparent0 = document.getElementById(faction + "-" + branch)
       // generation 0
       for (const controlName_0 in objControlsFactionTree[faction][branch]) {
         const gen = 0
-        await createRowControl(objControlsFactionTree[faction][branch], faction, controlName_0, HTMLparent0, gen)
+        await createRowControl(game, objControlsFactionTree[faction][branch], faction, controlName_0, HTMLparent0, gen)
         const HTMLparent1 = HTMLparent0.lastChild
 
         // generation 1
         for (const controlName_1 in objControlsFactionTree[faction][branch][controlName_0]) {
           const gen = 1
-          await createRowControl(objControlsFactionTree[faction][branch][controlName_0], faction, controlName_1, HTMLparent1, gen, controlName_0)
+          await createRowControl(game, objControlsFactionTree[faction][branch][controlName_0], faction, controlName_1, HTMLparent1, gen, controlName_0)
           const HTMLparent2 = HTMLparent1.lastChild
 
           // generation 2
           for (const controlName_2 in objControlsFactionTree[faction][branch][controlName_0][controlName_1]) {
             const gen = 2
             await createRowControl(
+              game,
               objControlsFactionTree[faction][branch][controlName_0][controlName_1],
               faction,
               controlName_2,
@@ -40,6 +51,7 @@ export async function createRows(arrayData, arrayDataInWithoutSpaces) {
             for (const controlName_3 in objControlsFactionTree[faction][branch][controlName_0][controlName_1][controlName_2]) {
               const gen = 3
               await createRowControl(
+                game,
                 objControlsFactionTree[faction][branch][controlName_0][controlName_1][controlName_2],
                 faction,
                 controlName_3,
@@ -54,17 +66,17 @@ export async function createRows(arrayData, arrayDataInWithoutSpaces) {
     }
   }
 
-  deleteShortcutsForExceptions()
+  deleteShortcutsForExceptions(game)
   addToggleEventListeners()
   addPreviewChilds()
 
-  await extractData(arrayData, arrayDataInWithoutSpaces)
+  await extractData(game, arrayData, arrayDataInWithoutSpaces)
 }
 
 // extract data from file and apply them to HTML components
-async function extractData(arrayData, arrayDataInWithoutSpaces) {
-  const controlsDesc = await getControlsDesc(arrayData, arrayDataInWithoutSpaces)
-  const exceptions = await File.readFile("../assets/data/json/exceptions.json")
+async function extractData(game, arrayData, arrayDataInWithoutSpaces) {
+  const controlsDesc = await getControlsDesc(game, arrayData, arrayDataInWithoutSpaces)
+  const exceptions = await File.readFile("../assets/data/json/noShortcutsExceptions.json")
   const objExceptions = JSON.parse(exceptions)
 
   for (const controlName in controlsDesc) {
@@ -122,13 +134,16 @@ async function extractData(arrayData, arrayDataInWithoutSpaces) {
       for (const elemNew of elementsNew) {
         elemNew.disabled = true
       }
+
+      console.log("MISSING: " + controlName)
     }
   }
 }
 
 // { 'controlName': 'control description'}
-async function getControlsDesc(arrayDataIn, arrayDataInWithoutSpaces) {
-  const readControlsList = await File.readFile("../assets/data/json/controlsList.json")
+async function getControlsDesc(game, arrayDataIn, arrayDataInWithoutSpaces) {
+  const filePath = "../assets/data/json/" + game.toUpperCase() + "-controlsList.json"
+  const readControlsList = await File.readFile(filePath)
   let objControlsList = JSON.parse(readControlsList)
   // let controlsData = objControlsList
 
@@ -151,7 +166,7 @@ async function getControlsDesc(arrayDataIn, arrayDataInWithoutSpaces) {
   return objControlsList
 }
 
-async function createRowControl(obj, faction, controlName, HTMLparent, gen, parent) {
+async function createRowControl(game, obj, faction, controlName, HTMLparent, gen, parent) {
   let hidden
   if (gen > 0) {
     hidden = "hidden"
@@ -164,7 +179,7 @@ async function createRowControl(obj, faction, controlName, HTMLparent, gen, pare
   const nameNew = nameMain + "-new"
   const nameDesc = nameMain + "-desc"
 
-  const srcControl = await Utils.getSrcControl(controlName, faction, parent)
+  const srcControl = await Utils.getSrcControl(game, controlName, faction, parent)
   // const label = controlName.split(":")[1]
 
   const numberOfChilds = Object.keys(obj[controlName]).length
@@ -263,11 +278,12 @@ function addToggleEventListeners() {
 }
 
 // some controls can't have shortcuts like inn, power menu etc, shortcuts elements are disabled for thoses
-async function deleteShortcutsForExceptions() {
-  const exceptions = await File.readFile("../assets/data/json/exceptions.json")
+async function deleteShortcutsForExceptions(game) {
+  const filePath = "../assets/data/json/noShortcutsExceptions.json"
+  const exceptions = await File.readFile(filePath)
   const objExceptions = JSON.parse(exceptions)
 
-  for (const controlName in objExceptions) {
+  for (const controlName in objExceptions[game]) {
     const elementById = document.getElementById(controlName)
 
     if (elementById !== null) {
@@ -281,10 +297,6 @@ async function deleteShortcutsForExceptions() {
     }
 
     document.getElementById(controlName + "-new").remove()
-    // const elements = getElementsByIdAndNames(controlName + "-new")
-    // for (const elem of elements) {
-    //   elem.remove()
-    // }
   }
 }
 

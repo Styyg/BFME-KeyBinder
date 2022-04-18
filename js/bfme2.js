@@ -7,7 +7,7 @@ const fileToExtract = "data\\lotr.str"
 
 function init() {
   // document.getElementById("main-div").hidden = false
-  // Rows.createRows("rotwk")
+  // Rows.createRows("bfme2")
   setEventListeners()
 }
 
@@ -60,7 +60,7 @@ function setEventListeners() {
       }
       document.getElementById("uncategorized").innerHTML = ""
 
-      const game = "rotwk"
+      const game = "bfme2"
       Rows.createRows(game, arrayDataIn, arrayDataInWithoutSpaces).then(() => {
         mainDiv.hidden = false
         loadingRoller.hidden = true
