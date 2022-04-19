@@ -59,6 +59,7 @@
   "CONTROLBAR:Command_GondorCastleWallHub_BeginWallSpan": "",
   "CONTROLBAR:Command_MenWallUpgradeToHub": "",
   "CONTROLBAR:Command_MenWallUpgradeToRegularGate": "",
+  "CONTROLBAR:ToggleGateOpenClose": "",
   "CONTROLBAR:Command_MenWallUpgradeToPosternGate": "",
   "CONTROLBAR:Command_MenWallUpgradeToTower": "",
   "CONTROLBAR:Command_MenWallUpgradeToTrebuchet": "",

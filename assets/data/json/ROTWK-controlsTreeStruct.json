@@ -91,7 +91,7 @@
       "CONTROLBAR:ConstructMenWallHub": {
         "CONTROLBAR:Command_GondorCastleWallHub_BeginWallSpan": {},
         "CONTROLBAR:Command_MenWallUpgradeToHub": {},
-        "CONTROLBAR:Command_MenWallUpgradeToRegularGate": {},
+        "CONTROLBAR:Command_MenWallUpgradeToRegularGate": { "CONTROLBAR:ToggleGateOpenClose": {} },
         "CONTROLBAR:Command_MenWallUpgradeToPosternGate": {},
         "CONTROLBAR:Command_MenWallUpgradeToTower": {},
         "CONTROLBAR:Command_MenWallUpgradeToTrebuchet": {}
@@ -246,7 +246,7 @@
       "CONTROLBAR:ConstructElvenWallHub": {
         "CONTROLBAR:Command_ElvenCastleWallHub_BeginWallSpan": {},
         "CONTROLBAR:Command_ElvenWallUpgradeToHub": {},
-        "CONTROLBAR:Command_ElvenWallUpgradeToRegularGate": {}
+        "CONTROLBAR:Command_ElvenWallUpgradeToRegularGate": { "CONTROLBAR:ToggleGateOpenClose": {} }
       },
       "CONTROLBAR:ConstructElvenFortress": {
         "CONTROLBAR:ConstructElvenPorter": {},
@@ -375,7 +375,7 @@
       "CONTROLBAR:ConstructDwarvenWallHub": {
         "CONTROLBAR:Command_DwarvenCastleWallHub_BeginWallSpan": {},
         "CONTROLBAR:Command_DwarvenWallUpgradeToHub": {},
-        "CONTROLBAR:Command_DwarvenWallUpgradeToRegularGate": {},
+        "CONTROLBAR:Command_DwarvenWallUpgradeToRegularGate": { "CONTROLBAR:ToggleGateOpenClose": {} },
         "CONTROLBAR:Command_DwarvenWallUpgradeToPosternGate": {},
         "CONTROLBAR:Command_DwarvenWallUpgradeToTower": {},
         "CONTROLBAR:Command_DwarvenWallUpgradeToCatapult": {}
@@ -524,7 +524,7 @@
       "CONTROLBAR:Command_ConstructIsengardCastleWallHub": {
         "CONTROLBAR:Command_IsengardCastleWallHub_BeginWallSpan": {},
         "CONTROLBAR:Command_IsengardWallUpgradeToHub": {},
-        "CONTROLBAR:Command_IsengardWallUpgradeToRegularGate": {}
+        "CONTROLBAR:Command_IsengardWallUpgradeToRegularGate": { "CONTROLBAR:ToggleGateOpenClose": {} }
       },
       "CONTROLBAR:ConstructIsengardFortress": {
         "CONTROLBAR:ConstructIsengardPorter": {},
@@ -952,7 +952,7 @@
       "CONTROLBAR:ConstructDwarvenWallHub": {
         "CONTROLBAR:Command_DwarvenCastleWallHub_BeginWallSpan": {},
         "CONTROLBAR:Command_AngmarWallUpgradeToHub": {},
-        "CONTROLBAR:Command_AngmarWallUpgradeToRegularGate": {},
+        "CONTROLBAR:Command_AngmarWallUpgradeToRegularGate": { "CONTROLBAR:ToggleGateOpenClose": {} },
         "CONTROLBAR:Command_AngmarWallUpgradeToPosternGate": {},
         "CONTROLBAR:Command_AngmarWallUpgradeToTower": {},
         "CONTROLBAR:Command_AngmarWallUpgradeToCatapult": {}

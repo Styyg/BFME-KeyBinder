@@ -88,7 +88,7 @@
       "CONTROLBAR:ConstructMenWallHub": {
         "CONTROLBAR:Command_GondorCastleWallHub_BeginWallSpan": {},
         "CONTROLBAR:Command_MenWallUpgradeToHub": {},
-        "CONTROLBAR:Command_MenWallUpgradeToRegularGate": {},
+        "CONTROLBAR:Command_MenWallUpgradeToRegularGate": { "CONTROLBAR:ToggleGateOpenClose": {} },
         "CONTROLBAR:Command_MenWallUpgradeToPosternGate": {},
         "CONTROLBAR:Command_MenWallUpgradeToTower": {},
         "CONTROLBAR:Command_MenWallUpgradeToTrebuchet": {}
@@ -239,12 +239,12 @@
       "CONTROLBAR:ConstructElvenWallHub": {
         "CONTROLBAR:Command_ElvenCastleWallHub_BeginWallSpan": {},
         "CONTROLBAR:Command_ElvenWallUpgradeToHub": {},
-        "CONTROLBAR:Command_ElvenWallUpgradeToRegularGate": {}
+        "CONTROLBAR:Command_ElvenWallUpgradeToRegularGate": { "CONTROLBAR:ToggleGateOpenClose": {} }
       },
       "CONTROLBAR:ConstructElvenFortress": {
         "CONTROLBAR:ConstructElvenPorter": {},
         "CONTROLBAR:SelectRevivablesElvenFortress": {
-          "CONTROLBAR:ElvenArwenHotkey": { "CONTROLBAR:TheodenMount": {}, "CONTROLBAR:ElvenGrace": {}, "CONTROLBAR:PersonalFlood": {} },
+          "CONTROLBAR:ElvenArwenHotkey": { "CONTROLBAR:TheodenMount": {}, "CONTROLBAR:PersonalFlood": {} },
           "CONTROLBAR:ElvenHaldirHotkey": { "CONTROLBAR:ToggleElvenWarriorWeapons": {}, "CONTROLBAR:HaldirGoldenArrow": {} },
           "CONTROLBAR:ElvenGlorfindelHotkey": {
             "CONTROLBAR:TheodenMount": {},
@@ -258,12 +258,18 @@
             "CONTROLBAR:KnifeFighter": {},
             "CONTROLBAR:ArrowWind": {}
           },
-          "CONTROLBAR:ElvenThranduilHotkey": { "CONTROLBAR:MoveUnseen": {}, "CONTROLBAR:DeadEye": {}, "CONTROLBAR:ThornofVengeance": {} },
+          "CONTROLBAR:ElvenThranduilHotkey": {
+            "CONTROLBAR:TheodenMount": {},
+            "CONTROLBAR:DeadEye": {},
+            "CONTROLBAR:WildWalk": {},
+            "CONTROLBAR:MoveUnseen": {},
+            "CONTROLBAR:ThornofVengeance": {}
+          },
           "CONTROLBAR:ElvenElrondHotkey": {
-            "CONTROLBAR:ElrondFarsight": {},
             "CONTROLBAR:ElvenGrace": {},
-            "CONTROLBAR:ElrondRestoration": {},
-            "CONTROLBAR:ElrondWhirlwind": {}
+            "CONTROLBAR:ElrondFarsight": {},
+            "CONTROLBAR:ElrondWhirlwind": {},
+            "CONTROLBAR:ElrondRestoration": {}
           }
         },
         "CONTROLBAR:SelectUpgradesElvenFortress": {
@@ -361,7 +367,7 @@
       "CONTROLBAR:ConstructDwarvenWallHub": {
         "CONTROLBAR:Command_DwarvenCastleWallHub_BeginWallSpan": {},
         "CONTROLBAR:Command_DwarvenWallUpgradeToHub": {},
-        "CONTROLBAR:Command_DwarvenWallUpgradeToRegularGate": {},
+        "CONTROLBAR:Command_DwarvenWallUpgradeToRegularGate": { "CONTROLBAR:ToggleGateOpenClose": {} },
         "CONTROLBAR:Command_DwarvenWallUpgradeToPosternGate": {},
         "CONTROLBAR:Command_DwarvenWallUpgradeToTower": {},
         "CONTROLBAR:Command_DwarvenWallUpgradeToCatapult": {}
@@ -493,7 +499,7 @@
       "CONTROLBAR:Command_ConstructIsengardCastleWallHub": {
         "CONTROLBAR:Command_IsengardCastleWallHub_BeginWallSpan": {},
         "CONTROLBAR:Command_IsengardWallUpgradeToHub": {},
-        "CONTROLBAR:Command_IsengardWallUpgradeToRegularGate": {}
+        "CONTROLBAR:Command_IsengardWallUpgradeToRegularGate": { "CONTROLBAR:ToggleGateOpenClose": {} }
       },
       "CONTROLBAR:ConstructIsengardFortress": {
         "CONTROLBAR:ConstructIsengardPorter": {},
@@ -514,14 +520,14 @@
             "CONTROLBAR:WizardBlast": {},
             "CONTROLBAR:SpecialAbilitySarumanFireball": {},
             "CONTROLBAR:SpeechCraft": {},
-            "CONTROLBAR:ThunderBolt": {},
-            "CONTROLBAR:Dominate": {}
+            "CONTROLBAR:Dominate": {},
+            "CONTROLBAR:ThunderBolt": {}
           }
         },
         "CONTROLBAR:SelectUpgradesIsengardFortress": {
           "CONTROLBAR:PurchaseUpgradeIsengardFortressMurderOfCrows": {},
-          "CONTROLBAR:PurchaseUpgradeIsengardFortressExcavations": {},
           "CONTROLBAR:PurchaseUpgradeIsengardFortressBurningForges": {},
+          "CONTROLBAR:PurchaseUpgradeIsengardFortressExcavations": {},
           "CONTROLBAR:PurchaseUpgradeIsengardFortressOrcfireMunitions": {},
           "CONTROLBAR:PurchaseUpgradeIsengardFortressIronPlating": {},
           "CONTROLBAR:PurchaseUpgradeIsengardFortressWizardsTower": {}
@@ -542,7 +548,7 @@
           "CONTROLBAR:ThrowFireBombs": {},
           "CONTROLBAR:Knife": {},
           "CONTROLBAR:ArcherBarrage": {},
-          "CONTROLBAR:PurchaseUpgradeMordorBasicTraining": {}
+          "CONTROLBAR:PurchaseUpgradeIsengardBasicTraining": {}
         }
       }
     },
@@ -630,7 +636,7 @@
       "CONTROLBAR:Command_ConstructMordorCastleWallHub09v2": {
         "CONTROLBAR:Command_IsengardCastleWallHub_BeginWallSpan": {},
         "CONTROLBAR:Command_IsengardWallUpgradeToHub": {},
-        "CONTROLBAR:Command_IsengardWallUpgradeToRegularGate": {},
+        "CONTROLBAR:Command_IsengardWallUpgradeToRegularGate": { "CONTROLBAR:ToggleGateOpenClose": {} },
         "CONTROLBAR:Command_MenWallUpgradeToTower": {},
         "CONTROLBAR:Command_DwarvenWallUpgradeToCatapult": {}
       },
