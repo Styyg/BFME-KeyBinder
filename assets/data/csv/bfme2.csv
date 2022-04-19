@@ -91,7 +91,7 @@ CONTROLBAR:GondorFaramirHotkey,men,CONTROLBAR:SelectRevivablesMenFortress,basic,
 CONTROLBAR:ToggleFaramirWeapons,men,CONTROLBAR:GondorFaramirHotkey,basic,3
 CONTROLBAR:WoundingArrow,men,CONTROLBAR:GondorFaramirHotkey,basic,3
 CONTROLBAR:FaramirKnightRanger,men,CONTROLBAR:GondorFaramirHotkey,basic,3
-CONTROLBAR:CaptainofGondor,men,CONTROLBAR:GondorFaramirHotkey,basic,3
+CONTROLBAR:PrinceofIthilien09v2,men,CONTROLBAR:GondorFaramirHotkey,basic,3
 CONTROLBAR:RohanEomerHotkey,men,CONTROLBAR:SelectRevivablesMenFortress,basic,2
 CONTROLBAR:TheodenMount,men,CONTROLBAR:RohanEomerHotkey,basic,3
 CONTROLBAR:ThrowSpear,men,CONTROLBAR:RohanEomerHotkey,basic,3

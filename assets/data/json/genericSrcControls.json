@@ -378,6 +378,7 @@
   "CONTROLBAR:ToggleGateOpenClose": "generic/evacuate_all.png",
   "bfme2": {
     "CONTROLBAR:CaptainofGondor": "men/CaptainOfGondor2.png",
+    "CONTROLBAR:PrinceofIthilien09v2": "men/CaptainOfGondor2.png",
     "CONTROLBAR:HornofGondor": "men/HornofGondor2.png",
     "CONTROLBAR:PurchaseTechnologyGondorFireArrows": "generic/fire_arrow3_BFME2_1.09v2.png",
     "CONTROLBAR:PurchaseUpgradeMenFortressFlamingMunitions": "generic/fire_arrow3_BFME2_1.09v2.png",
@@ -436,7 +437,8 @@
       "OBJECT:RohanFrodo": "generic/UseSword.png",
       "OBJECT:RohanSam": "generic/UseStick.png",
       "OBJECT:RohanMerry": "generic/UseStick.png",
-      "OBJECT:RohanPippin": "generic/UseStick.png"
+      "OBJECT:RohanPippin": "generic/UseStick.png",
+      "CONTROLBAR:ConstructElvenHobbitShirrif": "generic/UseStick.png"
     },
     "CONTROLBAR:HobbitFireCracker": "mordor/ThrowFireBombs.png",
     "CONTROLBAR:SummonBalrogSauron09v2": "generic/SummonBalrog.png",
