@@ -1,7 +1,11 @@
 import * as File from "./file.js"
 import * as Utils from "./utils.js"
 
+let exceptions, readControlsList, readControlsFactionTree
+
 export async function createRows(game, arrayData, arrayDataInWithoutSpaces) {
+  await initJsonFiles(game)
+
   const arrayFaction = {
     rotwk: ["men", "elves", "dwarves", "isengard", "mordor", "goblins", "angmar", "misc"],
     bfme2: ["men", "elves", "dwarves", "isengard", "mordor", "goblins", "misc"],
@@ -13,8 +17,8 @@ export async function createRows(game, arrayData, arrayDataInWithoutSpaces) {
     bfme1: ["basic", "power"],
   }
 
-  const filePath = "../assets/data/json/" + game.toUpperCase() + "-controlsTreeStruct.json"
-  const readControlsFactionTree = await File.readFile(filePath)
+  // const filePath = "../assets/data/json/" + game.toUpperCase() + "-controlsTreeStruct.json"
+  // const readControlsFactionTree = await File.readFile(filePath)
   const objControlsFactionTree = JSON.parse(readControlsFactionTree)
 
   // create all rows for shortcurts
@@ -73,10 +77,21 @@ export async function createRows(game, arrayData, arrayDataInWithoutSpaces) {
   await extractData(game, arrayData, arrayDataInWithoutSpaces)
 }
 
+async function initJsonFiles(game) {
+  // Exceptions JSON
+  let filePath = "../assets/data/json/noShortcutsExceptions.json"
+  exceptions = await File.readFile(filePath)
+  // Game Controls List
+  filePath = "../assets/data/json/" + game.toUpperCase() + "-controlsList.json"
+  readControlsList = await File.readFile(filePath)
+  // Game Controls Tree Structure
+  filePath = "../assets/data/json/" + game.toUpperCase() + "-controlsTreeStruct.json"
+  readControlsFactionTree = await File.readFile(filePath)
+}
+
 // extract data from file and apply them to HTML components
 async function extractData(game, arrayData, arrayDataInWithoutSpaces) {
   const controlsDesc = await getControlsDesc(game, arrayData, arrayDataInWithoutSpaces)
-  const exceptions = await File.readFile("../assets/data/json/noShortcutsExceptions.json")
   const objExceptions = JSON.parse(exceptions)
 
   for (const controlName in controlsDesc) {
@@ -142,8 +157,8 @@ async function extractData(game, arrayData, arrayDataInWithoutSpaces) {
 
 // { 'controlName': 'control description'}
 async function getControlsDesc(game, arrayDataIn, arrayDataInWithoutSpaces) {
-  const filePath = "../assets/data/json/" + game.toUpperCase() + "-controlsList.json"
-  const readControlsList = await File.readFile(filePath)
+  // const filePath = "../assets/data/json/" + game.toUpperCase() + "-controlsList.json"
+  // const readControlsList = await File.readFile(filePath)
   let objControlsList = JSON.parse(readControlsList)
   // let controlsData = objControlsList
 
@@ -277,8 +292,8 @@ function addToggleEventListeners() {
 
 // some controls can't have shortcuts like inn, power menu etc, shortcuts elements are disabled for thoses
 async function deleteShortcutsForExceptions(game) {
-  const filePath = "../assets/data/json/noShortcutsExceptions.json"
-  const exceptions = await File.readFile(filePath)
+  // const filePath = "../assets/data/json/noShortcutsExceptions.json"
+  // const exceptions = await File.readFile(filePath)
   const objExceptions = JSON.parse(exceptions)
 
   for (const controlName in objExceptions[game]) {
