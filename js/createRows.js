@@ -91,7 +91,7 @@ async function extractData(game, arrayData, arrayDataInWithoutSpaces) {
         desc = desc.replaceAll('"', "")
       }
       for (const elemDesc of elementsDesc) {
-        elemDesc.innerText = desc.replace("&", "")
+        elemDesc.innerText = desc.replaceAll("&", "")
       }
 
       // if the element can have a shortcut (even if there isn't any)
@@ -149,9 +149,7 @@ async function getControlsDesc(game, arrayDataIn, arrayDataInWithoutSpaces) {
 
   for (const controlName in objControlsList) {
     objControlsList[controlName] = {}
-    // if (arrayDataIn.includes(controlName)) {
     if (arrayDataInWithoutSpaces.includes(controlName)) {
-      // const index = arrayDataIn.indexOf(controlName)
       objControlsList[controlName]["found"] = true
       const index = arrayDataInWithoutSpaces.indexOf(controlName)
       let offset = 1

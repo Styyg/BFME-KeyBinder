@@ -92,9 +92,6 @@ export async function getSrcControl(game, controlName, faction, parent) {
     objGenericSrc = JSON.parse(readGenericSrc)
   }
 
-  if (controlName == "CONTROLBAR:FireWorks") {
-    console.log()
-  }
   let genericControl
   if (objGenericSrc[game][controlName] !== undefined) {
     genericControl = objGenericSrc[game][controlName]
