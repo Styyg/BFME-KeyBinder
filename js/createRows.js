@@ -95,7 +95,6 @@ async function extractData(game, arrayData, arrayDataInWithoutSpaces) {
   const objExceptions = JSON.parse(exceptions)
 
   for (const controlName in controlsDesc) {
-    // const elementsDesc = getElementsByIdAndNames(controlName + "-desc")
     const elementsDesc = document.getElementsByName(controlName + "-desc")
 
     // if the control is found in the input file
@@ -113,14 +112,12 @@ async function extractData(game, arrayData, arrayDataInWithoutSpaces) {
       if (objExceptions[controlName] === undefined) {
         // apply current shortcut
         const shortcut = Utils.getShortcut(desc)
-        // const elementsCurrent = getElementsByIdAndNames(controlName + "-current")
         const elementsCurrent = document.getElementsByName(controlName + "-current")
         for (const elemCurrent of elementsCurrent) {
           elemCurrent.innerText = shortcut
         }
       } else {
         // inputs are disabled
-        // const elementsNew = getElementsByIdAndNames(controlName + "-new")
         const elementsNew = document.getElementsByName(controlName + "-new")
         for (const elemNew of elementsNew) {
           elemNew.disabled = true
@@ -133,15 +130,12 @@ async function extractData(game, arrayData, arrayDataInWithoutSpaces) {
       }
 
       // control-main elements are disabled
-      // const elementsMain = getElementsByIdAndNames(controlName)
       const elementsMain = document.getElementsByName(controlName)
       for (const elemMain of elementsMain) {
-        // elemMain.classList = "control-main disabled"
         elemMain.querySelector(".control-row").classList = "control-row disabled"
       }
 
       // inputs are disabled
-      // const elementsNew = getElementsByIdAndNames(controlName + "-new")
       if (document.getElementById(controlName + "-new") != null) {
         document.getElementById(controlName + "-new").remove()
       }
@@ -160,7 +154,6 @@ async function getControlsDesc(game, arrayDataIn, arrayDataInWithoutSpaces) {
   // const filePath = "../assets/data/json/" + game.toUpperCase() + "-controlsList.json"
   // const readControlsList = await File.readFile(filePath)
   let objControlsList = JSON.parse(readControlsList)
-  // let controlsData = objControlsList
 
   for (const controlName in objControlsList) {
     objControlsList[controlName] = {}
@@ -208,7 +201,7 @@ async function createRowControl(game, obj, faction, controlName, HTMLparent, gen
   const newDiv = `<div name="${nameMain}" class="control-main ${faction}" ${hidden}>
       <div class="${toggleClick}">
         <div class="control-row">
-          <img class="icon" src="${srcControl}">
+          <img class="icon" src="${srcControl}" loading="lazy">
   
           <div class="description" name="${nameDesc}" >
             ${controlName}
@@ -263,7 +256,7 @@ function addPreviewChilds() {
 
     let divImg = ""
     for (const item of src) {
-      divImg += `<img src="${item}" class="icon-preview">`
+      divImg += `<img src="${item}" class="icon-preview" loading="lazy">`
     }
     if (divImg !== "") {
       const divPreview = `<div class="preview">
