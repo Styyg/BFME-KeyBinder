@@ -49,7 +49,3 @@ h6,
 .rounded-corner {
   border-radius: 10px;
 }
-
-.disabled img {
-  filter: grayscale(100%);
-}

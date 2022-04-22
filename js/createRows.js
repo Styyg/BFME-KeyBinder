@@ -1,8 +1,6 @@
 import * as File from "./file.js"
 import * as Utils from "./utils.js"
 
-let objExceptions
-
 export async function createRows(game, arrayData, arrayDataInWithoutSpaces) {
   const arrayFaction = {
     rotwk: ["men", "elves", "dwarves", "isengard", "mordor", "goblins", "angmar", "misc"],
@@ -68,7 +66,7 @@ export async function createRows(game, arrayData, arrayDataInWithoutSpaces) {
     }
   }
 
-  deleteShortcutsForExceptions(game)
+  // deleteShortcutsForExceptions(game)
   addToggleEventListeners()
   addPreviewChilds()
 
@@ -77,6 +75,9 @@ export async function createRows(game, arrayData, arrayDataInWithoutSpaces) {
 
 // extract data from file and apply them to HTML components
 async function extractData(game, arrayData, arrayDataInWithoutSpaces) {
+  const filePath = "../assets/data/json/noShortcutsExceptions.json"
+  const exceptions = await File.readFile(filePath)
+  const objExceptions = JSON.parse(exceptions)
   const controlsDesc = await getControlsDesc(game, arrayData, arrayDataInWithoutSpaces)
 
   for (const controlName in controlsDesc) {
@@ -94,30 +95,46 @@ async function extractData(game, arrayData, arrayDataInWithoutSpaces) {
       }
 
       // if the element can have a shortcut (even if there isn't any)
-      if (objExceptions[controlName] === undefined) {
+      if (objExceptions[game][controlName] === undefined) {
         // apply current shortcut
         const shortcut = Utils.getShortcut(desc)
         const elementsCurrent = document.getElementsByName(controlName + "-current")
         for (const elemCurrent of elementsCurrent) {
           elemCurrent.innerText = shortcut
         }
+        // the element can't have a shortcut
       } else {
         // inputs are disabled
-        const elementsNew = document.getElementsByName(controlName + "-new")
-        for (const elemNew of elementsNew) {
-          elemNew.disabled = true
+        // const elementsNew = document.getElementsByName(controlName + "-new")
+        // for (const elemNew of elementsNew) {
+        //   elemNew.disabled = true
+        // }
+
+        // inputs are deleted
+        const elements = document.getElementsByName(controlName)
+        for (const element of elements) {
+          element.querySelector(".shortcuts").innerHTML = ""
         }
+
+        document.getElementById(controlName + "-new").remove()
       }
+      // control is NOT found
     } else {
       // description with MISSING
       for (const elemDesc of elementsDesc) {
         elemDesc.innerHTML = "MISSING: " + elemDesc.innerHTML
       }
 
-      // control-main elements are disabled
+      // control-row elements are disabled
       const elementsMain = document.getElementsByName(controlName)
       for (const elemMain of elementsMain) {
-        elemMain.querySelector(".control-row").classList = "control-row disabled"
+        elemMain.querySelector(".control-row").classList += " disabled"
+      }
+
+      // preview images
+      const elementsPreview = document.getElementsByName(controlName + "-preview")
+      for (const elemPrev of elementsPreview) {
+        elemPrev.classList += " disabled-preview"
       }
 
       // inputs are disabled
@@ -231,23 +248,24 @@ function addPreviewChilds() {
   for (const controlElement of allControlRowElements) {
     const allChildrenControls = controlElement.querySelectorAll(":scope > .control-main")
 
-    let src = []
+    let imgAttributes = []
     for (const child of allChildrenControls) {
       const source = child.querySelector("img.icon").src
-      if (source !== undefined && !src.includes(source)) {
-        src.push(source)
+      if (source !== undefined && !imgAttributes.includes(source)) {
+        const name = child.getAttribute("name")
+        imgAttributes.push({ src: source, name: name })
       }
     }
 
     let divImg = ""
-    for (const item of src) {
-      divImg += `<img src="${item}" class="icon-preview" loading="lazy">`
+    for (const item of imgAttributes) {
+      divImg += `<div name="${item.name}-preview" class="icon-preview" >
+        <img src="${item.src}" loading="lazy">
+      </div>`
     }
     if (divImg !== "") {
       const divPreview = `<div class="preview">
-          <div>
-            ${divImg}
-          </div>
+          ${divImg}
         </div>`
 
       const control = controlElement.querySelector(".control-row")
@@ -269,27 +287,27 @@ function addToggleEventListeners() {
 }
 
 // some controls can't have shortcuts like inn, power menu etc, shortcuts elements are disabled for thoses
-async function deleteShortcutsForExceptions(game) {
-  const filePath = "../assets/data/json/noShortcutsExceptions.json"
-  const exceptions = await File.readFile(filePath)
-  objExceptions = JSON.parse(exceptions)
+// async function deleteShortcutsForExceptions(game) {
+//   const filePath = "../assets/data/json/noShortcutsExceptions.json"
+//   const exceptions = await File.readFile(filePath)
+//   objExceptions = JSON.parse(exceptions)
 
-  for (const controlName in objExceptions[game]) {
-    const elementById = document.getElementById(controlName)
+//   for (const controlName in objExceptions[game]) {
+//     const elementById = document.getElementById(controlName)
 
-    if (elementById !== null) {
-      elementById.querySelector(".shortcuts").innerHTML = ""
-    } else {
-      const elementsByNames = document.getElementsByName(controlName)
+//     if (elementById !== null) {
+//       elementById.querySelector(".shortcuts").innerHTML = ""
+//     } else {
+//       const elementsByNames = document.getElementsByName(controlName)
 
-      for (const element of elementsByNames) {
-        element.querySelector(".shortcuts").innerHTML = ""
-      }
-    }
+//       for (const element of elementsByNames) {
+//         element.querySelector(".shortcuts").innerHTML = ""
+//       }
+//     }
 
-    document.getElementById(controlName + "-new").remove()
-  }
-}
+//     document.getElementById(controlName + "-new").remove()
+//   }
+// }
 
 function addNewShortcutsInput(id) {
   // add new input

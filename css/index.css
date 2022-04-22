@@ -46,3 +46,7 @@
 .text-bfme1 {
   color: #9e1c1c;
 }
+
+.disabled img {
+  filter: grayscale(100%);
+}
