@@ -73,7 +73,7 @@
   "CONTROLBAR:ToggleLineFormation": {
     "CONTROLBAR:ConstructGondorFighterHorde": "men/soldier_shieldwalloff.png",
     "CONTROLBAR:ConstructIsengardUrukHai": "isengard/isen_ToggleLineFormation.png",
-    "CONTROLBAR:ConstructMordorHaradrimLancerHorde": "generic/haradrim_lineFormation.png",
+    "CONTROLBAR:ConstructMordorHaradrimLancerHorde": "generic/lineFormation.png",
     "CONTROLBAR:ConstructRohanSpearmenHorde": "generic/porcupine_off.png",
     "CONTROLBAR:ConstructGondorShieldGuardHorde": "generic/porcupine_off.png",
     "CONTROLBAR:ConstructElvenMithlondSentryHorde": "generic/porcupine_off.png",
@@ -81,10 +81,14 @@
     "CONTROLBAR:ConstructAngmarHillTrollHorde": "generic/porcupine_off.png",
     "CONTROLBAR:ConstructMordorEasterlingHorde": "generic/porcupine_off.png",
     "CONTROLBAR:ConstructDwarvenPhalanxHorde": "generic/porcupine_off.png",
-    "CONTROLBAR:ConstructWildMarauderHorde": "generic/porcupine_off.png"
+    "CONTROLBAR:ConstructWildMarauderHorde": "generic/porcupine_off.png",
+    "CONTROLBAR:ConstructRohanArcherHorde": "generic/lineFormation.png",
+    "CONTROLBAR:ConstructRohanRohirrimHorde": "generic/lineFormation.png",
+    "CONTROLBAR:ConstructRohanRohirrimArcherHorde": "generic/lineFormation.png"
   },
   "CONTROLBAR:TogglePorcupineFormation": "generic/porcupine.png",
   "CONTROLBAR:ToggleSkirmishFormation": "generic/ToggleSkirmishFormation.png",
+  "CONTROLBAR:ToggleWedgeFormation": "generic/ToggleWedgeFormation.png",
   "CONTROLBAR:PurchaseTechnologyGondorFireArrows": "generic/fire_arrow.png",
   "CONTROLBAR:FireArrowUpgrade": {
     "CONTROLBAR:ConstructGondorArcherHorde": "generic/fire_arrow.png",
@@ -269,8 +273,8 @@
   "CONTROLBAR:AwakenWyrm": "generic/SummonWyrm.png",
   "CONTROLBAR:SpecialAbilityWyrmReposition": "generic/SummonWyrm.png",
   "CONTROLBAR:TerribleFury": {
-    "CONTROLBAR:SauronHotkey": "generic/Fury_Sauron.png",
-    "CONTROLBAR:GaladrielHotkey": "generic/Fury_Galadriel.png"
+    "CONTROLBAR:SauronHotkey": "misc/Fury_Sauron.png",
+    "CONTROLBAR:GaladrielHotkey": "misc/Fury_Galadriel.png"
   },
   "CONTROLBAR:PurchaseUpgradeDwarvenSiegeHammer": "dwarves/Dwarves_hammer.png",
   "CONTROLBAR:PurchaseTechnologyDwarvenSiegeHammer": "dwarves/Dwarves_hammer.png",
@@ -330,8 +334,8 @@
     "CONTROLBAR:ConstructGoblinCaveTroll": "generic/ThrowRocks.png",
     "CONTROLBAR:ConstructWildMountainGiant": "goblins/Goblins_GiantThrowRocks.png",
     "CONTROLBAR:SummonGiants": "goblins/Goblins_GiantThrowRocks.png",
-    "CONTROLBAR:ConstructEnt": "generic/Elves_ThrowRocks.png",
-    "CONTROLBAR:ConstructTreebeard": "generic/Elves_ThrowRocks.png"
+    "CONTROLBAR:ConstructEnt": "elves/ThrowRocks.png",
+    "CONTROLBAR:ConstructTreebeard": "elves/ThrowRocks.png"
   },
   "CONTROLBAR:ConstructElvenVigilantEntExpansion": "elves/ConstructEnt.png",
   "CONTROLBAR:TrollFindTree": "generic/TrollFindTree.png",
@@ -350,8 +354,8 @@
   "CONTROLBAR:PurchaseUpgradeIsengardTorches": "isengard/Isengard_Torches.png",
   "CONTROLBAR:MordorWitchkingMorgulCorruption": "mordor/WitchKingMorgulCorruption.png",
   "CONTROLBAR:WitchkingMorgulCorruption": "mordor/WitchKingMorgulCorruption.png",
-  "CONTROLBAR:ConstructElvenBattleTower": "elves/Elves_BattleTower.png",
-  "CONTROLBAR:ConstructElvenWatchtowerExpansion": "elves/Elves_BattleTower.png",
+  "CONTROLBAR:ConstructElvenBattleTower": "elves/BattleTower.png",
+  "CONTROLBAR:ConstructElvenWatchtowerExpansion": "elves/BattleTower.png",
   "CONTROLBAR:Command_DwarvenWallUpgradeToHub": "dwarves/Dwarves_WallHub.png",
   "CONTROLBAR:Command_ConstructDwarvenWallHubExpansion": "dwarves/Dwarves_WallHub.png",
   "CONTROLBAR:SpecialAbilityFireDrakeInferno": "goblins/Goblins_DrakeInferno.png",
@@ -376,6 +380,28 @@
   "CONTROLBAR:EvilPlayerExperienceMenu": "generic/One_Ring.png",
   "CONTROLBAR:ConstructIronOreUpgrade": "men/ConstructIronOreUpgrade.png",
   "CONTROLBAR:ToggleGateOpenClose": "generic/evacuate_all.png",
+  "CONTROLBAR:ConstructRohanPeasant": "rohan/ConstructRohanPeasant.png",
+  "CONTROLBAR:ToggleRohirrimWeapons": "rohan/ConstructRohanRohirrimHorde.png",
+  "CONTROLBAR:PurchaseUpgradeRohanBasicTraining": "rohan/PurchaseUpgradeRohanBasicTraining.png",
+  "bfme1": {
+    "CONTROLBAR:Guard": "generic/guard.png",
+    "CONTROLBAR:RepairStructure": "generic/repair.png",
+    "CONTROLBAR:ConstructRohanFarm": "men/ConstructMenFarm.png",
+    "CONTROLBAR:UnpackRohanFarm": "men/ConstructMenFarm.png",
+    "CONTROLBAR:ConstructRohanArcherRange": "dwarves/ConstructDwarvenArcheryRange.png",
+    "CONTROLBAR:ConstructEntMoot": "elves/ConstructEntMoot.png",
+    "CONTROLBAR:PurchaseUpgradeRohanForgedBlades": "men/PurchaseTechnologyGondorForgedBlades.png",
+    "CONTROLBAR:PurchaseTechnologyRohanForgedBlades": "men/PurchaseTechnologyGondorForgedBlades.png",
+    "CONTROLBAR:PurchaseUpgradeRohanHeavyArmor": "men/PurchaseTechnologyGondorHeavyArmor.png",
+    "CONTROLBAR:PurchaseTechnologyRohanHeavyArmor": "men/PurchaseTechnologyGondorHeavyArmor.png",
+    "CONTROLBAR:PurchaseTechnologyRohanBasicTraining": "rohan/PurchaseUpgradeRohanBasicTraining.png",
+    "CONTROLBAR:PurchaseUpgradeRohanHorseShield": "rohan/HorseShield.png",
+    "CONTROLBAR:PurchaseTechnologyRohanHorseShield": "rohan/HorseShield.png",
+    "CONTROLBAR:ConstructCastle": "rohan/ConstructOutpost.png",
+    "CONTROLBAR:ToggleElvenWarriorWeapons": "generic/Knife.png",
+    "CONTROLBAR:FireArrowUpgrade": "generic/fire_arrow.png",
+    "OBJECT:EconomyFlag": "generic/EconomyFlag.png"
+  },
   "bfme2": {
     "CONTROLBAR:CaptainofGondor": "men/CaptainOfGondor2.png",
     "CONTROLBAR:PrinceofIthilien09v2": "men/CaptainOfGondor2.png",
@@ -400,7 +426,7 @@
     "CONTROLBAR:PurchaseUpgradeMordorFortressFireArrows": "generic/fire_arrow4.png",
     "CONTROLBAR:PurchaseTechnologyGondorIronOre": "men/ConstructIronOreUpgrade.png",
     "CONTROLBAR:tooltipCommand_ToggleEntRockThrow": "generic/tooltipCommand_ToggleEntRockThrow.png",
-    "CONTROLBAR:ConstructSindarWarriorHorde": "men/ConstructRohanElvenWarriorHorde.png",
+    "CONTROLBAR:ConstructSindarWarriorHorde": "rohan/ConstructElvenWarriorHorde.png",
     "CONTROLBAR:StopBombard": "generic/stop_bombard.png",
     "CONTROLBAR:TheodenMount": {
       "CONTROLBAR:RohanEowynHotkey": "men/EowynMount2.png",

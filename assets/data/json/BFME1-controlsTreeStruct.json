@@ -1,0 +1,90 @@
+{
+  "rohan": {
+    "basic": {
+      "CONTROLBAR:ConstructRohanFarm": {
+        "CONTROLBAR:ConstructRohanPeasant": {
+          "CONTROLBAR:Guard": {},
+          "CONTROLBAR:RepairStructure": {},
+          "CONTROLBAR:PurchaseUpgradeRohanForgedBlades": {},
+          "CONTROLBAR:PurchaseUpgradeRohanHeavyArmor": {},
+          "CONTROLBAR:PurchaseUpgradeRohanBasicTraining": {}
+        }
+      },
+      "CONTROLBAR:ConstructRohanArcherRange": {
+        "CONTROLBAR:ConstructRohanArcherHorde": {
+          "CONTROLBAR:Guard": {},
+          "CONTROLBAR:ToggleSkirmishFormation": {},
+          "CONTROLBAR:ToggleLineFormation": {},
+          "CONTROLBAR:PurchaseUpgradeRohanForgedBlades": {},
+          "CONTROLBAR:PurchaseUpgradeRohanHeavyArmor": {},
+          "CONTROLBAR:PurchaseUpgradeRohanBasicTraining": {}
+        },
+        "CONTROLBAR:ConstructElvenWarriorHorde": {
+          "CONTROLBAR:Guard": {},
+          "CONTROLBAR:ToggleElvenWarriorWeapons": {},
+          "CONTROLBAR:PurchaseUpgradeRohanForgedBlades": {},
+          "CONTROLBAR:PurchaseUpgradeRohanHeavyArmor": {},
+          "CONTROLBAR:FireArrowUpgrade": {},
+          "CONTROLBAR:PurchaseUpgradeRohanBasicTraining": {}
+        },
+        "CONTROLBAR:PurchaseTechnologyRohanFireArrows": {}
+      },
+      "CONTROLBAR:ConstructRohanWell": {},
+      "CONTROLBAR:ConstructRohanStatue": {},
+      "CONTROLBAR:ConstructRohanStable": {
+        "CONTROLBAR:ConstructRohanRohirrimHorde": {
+          "CONTROLBAR:Guard": {},
+          "CONTROLBAR:ToggleWedgeFormation": {},
+          "CONTROLBAR:ToggleLineFormation": {},
+          "CONTROLBAR:PurchaseUpgradeRohanForgedBlades": {},
+          "CONTROLBAR:PurchaseUpgradeRohanHeavyArmor": {},
+          "CONTROLBAR:PurchaseUpgradeRohanHorseShield": {},
+          "CONTROLBAR:PurchaseUpgradeRohanBasicTraining": {}
+        },
+        "CONTROLBAR:ConstructRohanRohirrimArcherHorde": {
+          "CONTROLBAR:Guard": {},
+          "CONTROLBAR:ToggleWedgeFormation": {},
+          "CONTROLBAR:ToggleLineFormation": {},
+          "CONTROLBAR:PurchaseUpgradeRohanHeavyArmor": {},
+          "CONTROLBAR:FireArrowUpgrade": {},
+          "CONTROLBAR:PurchaseUpgradeRohanBasicTraining": {}
+        },
+        "CONTROLBAR:PurchaseTechnologyRohanHorseShield": {}
+      },
+      "CONTROLBAR:ConstructRohanArmory": {
+        "CONTROLBAR:PurchaseTechnologyRohanBasicTraining": {},
+        "CONTROLBAR:PurchaseTechnologyRohanHeavyArmor": {},
+        "CONTROLBAR:PurchaseTechnologyRohanForgedBlades": {}
+      },
+      "OBJECT:RohanCastleBaseKeep": {
+        "CONTROLBAR:RohanTheodenHotkey": { "CONTROLBAR:GloriousCharge": {}, "CONTROLBAR:KingsFavor": {}, "CONTROLBAR:TheodenMount": {} },
+        "CONTROLBAR:RohanEomerHotkey": { "CONTROLBAR:ThrowSpear": {}, "CONTROLBAR:EomerMount": {} },
+        "CONTROLBAR:RohanEowynHotkey": { "CONTROLBAR:Smite": {}, "CONTROLBAR:Disguise": {}, "CONTROLBAR:ShieldMaiden": {}, "CONTROLBAR:EowynMount": {} },
+        "CONTROLBAR:RohanGimliHotkey": { "CONTROLBAR:AxeThrow": {}, "CONTROLBAR:Leap": {}, "CONTROLBAR:Slayer": {} },
+        "CONTROLBAR:RohanLegolasHotkey": {
+          "CONTROLBAR:HawkStrike": {},
+          "CONTROLBAR:KnifeFighter": {},
+          "CONTROLBAR:TrainArchers": {},
+          "CONTROLBAR:ArrowWind": {}
+        },
+        "CONTROLBAR:GondorAragornHotkey": { "CONTROLBAR:Athelas": {}, "CONTROLBAR:BladeMaster": {}, "CONTROLBAR:Elendil": {}, "CONTROLBAR:Oathbreakers": {} },
+        "CONTROLBAR:RohanMerryHotkey": { "CONTROLBAR:ThrowRocks": {}, "CONTROLBAR:UseSword": {}, "CONTROLBAR:ElvenCloak": {} }
+      },
+      "OBJECT:RohanCastleWall": { "CONTROLBAR:FlagsUpgrade": {}, "CONTROLBAR:BattleTowerUpgrade": {}, "CONTROLBAR:PosternGateUpgrade": {} },
+      "OBJECT:EconomyFlag": {
+        "CONTROLBAR:UnpackRohanFarm": {},
+        "CONTROLBAR:ConstructEntMoot": {
+          "CONTROLBAR:ConstructTreeBeard": {},
+          "CONTROLBAR:ConstructEnt": { "CONTROLBAR:Guard": {}, "CONTROLBAR:GrabBuildingChunk": {}, "CONTROLBAR:ThrowRocks": {}, "CONTROLBAR:KickAndPunch": {} }
+        },
+        "CONTROLBAR:ConstructOutpost": {},
+        "CONTROLBAR:ConstructCastle": {}
+      }
+    },
+    "power": {}
+  },
+  "gondor": { "basic": {}, "power": {} },
+  "isengard": { "basic": {}, "power": {} },
+  "mordor": { "basic": {}, "power": {} },
+  "misc": { "basic": {}, "power": {} }
+}
