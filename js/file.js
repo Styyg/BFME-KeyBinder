@@ -1,105 +1,170 @@
 import * as Utils from "./utils.js"
 
-const newFileData = {}
 const sizePosInBigHeader = 4
-let BIGbufferData
-let startIndex
+const fileData = {} // contains, all files data, type, index
+let bufferData
+
+export function extractStrData(buffer, extensionName) {
+  bufferData = buffer
+  // type of big file, so far i've seen only BIGF or BIG4 for big files
+  const decoder = new TextDecoder("utf-8")
+  const fileType = decoder.decode(new DataView(bufferData, 0, 4))
+  if (extensionName != "big") {
+    fileData["type"] = extensionName.toUpperCase()
+  }
+
+  let data
+  switch (fileType) {
+    case "BIGF":
+    case "BIG4":
+      fileData["type"] = fileType
+      data = extractDataFromBIG(buffer)
+      break
+    default:
+      data = extractDataFromLotr(buffer, extensionName)
+      break
+  }
+
+  return data
+}
 
 // extract specified file as binary from the BIGF archive
-export function extractFileFromBIG(BIG_File, fileToExtract) {
-  BIGbufferData = BIG_File
+// big structure http://wiki.xentax.com/index.php/EA_BIG_BIGF_Archive
+function extractDataFromBIG(buffer) {
+  // const filesToExtract = ["lotr.csf", "data\\lotr.str"]
+  const filesToExtract = ["lotr.csf", "lotr.str"]
+
+  bufferData = buffer
+
   // type of big file, so far i've seen only BIGF or BIG4 for BFME files
   // const decoder = new TextDecoder("utf-8")
-  // const type = decoder.decode(new DataView(BIGbufferData, 0, 4))
+  // const type = decoder.decode(new DataView(bufferData, 0, 4))
 
   // size of the whole big archive file
-  // const archiveSize = new DataView(BIGbufferData).getUint32(4, true)
+  // const archiveSize = new DataView(bufferData).getUint32(4, true)
   // number of files present in big file
-  const nbFiles = new DataView(BIGbufferData).getUint32(8)
+  const nbFiles = new DataView(bufferData).getUint32(8)
   // size of the header, right before files data
-  // const headerSize = new DataView(BIGbufferData).getUint32(12)
+  // const headerSize = new DataView(bufferData).getUint32(12)
 
-  newFileData["allFiles"] = []
+  fileData["allFiles"] = []
 
   // files header start at byte n°16
   let readOffset = 16
-  startIndex = -1
   // for each file in archive, header data are stored
   for (let i = 0; i < nbFiles; i++) {
     const headerStartPos = readOffset
-    const fDataStartPos = new DataView(BIGbufferData).getUint32(readOffset)
+    const fDataStartPos = new DataView(bufferData).getUint32(readOffset)
     readOffset += 4
-    const fDataSize = new DataView(BIGbufferData).getUint32(readOffset)
+    const fDataSize = new DataView(bufferData).getUint32(readOffset)
     readOffset += 4
 
     let fileName = ""
-    let dataView = new DataView(BIGbufferData).getInt8(readOffset)
+    let dataView = new DataView(bufferData).getInt8(readOffset)
     while (dataView != "") {
       fileName += String.fromCharCode(dataView)
       readOffset++
-      dataView = new DataView(BIGbufferData).getInt8(readOffset)
+      dataView = new DataView(bufferData).getInt8(readOffset)
     }
 
     readOffset += 1 // +1 to skip the null byte
 
-    newFileData["allFiles"].push({
+    fileData["allFiles"].push({
       dataStartPos: fDataStartPos,
       dataSize: fDataSize,
       headerStartPos: headerStartPos,
       fileName: fileName,
     })
 
-    if (fileName == fileToExtract) {
-      startIndex = i
+    const split = fileName.split("\\")
+    const fileNameTrimed = split[split.length - 1]
+    if (fileData["fileIndex"] == undefined && filesToExtract.includes(fileNameTrimed)) {
+      fileData["fileIndex"] = i
     }
   }
 
   // return null if file is not found
-  if (startIndex == -1) {
-    console.log("Err: file " + fileToExtract + " not found")
+  if (fileData["fileIndex"] == undefined) {
+    console.log("Err: lotr (.csf or .str) file not found")
+    errFileNotFound()
     return null
   }
 
-  const dataStartPos = newFileData["allFiles"][startIndex]["dataStartPos"]
-  const dataSize = newFileData["allFiles"][startIndex]["dataSize"]
+  const objFileToExtract = fileData["allFiles"][fileData["fileIndex"]]
+  const fileToExtract = objFileToExtract["fileName"]
+  const dataStartPos = objFileToExtract["dataStartPos"]
+  const dataSize = objFileToExtract["dataSize"]
 
-  // encoding: lotr.str is windows-1252 (latin1 also works), commandmap.ini is utf-8
-  const decoderWindows1252 = new TextDecoder("windows-1252")
-  const fileData = new DataView(BIGbufferData, dataStartPos, dataSize)
-  const fileDataStr = decoderWindows1252.decode(fileData)
-  newFileData["dataStr"] = fileDataStr
+  const fileBuffer = bufferData.slice(dataStartPos, dataStartPos + dataSize)
+  const split = fileToExtract.split(".")
+  const extensionName = split[split.length - 1]
+  const decodedFileData = extractDataFromLotr(fileBuffer, extensionName)
+  fileData["fileExtension"] = extensionName
 
-  return fileDataStr
+  return decodedFileData
 }
 
-export function replaceFileInBigArchive(newFile, fileToExtract) {
-  const arrayFiles = newFileData["allFiles"]
-
-  // get index of file to modify
-  while (startIndex < arrayFiles.length && arrayFiles[startIndex]["fileName"] != fileToExtract) {
-    startIndex++
+function extractDataFromLotr(buffer, extensionName) {
+  let decodedFileData
+  if (extensionName == "csf") {
+    decodedFileData = decodeCSF(buffer)
+    fileData["encoding"] = guessLotrEncoding(decodedFileData)
+  } else {
+    fileData["encoding"] = guessLotrEncoding(buffer)
+    const decoder = new TextDecoder(fileData["encoding"])
+    decodedFileData = decoder.decode(buffer)
   }
 
-  const pos = arrayFiles[startIndex]["dataStartPos"]
-  const size = arrayFiles[startIndex]["dataSize"]
-  const headerSizePos = arrayFiles[startIndex]["headerStartPos"] + 4
-  const encoded = new TextEncoder("windows-1252", { NONSTANDARD_allowLegacyEncoding: true }).encode(newFile)
+  return decodedFileData
+}
+
+export function assembleFile(strFile) {
+  let data
+  switch (fileData["type"]) {
+    case "BIGF":
+    case "BIG4":
+      data = replaceFileInBigArchive(strFile)
+      break
+    case "CSF":
+      data = encodeCSF(strFile)
+      break
+    default:
+      data = new TextEncoder(fileData["encoding"], { NONSTANDARD_allowLegacyEncoding: true }).encode(strFile.join("\n"))
+      break
+  }
+
+  return data
+}
+
+function replaceFileInBigArchive(newFile) {
+  const arrayFiles = fileData["allFiles"]
+  const fileIndex = fileData["fileIndex"]
+  const pos = arrayFiles[fileIndex]["dataStartPos"]
+  const size = arrayFiles[fileIndex]["dataSize"]
+  const headerSizePos = arrayFiles[fileIndex]["headerStartPos"] + 4
+
+  let encoded
+  if (fileData["fileExtension"] == "csf") {
+    encoded = encodeCSF(newFile)
+  } else {
+    encoded = new TextEncoder(fileData["encoding"], { NONSTANDARD_allowLegacyEncoding: true }).encode(newFile.join("\n"))
+  }
 
   // append buffers to make the new big archive
-  const newData = Utils.appendBuffer(Utils.appendBuffer(BIGbufferData.slice(0, pos), encoded), BIGbufferData.slice(pos + size))
+  const newData = Utils.appendBuffer(Utils.appendBuffer(bufferData.slice(0, pos), encoded), bufferData.slice(pos + size))
 
   // overwrite whole archive size in header
   const dataView = new DataView(newData)
   dataView.setUint32(sizePosInBigHeader, newData.byteLength, true)
 
-  const newFileSize = newFile.length
+  const newFileSize = encoded.byteLength
 
   // overwrite file's size in global header
   dataView.setUint32(headerSizePos, newFileSize)
-  arrayFiles[startIndex]["dataSize"] = newFileSize
+  arrayFiles[fileIndex]["dataSize"] = newFileSize
 
   // update start postion of all files after the one modified (because of the size change)
-  for (let i = startIndex + 1; i < arrayFiles.length; i++) {
+  for (let i = fileIndex + 1; i < arrayFiles.length; i++) {
     const headerPos = arrayFiles[i]["headerStartPos"]
     const newStartPos = arrayFiles[i - 1]["dataStartPos"] + arrayFiles[i - 1]["dataSize"]
 
@@ -110,9 +175,150 @@ export function replaceFileInBigArchive(newFile, fileToExtract) {
   return newData
 }
 
-export async function readFile(path) {
-  let response = await fetch(path)
-  // read response stream as text
-  let text_data = await response.text()
-  return text_data
+function encodeCSF(str) {
+  const header = bufferData.slice(0, 24) // shouldn't have changed
+  str = str.filter((el) => el != "" && el != "END")
+  const encoder = new TextEncoder()
+  const encoder16 = new TextEncoder("utf-16", { NONSTANDARD_allowLegacyEncoding: true })
+  let labelsData = new ArrayBuffer()
+
+  for (const row of str) {
+    // value
+    if (row.startsWith('"')) {
+      const newRow = row.slice(1).slice(0, -1)
+      const valueType = " RTS"
+      // add RTS and 4 empty bytes
+      let buff = Utils.appendBuffer(encoder.encode(valueType).buffer, new ArrayBuffer(4))
+
+      const dataView = new DataView(buff)
+      // value length
+      dataView.setInt32(4, newRow.length, true)
+
+      if (newRow.length > 0) {
+        // add value
+        const buff_utf16 = encoder16.encode(newRow).buffer
+        revertInt8Buffer(buff_utf16)
+        buff = Utils.appendBuffer(buff, buff_utf16)
+      }
+
+      labelsData = Utils.appendBuffer(labelsData, buff)
+
+      // label
+    } else {
+      const LBL = " LBL"
+      // add LBL and 4 empty bytes
+      let buff = Utils.appendBuffer(encoder.encode(LBL).buffer, new ArrayBuffer(8))
+      const dataView = new DataView(buff)
+      // nbr of strings pairs, always 1 it seems
+      dataView.setInt32(4, 1, true)
+      // label name length
+      dataView.setInt32(8, row.length, true)
+
+      // add label name
+      buff = Utils.appendBuffer(buff, encoder.encode(row).buffer)
+
+      labelsData = Utils.appendBuffer(labelsData, buff)
+    }
+  }
+
+  labelsData = Utils.appendBuffer(header, labelsData)
+
+  return labelsData
+}
+
+function revertInt8Buffer(buffer) {
+  const length = buffer.byteLength
+  for (let i = 0; i < length; i++) {
+    const dataV = new DataView(buffer)
+    dataV.setInt8(i, 255 - dataV.getUint8(i))
+  }
+}
+
+// csf structure https://modenc.renegadeprojects.com/CSF_File_Format
+function decodeCSF(csf) {
+  const decoder = new TextDecoder("utf-8")
+
+  let decoded = ""
+
+  // let index = 0
+  // CSF header
+  // const type = decoder.decode(new DataView(csf, index, 4))
+  // index += 4
+  // const version = new DataView(csf).getInt32(index, true)
+  // index += 4
+  let index = 8
+  const numLabel = new DataView(csf).getInt32(index, true)
+  // index += 4
+  // const numStrings = new DataView(csf).getInt32(index, true)
+  // index += 4
+  // const unUsed = new DataView(csf).getInt32(index, true)
+  // index += 4
+  // const language = new DataView(csf).getInt32(index, true)
+  // index += 4
+
+  // console.log("type : " + type)
+  // console.log("version : " + version)
+  console.log("numLabel : " + numLabel)
+  // console.log("numStrings : " + numStrings)
+  // console.log("unUsed : " + unUsed)
+  // console.log("language : " + language)
+
+  index = 24
+  for (let i = 0; i < numLabel; i++) {
+    // label header
+    // const LBL = decoder.decode(new DataView(csf, index, 4))
+    index += 4
+    // const numStringsPairs = new DataView(csf).getInt32(index, true)
+    index += 4
+    const labelLength = new DataView(csf).getInt32(index, true)
+    index += 4
+    const labelName = decoder.decode(new DataView(csf, index, labelLength))
+    index += labelLength
+
+    // console.log("LBL : " + LBL)
+    // console.log("numStringsPairs : " + numStringsPairs)
+    // console.log("labelLength : " + labelLength)
+    // console.log("labelName : " + labelName)
+
+    // values
+    // const RTS = decoder.decode(new DataView(csf, index, 4))
+    index += 4
+    const valueLength = new DataView(csf).getInt32(index, true)
+    index += 4
+    let arrayValue = []
+    for (let i = 0; i < valueLength; i++) {
+      const char_bin = new DataView(csf).getUint16(index, true)
+      arrayValue.push(String.fromCharCode(256 * 256 - char_bin - 1))
+      index += 2
+    }
+    const value = arrayValue.join("")
+
+    decoded += labelName + "\r\n" + '"' + value + '"' + "\r\n" + "END" + "\r\n\r\n"
+
+    //   console.log("RTS : " + RTS)
+    //   console.log("valueLength : " + valueLength)
+    //   console.log("value : " + value)
+  }
+
+  return decoded
+}
+
+function guessLotrEncoding(str) {
+  // windows1252, windows1251, utf-8
+  const cyrillic = /[\u0400-\u04FF]/
+  const win1251 = "windows-1251"
+  const win1252 = "windows-1252"
+
+  if (cyrillic.test(str)) {
+    return win1251
+  } else {
+    return win1252
+  }
+}
+
+function errFileNotFound() {
+  console.log("file not found")
+  const errLabel = document.getElementById("errInputFile")
+  errLabel.innerText = "lotr.csf or data\\lotr.str was not found in big archive"
+  errLabel.hidden = false
 }

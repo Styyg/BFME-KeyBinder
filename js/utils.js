@@ -1,8 +1,6 @@
-import { readFile } from "./file.js"
-
 export function testFile(files) {
   const maxFileSize = 10 * (1024 * 1024) //10MB
-  const allowedExtension = ["str", "big"]
+  const allowedExtension = ["str", "big", "csf"]
   const file = files[0]
   const errLabel = document.getElementById("errInputFile")
 
@@ -48,9 +46,9 @@ export function isAlphaNum(str) {
   return str.length === 1 && str.match(/[a-z]|[0-9]/i)
 }
 
-// some files had different line break format varying between \n and \r\n
 export function splitByLineBreak(str) {
   let reg
+  // some files had different line break format varying between \n and \r\n
   if (str.search("\r\n") > -1) {
     reg = /\r\n/
   } else {
@@ -126,4 +124,11 @@ export function displayFaction(faction) {
       divFact.hidden = true
     }
   }
+}
+
+export async function readFile(path) {
+  let response = await fetch(path)
+  // read response stream as text
+  let text_data = await response.text()
+  return text_data
 }

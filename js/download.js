@@ -1,14 +1,14 @@
 import * as Utils from "./utils.js"
 import * as File from "./file.js"
 
-export function downloadStringsFile(fileName, newShortcuts, arrayData, arrayDataWithoutSpaces, isBigArchive, fileToExtract) {
+export function downloadStringsFile(fileName, newShortcuts, arrayData) {
   const lengthControls = Object.keys(newShortcuts).length
   if (lengthControls <= 0) {
     return
   }
 
   for (const controlName in newShortcuts) {
-    const index = arrayDataWithoutSpaces.indexOf(controlName) // get ControlBar index
+    const index = arrayData.indexOf(controlName) // get ControlBar index
 
     // if we get the ControlBar
     if (index > -1) {
@@ -18,14 +18,13 @@ export function downloadStringsFile(fileName, newShortcuts, arrayData, arrayData
       }
       let offset = 1
       // need to avoid to change shortcuts in commented lines
-      while (!arrayDataWithoutSpaces[index + offset].startsWith('"')) {
+      while (!arrayData[index + offset].startsWith('"')) {
         offset++
       }
 
-      let row = arrayDataWithoutSpaces[index + offset]
+      let row = arrayData[index + offset]
 
       // searching for '(&.)' or '[&.]' with . as a single character
-      // const regexpParenthesis = new RegExp("(\\[|\\()&.(\\]|\\))")
       const regexpParenthesis = new RegExp(/(\[|\()&.(\]|\))/)
       const searchPosParenthesis = row.search(regexpParenthesis)
 
@@ -61,12 +60,11 @@ export function downloadStringsFile(fileName, newShortcuts, arrayData, arrayData
     }
   }
 
-  let newFile = arrayData.join("\n")
-  if (isBigArchive) {
-    newFile = File.replaceFileInBigArchive(newFile, fileToExtract)
-  } else {
-    newFile = new TextEncoder("windows-1252", { NONSTANDARD_allowLegacyEncoding: true }).encode(newFile)
-  }
+  // let newFile = arrayData.join("\n")
+  // newFile = File.replaceFileInBigArchive(newFile)
+  // newFile = new TextEncoder("windows-1252", { NONSTANDARD_allowLegacyEncoding: true }).encode(newFile)
+
+  const newFile = File.assembleFile(arrayData)
 
   download(newFile, fileName)
 }

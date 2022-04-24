@@ -3,8 +3,6 @@ import * as File from "./file.js"
 import * as Rows from "./createRows.js"
 import * as Download from "./download.js"
 
-const fileToExtract = "data\\lotr.str"
-
 function init() {
   // document.getElementById("main-div").hidden = false
   // Rows.createRows("bfme2")
@@ -17,7 +15,6 @@ function setEventListeners() {
   // id starting with 'display'
   const iconFaction = document.querySelectorAll("[id ^= 'display']")
   let arrayDataIn
-  let arrayDataInWithoutSpaces // used for better treatment
   let fileName
   let extensionName
 
@@ -31,28 +28,16 @@ function setEventListeners() {
 
     const file = this.files[0]
     fileName = file.name
-
     const reader = new FileReader()
+
+    // Reading file
     reader.onload = function fileReadCompleted() {
-      const data = reader.result
-      let extractedFile
-      if (extensionName == "big") {
-        // need to extract file from big archive
-        extractedFile = File.extractFileFromBIG(data, fileToExtract)
+      const rawData = reader.result
+      const extractedData = File.extractStrData(rawData, extensionName)
+      const game = "bfme2"
 
-        if (extractedFile == null) {
-          errFileNotFound()
-          loadingRoller.hidden = true
-          return
-        }
-      } else {
-        // no need to extract file
-        extractedFile = data
-      }
-
-      // \t = tab, got some problems with tab at the end of control's name. map is used to trim all elements
-      arrayDataInWithoutSpaces = Utils.splitByLineBreak(extractedFile.replaceAll("\t", "")).map((element) => element.trim())
-      arrayDataIn = Utils.splitByLineBreak(extractedFile)
+      // trim because I got some problems with tabs or space at the end of control's name.
+      arrayDataIn = Utils.splitByLineBreak(extractedData).map((element) => element.trim())
 
       // reset factions div to avoid duplication
       for (const element of document.getElementsByName("branch")) {
@@ -60,28 +45,21 @@ function setEventListeners() {
       }
       document.getElementById("uncategorized").innerHTML = ""
 
-      const game = "bfme2"
-      Rows.createRows(game, arrayDataIn, arrayDataInWithoutSpaces).then(() => {
+      Rows.createRows(game, arrayDataIn).then(() => {
         mainDiv.hidden = false
         loadingRoller.hidden = true
       })
     }
 
     const fileNameSplit = fileName.split(".")
-    extensionName = fileNameSplit[fileNameSplit.length - 1]
+    extensionName = fileNameSplit[fileNameSplit.length - 1].toLowerCase()
 
-    // read data
-    if (extensionName == "big") {
-      reader.readAsArrayBuffer(file)
-    } else {
-      reader.readAsText(file, "windows-1252")
-    }
+    reader.readAsArrayBuffer(file)
   })
 
+  // Download
   btnDownload.addEventListener("click", () => {
-    // need to run some test before accepting keys
     const isBigArchive = extensionName == "big"
-
     const newShortcuts = {}
     const inputs = document.getElementById("new-shortcuts").querySelectorAll("input")
 
@@ -95,22 +73,16 @@ function setEventListeners() {
       }
     }
 
-    Download.downloadStringsFile(fileName, newShortcuts, arrayDataIn, arrayDataInWithoutSpaces, isBigArchive, fileToExtract)
+    Download.downloadStringsFile(fileName, newShortcuts, arrayDataIn)
   })
 
+  // Display factions
   for (const img of iconFaction) {
     img.addEventListener("click", () => {
       const faction = img.id.slice("display".length)
       Utils.displayFaction(faction)
     })
   }
-}
-
-function errFileNotFound() {
-  console.log("file not found")
-  const errLabel = document.getElementById("errInputFile")
-  errLabel.innerText = fileToExtract + " was not found in big archive"
-  errLabel.hidden = false
 }
 
 init()
