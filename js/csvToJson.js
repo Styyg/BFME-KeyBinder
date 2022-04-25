@@ -3,7 +3,7 @@ const fs = require("fs")
 const arrayFaction = {
   rotwk: ["men", "elves", "dwarves", "isengard", "mordor", "goblins", "angmar", "misc"],
   bfme2: ["men", "elves", "dwarves", "isengard", "mordor", "goblins", "misc"],
-  bfme1: ["rohan", "gondor", "isengard", "mordor", "misc"],
+  bfme1: ["rohan", "men", "isengard", "mordor", "misc"],
 }
 const arrayBranch = {
   rotwk: ["basic", "power", "inn", "port"],

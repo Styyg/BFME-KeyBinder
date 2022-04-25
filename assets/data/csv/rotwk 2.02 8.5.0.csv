@@ -924,6 +924,7 @@ CONTROLBAR:ThrowRocks,angmar,CONTROLBAR:SummonGiants,power,2
 CONTROLBAR:ToggleTrebWeapon,angmar,CONTROLBAR:SummonGiants,power,2
 CONTROLBAR:StopBombard,angmar,CONTROLBAR:SummonGiants,power,2
 CONTROLBAR:SelectNearestBuilder,misc,,basic,0
+CONTROLBAR:SelectAllHeroes,misc,,basic,0
 CONTROLBAR:AttackMove,misc,,basic,0
 CONTROLBAR:SauronHotkey,misc,,basic,0
 CONTROLBAR:SpecialAbilityFiresOfDoom,misc,CONTROLBAR:SauronHotkey,basic,1

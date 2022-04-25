@@ -775,6 +775,7 @@
   "misc": {
     "basic": {
       "CONTROLBAR:SelectNearestBuilder": {},
+      "CONTROLBAR:SelectAllHeroes": {},
       "CONTROLBAR:AttackMove": {},
       "CONTROLBAR:SauronHotkey": { "CONTROLBAR:SpecialAbilityFiresOfDoom": {}, "CONTROLBAR:TerribleFury": {} },
       "CONTROLBAR:GaladrielHotkey": { "CONTROLBAR:GaladrielTornado": {}, "CONTROLBAR:TerribleFury": {} },

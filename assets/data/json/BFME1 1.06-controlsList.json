@@ -57,6 +57,10 @@
   "CONTROLBAR:ThrowRocks": "",
   "CONTROLBAR:UseSword": "",
   "CONTROLBAR:ElvenCloak": "",
+  "CONTROLBAR:StartCitadelSelfRepair": "",
+  "OBJECT:RohanCastleGate": "",
+  "CONTROLBAR:ToggleGateOpenClose": "",
+  "CONTROLBAR:StartSelfRepair": "",
   "OBJECT:RohanCastleWall": "",
   "CONTROLBAR:FlagsUpgrade": "",
   "CONTROLBAR:BattleTowerUpgrade": "",
@@ -70,5 +74,6 @@
   "CONTROLBAR:ConstructEnt": "",
   "CONTROLBAR:ConstructOutpost": "",
   "CONTROLBAR:ConstructCastle": "",
+  "CONTROLBAR:SelectAllHeroes": "",
   "CONTROLBAR:AttackMove": ""
 }

@@ -9,9 +9,11 @@ function init() {
   getUrlParams()
   selectGameAndVersion(selectedGame, selectedVersion)
 
+  setEventListeners()
+
+  // For debug
   // document.getElementById("main-div").hidden = false
   // Rows.createRows(selectedGame, selectedVersion)
-  setEventListeners()
 }
 
 function setEventListeners() {

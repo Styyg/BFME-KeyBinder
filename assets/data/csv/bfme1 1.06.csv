@@ -76,10 +76,15 @@ CONTROLBAR:RohanMerryHotkey,rohan,OBJECT:RohanCastleBaseKeep,basic,1
 CONTROLBAR:ThrowRocks,rohan,CONTROLBAR:RohanMerryHotkey,basic,2
 CONTROLBAR:UseSword,rohan,CONTROLBAR:RohanMerryHotkey,basic,2
 CONTROLBAR:ElvenCloak,rohan,CONTROLBAR:RohanMerryHotkey,basic,2
+CONTROLBAR:StartCitadelSelfRepair,rohan,OBJECT:RohanCastleBaseKeep,basic,1
+OBJECT:RohanCastleGate,rohan,,basic,0
+CONTROLBAR:ToggleGateOpenClose,rohan,OBJECT:RohanCastleGate,basic,1
+CONTROLBAR:StartSelfRepair,rohan,OBJECT:RohanCastleGate,basic,1
 OBJECT:RohanCastleWall,rohan,,basic,0
 CONTROLBAR:FlagsUpgrade,rohan,OBJECT:RohanCastleWall,basic,1
 CONTROLBAR:BattleTowerUpgrade,rohan,OBJECT:RohanCastleWall,basic,1
 CONTROLBAR:PosternGateUpgrade,rohan,OBJECT:RohanCastleWall,basic,1
+CONTROLBAR:StartSelfRepair,rohan,OBJECT:RohanCastleWall,basic,1
 OBJECT:EconomyFlag,rohan,,basic,0
 CONTROLBAR:UnpackRohanFarm,rohan,OBJECT:EconomyFlag,basic,1
 CONTROLBAR:ConstructEntMoot,rohan,OBJECT:EconomyFlag,basic,1
@@ -95,4 +100,5 @@ CONTROLBAR:ThrowRocks,rohan,CONTROLBAR:ConstructEnt,basic,3
 CONTROLBAR:KickAndPunch,rohan,CONTROLBAR:ConstructEnt,basic,3
 CONTROLBAR:ConstructOutpost,rohan,OBJECT:EconomyFlag,basic,1
 CONTROLBAR:ConstructCastle,rohan,OBJECT:EconomyFlag,basic,1
+CONTROLBAR:SelectAllHeroes,misc,,basic,0
 CONTROLBAR:AttackMove,misc,,basic,0

@@ -68,9 +68,16 @@
           "CONTROLBAR:ArrowWind": {}
         },
         "CONTROLBAR:GondorAragornHotkey": { "CONTROLBAR:Athelas": {}, "CONTROLBAR:BladeMaster": {}, "CONTROLBAR:Elendil": {}, "CONTROLBAR:Oathbreakers": {} },
-        "CONTROLBAR:RohanMerryHotkey": { "CONTROLBAR:ThrowRocks": {}, "CONTROLBAR:UseSword": {}, "CONTROLBAR:ElvenCloak": {} }
+        "CONTROLBAR:RohanMerryHotkey": { "CONTROLBAR:ThrowRocks": {}, "CONTROLBAR:UseSword": {}, "CONTROLBAR:ElvenCloak": {} },
+        "CONTROLBAR:StartCitadelSelfRepair": {}
       },
-      "OBJECT:RohanCastleWall": { "CONTROLBAR:FlagsUpgrade": {}, "CONTROLBAR:BattleTowerUpgrade": {}, "CONTROLBAR:PosternGateUpgrade": {} },
+      "OBJECT:RohanCastleGate": { "CONTROLBAR:ToggleGateOpenClose": {}, "CONTROLBAR:StartSelfRepair": {} },
+      "OBJECT:RohanCastleWall": {
+        "CONTROLBAR:FlagsUpgrade": {},
+        "CONTROLBAR:BattleTowerUpgrade": {},
+        "CONTROLBAR:PosternGateUpgrade": {},
+        "CONTROLBAR:StartSelfRepair": {}
+      },
       "OBJECT:EconomyFlag": {
         "CONTROLBAR:UnpackRohanFarm": {},
         "CONTROLBAR:ConstructEntMoot": {
@@ -91,5 +98,5 @@
   "men": { "basic": {}, "power": {} },
   "isengard": { "basic": {}, "power": {} },
   "mordor": { "basic": {}, "power": {} },
-  "misc": { "basic": { "CONTROLBAR:AttackMove": {} }, "power": {} }
+  "misc": { "basic": { "CONTROLBAR:SelectAllHeroes": {}, "CONTROLBAR:AttackMove": {} }, "power": {} }
 }

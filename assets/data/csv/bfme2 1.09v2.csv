@@ -741,6 +741,7 @@ CONTROLBAR:PurchaseUpgradeIsengardTorches,goblins,CONTROLBAR:ConstructIsengardWi
 CONTROLBAR:PurchaseUpgradeWildHeavyArmor,goblins,CONTROLBAR:ConstructIsengardWildmanHorde,inn,2
 CONTROLBAR:PurchaseUpgradeWildBasicTraining,goblins,CONTROLBAR:ConstructIsengardWildmanHorde,inn,2
 CONTROLBAR:SelectNearestBuilder,misc,,basic,0
+CONTROLBAR:SelectAllHeroes,misc,,basic,0
 CONTROLBAR:AttackMove,misc,,basic,0
 CONTROLBAR:SauronHotkey,misc,,basic,0
 CONTROLBAR:SummonBalrogSauron09v2,misc,CONTROLBAR:SauronHotkey,basic,1
