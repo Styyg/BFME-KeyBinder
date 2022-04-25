@@ -261,6 +261,7 @@ CONTROLBAR:ArrowWind,elves,CONTROLBAR:RohanLegolasHotkey,basic,3
 CONTROLBAR:ElvenThranduilHotkey,elves,CONTROLBAR:SelectRevivablesElvenFortress,basic,2
 CONTROLBAR:MoveUnseen,elves,CONTROLBAR:ElvenThranduilHotkey,basic,3
 CONTROLBAR:DeadEye,elves,CONTROLBAR:ElvenThranduilHotkey,basic,3
+CONTROLBAR:WildWalk,elves,CONTROLBAR:ElvenThranduilHotkey,basic,3
 CONTROLBAR:ThornofVengeance,elves,CONTROLBAR:ElvenThranduilHotkey,basic,3
 CONTROLBAR:SelectUpgradesElvenFortress,elves,CONTROLBAR:ConstructElvenFortress,basic,1
 CONTROLBAR:PurchaseUpgradeElvenFortressEnchantedAnvil,elves,CONTROLBAR:SelectUpgradesElvenFortress,basic,2
