@@ -383,7 +383,7 @@
   "CONTROLBAR:ConstructRohanPeasant": "rohan/ConstructRohanPeasant.png",
   "CONTROLBAR:ToggleRohirrimWeapons": "rohan/ConstructRohanRohirrimHorde.png",
   "CONTROLBAR:PurchaseUpgradeRohanBasicTraining": "rohan/PurchaseUpgradeRohanBasicTraining.png",
-  "bfme1": {
+  "bfme1 1.06": {
     "CONTROLBAR:Guard": "generic/guard.png",
     "CONTROLBAR:RepairStructure": "generic/repair.png",
     "CONTROLBAR:ConstructRohanFarm": "men/ConstructMenFarm.png",
@@ -402,7 +402,8 @@
     "CONTROLBAR:FireArrowUpgrade": "generic/fire_arrow.png",
     "OBJECT:EconomyFlag": "generic/EconomyFlag.png"
   },
-  "bfme2": {
+  "bfme2 1.06": {},
+  "bfme2 1.09v2": {
     "CONTROLBAR:CaptainofGondor": "men/CaptainOfGondor2.png",
     "CONTROLBAR:PrinceofIthilien09v2": "men/CaptainOfGondor2.png",
     "CONTROLBAR:HornofGondor": "men/HornofGondor2.png",
@@ -556,7 +557,8 @@
     "CONTROLBAR:SauronHotkey": "misc/SauronHotkey2.png",
     "CONTROLBAR:SpecialAbilityFiresOfDoom": "misc/SpecialAbilityFiresOfDoom2.png"
   },
-  "rotwk": {
+  "rotwk 2.01": {},
+  "rotwk 2.02 8.5.0": {
     "CONTROLBAR:SpecialAbilityShieldBubble": "men/SpecialAbilityShieldBubble.png"
   }
 }

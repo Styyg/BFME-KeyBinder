@@ -15,8 +15,8 @@
           "CONTROLBAR:Guard": {},
           "CONTROLBAR:ToggleSkirmishFormation": {},
           "CONTROLBAR:ToggleLineFormation": {},
-          "CONTROLBAR:PurchaseUpgradeRohanForgedBlades": {},
           "CONTROLBAR:PurchaseUpgradeRohanHeavyArmor": {},
+          "CONTROLBAR:FireArrowUpgrade": {},
           "CONTROLBAR:PurchaseUpgradeRohanBasicTraining": {}
         },
         "CONTROLBAR:ConstructElvenWarriorHorde": {
@@ -74,7 +74,12 @@
       "OBJECT:EconomyFlag": {
         "CONTROLBAR:UnpackRohanFarm": {},
         "CONTROLBAR:ConstructEntMoot": {
-          "CONTROLBAR:ConstructTreeBeard": {},
+          "CONTROLBAR:ConstructTreeBeard": {
+            "CONTROLBAR:Guard": {},
+            "CONTROLBAR:GrabBuildingChunk": {},
+            "CONTROLBAR:ThrowRocks": {},
+            "CONTROLBAR:KickAndPunch": {}
+          },
           "CONTROLBAR:ConstructEnt": { "CONTROLBAR:Guard": {}, "CONTROLBAR:GrabBuildingChunk": {}, "CONTROLBAR:ThrowRocks": {}, "CONTROLBAR:KickAndPunch": {} }
         },
         "CONTROLBAR:ConstructOutpost": {},
@@ -86,5 +91,5 @@
   "gondor": { "basic": {}, "power": {} },
   "isengard": { "basic": {}, "power": {} },
   "mordor": { "basic": {}, "power": {} },
-  "misc": { "basic": {}, "power": {} }
+  "misc": { "basic": { "CONTROLBAR:AttackMove": {} }, "power": {} }
 }

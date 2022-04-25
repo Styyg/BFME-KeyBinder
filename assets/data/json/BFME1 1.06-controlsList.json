@@ -10,9 +10,9 @@
   "CONTROLBAR:ConstructRohanArcherHorde": "",
   "CONTROLBAR:ToggleSkirmishFormation": "",
   "CONTROLBAR:ToggleLineFormation": "",
+  "CONTROLBAR:FireArrowUpgrade": "",
   "CONTROLBAR:ConstructElvenWarriorHorde": "",
   "CONTROLBAR:ToggleElvenWarriorWeapons": "",
-  "CONTROLBAR:FireArrowUpgrade": "",
   "CONTROLBAR:PurchaseTechnologyRohanFireArrows": "",
   "CONTROLBAR:ConstructRohanWell": "",
   "CONTROLBAR:ConstructRohanStatue": "",
@@ -65,9 +65,10 @@
   "CONTROLBAR:UnpackRohanFarm": "",
   "CONTROLBAR:ConstructEntMoot": "",
   "CONTROLBAR:ConstructTreeBeard": "",
-  "CONTROLBAR:ConstructEnt": "",
   "CONTROLBAR:GrabBuildingChunk": "",
   "CONTROLBAR:KickAndPunch": "",
+  "CONTROLBAR:ConstructEnt": "",
   "CONTROLBAR:ConstructOutpost": "",
-  "CONTROLBAR:ConstructCastle": ""
+  "CONTROLBAR:ConstructCastle": "",
+  "CONTROLBAR:AttackMove": ""
 }

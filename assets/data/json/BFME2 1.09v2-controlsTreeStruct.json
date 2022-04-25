@@ -643,7 +643,7 @@
       "CONTROLBAR:ConstructMordorFortress": {
         "CONTROLBAR:ConstructMordorPorter": {},
         "CONTROLBAR:SelectRevivablesMordorFortress": {
-          "CONTROLBAR:BlackRiderRecruit": { "CONTROLBAR:TheodenMount": {}, "CONTROLBAR:BlackRiderMorgulBlade": {}, "CONTROLBAR:Screech": {} },
+          "CONTROLBAR:BlackRiderHotkey": { "CONTROLBAR:TheodenMount": {}, "CONTROLBAR:BlackRiderMorgulBlade": {}, "CONTROLBAR:Screech": {} },
           "CONTROLBAR:MordorMouthofSauronHotkey": {
             "CONTROLBAR:TheodenMount": {},
             "CONTROLBAR:SpecialAbilityMouthOfSauronEvilEye": {},
@@ -709,6 +709,18 @@
         "CONTROLBAR:ConstructWildCaveLevel2Upgrade": {},
         "CONTROLBAR:ConstructWildCaveLevel3Upgrade": {}
       },
+      "CONTROLBAR:ConstructWildWildSpiderPit": {
+        "CONTROLBAR:ConstructWildSpiderlingHorde": { "CONTROLBAR:PurchaseSpiderVenomSacks": {}, "CONTROLBAR:PurchaseUpgradeWildBasicTraining": {} },
+        "CONTROLBAR:ConstructWildSpiderRiderHorde": {
+          "CONTROLBAR:ToggleSpiderRiderWeapons": {},
+          "CONTROLBAR:PurchaseUpgradeWildForgedBlade": {},
+          "CONTROLBAR:PurchaseUpgradeWildFireArrows": {},
+          "CONTROLBAR:PurchaseSpiderVenomSacks": {},
+          "CONTROLBAR:PurchaseUpgradeWildBasicTraining": {}
+        },
+        "CONTROLBAR:ConstructWildSpiderPitLevel2Upgrade": {},
+        "CONTROLBAR:ConstructWildSpiderPitLevel3Upgrade": {}
+      },
       "CONTROLBAR:ConstructWildGoblinFissure": {
         "CONTROLBAR:ConstructGoblinCaveTroll": {
           "CONTROLBAR:ThrowRocks": {},
@@ -735,17 +747,6 @@
         "CONTROLBAR:UpgradeWildFissureLevel2": {},
         "CONTROLBAR:UpgradeWildFissureLevel3": {}
       },
-      "CONTROLBAR:ConstructWildWildSpiderPit": {
-        "CONTROLBAR:ConstructWildSpiderlingHorde": { "CONTROLBAR:PurchaseSpiderVenomSacks": {}, "CONTROLBAR:PurchaseUpgradeWildBasicTraining": {} },
-        "CONTROLBAR:ConstructWildSpiderRiderHorde": {
-          "CONTROLBAR:ToggleSpiderRiderWeapons": {},
-          "CONTROLBAR:PurchaseUpgradeWildForgedBlade": {},
-          "CONTROLBAR:PurchaseUpgradeWildFireArrows": {},
-          "CONTROLBAR:PurchaseUpgradeWildBasicTraining": {}
-        },
-        "CONTROLBAR:ConstructWildSpiderPitLevel2Upgrade": {},
-        "CONTROLBAR:ConstructWildSpiderPitLevel3Upgrade": {}
-      },
       "CONTROLBAR:ConstructWildSentryTower": {
         "CONTROLBAR:GarrisonExit": {},
         "CONTROLBAR:EvacuateAll": {},
@@ -771,8 +772,7 @@
           "CONTROLBAR:ShelobHotkey": {
             "CONTROLBAR:WildShelobInstillTerror": {},
             "CONTROLBAR:WildShelobPoisonedStinger": {},
-            "CONTROLBAR:SpecialAbilityWildShelobTunnel": {},
-            "CONTROLBAR:ShelobWebbing": {}
+            "CONTROLBAR:SpecialAbilityWildShelobTunnel": {}
           },
           "CONTROLBAR:WildDrogothHotkey": {
             "CONTROLBAR:SpecialAbilityDrogothFireball": {},

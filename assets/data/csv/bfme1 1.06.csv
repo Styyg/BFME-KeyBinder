@@ -11,8 +11,8 @@ CONTROLBAR:ConstructRohanArcherHorde,rohan,CONTROLBAR:ConstructRohanArcherRange,
 CONTROLBAR:Guard,rohan,CONTROLBAR:ConstructRohanArcherHorde,basic,2
 CONTROLBAR:ToggleSkirmishFormation,rohan,CONTROLBAR:ConstructRohanArcherHorde,basic,2
 CONTROLBAR:ToggleLineFormation,rohan,CONTROLBAR:ConstructRohanArcherHorde,basic,2
-CONTROLBAR:PurchaseUpgradeRohanForgedBlades,rohan,CONTROLBAR:ConstructRohanArcherHorde,basic,2
 CONTROLBAR:PurchaseUpgradeRohanHeavyArmor,rohan,CONTROLBAR:ConstructRohanArcherHorde,basic,2
+CONTROLBAR:FireArrowUpgrade,rohan,CONTROLBAR:ConstructRohanArcherHorde,basic,2
 CONTROLBAR:PurchaseUpgradeRohanBasicTraining,rohan,CONTROLBAR:ConstructRohanArcherHorde,basic,2
 CONTROLBAR:ConstructElvenWarriorHorde,rohan,CONTROLBAR:ConstructRohanArcherRange,basic,1
 CONTROLBAR:Guard,rohan,CONTROLBAR:ConstructElvenWarriorHorde,basic,2
@@ -84,6 +84,10 @@ OBJECT:EconomyFlag,rohan,,basic,0
 CONTROLBAR:UnpackRohanFarm,rohan,OBJECT:EconomyFlag,basic,1
 CONTROLBAR:ConstructEntMoot,rohan,OBJECT:EconomyFlag,basic,1
 CONTROLBAR:ConstructTreeBeard,rohan,CONTROLBAR:ConstructEntMoot,basic,2
+CONTROLBAR:Guard,rohan,CONTROLBAR:ConstructTreeBeard,basic,3
+CONTROLBAR:GrabBuildingChunk,rohan,CONTROLBAR:ConstructTreeBeard,basic,3
+CONTROLBAR:ThrowRocks,rohan,CONTROLBAR:ConstructTreeBeard,basic,3
+CONTROLBAR:KickAndPunch,rohan,CONTROLBAR:ConstructTreeBeard,basic,3
 CONTROLBAR:ConstructEnt,rohan,CONTROLBAR:ConstructEntMoot,basic,2
 CONTROLBAR:Guard,rohan,CONTROLBAR:ConstructEnt,basic,3
 CONTROLBAR:GrabBuildingChunk,rohan,CONTROLBAR:ConstructEnt,basic,3
@@ -91,3 +95,4 @@ CONTROLBAR:ThrowRocks,rohan,CONTROLBAR:ConstructEnt,basic,3
 CONTROLBAR:KickAndPunch,rohan,CONTROLBAR:ConstructEnt,basic,3
 CONTROLBAR:ConstructOutpost,rohan,OBJECT:EconomyFlag,basic,1
 CONTROLBAR:ConstructCastle,rohan,OBJECT:EconomyFlag,basic,1
+CONTROLBAR:AttackMove,misc,,basic,0
