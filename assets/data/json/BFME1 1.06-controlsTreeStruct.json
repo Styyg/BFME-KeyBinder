@@ -74,7 +74,7 @@
       "OBJECT:EconomyFlag": {
         "CONTROLBAR:UnpackRohanFarm": {},
         "CONTROLBAR:ConstructEntMoot": {
-          "CONTROLBAR:ConstructTreeBeard": {
+          "CONTROLBAR:ConstructTreebeard": {
             "CONTROLBAR:Guard": {},
             "CONTROLBAR:GrabBuildingChunk": {},
             "CONTROLBAR:ThrowRocks": {},
@@ -88,7 +88,7 @@
     },
     "power": {}
   },
-  "gondor": { "basic": {}, "power": {} },
+  "men": { "basic": {}, "power": {} },
   "isengard": { "basic": {}, "power": {} },
   "mordor": { "basic": {}, "power": {} },
   "misc": { "basic": { "CONTROLBAR:AttackMove": {} }, "power": {} }

@@ -83,11 +83,11 @@ CONTROLBAR:PosternGateUpgrade,rohan,OBJECT:RohanCastleWall,basic,1
 OBJECT:EconomyFlag,rohan,,basic,0
 CONTROLBAR:UnpackRohanFarm,rohan,OBJECT:EconomyFlag,basic,1
 CONTROLBAR:ConstructEntMoot,rohan,OBJECT:EconomyFlag,basic,1
-CONTROLBAR:ConstructTreeBeard,rohan,CONTROLBAR:ConstructEntMoot,basic,2
-CONTROLBAR:Guard,rohan,CONTROLBAR:ConstructTreeBeard,basic,3
-CONTROLBAR:GrabBuildingChunk,rohan,CONTROLBAR:ConstructTreeBeard,basic,3
-CONTROLBAR:ThrowRocks,rohan,CONTROLBAR:ConstructTreeBeard,basic,3
-CONTROLBAR:KickAndPunch,rohan,CONTROLBAR:ConstructTreeBeard,basic,3
+CONTROLBAR:ConstructTreebeard,rohan,CONTROLBAR:ConstructEntMoot,basic,2
+CONTROLBAR:Guard,rohan,CONTROLBAR:ConstructTreebeard,basic,3
+CONTROLBAR:GrabBuildingChunk,rohan,CONTROLBAR:ConstructTreebeard,basic,3
+CONTROLBAR:ThrowRocks,rohan,CONTROLBAR:ConstructTreebeard,basic,3
+CONTROLBAR:KickAndPunch,rohan,CONTROLBAR:ConstructTreebeard,basic,3
 CONTROLBAR:ConstructEnt,rohan,CONTROLBAR:ConstructEntMoot,basic,2
 CONTROLBAR:Guard,rohan,CONTROLBAR:ConstructEnt,basic,3
 CONTROLBAR:GrabBuildingChunk,rohan,CONTROLBAR:ConstructEnt,basic,3
