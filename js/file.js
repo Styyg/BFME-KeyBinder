@@ -83,11 +83,10 @@ function extractDataFromBIG(buffer) {
     }
   }
 
-  // return null if file is not found
+  // throw error if file is not found
   if (fileData["fileIndex"] == undefined) {
-    console.log("Err: lotr (.csf or .str) file not found")
-    errFileNotFound()
-    return null
+    console.log("Err: lotr.csf or lotr.str file not found")
+    throw "lotr.csf or lotr.str was not found in big archive"
   }
 
   const objFileToExtract = fileData["allFiles"][fileData["fileIndex"]]
@@ -118,25 +117,25 @@ function extractDataFromLotr(buffer, extensionName) {
   return decodedFileData
 }
 
-export function assembleFile(strFile) {
+export function assembleFile(arrayStrFile) {
   let data
   switch (fileData["type"]) {
     case "BIGF":
     case "BIG4":
-      data = replaceFileInBigArchive(strFile)
+      data = replaceFileInBigArchive(arrayStrFile)
       break
     case "CSF":
-      data = encodeCSF(strFile)
+      data = encodeCSF(arrayStrFile)
       break
     default:
-      data = new TextEncoder(fileData["encoding"], { NONSTANDARD_allowLegacyEncoding: true }).encode(strFile.join("\n"))
+      data = new TextEncoder(fileData["encoding"], { NONSTANDARD_allowLegacyEncoding: true }).encode(arrayStrFile.join("\n"))
       break
   }
 
   return data
 }
 
-function replaceFileInBigArchive(newFile) {
+function replaceFileInBigArchive(arrayStrFile) {
   const arrayFiles = fileData["allFiles"]
   const fileIndex = fileData["fileIndex"]
   const pos = arrayFiles[fileIndex]["dataStartPos"]
@@ -145,9 +144,9 @@ function replaceFileInBigArchive(newFile) {
 
   let encoded
   if (fileData["fileExtension"] == "csf") {
-    encoded = encodeCSF(newFile)
+    encoded = encodeCSF(arrayStrFile)
   } else {
-    encoded = new TextEncoder(fileData["encoding"], { NONSTANDARD_allowLegacyEncoding: true }).encode(newFile.join("\n"))
+    encoded = new TextEncoder(fileData["encoding"], { NONSTANDARD_allowLegacyEncoding: true }).encode(arrayStrFile.join("\n"))
   }
 
   // append buffers to make the new big archive
@@ -176,35 +175,32 @@ function replaceFileInBigArchive(newFile) {
 }
 
 function encodeCSF(str) {
-  const header = bufferData.slice(0, 24) // shouldn't have changed
-  str = str.filter((el) => el != "" && el != "END")
+  let tmpHeader
+  if (fileData["type"].startsWith("BIG")) {
+    const fileIndex = fileData["fileIndex"]
+    const pos = fileData["allFiles"][fileIndex]["dataStartPos"]
+    tmpHeader = bufferData.slice(pos, pos + 24)
+  } else {
+    tmpHeader = bufferData.slice(0, 24)
+  }
+
+  // header shouldn't have changed
+  const header = tmpHeader
+
+  // str = str.filter((el) => el != "" && el != "END")
   const encoder = new TextEncoder()
   const encoder16 = new TextEncoder("utf-16", { NONSTANDARD_allowLegacyEncoding: true })
   let labelsData = new ArrayBuffer()
 
-  for (const row of str) {
-    // value
-    if (row.startsWith('"')) {
-      const newRow = row.slice(1).slice(0, -1)
-      const valueType = " RTS"
-      // add RTS and 4 empty bytes
-      let buff = Utils.appendBuffer(encoder.encode(valueType).buffer, new ArrayBuffer(4))
+  for (let i = 0; i < str.length; i++) {
+    // for (const row of str) {
+    while (str[i] == "" && i < str.length) {
+      i++
+    }
+    if (i < str.length) {
+      const labelRow = str[i]
 
-      const dataView = new DataView(buff)
-      // value length
-      dataView.setInt32(4, newRow.length, true)
-
-      if (newRow.length > 0) {
-        // add value
-        const buff_utf16 = encoder16.encode(newRow).buffer
-        revertInt8Buffer(buff_utf16)
-        buff = Utils.appendBuffer(buff, buff_utf16)
-      }
-
-      labelsData = Utils.appendBuffer(labelsData, buff)
-
-      // label
-    } else {
+      // ---------- label ----------
       const LBL = " LBL"
       // add LBL and 4 empty bytes
       let buff = Utils.appendBuffer(encoder.encode(LBL).buffer, new ArrayBuffer(8))
@@ -212,10 +208,40 @@ function encodeCSF(str) {
       // nbr of strings pairs, always 1 it seems
       dataView.setInt32(4, 1, true)
       // label name length
-      dataView.setInt32(8, row.length, true)
+      dataView.setInt32(8, labelRow.length, true)
 
       // add label name
-      buff = Utils.appendBuffer(buff, encoder.encode(row).buffer)
+      buff = Utils.appendBuffer(buff, encoder.encode(labelRow).buffer)
+
+      labelsData = Utils.appendBuffer(labelsData, buff)
+
+      i++
+      // ---------- value ----------
+      let valueRow = ""
+      // have to do this because of the \n inside the labels
+      while (str[i] != "END" && i < str.length) {
+        if (valueRow != "") {
+          valueRow += "\n"
+        }
+        valueRow += str[i]
+        i++
+      }
+      valueRow = valueRow.slice(1).slice(0, -1)
+
+      const valueType = " RTS"
+      // add RTS and 4 empty bytes
+      buff = Utils.appendBuffer(encoder.encode(valueType).buffer, new ArrayBuffer(4))
+      const dataView2 = new DataView(buff)
+
+      // value length
+      dataView2.setInt32(4, valueRow.length, true)
+
+      if (valueRow.length > 0) {
+        // add value
+        const buff_utf16 = encoder16.encode(valueRow).buffer
+        revertInt8Buffer(buff_utf16)
+        buff = Utils.appendBuffer(buff, buff_utf16)
+      }
 
       labelsData = Utils.appendBuffer(labelsData, buff)
     }
@@ -258,7 +284,7 @@ function decodeCSF(csf) {
 
   // console.log("type : " + type)
   // console.log("version : " + version)
-  console.log("numLabel : " + numLabel)
+  // console.log("numLabel : " + numLabel)
   // console.log("numStrings : " + numStrings)
   // console.log("unUsed : " + unUsed)
   // console.log("language : " + language)
@@ -266,9 +292,9 @@ function decodeCSF(csf) {
   index = 24
   for (let i = 0; i < numLabel; i++) {
     // label header
-    // const LBL = decoder.decode(new DataView(csf, index, 4))
+    const LBL = decoder.decode(new DataView(csf, index, 4))
     index += 4
-    // const numStringsPairs = new DataView(csf).getInt32(index, true)
+    const numStringsPairs = new DataView(csf).getInt32(index, true)
     index += 4
     const labelLength = new DataView(csf).getInt32(index, true)
     index += 4
@@ -280,24 +306,29 @@ function decodeCSF(csf) {
     // console.log("labelLength : " + labelLength)
     // console.log("labelName : " + labelName)
 
-    // values
-    // const RTS = decoder.decode(new DataView(csf, index, 4))
-    index += 4
-    const valueLength = new DataView(csf).getInt32(index, true)
-    index += 4
-    let arrayValue = []
-    for (let i = 0; i < valueLength; i++) {
-      const char_bin = new DataView(csf).getUint16(index, true)
-      arrayValue.push(String.fromCharCode(256 * 256 - char_bin - 1))
-      index += 2
+    if (numStringsPairs > 0) {
+      // values
+      // const RTS = decoder.decode(new DataView(csf, index, 4))
+      index += 4
+      const valueLength = new DataView(csf).getInt32(index, true)
+      index += 4
+      let arrayValue = []
+      for (let i = 0; i < valueLength; i++) {
+        const char_bin = new DataView(csf).getUint16(index, true)
+        arrayValue.push(String.fromCharCode(256 * 256 - char_bin - 1))
+        index += 2
+      }
+      const value = arrayValue.join("")
+
+      decoded += labelName + "\n" + '"' + value + '"' + "\n" + "END" + "\n\n"
+
+      //   console.log("RTS : " + RTS)
+      //   console.log("valueLength : " + valueLength)
+      //   console.log("value : " + value)
+    } else {
+      const value = ""
+      decoded += labelName + "\n" + '"' + value + '"' + "\n" + "END" + "\n\n"
     }
-    const value = arrayValue.join("")
-
-    decoded += labelName + "\r\n" + '"' + value + '"' + "\r\n" + "END" + "\r\n\r\n"
-
-    //   console.log("RTS : " + RTS)
-    //   console.log("valueLength : " + valueLength)
-    //   console.log("value : " + value)
   }
 
   return decoded
@@ -314,11 +345,4 @@ function guessLotrEncoding(str) {
   } else {
     return win1252
   }
-}
-
-function errFileNotFound() {
-  console.log("file not found")
-  const errLabel = document.getElementById("errInputFile")
-  errLabel.innerText = "lotr.csf or data\\lotr.str was not found in big archive"
-  errLabel.hidden = false
 }

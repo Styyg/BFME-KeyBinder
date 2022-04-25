@@ -30,14 +30,14 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
-    <script src="./js/index.js" type="module"></script>
+    <!-- <script src="./js/index.js" type="module"></script> -->
   </head>
 
   <body>
     <!-- Responsive navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container px-5">
-        <a class="navbar-brand" href="/">BFME KeyBinder</a>
+        <a class="navbar-brand" href="https://bfme-keybinder.netlify.app/">BFME KeyBinder</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -52,49 +52,55 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="/html/bfme2.html">BFME2 1.09v2</a></li>
-            <li class="nav-item"><a class="nav-link" href="/html/rotwk.html">ROTWK 2.02 8.5.0</a></li>
+            <!-- <li class="nav-item"><a class="nav-link" href="/html/bfme2.html">BFME2 1.09v2</a></li>
+            <li class="nav-item"><a class="nav-link" href="/html/rotwk.html">ROTWK 2.02 8.5.0</a></li> -->
+            <li class="nav-item"><a class="nav-link" href="/html/shortcuts.html">Shortcuts</a></li>
             <li class="nav-item"><a class="nav-link" href="/html/contact.html">Contact</a></li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- Header-->
-    <div class="text-center my-5 py-5">
-      <h1 class="display-5 fw-bolder mb-2">BFME KeyBinder</h1>
+    <!-- Title-->
+    <div class="text-center mt-5 mb-5 py-5">
+      <h1 class="display-5 fw-bolder">Welcome to the BFME KeyBinder</h1>
     </div>
 
-    <div class="center mb-3">
-      <h3>Select a game:</h3>
-    </div>
-
-    <div class="center">
-      <div id="bfme" class="game-icon bg-dark disabled">
-        <div>
-          <img src="./assets/images/games-icons/bfme.png" />
-        </div>
-        <h5>The Battle for Middle-Earth</h5>
-        <h6 style="color: rgb(255, 174, 0)">not ready</h6>
-      </div>
-
-      <div id="bfme2" class="game-icon bg-dark" onclick="window.location='./html/bfme2.html';">
-        <img src="./assets/images/games-icons/bfme2.png" />
-        <h5>The Battle for Middle-Earth II</h5>
-        <div style="display: flex; justify-content: space-evenly">
-          <!-- <h6 class="text-bfme2">1.06</h6> -->
-          <h6 class="text-bfme2">1.09v2</h6>
+    <div class="main-container">
+      <!-- What is it ? -->
+      <div class="card bg-dark mt-3 mb-5">
+        <h3 class="card-header fw-bolder">What is it ?</h3>
+        <div class="card-body">
+          <div class="card-text text-lightgray">
+            BFME games have in-game shortcuts/hotkeys. Sometimes they can be changed manually by editing game files, but this is complicated or impossible in
+            some cases.
+            <br />
+            The purpose of this app is to allow the change of these in-game shortcuts in a very simple and pleasant way.
+            <br />
+            <br />
+            Currently the app is compatible with some the main versions of BFME games: <text class="text-bfme2">BFME2 1.06/1.09v2</text> and
+            <text class="text-rotwk">ROTWK 2.02 8.5.0</text>.
+            <br />
+            <text class="text-bfme1">BFME1 1.06</text> is coming soon
+          </div>
         </div>
       </div>
 
-      <div id="rotwk" class="game-icon bg-dark" onclick="window.location='./html/rotwk.html';">
-        <img src="./assets/images/games-icons/rotwk.png" />
-        <h5>The Rise of the Witch-King</h5>
-        <h6 class="text-rotwk">2.02 8.5.0</h6>
+      <!-- How to use it -->
+      <div class="card bg-dark">
+        <h3 class="card-header fw-bolder">How to use it ?</h3>
+        <div class="card-body">
+          <div class="card-text text-lightgray">
+            It's very simple, just go to the <a href="/html/shortcuts.html">Shortcuts</a> tab, select your version, and import the language file of the
+            corresponding version. The default file path is indicated for each version. <br /><br />
+            Then, the different elements of the game (buildings, units, ...) are displayed. You can then assign a new shortcut to the desired elements.
+            <br /><br />
+            finally, you have to download the new file, and replace the old one by this one.
+            <text class="text-warning">Be careful to keep the old one in case an error occurs.</text>
+          </div>
+        </div>
       </div>
     </div>
-
-    <h5 class="center mt-5">BFME 1 and BFME II 1.06 are coming soon, i'm working on it</h5>
 
     <!-- Footer-->
     <footer class="py-5 mt-5">

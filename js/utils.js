@@ -38,24 +38,8 @@ export function appendBuffer(buffer1, buffer2) {
   return tmp.buffer
 }
 
-// export function isLetter(str) {
-//   return str.length === 1 && str.match(/[a-z]/i)
-// }
-
 export function isAlphaNum(str) {
   return str.length === 1 && str.match(/[a-z]|[0-9]/i)
-}
-
-export function splitByLineBreak(str) {
-  let reg
-  // some files had different line break format varying between \n and \r\n
-  if (str.search("\r\n") > -1) {
-    reg = /\r\n/
-  } else {
-    reg = /\n/
-  }
-
-  return str.split(reg)
 }
 
 export function getShortcut(str) {
@@ -83,16 +67,17 @@ export function getNavigatorLanguage() {
 
 let objGenericSrc
 // get the string of the src of image matching the controlName
-export async function getSrcControl(game, controlName, faction, parent) {
+export async function getSrcControl(game, version, controlName, faction, parent) {
   const path = "../assets/images/"
+  const gameV = game + " " + version
   if (objGenericSrc === undefined) {
-    const readGenericSrc = await readFile("../assets/data/json/genericSrcControls.json")
+    const readGenericSrc = await readFile("../assets/data/json/sourceControls.json")
     objGenericSrc = JSON.parse(readGenericSrc)
   }
 
   let genericControl
-  if (objGenericSrc[game][controlName] !== undefined) {
-    genericControl = objGenericSrc[game][controlName]
+  if (objGenericSrc[gameV][controlName] !== undefined) {
+    genericControl = objGenericSrc[gameV][controlName]
   } else {
     if (objGenericSrc[controlName] !== undefined) {
       genericControl = objGenericSrc[controlName]

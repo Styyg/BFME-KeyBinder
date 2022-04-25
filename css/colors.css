@@ -1,25 +1,43 @@
-.control-main.men {
+.text-bfme1 {
+  color: #c51d1d;
+}
+
+.text-bfme2 {
+  color: #17ac2b;
+}
+
+.text-rotwk {
+  color: #207feb;
+}
+
+.control-main.men,
+.control-main.gondor {
   /* background-color: rgba(0, 102, 255, 0.1); */
   background-color: rgb(87, 125, 207);
 }
 
-.control-main.men > .control-main.men {
+.control-main.men > .control-main.men,
+.control-main.gondor > .control-main.gondor {
   background-color: rgb(129, 157, 219);
 }
 
-.control-main.men > .control-main.men > .control-main.men {
+.control-main.men > .control-main.men > .control-main.men,
+.control-main.gondor > .control-main.gondor > .control-main.gondor {
   background-color: rgb(171, 193, 241);
 }
 
-.control-main.elves {
+.control-main.elves,
+.control-main.rohan {
   background-color: rgb(75, 192, 91);
 }
 
-.control-main.elves > .control-main.elves {
+.control-main.elves > .control-main.elves,
+.control-main.rohan > .control-main.rohan {
   background-color: rgb(124, 209, 135);
 }
 
-.control-main.elves > .control-main.elves > .control-main.elves {
+.control-main.elves > .control-main.elves > .control-main.elves,
+.control-main.rohan > .control-main.rohan > .control-main.rohan {
   background-color: rgb(155, 228, 165);
 }
 
