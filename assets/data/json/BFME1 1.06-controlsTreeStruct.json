@@ -95,8 +95,295 @@
     },
     "power": {}
   },
-  "men": { "basic": {}, "power": {} },
-  "isengard": { "basic": {}, "power": {} },
-  "mordor": { "basic": {}, "power": {} },
+  "men": {
+    "basic": {
+      "CONTROLBAR:ConstructGondorFarm": {},
+      "CONTROLBAR:ConstructGondorBlackSmith": {
+        "CONTROLBAR:PurchaseTechnologyGondorBasicTraining": {},
+        "CONTROLBAR:PurchaseTechnologyGondorHeavyArmor": {},
+        "CONTROLBAR:PurchaseTechnologyGondorForgedBlades": {}
+      },
+      "CONTROLBAR:ConstructGondorBarracks": {
+        "CONTROLBAR:ConstructGondorFighterHorde": {
+          "CONTROLBAR:Guard": {},
+          "CONTROLBAR:ToggleBlockFormation": {},
+          "CONTROLBAR:ToggleLineFormation": {},
+          "CONTROLBAR:PurchaseUpgradeGondorForgedBlades": {},
+          "CONTROLBAR:PurchaseUpgradeGondorHeavyArmor": {},
+          "CONTROLBAR:PurchaseUpgradeGondorBasicTraining": {}
+        },
+        "CONTROLBAR:ConstructGondorShieldGuardHorde": {
+          "CONTROLBAR:Guard": {},
+          "CONTROLBAR:ToggleShieldWallFormation": {},
+          "CONTROLBAR:ToggleLineFormation": {},
+          "CONTROLBAR:PurchaseUpgradeGondorForgedBlades": {},
+          "CONTROLBAR:PurchaseUpgradeGondorHeavyArmor": {},
+          "CONTROLBAR:PurchaseUpgradeGondorBasicTraining": {}
+        }
+      },
+      "CONTROLBAR:ConstructGondorArcherRange": {
+        "CONTROLBAR:ConstructGondorArcherHorde": {
+          "CONTROLBAR:Guard": {},
+          "CONTROLBAR:ToggleWedgeFormation": {},
+          "CONTROLBAR:ToggleLineFormation": {},
+          "CONTROLBAR:PurchaseUpgradeGondorHeavyArmor": {},
+          "CONTROLBAR:FireArrowUpgrade": {},
+          "CONTROLBAR:PurchaseUpgradeGondorBasicTraining": {}
+        },
+        "CONTROLBAR:ConstructGondorRangerHorde": {
+          "CONTROLBAR:Guard": {},
+          "CONTROLBAR:ToggleSkirmishFormation": {},
+          "CONTROLBAR:ToggleLineFormation": {},
+          "CONTROLBAR:FireArrowUpgrade": {},
+          "CONTROLBAR:PurchaseUpgradeGondorBasicTraining": {},
+          "CONTROLBAR:NoAutoAcquire": {},
+          "CONTROLBAR:AutoAcquire": {}
+        },
+        "CONTROLBAR:PurchaseTechnologyGondorFireArrows": {}
+      },
+      "CONTROLBAR:ConstructGondorStatue": {},
+      "CONTROLBAR:ConstructGondorWell": {},
+      "CONTROLBAR:ConstructGondorKeep": {},
+      "CONTROLBAR:ConstructGondorStable": {
+        "CONTROLBAR:ConstructGondorKnightHorde": {
+          "CONTROLBAR:Guard": {},
+          "CONTROLBAR:ToggleWedgeFormation": {},
+          "CONTROLBAR:ToggleLineFormation": {},
+          "CONTROLBAR:PurchaseUpgradeGondorForgedBlades": {},
+          "CONTROLBAR:PurchaseUpgradeGondorHeavyArmor": {},
+          "CONTROLBAR:PurchaseUpgradeGondorKnightShield": {},
+          "CONTROLBAR:PurchaseUpgradeGondorBasicTraining": {}
+        },
+        "CONTROLBAR:PurchaseTechnologyGondorKnightShield": {}
+      },
+      "CONTROLBAR:ConstructGondorWorkshop": {
+        "CONTROLBAR:ConstructGondorTrebuchet": {
+          "CONTROLBAR:Guard": {},
+          "CONTROLBAR:NoAutoAcquire": {},
+          "CONTROLBAR:AutoAcquire": {},
+          "CONTROLBAR:PurchaseUpgradeGondorFireStones": {},
+          "CONTROLBAR:ToggleTrebWeapon": {}
+        },
+        "CONTROLBAR:PurchaseTechnologyGondorFireStones": {}
+      },
+      "CONTROLBAR:ConstructGondorStoneMaker": {
+        "CONTROLBAR:ConstructReinforcedGateUpgrade": {},
+        "CONTROLBAR:ConstructNumenorStoneworkUpgrade": {},
+        "CONTROLBAR:ConstructGarrisonUpgrade": {}
+      },
+      "CONTROLBAR:ConstructGondorMarketPlace": {
+        "CONTROLBAR:ConstructIronOreUpgrade": {},
+        "CONTROLBAR:ConstructGrandHarvestUpgrade": {},
+        "CONTROLBAR:ConstructSiegeMaterialsUpgrade": {}
+      },
+      "OBJECT:GondorCastleBaseKeep": {
+        "CONTROLBAR:GandalfTheWhiteHotkey": {
+          "CONTROLBAR:WizardBlast": {},
+          "CONTROLBAR:LightningSword": {},
+          "CONTROLBAR:Shadowfax": {},
+          "CONTROLBAR:IstariLight": {},
+          "CONTROLBAR:WordofPower": {}
+        },
+        "CONTROLBAR:GondorBoromirHotkey": { "CONTROLBAR:HornofGondor": {}, "CONTROLBAR:CaptainofGondor": {} },
+        "CONTROLBAR:GondorFaramirHotkey": {
+          "CONTROLBAR:ToggleFaramirWeapons": {},
+          "CONTROLBAR:WoundingArrow": {},
+          "CONTROLBAR:FaramirKnightRanger": {},
+          "CONTROLBAR:CaptainofGondor": {},
+          "CONTROLBAR:NoAutoAcquire": {},
+          "CONTROLBAR:AutoAcquire": {}
+        },
+        "CONTROLBAR:RohanPippinHotkey": { "CONTROLBAR:ThrowRocks": {}, "CONTROLBAR:UseSword": {}, "CONTROLBAR:ElvenCloak": {} },
+        "CONTROLBAR:StartCitadelSelfRepair": {}
+      },
+      "OBJECT:GondorCastleGate": { "CONTROLBAR:ToggleGateOpenClose": {}, "CONTROLBAR:StartSelfRepair": {} },
+      "OBJECT:GondorCastleWall": {
+        "CONTROLBAR:TrebuchetUpgrade": {},
+        "CONTROLBAR:BattleTowerUpgrade": {},
+        "CONTROLBAR:PosternGateUpgrade": {},
+        "CONTROLBAR:StartSelfRepair": {}
+      },
+      "OBJECT:EconomyFlag": { "CONTROLBAR:UnpackGondorFarm": {}, "CONTROLBAR:ConstructOutpost": {}, "CONTROLBAR:ConstructCastle": {} }
+    },
+    "power": {}
+  },
+  "isengard": {
+    "basic": {
+      "CONTROLBAR:ConstructSlaughterHouse": {},
+      "CONTROLBAR:ConstructFurnace": {},
+      "CONTROLBAR:ConstructIsengardUrukPit": {
+        "CONTROLBAR:ConstructIsengardUrukHai": {
+          "CONTROLBAR:Guard": {},
+          "CONTROLBAR:ToggleBlockFormation": {},
+          "CONTROLBAR:ToggleLooseFormation": {},
+          "CONTROLBAR:PurchaseUpgradeIsengardForgedBlades": {},
+          "CONTROLBAR:PurchaseUpgradeIsengardHeavyArmor": {},
+          "CONTROLBAR:PurchaseUpgradeIsengardBasicTraining": {},
+          "CONTROLBAR:Bloodthirsty": {}
+        },
+        "CONTROLBAR:ConstructIsengardCrossbowmen": {
+          "CONTROLBAR:Guard": {},
+          "CONTROLBAR:ToggleWedgeFormation": {},
+          "CONTROLBAR:ToggleLooseFormation": {},
+          "CONTROLBAR:PurchaseUpgradeIsengardHeavyArmor": {},
+          "CONTROLBAR:FireArrowUpgrade": {},
+          "CONTROLBAR:PurchaseUpgradeIsengardBasicTraining": {}
+        },
+        "CONTROLBAR:ConstructIsengardPikemen": {
+          "CONTROLBAR:Guard": {},
+          "CONTROLBAR:TogglePorcupineFormation": {},
+          "CONTROLBAR:ToggleLooseFormation": {},
+          "CONTROLBAR:PurchaseUpgradeIsengardForgedBlades": {},
+          "CONTROLBAR:PurchaseUpgradeIsengardHeavyArmor": {},
+          "CONTROLBAR:PurchaseUpgradeIsengardBasicTraining": {}
+        },
+        "CONTROLBAR:ConstructIsengardBerserker": { "CONTROLBAR:Guard": {}, "CONTROLBAR:LightTorch": {}, "CONTROLBAR:ExtinguishTorch": {} }
+      },
+      "CONTROLBAR:ConstructIsengardBattleTower": {},
+      "CONTROLBAR:ConstructIsengardWargPit": {
+        "CONTROLBAR:ConstructIsengardWargRider": {
+          "CONTROLBAR:Guard": {},
+          "CONTROLBAR:ToggleLineFormation": {},
+          "CONTROLBAR:ToggleSkirmishFormation": {},
+          "CONTROLBAR:PurchaseUpgradeIsengardForgedBlades": {},
+          "CONTROLBAR:PurchaseUpgradeIsengardHeavyArmor": {},
+          "CONTROLBAR:PurchaseUpgradeIsengardBasicTraining": {},
+          "CONTROLBAR:WargRiderHowl": {}
+        }
+      },
+      "CONTROLBAR:ConstructIsengardArmory": {
+        "CONTROLBAR:PurchaseTechnologyIsengardForgedBlades": {},
+        "CONTROLBAR:PurchaseTechnologyIsengardHeavyArmor": {},
+        "CONTROLBAR:PurchaseTechnologyIsengardFireArrows": {},
+        "CONTROLBAR:PurchaseTechnologyIsengardBasicTraining": {}
+      },
+      "CONTROLBAR:ConstructIsengardSiegeWorks": {
+        "CONTROLBAR:ConstructIsengardSiegeLadder": { "CONTROLBAR:SiegeRetract": {} },
+        "CONTROLBAR:ConstructIsengardBatteringRam": {},
+        "CONTROLBAR:ConstructIsengardSiegeBallista": {
+          "CONTROLBAR:Guard": {},
+          "CONTROLBAR:ToggleTrebWeapon": {},
+          "CONTROLBAR:NoAutoAcquire": {},
+          "CONTROLBAR:AutoAcquire": {}
+        },
+        "CONTROLBAR:ConstructIsengardExplosiveMine": { "CONTROLBAR:DeployMine": {} }
+      },
+      "CONTROLBAR:ConstructEvilSentryTower": {},
+      "OBJECT:IsengardCampKeep": {
+        "CONTROLBAR:IsengardSarumanHotkey": {
+          "CONTROLBAR:WizardBlast": {},
+          "CONTROLBAR:SpecialAbilitySarumanFireball": {},
+          "CONTROLBAR:Dominate": {},
+          "CONTROLBAR:SpeechCraft": {}
+        },
+        "CONTROLBAR:IsengardLurtzHotkey": {
+          "CONTROLBAR:ToggleLurtzWeapon": {},
+          "CONTROLBAR:SpecialAbilityLurtzCripple": {},
+          "CONTROLBAR:SpecialAbilityLurtzCarnage": {}
+        },
+        "CONTROLBAR:StartCitadelSelfRepair": {}
+      },
+      "OBJECT:EconomyFlag": {
+        "CONTROLBAR:UnpackLumbermill": { "CONTROLBAR:BuildMordorWorker": {} },
+        "CONTROLBAR:UnpackSlaughterhouse": {},
+        "CONTROLBAR:ConstructOutpost": {},
+        "CONTROLBAR:ConstructCastle": {}
+      }
+    },
+    "power": {
+      "CONTROLBAR:EvilPlayerExperienceMenu": {
+        "CONTROLBAR:SummonBalrog": {
+          "CONTROLBAR:SpecialAbilityIgnite": {},
+          "CONTROLBAR:SpecialAbilityFireWhip": {},
+          "CONTROLBAR:SpecialAbilityBalrogScream": {},
+          "CONTROLBAR:SpecialAbilityBalrogBreath": {},
+          "CONTROLBAR:SpecialAbilityBalrogWings": {}
+        }
+      }
+    }
+  },
+  "mordor": {
+    "basic": {
+      "CONTROLBAR:ConstructSlaughterHouse": {},
+      "CONTROLBAR:ConstructFurnace": {},
+      "CONTROLBAR:ConstructMordorOrcPit": {
+        "CONTROLBAR:ConstructMordorOrcFighterHorde": {
+          "CONTROLBAR:Guard": {},
+          "CONTROLBAR:PurchaseUpgradeMordorBasicTraining": {},
+          "CONTROLBAR:Bloodthirsty": {}
+        },
+        "CONTROLBAR:ConstructMordorOrcArcherHorde": {
+          "CONTROLBAR:Guard": {},
+          "CONTROLBAR:FireArrowUpgrade": {},
+          "CONTROLBAR:PurchaseUpgradeMordorBasicTraining": {}
+        },
+        "CONTROLBAR:PurchaseTechnologyMordorFireArrows": {},
+        "CONTROLBAR:PurchaseTechnologyMordorBasicTraining": {}
+      },
+      "CONTROLBAR:ConstructMordorHaradrimPalace": {
+        "CONTROLBAR:ConstructMordorHaradrimHorde": {
+          "CONTROLBAR:Guard": {},
+          "CONTROLBAR:ToggleWedgeFormation": {},
+          "CONTROLBAR:ToggleLineFormation": {},
+          "CONTROLBAR:PurchaseUpgradeMordorBasicTraining": {}
+        },
+        "CONTROLBAR:ConstructMordorEasterlingHorde": {
+          "CONTROLBAR:Guard": {},
+          "CONTROLBAR:TogglePorcupineFormation": {},
+          "CONTROLBAR:ToggleLineFormation": {},
+          "CONTROLBAR:PurchaseUpgradeMordorBasicTraining": {}
+        }
+      },
+      "CONTROLBAR:ConstructMordorTrollCage": {
+        "CONTROLBAR:ConstructMordorMountainTroll": {
+          "CONTROLBAR:Guard": {},
+          "CONTROLBAR:TrollFindRock": {},
+          "CONTROLBAR:TrollFindTree": {},
+          "CONTROLBAR:TrollFindTastyOrc": {},
+          "CONTROLBAR:NoAutoAcquire": {},
+          "CONTROLBAR:AutoAcquire": {}
+        },
+        "CONTROLBAR:ConstructMordorDrummerTrolls": { "CONTROLBAR:Guard": {} }
+      },
+      "CONTROLBAR:ConstructMordorSiegeWorks": {
+        "CONTROLBAR:ConstructMordorCatapult": {
+          "CONTROLBAR:Guard": {},
+          "CONTROLBAR:ToggleTrebWeapon": {},
+          "CONTROLBAR:ToggleCatapultWeapons": {},
+          "CONTROLBAR:NoAutoAcquire": {},
+          "CONTROLBAR:AutoAcquire": {}
+        },
+        "CONTROLBAR:ConstructMordorSiegeTower": { "CONTROLBAR:SiegeRetract": {} },
+        "CONTROLBAR:ConstructMordorBatteringRam": {}
+      },
+      "CONTROLBAR:ConstructMordorMumakilPen": {
+        "CONTROLBAR:ConstructMordorMumakil": { "CONTROLBAR:Guard": {}, "CONTROLBAR:ChargeAttack": {}, "CONTROLBAR:TransportEvacuate": {} }
+      },
+      "CONTROLBAR:ConstructEvilSentryTower": {},
+      "OBJECT:MordorCampKeep": {
+        "CONTROLBAR:MordorWitchKingOnFellBeastHotkey": { "CONTROLBAR:Screech": {} },
+        "CONTROLBAR:MordorFellBeastHotkey": { "CONTROLBAR:Screech": {} },
+        "CONTROLBAR:MordorGollumHotkey": { "CONTROLBAR:AttackMove": {}, "CONTROLBAR:Guard": {}, "CONTROLBAR:Stop": {} },
+        "CONTROLBAR:StartCitadelSelfRepair": {}
+      },
+      "OBJECT:EconomyFlag": {
+        "CONTROLBAR:UnpackLumbermill": { "CONTROLBAR:BuildMordorWorker": {} },
+        "CONTROLBAR:UnpackSlaughterhouse": {},
+        "CONTROLBAR:ConstructOutpost": {},
+        "CONTROLBAR:ConstructCastle": {}
+      }
+    },
+    "power": {
+      "CONTROLBAR:EvilPlayerExperienceMenu": {
+        "CONTROLBAR:SummonBalrog": {
+          "CONTROLBAR:SpecialAbilityIgnite": {},
+          "CONTROLBAR:SpecialAbilityFireWhip": {},
+          "CONTROLBAR:SpecialAbilityBalrogScream": {},
+          "CONTROLBAR:SpecialAbilityBalrogBreath": {},
+          "CONTROLBAR:SpecialAbilityBalrogWings": {}
+        }
+      }
+    }
+  },
   "misc": { "basic": { "CONTROLBAR:SelectAllHeroes": {}, "CONTROLBAR:AttackMove": {} }, "power": {} }
 }
