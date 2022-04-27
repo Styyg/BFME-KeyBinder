@@ -3,7 +3,6 @@
     "basic": {
       "CONTROLBAR:ConstructRohanFarm": {
         "CONTROLBAR:ConstructRohanPeasant": {
-          "CONTROLBAR:Guard": {},
           "CONTROLBAR:RepairStructure": {},
           "CONTROLBAR:PurchaseUpgradeRohanForgedBlades": {},
           "CONTROLBAR:PurchaseUpgradeRohanHeavyArmor": {},
@@ -12,7 +11,6 @@
       },
       "CONTROLBAR:ConstructRohanArcherRange": {
         "CONTROLBAR:ConstructRohanArcherHorde": {
-          "CONTROLBAR:Guard": {},
           "CONTROLBAR:ToggleSkirmishFormation": {},
           "CONTROLBAR:ToggleLineFormation": {},
           "CONTROLBAR:PurchaseUpgradeRohanHeavyArmor": {},
@@ -20,7 +18,6 @@
           "CONTROLBAR:PurchaseUpgradeRohanBasicTraining": {}
         },
         "CONTROLBAR:ConstructElvenWarriorHorde": {
-          "CONTROLBAR:Guard": {},
           "CONTROLBAR:ToggleElvenWarriorWeapons": {},
           "CONTROLBAR:PurchaseUpgradeRohanForgedBlades": {},
           "CONTROLBAR:PurchaseUpgradeRohanHeavyArmor": {},
@@ -33,7 +30,6 @@
       "CONTROLBAR:ConstructRohanStatue": {},
       "CONTROLBAR:ConstructRohanStable": {
         "CONTROLBAR:ConstructRohanRohirrimHorde": {
-          "CONTROLBAR:Guard": {},
           "CONTROLBAR:ToggleWedgeFormation": {},
           "CONTROLBAR:ToggleLineFormation": {},
           "CONTROLBAR:PurchaseUpgradeRohanForgedBlades": {},
@@ -42,7 +38,6 @@
           "CONTROLBAR:PurchaseUpgradeRohanBasicTraining": {}
         },
         "CONTROLBAR:ConstructRohanRohirrimArcherHorde": {
-          "CONTROLBAR:Guard": {},
           "CONTROLBAR:ToggleWedgeFormation": {},
           "CONTROLBAR:ToggleLineFormation": {},
           "CONTROLBAR:PurchaseUpgradeRohanHeavyArmor": {},
@@ -105,7 +100,6 @@
       },
       "CONTROLBAR:ConstructGondorBarracks": {
         "CONTROLBAR:ConstructGondorFighterHorde": {
-          "CONTROLBAR:Guard": {},
           "CONTROLBAR:ToggleBlockFormation": {},
           "CONTROLBAR:ToggleLineFormation": {},
           "CONTROLBAR:PurchaseUpgradeGondorForgedBlades": {},
@@ -113,7 +107,6 @@
           "CONTROLBAR:PurchaseUpgradeGondorBasicTraining": {}
         },
         "CONTROLBAR:ConstructGondorShieldGuardHorde": {
-          "CONTROLBAR:Guard": {},
           "CONTROLBAR:ToggleShieldWallFormation": {},
           "CONTROLBAR:ToggleLineFormation": {},
           "CONTROLBAR:PurchaseUpgradeGondorForgedBlades": {},
@@ -123,7 +116,6 @@
       },
       "CONTROLBAR:ConstructGondorArcherRange": {
         "CONTROLBAR:ConstructGondorArcherHorde": {
-          "CONTROLBAR:Guard": {},
           "CONTROLBAR:ToggleWedgeFormation": {},
           "CONTROLBAR:ToggleLineFormation": {},
           "CONTROLBAR:PurchaseUpgradeGondorHeavyArmor": {},
@@ -131,7 +123,6 @@
           "CONTROLBAR:PurchaseUpgradeGondorBasicTraining": {}
         },
         "CONTROLBAR:ConstructGondorRangerHorde": {
-          "CONTROLBAR:Guard": {},
           "CONTROLBAR:ToggleSkirmishFormation": {},
           "CONTROLBAR:ToggleLineFormation": {},
           "CONTROLBAR:FireArrowUpgrade": {},
@@ -146,7 +137,6 @@
       "CONTROLBAR:ConstructGondorKeep": {},
       "CONTROLBAR:ConstructGondorStable": {
         "CONTROLBAR:ConstructGondorKnightHorde": {
-          "CONTROLBAR:Guard": {},
           "CONTROLBAR:ToggleWedgeFormation": {},
           "CONTROLBAR:ToggleLineFormation": {},
           "CONTROLBAR:PurchaseUpgradeGondorForgedBlades": {},
@@ -158,7 +148,6 @@
       },
       "CONTROLBAR:ConstructGondorWorkshop": {
         "CONTROLBAR:ConstructGondorTrebuchet": {
-          "CONTROLBAR:Guard": {},
           "CONTROLBAR:NoAutoAcquire": {},
           "CONTROLBAR:AutoAcquire": {},
           "CONTROLBAR:PurchaseUpgradeGondorFireStones": {},
@@ -213,7 +202,6 @@
       "CONTROLBAR:ConstructFurnace": {},
       "CONTROLBAR:ConstructIsengardUrukPit": {
         "CONTROLBAR:ConstructIsengardUrukHai": {
-          "CONTROLBAR:Guard": {},
           "CONTROLBAR:ToggleBlockFormation": {},
           "CONTROLBAR:ToggleLooseFormation": {},
           "CONTROLBAR:PurchaseUpgradeIsengardForgedBlades": {},
@@ -222,7 +210,6 @@
           "CONTROLBAR:Bloodthirsty": {}
         },
         "CONTROLBAR:ConstructIsengardCrossbowmen": {
-          "CONTROLBAR:Guard": {},
           "CONTROLBAR:ToggleWedgeFormation": {},
           "CONTROLBAR:ToggleLooseFormation": {},
           "CONTROLBAR:PurchaseUpgradeIsengardHeavyArmor": {},
@@ -230,19 +217,17 @@
           "CONTROLBAR:PurchaseUpgradeIsengardBasicTraining": {}
         },
         "CONTROLBAR:ConstructIsengardPikemen": {
-          "CONTROLBAR:Guard": {},
           "CONTROLBAR:TogglePorcupineFormation": {},
           "CONTROLBAR:ToggleLooseFormation": {},
           "CONTROLBAR:PurchaseUpgradeIsengardForgedBlades": {},
           "CONTROLBAR:PurchaseUpgradeIsengardHeavyArmor": {},
           "CONTROLBAR:PurchaseUpgradeIsengardBasicTraining": {}
         },
-        "CONTROLBAR:ConstructIsengardBerserker": { "CONTROLBAR:Guard": {}, "CONTROLBAR:LightTorch": {}, "CONTROLBAR:ExtinguishTorch": {} }
+        "CONTROLBAR:ConstructIsengardBerserker": { "CONTROLBAR:LightTorch": {}, "CONTROLBAR:ExtinguishTorch": {} }
       },
       "CONTROLBAR:ConstructIsengardBattleTower": {},
       "CONTROLBAR:ConstructIsengardWargPit": {
         "CONTROLBAR:ConstructIsengardWargRider": {
-          "CONTROLBAR:Guard": {},
           "CONTROLBAR:ToggleLineFormation": {},
           "CONTROLBAR:ToggleSkirmishFormation": {},
           "CONTROLBAR:PurchaseUpgradeIsengardForgedBlades": {},
@@ -260,12 +245,7 @@
       "CONTROLBAR:ConstructIsengardSiegeWorks": {
         "CONTROLBAR:ConstructIsengardSiegeLadder": { "CONTROLBAR:SiegeRetract": {} },
         "CONTROLBAR:ConstructIsengardBatteringRam": {},
-        "CONTROLBAR:ConstructIsengardSiegeBallista": {
-          "CONTROLBAR:Guard": {},
-          "CONTROLBAR:ToggleTrebWeapon": {},
-          "CONTROLBAR:NoAutoAcquire": {},
-          "CONTROLBAR:AutoAcquire": {}
-        },
+        "CONTROLBAR:ConstructIsengardSiegeBallista": { "CONTROLBAR:ToggleTrebWeapon": {}, "CONTROLBAR:NoAutoAcquire": {}, "CONTROLBAR:AutoAcquire": {} },
         "CONTROLBAR:ConstructIsengardExplosiveMine": { "CONTROLBAR:DeployMine": {} }
       },
       "CONTROLBAR:ConstructEvilSentryTower": {},
@@ -284,7 +264,7 @@
         "CONTROLBAR:StartCitadelSelfRepair": {}
       },
       "OBJECT:EconomyFlag": {
-        "CONTROLBAR:UnpackLumbermill": { "CONTROLBAR:BuildMordorWorker": {} },
+        "CONTROLBAR:UnpackLumbermill": { "CONTROLBAR:BuildMordorWorker": { "CONTROLBAR:GoHarvest": {} } },
         "CONTROLBAR:UnpackSlaughterhouse": {},
         "CONTROLBAR:ConstructOutpost": {},
         "CONTROLBAR:ConstructCastle": {}
@@ -307,28 +287,18 @@
       "CONTROLBAR:ConstructSlaughterHouse": {},
       "CONTROLBAR:ConstructFurnace": {},
       "CONTROLBAR:ConstructMordorOrcPit": {
-        "CONTROLBAR:ConstructMordorOrcFighterHorde": {
-          "CONTROLBAR:Guard": {},
-          "CONTROLBAR:PurchaseUpgradeMordorBasicTraining": {},
-          "CONTROLBAR:Bloodthirsty": {}
-        },
-        "CONTROLBAR:ConstructMordorOrcArcherHorde": {
-          "CONTROLBAR:Guard": {},
-          "CONTROLBAR:FireArrowUpgrade": {},
-          "CONTROLBAR:PurchaseUpgradeMordorBasicTraining": {}
-        },
+        "CONTROLBAR:ConstructMordorOrcFighterHorde": { "CONTROLBAR:PurchaseUpgradeMordorBasicTraining": {}, "CONTROLBAR:Bloodthirsty": {} },
+        "CONTROLBAR:ConstructMordorOrcArcherHorde": { "CONTROLBAR:FireArrowUpgrade": {}, "CONTROLBAR:PurchaseUpgradeMordorBasicTraining": {} },
         "CONTROLBAR:PurchaseTechnologyMordorFireArrows": {},
         "CONTROLBAR:PurchaseTechnologyMordorBasicTraining": {}
       },
       "CONTROLBAR:ConstructMordorHaradrimPalace": {
         "CONTROLBAR:ConstructMordorHaradrimHorde": {
-          "CONTROLBAR:Guard": {},
           "CONTROLBAR:ToggleWedgeFormation": {},
           "CONTROLBAR:ToggleLineFormation": {},
           "CONTROLBAR:PurchaseUpgradeMordorBasicTraining": {}
         },
         "CONTROLBAR:ConstructMordorEasterlingHorde": {
-          "CONTROLBAR:Guard": {},
           "CONTROLBAR:TogglePorcupineFormation": {},
           "CONTROLBAR:ToggleLineFormation": {},
           "CONTROLBAR:PurchaseUpgradeMordorBasicTraining": {}
@@ -336,18 +306,16 @@
       },
       "CONTROLBAR:ConstructMordorTrollCage": {
         "CONTROLBAR:ConstructMordorMountainTroll": {
-          "CONTROLBAR:Guard": {},
           "CONTROLBAR:TrollFindRock": {},
           "CONTROLBAR:TrollFindTree": {},
           "CONTROLBAR:TrollFindTastyOrc": {},
           "CONTROLBAR:NoAutoAcquire": {},
           "CONTROLBAR:AutoAcquire": {}
         },
-        "CONTROLBAR:ConstructMordorDrummerTrolls": { "CONTROLBAR:Guard": {} }
+        "CONTROLBAR:ConstructMordorDrummerTrolls": {}
       },
       "CONTROLBAR:ConstructMordorSiegeWorks": {
         "CONTROLBAR:ConstructMordorCatapult": {
-          "CONTROLBAR:Guard": {},
           "CONTROLBAR:ToggleTrebWeapon": {},
           "CONTROLBAR:ToggleCatapultWeapons": {},
           "CONTROLBAR:NoAutoAcquire": {},
@@ -356,18 +324,16 @@
         "CONTROLBAR:ConstructMordorSiegeTower": { "CONTROLBAR:SiegeRetract": {} },
         "CONTROLBAR:ConstructMordorBatteringRam": {}
       },
-      "CONTROLBAR:ConstructMordorMumakilPen": {
-        "CONTROLBAR:ConstructMordorMumakil": { "CONTROLBAR:Guard": {}, "CONTROLBAR:ChargeAttack": {}, "CONTROLBAR:TransportEvacuate": {} }
-      },
+      "CONTROLBAR:ConstructMordorMumakilPen": { "CONTROLBAR:ConstructMordorMumakil": { "CONTROLBAR:ChargeAttack": {}, "CONTROLBAR:TransportEvacuate": {} } },
       "CONTROLBAR:ConstructEvilSentryTower": {},
       "OBJECT:MordorCampKeep": {
         "CONTROLBAR:MordorWitchKingOnFellBeastHotkey": { "CONTROLBAR:Screech": {} },
         "CONTROLBAR:MordorFellBeastHotkey": { "CONTROLBAR:Screech": {} },
-        "CONTROLBAR:MordorGollumHotkey": { "CONTROLBAR:AttackMove": {}, "CONTROLBAR:Guard": {}, "CONTROLBAR:Stop": {} },
+        "CONTROLBAR:MordorGollumHotkey": { "CONTROLBAR:Stop": {} },
         "CONTROLBAR:StartCitadelSelfRepair": {}
       },
       "OBJECT:EconomyFlag": {
-        "CONTROLBAR:UnpackLumbermill": { "CONTROLBAR:BuildMordorWorker": {} },
+        "CONTROLBAR:UnpackLumbermill": { "CONTROLBAR:BuildMordorWorker": { "CONTROLBAR:GoHarvest": {} } },
         "CONTROLBAR:UnpackSlaughterhouse": {},
         "CONTROLBAR:ConstructOutpost": {},
         "CONTROLBAR:ConstructCastle": {}
@@ -385,5 +351,5 @@
       }
     }
   },
-  "misc": { "basic": { "CONTROLBAR:SelectAllHeroes": {}, "CONTROLBAR:AttackMove": {} }, "power": {} }
+  "misc": { "basic": { "CONTROLBAR:SelectAllHeroes": {}, "CONTROLBAR:CancelBuild": {}, "CONTROLBAR:AttackMove": {}, "CONTROLBAR:Guard": {} }, "power": {} }
 }

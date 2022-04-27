@@ -432,7 +432,7 @@
   "isengard": {
     "basic": {
       "CONTROLBAR:ConstructFurnace": {},
-      "CONTROLBAR:ConstructIsengardLumberMill": { "CONTROLBAR:BuildMordorWorker": {} },
+      "CONTROLBAR:ConstructIsengardLumberMill": { "CONTROLBAR:BuildMordorWorker": { "CONTROLBAR:GoHarvest": {} } },
       "CONTROLBAR:ConstructIsengardUrukPit": {
         "CONTROLBAR:ConstructIsengardUrukHai": {
           "CONTROLBAR:ToggleBlockFormation": {},
@@ -557,7 +557,7 @@
   "mordor": {
     "basic": {
       "CONTROLBAR:ConstructSlaughterHouse": {},
-      "CONTROLBAR:ConstructMordorLumberMill": { "CONTROLBAR:BuildMordorWorker": {} },
+      "CONTROLBAR:ConstructMordorLumberMill": { "CONTROLBAR:BuildMordorWorker": { "CONTROLBAR:GoHarvest": {} } },
       "CONTROLBAR:ConstructMordorOrcPit": {
         "CONTROLBAR:ConstructMordorOrcFighterHorde": { "CONTROLBAR:Bloodthirsty": {}, "CONTROLBAR:PurchaseUpgradeMordorBasicTraining": {} },
         "CONTROLBAR:ConstructMordorOrcArcherHorde": {
@@ -691,7 +691,7 @@
   "goblins": {
     "basic": {
       "CONTROLBAR:ConstructWildMineShaft": { "CONTROLBAR:GarrisonExit": {}, "CONTROLBAR:EvacuateAll": {} },
-      "CONTROLBAR:ConstructWildLumberMill": { "CONTROLBAR:BuildMordorWorker": {} },
+      "CONTROLBAR:ConstructWildLumberMill": { "CONTROLBAR:BuildMordorWorker": { "CONTROLBAR:GoHarvest": {} } },
       "CONTROLBAR:ConstructWildGoblinCave": {
         "CONTROLBAR:ConstructGoblinFighterHorde": {
           "CONTROLBAR:SpecialAbilityGoblinFighterPoisonedBlades": {},
@@ -822,6 +822,7 @@
   "misc": {
     "basic": {
       "CONTROLBAR:SelectNearestBuilder": {},
+      "CONTROLBAR:CancelBuild": {},
       "CONTROLBAR:SelectAllHeroes": {},
       "CONTROLBAR:AttackMove": {},
       "CONTROLBAR:SauronHotkey": {

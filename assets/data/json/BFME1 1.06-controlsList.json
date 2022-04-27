@@ -1,7 +1,6 @@
 {
   "CONTROLBAR:ConstructRohanFarm": "",
   "CONTROLBAR:ConstructRohanPeasant": "",
-  "CONTROLBAR:Guard": "",
   "CONTROLBAR:RepairStructure": "",
   "CONTROLBAR:PurchaseUpgradeRohanForgedBlades": "",
   "CONTROLBAR:PurchaseUpgradeRohanHeavyArmor": "",
@@ -69,6 +68,7 @@
   "CONTROLBAR:UnpackRohanFarm": "",
   "CONTROLBAR:ConstructEntMoot": "",
   "CONTROLBAR:ConstructTreebeard": "",
+  "CONTROLBAR:Guard": "",
   "CONTROLBAR:GrabBuildingChunk": "",
   "CONTROLBAR:KickAndPunch": "",
   "CONTROLBAR:ConstructEnt": "",
@@ -175,6 +175,7 @@
   "CONTROLBAR:SpecialAbilityLurtzCarnage": "",
   "CONTROLBAR:UnpackLumbermill": "",
   "CONTROLBAR:BuildMordorWorker": "",
+  "CONTROLBAR:GoHarvest": "",
   "CONTROLBAR:UnpackSlaughterhouse": "",
   "CONTROLBAR:EvilPlayerExperienceMenu": "",
   "CONTROLBAR:SummonBalrog": "",
@@ -212,7 +213,8 @@
   "CONTROLBAR:Screech": "",
   "CONTROLBAR:MordorFellBeastHotkey": "",
   "CONTROLBAR:MordorGollumHotkey": "",
-  "CONTROLBAR:AttackMove": "",
   "CONTROLBAR:Stop": "",
-  "CONTROLBAR:SelectAllHeroes": ""
+  "CONTROLBAR:SelectAllHeroes": "",
+  "CONTROLBAR:CancelBuild": "",
+  "CONTROLBAR:AttackMove": ""
 }

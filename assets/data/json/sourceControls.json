@@ -444,8 +444,10 @@
   "CONTROLBAR:ConstructFurnace": "isengard/ConstructFurnace.png",
   "CONTROLBAR:AttackMove": "misc/AttackMove.png",
   "CONTROLBAR:Stop": "generic/stop_bombard.png",
+  "CONTROLBAR:CancelBuild": "misc/CancelBuild.png",
+  "CONTROLBAR:GoHarvest": "generic/GoHarvest.png",
   "bfme1 1.06": {
-    "CONTROLBAR:Guard": "generic/guard.png",
+    "CONTROLBAR:Guard": "misc/Guard.png",
     "CONTROLBAR:ConstructRohanFarm": "men/ConstructMenFarm.png",
     "CONTROLBAR:UnpackRohanFarm": "men/ConstructMenFarm.png",
     "CONTROLBAR:ConstructGondorFarm": "men/ConstructMenFarm.png",
@@ -477,7 +479,15 @@
     "CONTROLBAR:ConstructCastle": "generic/ConstructOutpost.png",
     "CONTROLBAR:ConstructOutpost": "generic/ConstructOutpost.png",
     "CONTROLBAR:ToggleElvenWarriorWeapons": "generic/Knife.png",
-    "CONTROLBAR:FireArrowUpgrade": "generic/fire_arrow.png",
+    "CONTROLBAR:FireArrowUpgrade": {
+      "CONTROLBAR:ConstructRohanArcherHorde": "generic/fire_arrow.png",
+      "CONTROLBAR:ConstructElvenWarriorHorde": "generic/fire_arrow.png",
+      "CONTROLBAR:ConstructRohanRohirrimArcherHorde": "generic/fire_arrow.png",
+      "CONTROLBAR:ConstructGondorArcherHorde": "generic/fire_arrow.png",
+      "CONTROLBAR:ConstructGondorRangerHorde": "generic/fire_arrow.png",
+      "CONTROLBAR:ConstructIsengardCrossbowmen": "generic/fire_arrow3.png",
+      "CONTROLBAR:ConstructMordorOrcArcherHorde": "generic/fire_arrow2.png"
+    },
     "OBJECT:EconomyFlag": "generic/EconomyFlag.png",
     "CONTROLBAR:TameTheBeast": "isengard/TameTheBeast.png",
     "CONTROLBAR:ToggleLineFormation": "generic/lineFormation.png",

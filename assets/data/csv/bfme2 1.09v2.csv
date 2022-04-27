@@ -403,6 +403,7 @@ CONTROLBAR:Fire_pit,dwarves,OBJECT:RohanPippin,power,3
 CONTROLBAR:ConstructFurnace,isengard,,basic,0
 CONTROLBAR:ConstructIsengardLumberMill,isengard,,basic,0
 CONTROLBAR:BuildMordorWorker,isengard,CONTROLBAR:ConstructIsengardLumberMill,basic,1
+CONTROLBAR:GoHarvest,isengard,CONTROLBAR:BuildMordorWorker,basic,2
 CONTROLBAR:ConstructIsengardUrukPit,isengard,,basic,0
 CONTROLBAR:ConstructIsengardUrukHai,isengard,CONTROLBAR:ConstructIsengardUrukPit,basic,1
 CONTROLBAR:ToggleBlockFormation,isengard,CONTROLBAR:ConstructIsengardUrukHai,basic,2
@@ -511,6 +512,7 @@ CONTROLBAR:SpecialAbilitySummonedDragonReposition,isengard,CONTROLBAR:DragonAlly
 CONTROLBAR:ConstructSlaughterHouse,mordor,,basic,0
 CONTROLBAR:ConstructMordorLumberMill,mordor,,basic,0
 CONTROLBAR:BuildMordorWorker,mordor,CONTROLBAR:ConstructMordorLumberMill,basic,1
+CONTROLBAR:GoHarvest,mordor,CONTROLBAR:BuildMordorWorker,basic,2
 CONTROLBAR:ConstructMordorOrcPit,mordor,,basic,0
 CONTROLBAR:ConstructMordorOrcFighterHorde,mordor,CONTROLBAR:ConstructMordorOrcPit,basic,1
 CONTROLBAR:Bloodthirsty,mordor,CONTROLBAR:ConstructMordorOrcFighterHorde,basic,2
@@ -637,6 +639,7 @@ CONTROLBAR:GarrisonExit,goblins,CONTROLBAR:ConstructWildMineShaft,basic,1
 CONTROLBAR:EvacuateAll,goblins,CONTROLBAR:ConstructWildMineShaft,basic,1
 CONTROLBAR:ConstructWildLumberMill,goblins,,basic,0
 CONTROLBAR:BuildMordorWorker,goblins,CONTROLBAR:ConstructWildLumberMill,basic,1
+CONTROLBAR:GoHarvest,goblins,CONTROLBAR:BuildMordorWorker,basic,2
 CONTROLBAR:ConstructWildGoblinCave,goblins,,basic,0
 CONTROLBAR:ConstructGoblinFighterHorde,goblins,CONTROLBAR:ConstructWildGoblinCave,basic,1
 CONTROLBAR:SpecialAbilityGoblinFighterPoisonedBlades,goblins,CONTROLBAR:ConstructGoblinFighterHorde,basic,2
@@ -741,6 +744,7 @@ CONTROLBAR:PurchaseUpgradeIsengardTorches,goblins,CONTROLBAR:ConstructIsengardWi
 CONTROLBAR:PurchaseUpgradeWildHeavyArmor,goblins,CONTROLBAR:ConstructIsengardWildmanHorde,inn,2
 CONTROLBAR:PurchaseUpgradeWildBasicTraining,goblins,CONTROLBAR:ConstructIsengardWildmanHorde,inn,2
 CONTROLBAR:SelectNearestBuilder,misc,,basic,0
+CONTROLBAR:CancelBuild,misc,,basic,0
 CONTROLBAR:SelectAllHeroes,misc,,basic,0
 CONTROLBAR:AttackMove,misc,,basic,0
 CONTROLBAR:SauronHotkey,misc,,basic,0
