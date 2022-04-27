@@ -62,9 +62,9 @@ function setEventListeners() {
 
   // Download
   btnDownload.addEventListener("click", () => {
-    const isBigArchive = extensionName == "big"
     const newShortcuts = {}
     const inputs = document.getElementById("new-shortcuts").querySelectorAll("input")
+    const spinner = document.getElementById("download-spinner")
 
     for (const input of inputs) {
       const key = input.value
@@ -76,7 +76,14 @@ function setEventListeners() {
       }
     }
 
-    Download.downloadStringsFile(fileName, newShortcuts, extractedData)
+    const lengthControls = Object.keys(newShortcuts).length
+    if (lengthControls > 0 && extractedData != undefined) {
+      spinner.hidden = false
+      delay(0).then(() => {
+        Download.downloadStringsFile(fileName, newShortcuts, extractedData)
+        spinner.hidden = true
+      })
+    }
   })
 
   // Game select event listeners
@@ -90,6 +97,10 @@ function setEventListeners() {
       window.location.href = url.href
     })
   }
+}
+
+function delay(time) {
+  return new Promise((resolve) => setTimeout(resolve, time))
 }
 
 function getUrlParams() {

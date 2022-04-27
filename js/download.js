@@ -3,7 +3,8 @@ import * as File from "./file.js"
 
 export function downloadStringsFile(fileName, newShortcuts, arrayData) {
   const lengthControls = Object.keys(newShortcuts).length
-  if (lengthControls <= 0) {
+
+  if (lengthControls <= 0 || arrayData == undefined) {
     return
   }
 
