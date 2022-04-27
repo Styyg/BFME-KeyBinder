@@ -20,9 +20,8 @@ function setEventListeners() {
   const inputFile = document.getElementById("inputFile")
   const btnDownload = document.getElementById("btn-download")
   // id starting with 'display'
-  const iconFaction = document.querySelectorAll("[id ^= 'display']")
   const divVersionSelect = document.querySelectorAll(".select-version")
-  let arrayDataIn
+  let extractedData
   let fileName
   let extensionName
 
@@ -41,33 +40,13 @@ function setEventListeners() {
 
     // Reading file
     reader.onload = async function fileReadCompleted() {
-      const rawData = reader.result
-      let extractedData
       try {
+        const rawData = reader.result
         extractedData = File.extractStrData(rawData, extensionName)
+        await Rows.createRows(selectedGame, selectedVersion, extractedData)
       } catch (error) {
         loadingRoller.hidden = true
         setErrInput(error)
-        return
-      }
-
-      // trim because I got some problems with tabs or space at the end of control's name.
-      arrayDataIn = extractedData
-        .replaceAll(/\r/g, "")
-        .split(/\n/)
-        .map((element) => element.trim())
-
-      // reset factions div to avoid duplication
-      for (const element of document.getElementsByName("branch")) {
-        element.innerHTML = ""
-      }
-      document.getElementById("uncategorized").innerHTML = ""
-
-      try {
-        await Rows.createRows(selectedGame, selectedVersion, arrayDataIn)
-      } catch (error) {
-        setErrInput(error)
-        loadingRoller.hidden = true
         return
       }
 
@@ -97,32 +76,19 @@ function setEventListeners() {
       }
     }
 
-    Download.downloadStringsFile(fileName, newShortcuts, arrayDataIn)
+    Download.downloadStringsFile(fileName, newShortcuts, extractedData)
   })
 
-  // Display factions
-  for (const img of iconFaction) {
-    img.addEventListener("click", () => {
-      const faction = img.id.slice("display".length)
-      Utils.displayFaction(faction)
-    })
-  }
-
-  // Game select
+  // Game select event listeners
   for (const div of divVersionSelect) {
     const game = div.getAttribute("data-game")
     const version = div.getAttribute("data-version")
-
     div.addEventListener("click", () => {
-      // selectGameAndVersion(game, version)
       const url = new URL(window.location.href)
       url.searchParams.set("game", game)
       url.searchParams.set("version", version)
       window.location.href = url.href
-      // window.history.replaceState(null, null, url.origin + url.pathname)
-      // window.history.pushState({ path: url.href }, "", url.href)
     })
-    // div.setAttribute("href", url)
   }
 }
 
@@ -133,29 +99,54 @@ function getUrlParams() {
   selectedVersion = urlParams.get("version")
 }
 
+//
 function selectGameAndVersion(game, version) {
-  // information div corresponding to game and version
-  const div = document.querySelector('[name="div-version"][data-game="' + game + '"][data-version="' + version + '"]')
+  // select faction div corresponding to game and version
+  const selectFactDiv = document.querySelector('[name="div-version"][data-game="' + game + '"][data-version="' + version + '"]')
   // div containing input file
   const divInput = document.getElementById("div-input")
-  // div
-  const divSelect = document.getElementById("div-game-select")
+  // global select faction div
+  const mainSelectFactDiv = document.getElementById("div-game-select")
 
-  if (div != null) {
-    div.hidden = false
+  // show the selected version and hide the rest
+  if (selectFactDiv != null) {
+    const iconFaction = document.querySelectorAll("[id ^= 'display']")
+
+    let firstFaction = null
+    // Add event listeners on display factions icons; and delete those which are not in the game selected
+    for (const selectFactDiv of iconFaction) {
+      const faction = selectFactDiv.id.slice("display".length)
+
+      if (Rows.arrayFaction[selectedGame].includes(faction.toLowerCase())) {
+        const img = selectFactDiv.querySelector("img")
+        img.addEventListener("click", () => {
+          Utils.displayFaction(faction)
+        })
+
+        if (firstFaction == null) {
+          firstFaction = faction
+        }
+      } else {
+        selectFactDiv.remove()
+      }
+    }
+    Utils.displayFaction(firstFaction)
+
+    selectFactDiv.hidden = false
     divInput.hidden = false
-    divSelect.hidden = true
+    mainSelectFactDiv.hidden = true
     selectedGame = game
     selectedVersion = version
 
     const divVersion = document.getElementsByName("div-version")
     for (const elem of divVersion) {
-      if (elem != div) {
+      if (elem != selectFactDiv) {
         elem.hidden = true
       }
     }
   } else {
-    divSelect.hidden = false
+    // show the versions to select
+    mainSelectFactDiv.hidden = false
   }
 }
 

@@ -79,10 +79,9 @@
             </div>
             <h5>The Battle for Middle-Earth</h5>
             <div style="display: flex; justify-content: space-evenly">
-              <!-- <a id="bfme1-1.06" class="select-version" data-game="bfme1" data-version="1.06">
+              <a id="bfme1-1.06" class="select-version" data-game="bfme1" data-version="1.06">
                 <h6 class="text-bfme1">1.06</h6>
-              </a> -->
-              <h6 class="text-bfme1">1.06 coming soon</h6>
+              </a>
             </div>
           </div>
 
@@ -138,7 +137,8 @@
           <div class="lead text-white-50 mb-4">
             Import your language file and change your shortcuts. <br />
             You can replace the file within the patch-switcher directory instead of the game directory, that way your file won't be overrided when you switch
-            version.
+            version. <br />
+            In this case, don't forget to switch version to apply the changes
           </div>
           <div class="lead text-white mb-1 fw-bolder">Default file path</div>
           <div class="lead text-white mb-4">
@@ -157,7 +157,8 @@
           <div class="lead text-white-50 mb-4">
             Import your language file and change your shortcuts. <br />
             You can replace the file within the patch-switcher directory instead of the game directory, that way your file won't be overrided when you switch
-            version.
+            version. <br />
+            In this case, don't forget to switch version to apply the changes
           </div>
           <div class="lead text-white mb-1 fw-bolder">Default file path</div>
           <div class="lead text-white mb-4">
@@ -217,56 +218,54 @@
           <h5>Select a faction:</h5>
 
           <div>
-            <!-- <div class="icon-faction center">
-              <img id="displayRohan" src="../assets/images/faction/rohan.webp" alt="" />
-            </div> -->
-
-            <div class="icon-faction center">
-              <img id="displayMen" src="../assets/images/faction/gondor.webp" alt="" />
+            <div id="displayRohan" class="icon-faction center">
+              <img src="../assets/images/faction/rohan.webp" alt="" />
             </div>
 
-            <div class="icon-faction center">
-              <img id="displayElves" src="../assets/images/faction/elfe.webp" alt="" />
+            <div id="displayMen" class="icon-faction center">
+              <img src="../assets/images/faction/gondor.webp" alt="" />
             </div>
 
-            <div class="icon-faction center">
-              <img id="displayDwarves" src="../assets/images/faction/nain.webp" alt="" />
+            <div id="displayElves" class="icon-faction center">
+              <img src="../assets/images/faction/elfe.webp" alt="" />
             </div>
 
-            <div class="icon-faction center">
-              <img id="displayIsengard" src="../assets/images/faction/isengard.webp" alt="" />
+            <div id="displayDwarves" class="icon-faction center">
+              <img src="../assets/images/faction/nain.webp" alt="" />
             </div>
 
-            <div class="icon-faction center">
-              <img id="displayMordor" src="../assets/images/faction/mordor.webp" alt="" />
+            <div id="displayIsengard" class="icon-faction center">
+              <img src="../assets/images/faction/isengard.webp" alt="" />
             </div>
 
-            <div class="icon-faction center">
-              <img id="displayGoblins" src="../assets/images/faction/gobelin.webp" alt="" />
+            <div id="displayMordor" class="icon-faction center">
+              <img src="../assets/images/faction/mordor.webp" alt="" />
             </div>
 
-            <div class="icon-faction center">
-              <img id="displayAngmar" src="../assets/images/faction/angmar.webp" alt="" />
+            <div id="displayGoblins" class="icon-faction center">
+              <img src="../assets/images/faction/gobelin.webp" alt="" />
             </div>
 
-            <div class="icon-faction center">
-              <img id="displayMisc" src="../assets/images/misc/AttackMove.png" alt="" />
+            <div id="displayAngmar" class="icon-faction center">
+              <img src="../assets/images/faction/angmar.webp" alt="" />
+            </div>
+
+            <div id="displayMisc" class="icon-faction center">
+              <img src="../assets/images/misc/AttackMove.png" alt="" />
             </div>
           </div>
 
           <button id="btn-download" class="btn btn-primary">Download</button>
-          <!-- <button id="btn-uncategorized" class="btn btn-secondary">Show uncategorized controls</button> -->
         </div>
 
-        <!-- <div id="main-faction" class="container-xxl" style="display: block"> -->
         <div id="main-faction" class="container-xxl bgdark">
           <div id="div-faction">
-            <div id="rohan">
+            <div id="rohan" hidden>
               <div id="rohan-basic" name="branch"></div>
               <div id="rohan-power" name="branch"></div>
               <div id="rohan-inn" name="branch"></div>
             </div>
-            <div id="men">
+            <div id="men" hidden>
               <div id="men-basic" name="branch"></div>
               <div id="men-power" name="branch"></div>
               <div id="men-inn" name="branch"></div>

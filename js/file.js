@@ -1,12 +1,12 @@
 import * as Utils from "./utils.js"
 
 const sizePosInBigHeader = 4
-const fileData = {} // contains, all files data, type, index
+let fileData = {} // contains, all files data, type, index
 let bufferData
 
 export function extractStrData(buffer, extensionName) {
   bufferData = buffer
-  // type of big file, so far i've seen only BIGF or BIG4 for big files
+  fileData = {}
   const decoder = new TextDecoder("utf-8")
   const fileType = decoder.decode(new DataView(bufferData, 0, 4))
   if (extensionName != "big") {
@@ -24,6 +24,12 @@ export function extractStrData(buffer, extensionName) {
       data = extractDataFromLotr(buffer, extensionName)
       break
   }
+
+  // trim because I got some problems with tabs or space at the end of control's name.
+  data = data
+    .replaceAll(/\r/g, "")
+    .split(/\n/)
+    .map((element) => element.trim())
 
   return data
 }
@@ -85,7 +91,6 @@ function extractDataFromBIG(buffer) {
 
   // throw error if file is not found
   if (fileData["fileIndex"] == undefined) {
-    console.log("Err: lotr.csf or lotr.str file not found")
     throw "lotr.csf or lotr.str was not found in big archive"
   }
 

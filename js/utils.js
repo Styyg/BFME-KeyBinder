@@ -1,21 +1,11 @@
 export function testFile(files) {
-  const maxFileSize = 10 * (1024 * 1024) //10MB
-  const allowedExtension = ["str", "big", "csf"]
+  const maxFileSize = 30 * (1024 * 1024) //30MB
   const file = files[0]
   const errLabel = document.getElementById("errInputFile")
 
   // no file
   if (files.length === 0) {
     errLabel.hidden = true
-    return
-  }
-
-  // not right file extension
-  const array = file.name.split(".")
-  const extensionName = array[array.length - 1]
-  if (!allowedExtension.includes(extensionName)) {
-    errLabel.textContent = "Invalid format, .str or .big is required"
-    errLabel.hidden = false
     return
   }
 
@@ -98,7 +88,9 @@ export async function getSrcControl(game, version, controlName, faction, parent)
   return srcControl
 }
 
+// Show all the controls of a faction and hide the others
 export function displayFaction(faction) {
+  // div containing all the control rows
   const mainDivFact = document.getElementById("div-faction")
   const divsFact = mainDivFact.children
 

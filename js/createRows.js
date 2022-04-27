@@ -1,6 +1,6 @@
 import * as Utils from "./utils.js"
 
-const arrayFaction = {
+export const arrayFaction = {
   rotwk: ["men", "elves", "dwarves", "isengard", "mordor", "goblins", "angmar", "misc"],
   bfme2: ["men", "elves", "dwarves", "isengard", "mordor", "goblins", "misc"],
   bfme1: ["rohan", "men", "isengard", "mordor", "misc"],
@@ -12,6 +12,12 @@ const arrayBranch = {
 }
 
 export async function createRows(game, version, arrayData) {
+  // reset factions div to avoid duplication
+  for (const element of document.getElementsByName("branch")) {
+    element.innerHTML = ""
+  }
+  document.getElementById("uncategorized").innerHTML = ""
+
   const filePath = "../assets/data/json/" + game.toUpperCase() + " " + version + "-controlsTreeStruct.json"
   const readControlsFactionTree = await Utils.readFile(filePath)
   const objControlsFactionTree = JSON.parse(readControlsFactionTree)
@@ -80,6 +86,8 @@ async function extractData(game, version, arrayData) {
   const objExceptions = JSON.parse(exceptions)
   const controlsDesc = await getControlsDesc(game, version, arrayData)
 
+  let nbrMissing = 0
+  let nbrControls = 0
   for (const controlName in controlsDesc) {
     const elementsDesc = document.getElementsByName(controlName + "-desc")
 
@@ -141,7 +149,14 @@ async function extractData(game, version, arrayData) {
       }
 
       console.log("MISSING: " + controlName)
+      nbrMissing++
     }
+    nbrControls++
+  }
+
+  if (nbrMissing == nbrControls) {
+    const controlFound = nbrControls - nbrMissing
+    throw "controls found found in file: " + controlFound + "/" + nbrControls
   }
 }
 
