@@ -351,5 +351,15 @@
       }
     }
   },
-  "misc": { "basic": { "CONTROLBAR:SelectAllHeroes": {}, "CONTROLBAR:CancelBuild": {}, "CONTROLBAR:AttackMove": {}, "CONTROLBAR:Guard": {} }, "power": {} }
+  "misc": {
+    "basic": {
+      "CONTROLBAR:SelectAllHeroes": {},
+      "CONTROLBAR:SellBuilding": {},
+      "CONTROLBAR:CancelBuild": {},
+      "CONTROLBAR:AttackMove": {},
+      "CONTROLBAR:Guard": {},
+      "CONTROLBAR:GuardUnit": {}
+    },
+    "power": {}
+  }
 }

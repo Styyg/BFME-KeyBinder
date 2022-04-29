@@ -445,6 +445,7 @@
   "CONTROLBAR:AttackMove": "misc/AttackMove.png",
   "CONTROLBAR:Stop": "generic/stop_bombard.png",
   "CONTROLBAR:CancelBuild": "misc/CancelBuild.png",
+  "CONTROLBAR:SellBuilding": "misc/CancelBuild.png",
   "CONTROLBAR:GoHarvest": "generic/GoHarvest.png",
   "bfme1 1.06": {
     "CONTROLBAR:Guard": "misc/Guard.png",

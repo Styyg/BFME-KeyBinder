@@ -215,6 +215,8 @@
   "CONTROLBAR:MordorGollumHotkey": "",
   "CONTROLBAR:Stop": "",
   "CONTROLBAR:SelectAllHeroes": "",
+  "CONTROLBAR:SellBuilding": "",
   "CONTROLBAR:CancelBuild": "",
-  "CONTROLBAR:AttackMove": ""
+  "CONTROLBAR:AttackMove": "",
+  "CONTROLBAR:GuardUnit": ""
 }

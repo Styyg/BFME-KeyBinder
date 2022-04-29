@@ -329,6 +329,8 @@ CONTROLBAR:SpecialAbilityBalrogScream,mordor,CONTROLBAR:SummonBalrog,power,2
 CONTROLBAR:SpecialAbilityBalrogBreath,mordor,CONTROLBAR:SummonBalrog,power,2
 CONTROLBAR:SpecialAbilityBalrogWings,mordor,CONTROLBAR:SummonBalrog,power,2
 CONTROLBAR:SelectAllHeroes,misc,,basic,0
+CONTROLBAR:SellBuilding,misc,,basic,0
 CONTROLBAR:CancelBuild,misc,,basic,0
 CONTROLBAR:AttackMove,misc,,basic,0
 CONTROLBAR:Guard,misc,,basic,0
+CONTROLBAR:GuardUnit,misc,,basic,0
