@@ -45,6 +45,7 @@ function createUncategorizedRows(arrayData) {
   }
 
   const divUncategorized = document.getElementById("div-uncategorized")
+  divUncategorized.innerHTML = ""
   for (const controlName in controls) {
     let source
     if (controlName.toLowerCase().includes("construct")) {
@@ -91,7 +92,6 @@ async function createCategorizedRows(game, version, arrayData) {
   for (const element of document.getElementsByName("branch")) {
     element.innerHTML = ""
   }
-  document.getElementById("uncategorized").innerHTML = ""
 
   const filePath = "../assets/data/json/" + game.toUpperCase() + " " + version + "-controlsTreeStruct.json"
   const readControlsFactionTree = await Utils.readFile(filePath)
