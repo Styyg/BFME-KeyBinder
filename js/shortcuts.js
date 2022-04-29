@@ -25,6 +25,11 @@ function setEventListeners() {
   let fileName
   let extensionName
 
+  // allows to select the same file again
+  inputFile.addEventListener("click", function selectedFileChanged() {
+    inputFile.value = ""
+  })
+
   inputFile.addEventListener("change", function selectedFileChanged() {
     if (!Utils.testFile(this.files)) return
 
@@ -42,7 +47,7 @@ function setEventListeners() {
     reader.onload = async function fileReadCompleted() {
       try {
         const rawData = reader.result
-        extractedData = File.extractStrData(rawData, extensionName)
+        extractedData = await File.extractStrData(rawData, extensionName)
         await Rows.createRows(selectedGame, selectedVersion, extractedData)
       } catch (error) {
         loadingRoller.hidden = true
@@ -79,7 +84,8 @@ function setEventListeners() {
     const lengthControls = Object.keys(newShortcuts).length
     if (lengthControls > 0 && extractedData != undefined) {
       spinner.hidden = false
-      delay(0).then(() => {
+      // need to add delay or the spinner won't show
+      delay(10).then(() => {
         Download.downloadStringsFile(fileName, newShortcuts, extractedData)
         spinner.hidden = true
       })
@@ -141,7 +147,9 @@ function selectGameAndVersion(game, version) {
         selectFactDiv.remove()
       }
     }
-    Utils.displayFaction(firstFaction)
+    if (firstFaction != null) {
+      Utils.displayFaction(firstFaction)
+    }
 
     selectFactDiv.hidden = false
     divInput.hidden = false

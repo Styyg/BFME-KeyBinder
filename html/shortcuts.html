@@ -72,7 +72,7 @@
           <h3 class="fw-bolder display-5">Select a version</h3>
         </div>
 
-        <div class="center">
+        <div class="center game-list">
           <div id="bfme" class="game-select">
             <div>
               <img src="../assets/images/games-icons/bfme.png" />
@@ -120,10 +120,12 @@
             <h1 class="display-5 fw-bolder text-white">The Battle for Middle-Earth I 1.06</h1>
           </div>
           <div class="lead text-white-50 mb-4">Import your language file and change your shortcuts.</div>
-          <div class="lead text-white mb-1 fw-bolder">Default file path</div>
+          <div class="lead text-white mb-1 fw-bolder">Default file path (other than english)</div>
           <div class="lead text-white mb-4">
             C:\Program Files (x86)\EA GAMES\The Battle for Middle-Earth\<b>_patch106<i>*your language*</i>.big</b>
           </div>
+          <div class="lead text-white mb-1 fw-bolder">Default file path (english only)</div>
+          <div class="lead text-white mb-4">C:\Program Files (x86)\EA GAMES\The Battle for Middle-Earth\<b>_patch106.big</b></div>
           <div class="lead text-white mb-1 fw-bolder">Other valid files</div>
           <div class="lead text-white mb-5">lotr.str &emsp; lotr.csf</div>
         </div>
@@ -189,12 +191,16 @@
             <input type="file" name="inputFile" id="inputFile" class="form-control" style="max-width: 850px" />
             <label id="errInputFile" class="text-danger fs-4" hidden></label>
           </div>
-          <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-            <label id="warningText" class="text-warning fs-4">⚠ Please keep a backup of your current file in case of problems ⚠</label>
-          </div>
+
+          <!-- Warnings -->
+          <label id="warningText" class="text-warning fs-4">⚠ Please keep a backup of your current file in case of problems ⚠</label>
           <label id="warningText" class="text-warning fs-4"
             >If you have any error using the KeyBinder, please <a href="/html/contact.html">contact me</a> on discord
           </label>
+
+          <div class="center my-5" id="selectFile" hidden>
+            <select class="form-select" style="max-width: 300px"></select>
+          </div>
         </div>
 
         <!-- loading spinner -->

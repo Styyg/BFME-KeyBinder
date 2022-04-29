@@ -10,6 +10,48 @@
   color: #207feb;
 }
 
+.text-uncategorized {
+  color: #858585;
+}
+
+#bfme {
+  border-color: #8a0d0d;
+}
+#bfme .select-version {
+  border-color: #da0f0f;
+}
+
+#bfme2 {
+  border-color: #167e24;
+}
+#bfme2 .select-version {
+  border-color: #1cbe32;
+}
+
+#rotwk {
+  border-color: #155094;
+}
+#rotwk .select-version {
+  border-color: #207feb;
+}
+
+#uncategorized {
+  border-color: #797979;
+}
+#uncategorized .select-version {
+  border-color: #797979;
+}
+
+#bfme .select-version:hover,
+#bfme2 .select-version:hover,
+#rotwk .select-version:hover,
+#uncategorized .select-version:hover {
+  border-color: #cacaca;
+}
+.select-version:hover > h6 {
+  color: #cacaca;
+}
+
 .control-main.men,
 .control-main.gondor {
   /* background-color: rgba(0, 102, 255, 0.1); */

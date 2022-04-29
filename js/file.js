@@ -4,7 +4,7 @@ const sizePosInBigHeader = 4
 let fileData = {} // contains, all files data, type, index
 let bufferData
 
-export function extractStrData(buffer, extensionName) {
+export async function extractStrData(buffer, extensionName) {
   bufferData = buffer
   fileData = {}
   const decoder = new TextDecoder("utf-8")
@@ -18,7 +18,7 @@ export function extractStrData(buffer, extensionName) {
     case "BIGF":
     case "BIG4":
       fileData["type"] = fileType
-      data = extractDataFromBIG(buffer)
+      data = await extractDataFromBIG(buffer)
       break
     default:
       data = extractDataFromLotr(buffer, extensionName)
@@ -36,7 +36,7 @@ export function extractStrData(buffer, extensionName) {
 
 // extract specified file as binary from the BIGF archive
 // big structure http://wiki.xentax.com/index.php/EA_BIG_BIGF_Archive
-function extractDataFromBIG(buffer) {
+async function extractDataFromBIG(buffer) {
   // const filesToExtract = ["lotr.csf", "data\\lotr.str"]
   const filesToExtract = ["lotr.csf", "lotr.str"]
 
@@ -54,6 +54,7 @@ function extractDataFromBIG(buffer) {
   // const headerSize = new DataView(bufferData).getUint32(12)
 
   fileData["allFiles"] = []
+  let validFiles = {}
 
   // files header start at byte n°16
   let readOffset = 16
@@ -84,17 +85,30 @@ function extractDataFromBIG(buffer) {
 
     const split = fileName.split("\\")
     const fileNameTrimed = split[split.length - 1]
-    if (fileData["fileIndex"] == undefined && filesToExtract.includes(fileNameTrimed)) {
-      fileData["fileIndex"] = i
+    if (filesToExtract.includes(fileNameTrimed)) {
+      // fileData["selectedFileIndex"] = i
+      validFiles[fileName] = i
     }
   }
 
   // throw error if file is not found
-  if (fileData["fileIndex"] == undefined) {
+  // if (fileData["selectedFileIndex"] == undefined) {
+  // throw error if no file is found
+  const nbValidFiles = Object.keys(validFiles).length
+  if (nbValidFiles == 0) {
     throw "lotr.csf or lotr.str was not found in big archive"
   }
 
-  const objFileToExtract = fileData["allFiles"][fileData["fileIndex"]]
+  let selectedFileIndex
+  if (nbValidFiles == 1) {
+    const fileName = Object.keys(validFiles)[0]
+    selectedFileIndex = validFiles[fileName]
+  } else {
+    selectedFileIndex = await getFileIndexFromList(validFiles)
+  }
+
+  fileData["selectedFileIndex"] = selectedFileIndex
+  const objFileToExtract = fileData["allFiles"][selectedFileIndex]
   const fileToExtract = objFileToExtract["fileName"]
   const dataStartPos = objFileToExtract["dataStartPos"]
   const dataSize = objFileToExtract["dataSize"]
@@ -106,6 +120,37 @@ function extractDataFromBIG(buffer) {
   fileData["fileExtension"] = extensionName
 
   return decodedFileData
+}
+
+function getFileIndexFromList(validFiles) {
+  const divSelect = document.getElementById("selectFile")
+  const selectList = divSelect.querySelector("select")
+  selectList.innerHTML = ""
+
+  const option = `<option value="">
+    Select a file...
+  </option>`
+
+  selectList.insertAdjacentHTML("beforeend", option)
+
+  for (const file in validFiles) {
+    const option = `<option value="${validFiles[file]}">
+      ${file}
+    </option>`
+
+    selectList.insertAdjacentHTML("beforeend", option)
+  }
+
+  divSelect.hidden = false
+
+  return new Promise(function (resolve, reject) {
+    selectList.addEventListener("change", function () {
+      if (selectList.value != "") {
+        divSelect.hidden = true
+        resolve(parseInt(selectList.value))
+      }
+    })
+  })
 }
 
 function extractDataFromLotr(buffer, extensionName) {
@@ -142,7 +187,7 @@ export function assembleFile(arrayStrFile) {
 
 function replaceFileInBigArchive(arrayStrFile) {
   const arrayFiles = fileData["allFiles"]
-  const fileIndex = fileData["fileIndex"]
+  const fileIndex = fileData["selectedFileIndex"]
   const pos = arrayFiles[fileIndex]["dataStartPos"]
   const size = arrayFiles[fileIndex]["dataSize"]
   const headerSizePos = arrayFiles[fileIndex]["headerStartPos"] + 4
@@ -182,7 +227,7 @@ function replaceFileInBigArchive(arrayStrFile) {
 function encodeCSF(str) {
   let tmpHeader
   if (fileData["type"].startsWith("BIG")) {
-    const fileIndex = fileData["fileIndex"]
+    const fileIndex = fileData["selectedFileIndex"]
     const pos = fileData["allFiles"][fileIndex]["dataStartPos"]
     tmpHeader = bufferData.slice(pos, pos + 24)
   } else {

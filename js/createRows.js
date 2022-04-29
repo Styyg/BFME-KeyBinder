@@ -12,6 +12,14 @@ const arrayBranch = {
 }
 
 export async function createRows(game, version, arrayData) {
+  if (game == "any" && version == "any") {
+    createUncategorizedRows(arrayData)
+  } else {
+    await createCategorizedRows(game, version, arrayData)
+  }
+}
+
+async function createCategorizedRows(game, version, arrayData) {
   // reset factions div to avoid duplication
   for (const element of document.getElementsByName("branch")) {
     element.innerHTML = ""
