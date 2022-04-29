@@ -72,6 +72,7 @@
           <h3 class="fw-bolder display-5">Select a version</h3>
         </div>
 
+        <!-- SELECT BFME 1 -->
         <div class="center game-list">
           <div id="bfme" class="game-select">
             <div>
@@ -85,6 +86,7 @@
             </div>
           </div>
 
+          <!-- SELECT BFME 2 -->
           <div id="bfme2" class="game-select">
             <img src="../assets/images/games-icons/bfme2.png" />
             <h5>The Battle for Middle-Earth II</h5>
@@ -98,6 +100,7 @@
             </div>
           </div>
 
+          <!-- SELECT ROTWK -->
           <div id="rotwk" class="game-select">
             <img src="../assets/images/games-icons/rotwk.png" />
             <h5>The Rise of the Witch-King</h5>
@@ -111,6 +114,7 @@
             </div>
           </div>
 
+          <!-- SELECT UNCATEGORIZED -->
           <!-- <div id="uncategorized" class="game-select">
             <img src="../assets/images/games-icons/rotwk.png" />
             <h5>Uncategorized (any game or mod)</h5>
@@ -122,6 +126,7 @@
           </div> -->
         </div>
       </div>
+
       <div class="text-center my-5 py-5">
         <!-- BFME I 1.06 -->
         <div name="div-version" data-game="bfme1" data-version="1.06" hidden>
@@ -135,7 +140,8 @@
             C:\Program Files (x86)\EA GAMES\The Battle for Middle-Earth\<b>_patch106<i>*your language*</i>.big</b>
           </div>
           <div class="lead text-white mb-1 fw-bolder">Default file path (english only)</div>
-          <div class="lead text-white mb-4">C:\Program Files (x86)\EA GAMES\The Battle for Middle-Earth\<b>_patch106.big</b></div>
+          <div class="lead text-white">C:\Program Files (x86)\EA GAMES\The Battle for Middle-Earth\<b>_patch106.big</b></div>
+          <div class="lead text-white mb-4">Then select english in the dropdown list</div>
           <div class="lead text-white mb-1 fw-bolder">Other valid files</div>
           <div class="lead text-white mb-5">lotr.str &emsp; lotr.csf</div>
         </div>
@@ -239,46 +245,74 @@
         </div>
       </div>
 
-      <!-- shortcuts -->
+      <!-- Shortcuts -->
       <div id="main-div" hidden>
+        <!-- Header -->
         <div class="header sticky bgdark">
           <h5>Select a faction:</h5>
 
           <div>
-            <div id="displayRohan" class="icon-faction center">
-              <img src="../assets/images/faction/rohan.webp" alt="" />
+            <div id="displayRohan">
+              <div class="icon-faction center">
+                <img src="../assets/images/faction/rohan.webp" alt="" />
+              </div>
+              <h6 class="center">Rohan</h6>
             </div>
 
-            <div id="displayMen" class="icon-faction center">
-              <img src="../assets/images/faction/gondor.webp" alt="" />
+            <div id="displayMen">
+              <div class="icon-faction center">
+                <img src="../assets/images/faction/gondor.webp" alt="" />
+              </div>
+              <h6 class="center">Men</h6>
             </div>
 
-            <div id="displayElves" class="icon-faction center">
-              <img src="../assets/images/faction/elfe.webp" alt="" />
+            <div id="displayElves">
+              <div class="icon-faction center">
+                <img src="../assets/images/faction/elfe.webp" alt="" />
+              </div>
+              <h6 class="center">Elves</h6>
             </div>
 
-            <div id="displayDwarves" class="icon-faction center">
-              <img src="../assets/images/faction/nain.webp" alt="" />
+            <div id="displayDwarves">
+              <div class="icon-faction center">
+                <img src="../assets/images/faction/nain.webp" alt="" />
+              </div>
+              <h6 class="center">Dwarves</h6>
             </div>
 
-            <div id="displayIsengard" class="icon-faction center">
-              <img src="../assets/images/faction/isengard.webp" alt="" />
+            <div id="displayIsengard">
+              <div class="icon-faction center">
+                <img src="../assets/images/faction/isengard.webp" alt="" />
+              </div>
+              <h6 class="center">Isengard</h6>
             </div>
 
-            <div id="displayMordor" class="icon-faction center">
-              <img src="../assets/images/faction/mordor.webp" alt="" />
+            <div id="displayMordor">
+              <div class="icon-faction center">
+                <img src="../assets/images/faction/mordor.webp" alt="" />
+              </div>
+              <h6 class="center">Mordor</h6>
             </div>
 
-            <div id="displayGoblins" class="icon-faction center">
-              <img src="../assets/images/faction/gobelin.webp" alt="" />
+            <div id="displayGoblins">
+              <div class="icon-faction center">
+                <img src="../assets/images/faction/gobelin.webp" alt="" />
+              </div>
+              <h6 class="center">Goblins</h6>
             </div>
 
-            <div id="displayAngmar" class="icon-faction center">
-              <img src="../assets/images/faction/angmar.webp" alt="" />
+            <div id="displayAngmar">
+              <div class="icon-faction center">
+                <img src="../assets/images/faction/angmar.webp" alt="" />
+              </div>
+              <h6 class="center">Angmar</h6>
             </div>
 
-            <div id="displayMisc" class="icon-faction center">
-              <img src="../assets/images/misc/AttackMove.png" alt="" />
+            <div id="displayMisc">
+              <div class="icon-faction center">
+                <img src="../assets/images/misc/AttackMove.png" alt="" />
+              </div>
+              <h6 class="center">Misc</h6>
             </div>
           </div>
 
@@ -287,6 +321,7 @@
           </button>
         </div>
 
+        <!-- Controls list -->
         <div id="main-faction" class="container-xxl bgdark">
           <div id="div-faction">
             <div id="rohan" hidden>
@@ -336,9 +371,7 @@
             </div>
           </div>
 
-          <div id="div-uncategorized" hidden>
-            <div id="uncategorized"></div>
-          </div>
+          <div id="div-uncategorized" hidden></div>
 
           <div id="new-shortcuts" hidden></div>
         </div>

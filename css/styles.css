@@ -28,6 +28,10 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
+.header > div > div {
+  margin-left: 2px;
+  margin-right: 2px;
+}
 
 .main-container {
   max-width: 1320px;

@@ -69,7 +69,11 @@
   margin-bottom: 50px;
 }
 
-.icon-faction,
+.icon-faction {
+  width: 85px;
+  height: 85px;
+}
+
 .icon-faction img:hover {
   width: 85px;
   height: 85px;
