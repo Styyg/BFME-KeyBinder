@@ -2,6 +2,13 @@
   margin-top: 150px;
 }
 
+.game-list {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  flex-wrap: wrap;
+}
+
 .game-select {
   display: block;
   text-align: center;
@@ -48,36 +55,6 @@
   border-radius: 10px;
   transition-duration: 0.2s;
   cursor: pointer;
-}
-
-#bfme {
-  border-color: #8a0d0d;
-}
-#bfme .select-version {
-  border-color: #da0f0f;
-}
-
-#bfme2 {
-  border-color: #167e24;
-}
-#bfme2 .select-version {
-  border-color: #1cbe32;
-}
-
-#rotwk {
-  border-color: #155094;
-}
-#rotwk .select-version {
-  border-color: #207feb;
-}
-
-#bfme .select-version:hover,
-#bfme2 .select-version:hover,
-#rotwk .select-version:hover {
-  border-color: #cacaca;
-}
-.select-version:hover > h6 {
-  color: #cacaca;
 }
 
 .title-game-icon {

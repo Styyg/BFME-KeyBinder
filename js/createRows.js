@@ -4,11 +4,13 @@ export const arrayFaction = {
   rotwk: ["men", "elves", "dwarves", "isengard", "mordor", "goblins", "angmar", "misc"],
   bfme2: ["men", "elves", "dwarves", "isengard", "mordor", "goblins", "misc"],
   bfme1: ["rohan", "men", "isengard", "mordor", "misc"],
+  any: [],
 }
 const arrayBranch = {
   rotwk: ["basic", "power", "inn", "port"],
   bfme2: ["basic", "power", "inn", "port"],
   bfme1: ["basic", "power"],
+  any: [],
 }
 
 export async function createRows(game, version, arrayData) {
@@ -17,6 +19,71 @@ export async function createRows(game, version, arrayData) {
   } else {
     await createCategorizedRows(game, version, arrayData)
   }
+}
+
+/**
+ * @param {Array<string>} arrayData
+ */
+function createUncategorizedRows(arrayData) {
+  const controls = {}
+  arrayData = arrayData.filter((row) => row != "" && !row.startsWith("//") && row.toUpperCase() != "END" && !row.toLowerCase().includes("tooltip"))
+
+  for (let i = 0; i < arrayData.length; i++) {
+    const row = arrayData[i]
+    // row = control name
+    if (!row.startsWith('"')) {
+      if (row.toLowerCase().startsWith("controlbar:")) {
+        i++
+        if (arrayData[i].includes("&")) {
+          const rowValue = arrayData[i]
+          controls[row] = {}
+          controls[row].desc = rowValue.slice(1, -1).replaceAll("&", "")
+          controls[row].key = Utils.getShortcut(rowValue)
+        }
+      }
+    }
+  }
+
+  const divUncategorized = document.getElementById("div-uncategorized")
+  for (const controlName in controls) {
+    let source
+    if (controlName.toLowerCase().includes("construct")) {
+      source = "../assets/images/men/ConstructMenFarm.png"
+    } else if (controlName.toLowerCase().includes("upgrade")) {
+      source = "../assets/images/generic/upgrade.png"
+    } else {
+      source = "../assets/images/uncategorized.png"
+    }
+
+    const newDiv = `<div id="${controls}" class="control-main misc">
+      <div id="${controls}-row" class="control-row">
+        <img class="icon" src="${source}" loading="lazy">
+
+        <div class="description" >
+          ${controlName}
+        </div>
+        <div class="shortcuts">
+          <label>Shortcut</label>
+
+          <div class="current-new">
+              <div>
+                  current : <label id="${controls}-current" class="current" >${controls[controlName].key}</label>
+              </div>
+              <div>
+                  new : <input id="${controls}-new" class="small-input" maxlength="1"></input>
+              </div>
+          </div>
+        </div>
+        <div class="description" >
+          ${controls[controlName].desc}
+        </div>
+      </div>
+    </div>`
+
+    // add html element to parent
+    divUncategorized.insertAdjacentHTML("beforeend", newDiv)
+  }
+  divUncategorized.hidden = false
 }
 
 async function createCategorizedRows(game, version, arrayData) {
