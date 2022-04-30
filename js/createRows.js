@@ -21,72 +21,6 @@ export async function createRows(game, version, arrayData) {
   }
 }
 
-/**
- * @param {Array<string>} arrayData
- */
-function createUncategorizedRows(arrayData) {
-  const controls = {}
-  arrayData = arrayData.filter((row) => row != "" && !row.startsWith("//") && row.toUpperCase() != "END" && !row.toLowerCase().includes("tooltip"))
-
-  for (let i = 0; i < arrayData.length; i++) {
-    const row = arrayData[i]
-    // row = control name
-    if (!row.startsWith('"')) {
-      if (row.toLowerCase().startsWith("controlbar:")) {
-        i++
-        if (arrayData[i].includes("&")) {
-          const rowValue = arrayData[i]
-          controls[row] = {}
-          controls[row].desc = rowValue.slice(1, -1).replaceAll("&", "")
-          controls[row].key = Utils.getShortcut(rowValue)
-        }
-      }
-    }
-  }
-
-  const divUncategorized = document.getElementById("div-uncategorized")
-  divUncategorized.innerHTML = ""
-  for (const controlName in controls) {
-    let source
-    if (controlName.toLowerCase().includes("construct")) {
-      source = "../assets/images/men/ConstructMenFarm.png"
-    } else if (controlName.toLowerCase().includes("upgrade")) {
-      source = "../assets/images/generic/upgrade.png"
-    } else {
-      source = "../assets/images/uncategorized.png"
-    }
-
-    const newDiv = `<div id="${controls}" class="control-main misc">
-      <div id="${controls}-row" class="control-row">
-        <img class="icon" src="${source}" loading="lazy">
-
-        <div class="description" >
-          ${controlName}
-        </div>
-        <div class="shortcuts">
-          <label>Shortcut</label>
-
-          <div class="current-new">
-              <div>
-                  current : <label id="${controls}-current" class="current" >${controls[controlName].key}</label>
-              </div>
-              <div>
-                  new : <input id="${controls}-new" class="small-input" maxlength="1"></input>
-              </div>
-          </div>
-        </div>
-        <div class="description" >
-          ${controls[controlName].desc}
-        </div>
-      </div>
-    </div>`
-
-    // add html element to parent
-    divUncategorized.insertAdjacentHTML("beforeend", newDiv)
-  }
-  divUncategorized.hidden = false
-}
-
 async function createCategorizedRows(game, version, arrayData) {
   // reset factions div to avoid duplication
   for (const element of document.getElementsByName("branch")) {
@@ -313,6 +247,76 @@ async function createRowControl(game, version, obj, faction, controlName, HTMLpa
   HTMLparent.insertAdjacentHTML("beforeend", newDiv)
 
   addNewShortcutsInput(nameNew)
+}
+
+/**
+ * @param {Array<string>} arrayData
+ */
+function createUncategorizedRows(arrayData) {
+  const divUncategorized = document.getElementById("div-uncategorized")
+  divUncategorized.innerHTML = ""
+
+  arrayData = arrayData.filter((row) => row != "" && !row.startsWith("//") && row.toUpperCase() != "END" && !row.toLowerCase().includes("tooltip"))
+
+  for (let i = 0; i < arrayData.length; i++) {
+    const controlName = arrayData[i]
+    if (!controlName.startsWith('"')) {
+      if (controlName.toLowerCase().startsWith("controlbar:")) {
+        i++
+        // if (arrayData[i].includes("&")) {
+        const descWithKey = arrayData[i]
+        const desc = descWithKey.slice(1, -1).replaceAll("&", "")
+        const key = Utils.getShortcut(descWithKey)
+
+        createUncategorizedRowControl(controlName, desc, key)
+        // }
+      }
+    }
+  }
+
+  divUncategorized.hidden = false
+}
+
+async function createUncategorizedRowControl(controlName, desc, key) {
+  let source
+  // if (controlName.toLowerCase().includes("construct")) {
+  //   source = "../assets/images/men/ConstructMenFarm.png"
+  // } else if (controlName.toLowerCase().includes("upgrade")) {
+  //   source = "../assets/images/generic/upgrade.png"
+  // } else {
+  source = "../assets/images/uncategorized.png"
+  // }
+
+  const newDiv = `<div id="${controlName}" class="control-main misc">
+    <div id="${controlName}-row" class="control-row">
+      <img class="icon" src="${source}" loading="lazy">
+
+      <div class="description" >
+        ${controlName}
+      </div>
+      <div class="shortcuts">
+        <label>Shortcut</label>
+
+        <div class="current-new">
+            <div>
+                current : <label id="${controlName}-current" class="current" >${key}</label>
+            </div>
+            <div>
+                new : <input name="${controlName}-new" class="small-input" maxlength="1"></input>
+            </div>
+        </div>
+      </div>
+      <div class="description" >
+        ${desc}
+      </div>
+    </div>
+  </div>`
+
+  // add html element to parent
+  const divUncategorized = document.getElementById("div-uncategorized")
+  divUncategorized.insertAdjacentHTML("beforeend", newDiv)
+
+  addNewShortcutsInput(controlName + "-new")
 }
 
 function toggleDisplayChilds(element) {
