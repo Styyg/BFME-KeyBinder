@@ -1,5 +1,16 @@
 {
-  "bfme1": {},
+  "bfme1": {
+    "OBJECT:RohanCastleBaseKeep": "",
+    "OBJECT:RohanCastleGate": "",
+    "OBJECT:RohanCastleWall": "",
+    "OBJECT:GondorCastleBaseKeep": "",
+    "OBJECT:GondorCastleGate": "",
+    "OBJECT:GondorCastleWall": "",
+    "OBJECT:IsengardCampKeep": "",
+    "OBJECT:MordorCampKeep": "",
+    "OBJECT:EconomyFlag": "",
+    "OBJECT:EvilPlayerExperienceMenu": ""
+  },
   "bfme2": {
     "CONTROLBAR:GoodPlayerExperienceMenu": "",
     "CONTROLBAR:EvilPlayerExperienceMenu": "",

@@ -28,6 +28,7 @@
       },
       "CONTROLBAR:ConstructRohanWell": {},
       "CONTROLBAR:ConstructRohanStatue": {},
+      "CONTROLBAR:ConstructRohanKeep": {},
       "CONTROLBAR:ConstructRohanStable": {
         "CONTROLBAR:ConstructRohanRohirrimHorde": {
           "CONTROLBAR:ToggleWedgeFormation": {},
@@ -220,7 +221,6 @@
         },
         "CONTROLBAR:ConstructIsengardBerserker": { "CONTROLBAR:LightTorch": {}, "CONTROLBAR:ExtinguishTorch": {} }
       },
-      "CONTROLBAR:ConstructIsengardBattleTower": {},
       "CONTROLBAR:ConstructIsengardWargPit": {
         "CONTROLBAR:ConstructIsengardWargRider": {
           "CONTROLBAR:ToggleLineFormation": {},
@@ -231,6 +231,7 @@
           "CONTROLBAR:WargRiderHowl": {}
         }
       },
+      "CONTROLBAR:ConstructIsengardBattleTower": {},
       "CONTROLBAR:ConstructIsengardArmory": {
         "CONTROLBAR:PurchaseTechnologyIsengardForgedBlades": {},
         "CONTROLBAR:PurchaseTechnologyIsengardHeavyArmor": {},
@@ -299,6 +300,7 @@
           "CONTROLBAR:PurchaseUpgradeMordorBasicTraining": {}
         }
       },
+      "CONTROLBAR:ConstructMordorBattleTower": {},
       "CONTROLBAR:ConstructMordorTrollCage": {
         "CONTROLBAR:ConstructMordorMountainTroll": {
           "CONTROLBAR:TrollFindRock": {},
@@ -349,6 +351,8 @@
   "misc": {
     "basic": {
       "CONTROLBAR:SelectAllHeroes": {},
+      "CONTROLBAR:NormalStance": {},
+      "CONTROLBAR:HoldGroundStance": {},
       "CONTROLBAR:SellBuilding": {},
       "CONTROLBAR:CancelBuild": {},
       "CONTROLBAR:AttackMove": {},

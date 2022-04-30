@@ -21,6 +21,7 @@ CONTROLBAR:PurchaseUpgradeRohanBasicTraining,rohan,CONTROLBAR:ConstructElvenWarr
 CONTROLBAR:PurchaseTechnologyRohanFireArrows,rohan,CONTROLBAR:ConstructRohanArcherRange,basic,1
 CONTROLBAR:ConstructRohanWell,rohan,,basic,0
 CONTROLBAR:ConstructRohanStatue,rohan,,basic,0
+CONTROLBAR:ConstructRohanKeep,rohan,,basic,0
 CONTROLBAR:ConstructRohanStable,rohan,,basic,0
 CONTROLBAR:ConstructRohanRohirrimHorde,rohan,CONTROLBAR:ConstructRohanStable,basic,1
 CONTROLBAR:ToggleWedgeFormation,rohan,CONTROLBAR:ConstructRohanRohirrimHorde,basic,2
@@ -212,7 +213,6 @@ CONTROLBAR:PurchaseUpgradeIsengardBasicTraining,isengard,CONTROLBAR:ConstructIse
 CONTROLBAR:ConstructIsengardBerserker,isengard,CONTROLBAR:ConstructIsengardUrukPit,basic,1
 CONTROLBAR:LightTorch,isengard,CONTROLBAR:ConstructIsengardBerserker,basic,2
 CONTROLBAR:ExtinguishTorch,isengard,CONTROLBAR:ConstructIsengardBerserker,basic,2
-CONTROLBAR:ConstructIsengardBattleTower,isengard,,basic,0
 CONTROLBAR:ConstructIsengardWargPit,isengard,,basic,0
 CONTROLBAR:ConstructIsengardWargRider,isengard,CONTROLBAR:ConstructIsengardWargPit,basic,1
 CONTROLBAR:ToggleLineFormation,isengard,CONTROLBAR:ConstructIsengardWargRider,basic,2
@@ -221,6 +221,7 @@ CONTROLBAR:PurchaseUpgradeIsengardForgedBlades,isengard,CONTROLBAR:ConstructIsen
 CONTROLBAR:PurchaseUpgradeIsengardHeavyArmor,isengard,CONTROLBAR:ConstructIsengardWargRider,basic,2
 CONTROLBAR:PurchaseUpgradeIsengardBasicTraining,isengard,CONTROLBAR:ConstructIsengardWargRider,basic,2
 CONTROLBAR:WargRiderHowl,isengard,CONTROLBAR:ConstructIsengardWargRider,basic,2
+CONTROLBAR:ConstructIsengardBattleTower,isengard,,basic,0
 CONTROLBAR:ConstructIsengardArmory,isengard,,basic,0
 CONTROLBAR:PurchaseTechnologyIsengardForgedBlades,isengard,CONTROLBAR:ConstructIsengardArmory,basic,1
 CONTROLBAR:PurchaseTechnologyIsengardHeavyArmor,isengard,CONTROLBAR:ConstructIsengardArmory,basic,1
@@ -282,6 +283,7 @@ CONTROLBAR:ConstructMordorEasterlingHorde,mordor,CONTROLBAR:ConstructMordorHarad
 CONTROLBAR:TogglePorcupineFormation,mordor,CONTROLBAR:ConstructMordorEasterlingHorde,basic,2
 CONTROLBAR:ToggleLineFormation,mordor,CONTROLBAR:ConstructMordorEasterlingHorde,basic,2
 CONTROLBAR:PurchaseUpgradeMordorBasicTraining,mordor,CONTROLBAR:ConstructMordorEasterlingHorde,basic,2
+CONTROLBAR:ConstructMordorBattleTower,mordor,,basic,0
 CONTROLBAR:ConstructMordorTrollCage,mordor,,basic,0
 CONTROLBAR:ConstructMordorMountainTroll,mordor,CONTROLBAR:ConstructMordorTrollCage,basic,1
 CONTROLBAR:TrollFindRock,mordor,CONTROLBAR:ConstructMordorMountainTroll,basic,2
@@ -327,6 +329,8 @@ CONTROLBAR:SpecialAbilityBalrogScream,mordor,CONTROLBAR:SummonBalrog,power,2
 CONTROLBAR:SpecialAbilityBalrogBreath,mordor,CONTROLBAR:SummonBalrog,power,2
 CONTROLBAR:SpecialAbilityBalrogWings,mordor,CONTROLBAR:SummonBalrog,power,2
 CONTROLBAR:SelectAllHeroes,misc,,basic,0
+CONTROLBAR:NormalStance,misc,,basic,0
+CONTROLBAR:HoldGroundStance,misc,,basic,0
 CONTROLBAR:SellBuilding,misc,,basic,0
 CONTROLBAR:CancelBuild,misc,,basic,0
 CONTROLBAR:AttackMove,misc,,basic,0

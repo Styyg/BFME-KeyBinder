@@ -74,6 +74,7 @@ const csvPath = {
   "rotwk 2.02 8.5.0": "./assets/data/csv/rotwk 2.02 8.5.0.csv",
   "bfme2 1.09v2": "./assets/data/csv/bfme2 1.09v2.csv",
   "bfme2 1.06": "./assets/data/csv/bfme2 1.06.csv",
+  "bfme1 2.22": "./assets/data/csv/bfme1 2.22.csv",
   "bfme1 1.06": "./assets/data/csv/bfme1 1.06.csv",
 }
 
@@ -94,6 +95,12 @@ const csvPath = {
 // const arrayFileBFME2_109v2 = fileBFME2_109v2.split(/\r\n/)
 // arrayFileBFME2_109v2.shift()
 // createFactionTreeStructure(BFME2, BFME2_109v2, arrayFileBFME2_109v2)
+
+// const BFME1_222 = "2.22"
+// const fileBFME1_222 = fs.readFileSync(csvPath[BFME1 + " " + BFME1_222], "utf-8")
+// const arrayFileBFME1_222 = fileBFME1_222.split(/\r\n/)
+// arrayFileBFME1_222.shift()
+// createFactionTreeStructure(BFME1, BFME1_222, arrayFileBFME1_222)
 
 // const BFME1_106 = "1.06"
 // const fileBFME1_106 = fs.readFileSync(csvPath[BFME1 + " " + BFME1_106], "utf-8")
