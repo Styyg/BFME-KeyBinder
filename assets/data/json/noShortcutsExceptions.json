@@ -9,7 +9,7 @@
     "OBJECT:IsengardCampKeep": "",
     "OBJECT:MordorCampKeep": "",
     "OBJECT:EconomyFlag": "",
-    "OBJECT:EvilPlayerExperienceMenu": ""
+    "CONTROLBAR:EvilPlayerExperienceMenu": ""
   },
   "bfme2": {
     "CONTROLBAR:GoodPlayerExperienceMenu": "",
