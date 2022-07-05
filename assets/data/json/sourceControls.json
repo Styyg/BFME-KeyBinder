@@ -837,6 +837,9 @@
       "CONTROLBAR:MordorMorgomirHotkey": "generic/dismount2.png",
       "CONTROLBAR:MordorWitchKingOnFellBeastHotkey": "generic/dismount2.png",
       "CONTROLBAR:AngmarWitchKingHotkey": "generic/dismount2.png"
-    }
+    },
+    "CONTROLBAR:PurchaseUpgradeSoulFreeze": "angmar/NecroSoulFreeze.png",
+    "CONTROLBAR:PurchaseUpgradeWellOfSouls": "angmar/NecroWellOfSouls.png",
+    "CONTROLBAR:PurchaseUpgradeCorpseRain": "angmar/NecroCorpseRain.png"
   }
 }
