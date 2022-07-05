@@ -58,8 +58,8 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item"><a class="nav-link" aria-current="page" href="/">Home</a></li>
-            <li class="nav-item"><a class="nav-link active" href="/html/shortcuts.html">Shortcuts</a></li>
-            <li class="nav-item"><a class="nav-link" href="/html/commandmap.html">Commandmap</a></li>
+            <li class="nav-item"><a class="nav-link" href="/html/shortcuts.html">Shortcuts</a></li>
+            <li class="nav-item"><a class="nav-link active" href="/html/commandmap.html">Commandmap</a></li>
             <li class="nav-item"><a class="nav-link" href="/html/contact.html">Contact</a></li>
           </ul>
         </div>
@@ -80,53 +80,23 @@
               <img src="../assets/images/games-icons/bfme.png" />
             </div>
             <h5>The Battle for Middle-Earth</h5>
-            <div style="display: flex; justify-content: space-evenly">
-              <!-- 1.06 -->
-              <a id="bfme1-1.06" class="select-version" data-game="bfme1" data-version="1.06">
-                <h6 class="text-bfme1">1.06</h6>
-              </a>
-              <!-- 2.22 -->
-              <a id="bfme1-2.22" class="select-version" data-game="bfme1" data-version="2.22">
-                <h6 class="text-bfme1">2.22</h6>
-              </a>
-            </div>
           </div>
 
           <!-- SELECT BFME 2 -->
           <div id="bfme2" class="game-select">
             <img src="../assets/images/games-icons/bfme2.png" />
             <h5>The Battle for Middle-Earth II</h5>
-            <div style="display: flex; justify-content: space-evenly">
-              <!-- 1.06 -->
-              <a id="bfme2-1.06" class="select-version" data-game="bfme2" data-version="1.06">
-                <h6 class="text-bfme2">1.06</h6>
-              </a>
-              <!-- 1.09v2 -->
-              <a id="bfme2-1.09v2" class="select-version" data-game="bfme2" data-version="1.09v2">
-                <h6 class="text-bfme2">1.09v2</h6>
-              </a>
-            </div>
           </div>
 
           <!-- SELECT ROTWK -->
           <div id="rotwk" class="game-select">
             <img src="../assets/images/games-icons/rotwk.png" />
             <h5>The Rise of the Witch-King</h5>
-            <div style="display: flex; justify-content: space-evenly">
-              <!-- 2.01 -->
-              <!-- <a id="rotwk-2.01" class="select-version" data-game="rotwk" data-version="2.01">
-                <h6 class="text-rotwk">2.01</h6>
-              </a> -->
-              <!-- 2.02 8.5.0 -->
-              <a id="rotwk-2.02 8.5.0" class="select-version" data-game="rotwk" data-version="2.02 8.5.0">
-                <h6 class="text-rotwk">2.02 8.5.0</h6>
-              </a>
-            </div>
           </div>
 
           <!-- SELECT UNCATEGORIZED -->
           <!-- <div id="uncategorized" class="game-select">
-            <img src="../assets/images/games-icons/rotwk.png" />
+            <img src="../assets/images/generic/One_Ring.png" />
             <h5>Uncategorized (any game or mod)</h5>
             <div style="display: flex; justify-content: space-evenly">
               <a id="rotwk-2.02 8.5.0" class="select-version" data-game="any" data-version="any">
@@ -230,18 +200,19 @@
         </div>
 
         <!-- Uncategorized -->
-        <!-- <div name="div-version" data-game="any" data-version="any" hidden>
+        <div name="div-version" data-game="any" data-version="any" hidden>
           <div class="center mb-4">
-            <img class="title-game-icon" src="../assets/images/games-icons/rotwk.png" />
+            <img class="title-game-icon" src="../assets/images/generic/One_Ring.png" />
             <h1 class="display-5 fw-bolder text-white">Uncategorized (any game or mod)</h1>
           </div>
           <div class="lead text-white-50 mb-4">Import your language file and change your shortcuts.</div>
           <div class="lead text-white mb-1 fw-bolder">Valid files</div>
-          <div class="lead text-white mb-5">lotr.str &emsp; lotr.csf &emsp; .big file containing one of the previous files</div>
-        </div> -->
+          <div class="lead text-white mb-5">lotr.str &emsp; lotr.csf &emsp; .big file containing at least one of the previous files</div>
+        </div>
 
         <!-- Input File -->
-        <div id="div-input" hidden>
+        <div id="div-input">
+        <!-- <div id="div-input" hidden> -->
           <div class="center row mb-4 px-5">
             <input type="file" name="inputFile" id="inputFile" class="form-control" style="max-width: 850px" />
             <label id="errInputFile" class="text-danger fs-4" hidden></label>
