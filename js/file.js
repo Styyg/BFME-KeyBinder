@@ -4,6 +4,7 @@ const sizePosInBigHeader = 4
 let fileData = {} // contains, all files data, type, index
 let bufferData
 
+// return the content of the file as a string
 export async function extractStrData(buffer, extensionName) {
   bufferData = buffer
   fileData = {}

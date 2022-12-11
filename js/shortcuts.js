@@ -31,7 +31,8 @@ function setEventListeners() {
   })
 
   inputFile.addEventListener("change", function selectedFileChanged() {
-    if (!Utils.testFile(this.files)) return
+    const errLabel = document.getElementById("errInputFile")
+    if (!Utils.testFile(this.files, errLabel)) return
 
     const mainDiv = document.getElementById("main-div")
     const loadingRoller = document.querySelector(".lds-roller")
@@ -41,9 +42,12 @@ function setEventListeners() {
 
     const file = this.files[0]
     fileName = file.name
-    const reader = new FileReader()
+
+    const fileNameSplit = fileName.split(".")
+    extensionName = fileNameSplit[fileNameSplit.length - 1].toLowerCase()
 
     // Reading file
+    const reader = new FileReader()
     reader.onload = async function fileReadCompleted() {
       try {
         const rawData = reader.result
@@ -58,9 +62,6 @@ function setEventListeners() {
       mainDiv.hidden = false
       loadingRoller.hidden = true
     }
-
-    const fileNameSplit = fileName.split(".")
-    extensionName = fileNameSplit[fileNameSplit.length - 1].toLowerCase()
 
     reader.readAsArrayBuffer(file)
   })

@@ -165,7 +165,7 @@ async function extractData(game, version, arrayData) {
 
   if (nbrMissing == nbrControls) {
     const controlFound = nbrControls - nbrMissing
-    throw "controls found found in file: " + controlFound + "/" + nbrControls
+    throw "controls found in file: " + controlFound + "/" + nbrControls
   }
 }
 

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Shortcuts</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JTKTYT23YN"></script>
+    <script src="../js/googleAnalytics.js"></script>
+
+    <!-- Favicon-->
+    <link rel="icon" href="../assets/images/one-ring.ico" />
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!-- Custom CSS -->
+    <link href="../css/styles.css" rel="stylesheet" />
+    <link href="../css/colors.css" rel="stylesheet" />
+    <link href="../css/shortcuts.css" rel="stylesheet" />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <!-- needed to support encode to old encoding types (like windows-1252) -->
+    <script>
+      window.TextEncoder = null // force installation of the polyfill
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/inexorabletash/text-encoding/lib/encoding-indexes.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/inexorabletash/text-encoding/lib/encoding.js"></script>
+    <script src="../js/transfer.js" type="module"></script>
+  </head>
+
+  <body>
+    <!-- Responsive navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container px-5">
+        <a class="navbar-brand" href="https://bfme-keybinder.netlify.app/">BFME KeyBinder</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" aria-current="page" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="/html/shortcuts.html">Shortcuts</a></li>
+            <li class="nav-item"><a class="nav-link active" href="/html/Transfer.html">
+              <img class="" src="../assets/images/other/new.png" width="30" height="30" />
+              Transfer
+            </a></li>
+            <li class="nav-item"><a class="nav-link" href="/html/contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="main-container">
+      <!-- Game select -->
+      <div id="div-game-select">
+        <div class="center mb-5">
+          <h2 class="fw-bolder display-5">
+            <img class="" src="../assets/images/other/new.png" width="60" height="60" />
+            Transfer your shortcuts from one file to another one</h2>
+          <br>
+        </div>
+
+        <div class="center mb-4">
+          <h2>Examples of transfer: </h2>
+        </div>
+
+        <div class="center">
+          <h6>
+            <img class="" src="../assets/images/games-icons/rotwk.png" width="30" height="30" />
+            ROTWK 2.02 v8.5.0  → 
+            <img class="" src="../assets/images/games-icons/bfme2.png" width="30" height="30" />
+            BFME2 1.09v2</h6> 
+        </div>
+
+        <div class="center">
+          <h6>
+            <img class="" src="../assets/images/games-icons/rotwk.png" width="30" height="30" />
+            ROTWK 2.02 v8.5.0 → 
+            <img class="" src="../assets/images/games-icons/rotwk.png" width="30" height="30" />
+            ROTWK 2.02 v9.0.0</h6> 
+        </div>
+
+        <div class="center mb-4">
+          <h6>
+            <img class="" src="../assets/images/games-icons/bfme2.png" width="30" height="30" />
+            BFME2 1.09v2 French  → 
+            <img class="" src="../assets/images/games-icons/bfme2.png" width="30" height="30" />
+            BFME2 1.09v2 English</h6> 
+        </div>
+      </div>
+
+      <!-- Input File -->
+      <div id="div-input">
+        <!-- File 1 (from) -->
+        <div class="center row mb-5 px-5">
+          <div style="max-width: 850px">
+            <label class="lead text-white fw-bolder">FROM</label> <br>
+            <label class="lead text-white mb-2">Select the file that already contains all your shortcuts</label>
+            <input type="file" name="inputFile1" id="inputFile1" class="form-control" />
+            <label id="errInputFile1" class="text-danger fs-4" hidden></label>
+          </div>
+        </div> 
+        
+        <!-- loading spinner -->
+        <div class="center">
+          <div id="roller1" class="lds-roller" hidden>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+
+        <!-- File 2 (to) -->
+        <div class="center row mb-4 px-5">
+          <div style="max-width: 850px">
+            <label class="lead text-white fw-bolder">TO</label> <br>
+            <label class="lead text-white mb-2">Select the new file that will get the new shortcuts</label>
+            <input type="file" name="inputFile2" id="inputFile2" class="form-control" />
+            <label id="errInputFile2" class="text-danger fs-4" hidden></label>
+          </div> 
+        </div> 
+        
+        <!-- loading spinner -->
+        <div class="center">
+          <div id="roller2" class="lds-roller" hidden>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Download Button -->
+    <div class="center mb-5 mt-2">
+      <button id="btn-download" class="btn btn-primary">
+        Download <span id="download-spinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" hidden></span>
+      </button>
+    </div>
+    
+
+
+    <!-- Footer-->
+    <footer class="py-5">
+      <div class="container px-5">
+        <h5 class="mb-4 text-center text-white">&copy; Made by Styg</h5>
+        <p class="m-0 text-center text-white">Special thanks to:</p>
+        <h6 class="m-0 text-center text-white">Eldar - Froldoom - Elrohir - Jaque - Werbo45 - MrleNUL</h6>
+      </div>
+    </footer>
+  </body>
+</html>
