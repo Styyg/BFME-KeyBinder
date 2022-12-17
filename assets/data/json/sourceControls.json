@@ -356,6 +356,7 @@
   "CONTROLBAR:Knife": "generic/Knife.png",
   "CONTROLBAR:GoblinKingPoisonedStinger": "goblins/Goblins_PoisonedStinger.png",
   "CONTROLBAR:WildShelobPoisonedStinger": "goblins/Goblins_PoisonedStinger.png",
+  "CONTROLBAR:HwaldarSummonHillmen1": "angmar/Angmar_Hillmen.png",
   "CONTROLBAR:HwaldarSummonHillmen2": "angmar/Angmar_Hillmen.png",
   "CONTROLBAR:ConstructAngmarWildmanHorde": "angmar/Angmar_Hillmen.png",
   "CONTROLBAR:PurchaseUpgradeIsengardTorches": "isengard/Isengard_Torches.png",

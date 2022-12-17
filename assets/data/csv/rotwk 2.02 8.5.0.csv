@@ -885,6 +885,7 @@ CONTROLBAR:ConstructDwarvenFortress,angmar,,basic,0
 CONTROLBAR:ConstructAngmarPorter,angmar,CONTROLBAR:ConstructDwarvenFortress,basic,1
 CONTROLBAR:SelectRevivablesDwarvenFortress,angmar,CONTROLBAR:ConstructDwarvenFortress,basic,1
 CONTROLBAR:AngmarHwaldarHotkey,angmar,CONTROLBAR:SelectRevivablesDwarvenFortress,basic,2
+CONTROLBAR:HwaldarSummonHillmen1,angmar,CONTROLBAR:AngmarHwaldarHotkey,basic,3
 CONTROLBAR:HwaldarSummonHillmen2,angmar,CONTROLBAR:AngmarHwaldarHotkey,basic,3
 CONTROLBAR:AngmarMorgramirHotkey,angmar,CONTROLBAR:SelectRevivablesDwarvenFortress,basic,2
 CONTROLBAR:BlackRiderMorgulBlade,angmar,CONTROLBAR:AngmarMorgramirHotkey,basic,3
