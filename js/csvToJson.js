@@ -71,18 +71,18 @@ const BFME2 = "bfme2"
 const BFME1 = "bfme1"
 
 const csvPath = {
-  "rotwk 2.02 8.5.0": "./assets/data/csv/rotwk 2.02 8.5.0.csv",
+  "rotwk 2.02 9.0.0": "./assets/data/csv/rotwk 2.02 9.0.0.csv",
   "bfme2 1.09v2": "./assets/data/csv/bfme2 1.09v2.csv",
   "bfme2 1.06": "./assets/data/csv/bfme2 1.06.csv",
   "bfme1 2.22": "./assets/data/csv/bfme1 2.22.csv",
   "bfme1 1.06": "./assets/data/csv/bfme1 1.06.csv",
 }
 
-// const ROTWK_850 = "2.02 8.5.0"
-// const fileROTWK_850 = fs.readFileSync(csvPath[ROTWK + " " + ROTWK_850], "utf-8")
-// const arrayFileROTWK_850 = fileROTWK_850.split(/\r\n/)
-// arrayFileROTWK_850.shift()
-// createFactionTreeStructure(ROTWK, ROTWK_850, arrayFileROTWK_850)
+const ROTWK_900 = "2.02 9.0.0"
+const fileROTWK_900 = fs.readFileSync(csvPath[ROTWK + " " + ROTWK_900], "utf-8")
+const arrayFileROTWK_900 = fileROTWK_900.split(/\r\n/)
+arrayFileROTWK_900.shift()
+createFactionTreeStructure(ROTWK, ROTWK_900, arrayFileROTWK_900)
 
 // const BFME2_106 = "1.06"
 // const fileBFME2_106 = fs.readFileSync(csvPath[BFME2 + " " + BFME2_106], "utf-8")

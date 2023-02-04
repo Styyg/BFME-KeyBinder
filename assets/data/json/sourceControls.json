@@ -298,8 +298,6 @@
   "CONTROLBAR:ConstructDwarvenMenOfDale": "dwarves/Dwarves_MenOfDale.png",
   "CONTROLBAR:BattleWagonUpgradeMenOfDale": "dwarves/Dwarves_MenOfDale.png",
   "CONTROLBAR:BattleWagonUpgradeBannerCarrier": "dwarves/Dwarves_Banner.png",
-  "CONTROLBAR:BlackArrows": "dwarves/Dwarves_BlackArrows.png",
-  "CONTROLBAR:DaleSlamArrow": "dwarves/Dwarves_BlackArrows.png",
   "CONTROLBAR:ToggleFaramirWeapons": "generic/ToggleWeapons.png",
   "CONTROLBAR:ToggleBrandWeapons": "generic/ToggleWeapons.png",
   "CONTROLBAR:TrainArchers": "generic/TrainArchers.png",
@@ -812,7 +810,7 @@
     "CONTROLBAR:SpecialAbilityFiresOfDoom": "misc/SpecialAbilityFiresOfDoom2.png"
   },
   "rotwk 2.01": {},
-  "rotwk 2.02 8.5.0": {
+  "rotwk 2.02 9.0.0": {
     "CONTROLBAR:SpecialAbilityShieldBubble": "men/SpecialAbilityShieldBubble.png",
     "CONTROLBAR:TameTheBeast": "isengard/TameTheBeast2.png",
     "CONTROLBAR:PurchaseTechnologyMordorFireArrows": "generic/fire_arrow5.png",
@@ -841,6 +839,11 @@
     },
     "CONTROLBAR:PurchaseUpgradeSoulFreeze": "angmar/NecroSoulFreeze.png",
     "CONTROLBAR:PurchaseUpgradeWellOfSouls": "angmar/NecroWellOfSouls.png",
-    "CONTROLBAR:PurchaseUpgradeCorpseRain": "angmar/NecroCorpseRain.png"
+    "CONTROLBAR:PurchaseUpgradeCorpseRain": "angmar/NecroCorpseRain.png",
+    "CONTROLBAR:NecromancerDeathMask": "angmar/DeathMasks.png",
+    "CONTROLBAR:PurchaseTechnologyAngmarDeathMasks": "angmar/DeathMasks.png",
+    "CONTROLBAR:SpecialAbilityIncinerate": "goblins/SpecialAbilityIncinerate3.png",
+    "CONTROLBAR:CAH_BattleRage_Level3": "goblins/AzogRage.png",
+    "CONTROLBAR:ToggleSpiderRiderWeapons": "goblins/ToggleSpiderRiderWeapons2.png"
   }
 }
