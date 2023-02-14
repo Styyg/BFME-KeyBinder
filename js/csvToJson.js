@@ -125,7 +125,7 @@ const csvPath = {
 // arrayFileBFME1_106.shift()
 // createFactionTreeStructure(BFME1, BFME1_106, arrayFileBFME1_106)
 
-const fileCommandMap = fs.readFileSync(csvPath["commandmap"], "utf-8")
-const arrayFileCommandMap = fileCommandMap.split(/\r\n/)
-arrayFileCommandMap.shift()
-createCommandMapTree(arrayFileCommandMap)
+// const fileCommandMap = fs.readFileSync(csvPath["commandmap"], "utf-8")
+// const arrayFileCommandMap = fileCommandMap.split(/\r\n/)
+// arrayFileCommandMap.shift()
+// createCommandMapTree(arrayFileCommandMap)
