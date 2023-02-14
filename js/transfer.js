@@ -131,7 +131,7 @@ function setEventListeners() {
       spinner.hidden = false
       // need to add delay or the spinner won't show
       delay(10).then(() => {
-        Download.downloadStringsFile(fileName2, newShortcuts, extractedData2)
+        Download.downloadShortcutsFile(fileName2, newShortcuts, extractedData2)
         spinner.hidden = true
       })
     }

@@ -61,6 +61,7 @@ function setEventListeners() {
 
       mainDiv.hidden = false
       loadingRoller.hidden = true
+      document.getElementById("main-div").scrollIntoView();
     }
 
     reader.readAsArrayBuffer(file)
@@ -87,7 +88,7 @@ function setEventListeners() {
       spinner.hidden = false
       // need to add delay or the spinner won't show
       delay(10).then(() => {
-        Download.downloadStringsFile(fileName, newShortcuts, extractedData)
+        Download.downloadShortcutsFile(fileName, newShortcuts, extractedData)
         spinner.hidden = true
       })
     }

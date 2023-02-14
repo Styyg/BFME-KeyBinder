@@ -1,7 +1,7 @@
 import * as Utils from "./utils.js"
 import * as File from "./file.js"
 
-export function downloadStringsFile(fileName, newShortcuts, arrayData) {
+export function downloadShortcutsFile(fileName, newShortcuts, arrayData) {
   const lengthControls = Object.keys(newShortcuts).length
 
   if (lengthControls <= 0 || arrayData == undefined) {
@@ -68,6 +68,56 @@ export function downloadStringsFile(fileName, newShortcuts, arrayData) {
   const newFile = File.assembleFile(arrayData)
 
   download(newFile, fileName)
+}
+
+export function downloadCommandmapFile(fileName, newCommandMaps, arrayData) {
+  const lengthControls = Object.keys(newCommandMaps).length
+
+  if (lengthControls <= 0 || arrayData == undefined) {
+    return
+  }
+
+  for (const commandmap in newCommandMaps) {
+    const commandMapText = "CommandMap"
+    const index = arrayData.indexOf(commandMapText + " " + commandmap) // get commandmap index
+
+    // if we get the commandmap
+    if (index > -1) {
+      let offset = 1
+
+      // while we haven't reached END
+      while (!arrayData[index + offset].toUpperCase().startsWith('END')) {
+
+        let row = arrayData[index + offset]
+        const attribute = row.split("=")[0].trim()
+
+        // if attribute is found
+        if (attribute in newCommandMaps[commandmap]) {
+
+          const searchPos = row.search("=")
+          if (searchPos > 0) {
+            // change value of attribute
+            row = row.slice(0, searchPos +1) + " " + newCommandMaps[commandmap][attribute]
+            
+            arrayData[index + offset] = row
+  
+            // new shortcut NOT found in row
+          } else {
+            console.log(attribute + " was not found for " + commandmap)
+          }
+        }
+
+        offset++
+      }
+    } else {
+      console.log(commandmap + " was not found")
+    }
+  }
+
+  const newFile = File.assembleFile(arrayData)
+
+  download(newFile, fileName)
+
 }
 
 function download(content, filename) {

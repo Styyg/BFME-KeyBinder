@@ -1,4 +1,29 @@
 name,notes
+SELECT_ALL,Select all units
+SELECT_MATCHING_UNITS,Selects units by type visible on the screen. Double click to select all of the same type on the map
+SELECT_HERO,Select heroes one by one
+STOP,Stop the selected units
+SCATTER,Scatter selected units
+SELL,Sell the selected building
+PLACE_BEACON,Place a beacon on the map visible by your allies
+VIEW_HOME_BASE,Move the camera to your base
+VIEW_LAST_RADAR_EVENT,Move the camera to the last radar event
+STANCE_AGGRESSIVE,Apply aggresive stance to selected units
+STANCE_BATTLE,Apply battle stance to selected units
+STANCE_HOLDGROUND,Apply hold ground stance to selected units
+CHAT_ALLIES,Open chat box to send messages to allies only
+CHAT_EVERYONE,Open chat box to send messages to everyone
+OPTIONS,Display game options
+SPELL_STORE,Open the power menu
+DIPLOMACY,Open diplomacy panel
+TOGGLE_PLANNING_MODE,Open the planning mode
+TOGGLE_CONTROL_BAR,Toggle the visibility of the HUD
+BEGIN_PREFER_SELECTION,Enable adding to selection
+END_PREFER_SELECTION,Disable adding to selection
+CAMERA_RESET,Reset the camera zoom and rotation at its initial values
+TOGGLE_FAST_FORWARD_MODE,Toggle the fast forward mode when watching replays
+ORDERMODE_WAYPOINT,Enable order mode. Orders you give are executed one after the other as waypoint
+ORDERMODE_IMMEDIATE,Disable order mode. Orders you give are executed immediately and cancel previous ones
 SAVE_VIEW1,Save view n°1 at current camera position
 SAVE_VIEW2,Save view n°2 at current camera position
 SAVE_VIEW3,Save view n°3 at current camera position
@@ -55,41 +80,16 @@ VIEW_TEAM6,Move the camera to the position of team n°6
 VIEW_TEAM7,Move the camera to the position of team n°7
 VIEW_TEAM8,Move the camera to the position of team n°8
 VIEW_TEAM9,Move the camera to the position of team n°9
-SELECT_MATCHING_UNITS,Selects units by type visible on the screen. Double click to select all of the same type on the map
+TAKE_SCREENSHOT,Should take a screenshot of the game screen but doesn't seem to work
+TOGGLE_ATTACKMOVE,Don't seem to work
+ALL_CHEER,Unknown. If you know how it works feel free to contact me
 SELECT_NEXT_UNIT,Unknown. If you know how it works feel free to contact me
 SELECT_PREV_UNIT,Unknown. If you know how it works feel free to contact me
 SELECT_NEXT_WORKER,Unknown. If you know how it works feel free to contact me
 SELECT_PREV_WORKER,Unknown. If you know how it works feel free to contact me
-SELECT_HERO,Select heroes one by one
-VIEW_HOME_BASE,Move the camera to your base
-VIEW_LAST_RADAR_EVENT,Move the camera to the last radar event
-SELECT_ALL,Select all units
-SCATTER,Scatter selected units
-STOP,Stop the selected units
-TOGGLE_ATTACKMOVE,Doesn't seem to work
-AUTO_SAVE,Unknown. If you know how it works feel free to contact me
-CREATE_FORMATION,Unknown. If you know how it works feel free to contact me
-CHAT_ALLIES,Open chat box to send message to ally only
-CHAT_EVERYONE,Open chat box to send message to everyone
-CHAT_BUDDIES,Unknown. If you know how it works feel free to contact me
-DIPLOMACY,Open diplomacy panel
-PLACE_BEACON,Place a beacon on the map visible by your allies
-OPTIONS,Display game options
-TOGGLE_CONTROL_BAR,Toggle the visibility of the HUD
 BEGIN_FORCEATTACK,Unknown. If you know how it works feel free to contact me
 END_FORCEATTACK,Unknown. If you know how it works feel free to contact me
-BEGIN_PREFER_SELECTION,Enable adding to selection
-END_PREFER_SELECTION,Disable adding to selection
-TAKE_SCREENSHOT,Should take a screenshot of the game screen but doesn't seem to work
-ALL_CHEER,Unknown if you know how it works feel free to contact me
-CAMERA_RESET,Reset the camera zoom and rotation at its initial values
-SPELL_STORE,Open the power menu
-TOGGLE_FAST_FORWARD_MODE,Toggle the fast forward mode when watching replays
-ORDERMODE_WAYPOINT,Enable order mode. Orders you give are executed one after the other
-ORDERMODE_IMMEDIATE,Disable order mode. Orders you give are immediate and cancel previous ones
-STANCE_AGGRESSIVE,Apply aggresive stance to selected units
-STANCE_BATTLE,Apply battle stance to selected units
-STANCE_HOLDGROUND,Apply hold ground stance to selected units
+AUTO_SAVE,Unknown. If you know how it works feel free to contact me
+CREATE_FORMATION,Unknown. If you know how it works feel free to contact me
+CHAT_BUDDIES,Unknown. If you know how it works feel free to contact me
 DEBUG_TOGGLE_STRINGTAGS,Unknown. If you know how it works feel free to contact me
-TOGGLE_PLANNING_MODE,Open the planning mode
-SELL,Sell the selected building

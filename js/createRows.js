@@ -180,10 +180,11 @@ async function extractData(game, version, arrayData) {
 
 async function extractCommandmapData(objCommandmap, arrayData) {
   
-  for (let i = 0; i < arrayData.length; i++) {
+  let i= 0
+  while (i < arrayData.length) {
     let row = arrayData[i].trim()
 
-    if (row.startsWith("CommandMap")) {
+    if (row.toLowerCase().startsWith("commandmap")) {
       const commandMap = row.slice("CommandMap".length +1,)
       i++
       row = arrayData[i].trim()
@@ -204,6 +205,8 @@ async function extractCommandmapData(objCommandmap, arrayData) {
         row = arrayData[i].trim()
         i++
       }
+    } else {
+      i++
     }
   }
 
@@ -327,11 +330,13 @@ async function createRowCommandMap(objCommandmap) {
 
     const notes = objCommandmap[commandMap]["notes"]
 
-    let disabled
+    let disabled, htmlName
     if("found" in objCommandmap[commandMap]) {
       disabled = ""
+      htmlName = "new-shortcuts"
     } else {
       disabled = "disabled"
+      htmlName = ""
     }
 
     const newDiv = `<div id="${commandMap}" class="control-main misc">
@@ -346,7 +351,7 @@ async function createRowCommandMap(objCommandmap) {
                   current : <label id="${id_KeyCurrent}" class="current">${key}</label>
               </div>
               <div>
-                  new : <select id="${id_KeyNew}" ${disabled}>
+                  new : <select id="${id_KeyNew}" name="${htmlName}" ${disabled}>
                     <option value=""></option>
                     <option value="KEY_NONE">None</option>
 
@@ -393,16 +398,16 @@ async function createRowCommandMap(objCommandmap) {
                     </optgroup>
 
                     <optgroup label="Numeric keypad">
-                      <option value="KEY_KP0">0</option>
-                      <option value="KEY_KP1">1</option>
-                      <option value="KEY_KP2">2</option>
-                      <option value="KEY_KP3">3</option>
-                      <option value="KEY_KP4">4</option>
-                      <option value="KEY_KP5">5</option>
-                      <option value="KEY_KP6">6</option>
-                      <option value="KEY_KP7">7</option>
-                      <option value="KEY_KP8">8</option>
-                      <option value="KEY_KP9">9</option>
+                      <option value="KEY_KP0">KP 0</option>
+                      <option value="KEY_KP1">KP 1</option>
+                      <option value="KEY_KP2">KP 2</option>
+                      <option value="KEY_KP3">KP 3</option>
+                      <option value="KEY_KP4">KP 4</option>
+                      <option value="KEY_KP5">KP 5</option>
+                      <option value="KEY_KP6">KP 6</option>
+                      <option value="KEY_KP7">KP 7</option>
+                      <option value="KEY_KP8">KP 8</option>
+                      <option value="KEY_KP9">KP 9</option>
                     </optgroup>
 
                     <optgroup label="Functions keys">
@@ -448,7 +453,7 @@ async function createRowCommandMap(objCommandmap) {
                   current : <label id="${id_TransitionCurrent}" class="current">${transition}</label>
               </div>
               <div>
-                  new : <select id="${id_TransitionNew}" ${disabled}>
+                  new : <select id="${id_TransitionNew}" name="${htmlName}" ${disabled}>
                   <option value=""></option>
                   <option value="UP">Up</option>
                   <option value="DOWN">Down</option>
@@ -464,7 +469,7 @@ async function createRowCommandMap(objCommandmap) {
                   current : <label id="${id_ModifierCurrent}" class="current">${modifiers}</label>
               </div>
               <div>
-                  new : <select id="${id_ModifierNew}" ${disabled}>
+                  new : <select id="${id_ModifierNew}" name="${htmlName}" ${disabled}>
                   <option value=""></option>
                   <option value="NONE">None</option>
                   <option value="CTRL">Ctrl</option>

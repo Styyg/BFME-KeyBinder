@@ -26,11 +26,17 @@ export async function extractStrData(buffer, extensionName, searchFile) {
       break
   }
 
-  // trim because I got some problems with tabs or space at the end of control's name.
-  data = data
-    .replaceAll(/\r/g, "")
-    .split(/\n/)
-    .map((element) => element.trim())
+  if (searchFile == "commandmap") {
+    data = data
+      .replaceAll(/\r/g, "")
+      .split(/\n/)
+  } else {
+    // trim because I got some problems with tabs or space at the end of control's name.
+    data = data
+      .replaceAll(/\r/g, "")
+      .split(/\n/)
+      .map((element) => element.trim())
+  }
 
   return data
 }
@@ -102,7 +108,11 @@ async function extractDataFromBIG(buffer, searchFile) {
   // throw error if no file is found
   const nbValidFiles = Object.keys(validFiles).length
   if (nbValidFiles == 0) {
-    throw "lotr.csf or lotr.str was not found in big archive"
+    if (searchFile == "commandmap") {
+      throw "commandmap.ini was not found in big archive"
+    } else {
+      throw "lotr.csf or lotr.str was not found in big archive"
+    }
   }
 
   let selectedFileIndex

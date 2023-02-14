@@ -52,6 +52,7 @@ function setEventListeners() {
 
       mainDiv.hidden = false
       loadingRoller.hidden = true
+      document.getElementById("main-div").scrollIntoView();
     }
 
     reader.readAsArrayBuffer(file)
@@ -59,26 +60,50 @@ function setEventListeners() {
 
   // Download
   btnDownload.addEventListener("click", () => {
-    const newShortcuts = {}
-    const inputs = document.getElementById("new-shortcuts").querySelectorAll("input")
+    const newCommandMaps = {}
+    const inputs = document.getElementsByName("new-shortcuts")
     const spinner = document.getElementById("download-spinner")
 
     for (const input of inputs) {
-      const key = input.value
-      const controlName = input.id.split("-")[0]
+      const value = input.value
 
-      if (key != "" && key != '"') {
-        newShortcuts[controlName] = {}
-        newShortcuts[controlName]["key"] = key
+      if (value != "") {
+        const arr = input.id.split("-")
+        const commandmap = arr[0]
+        const attribute = arr[1]
+
+        const attributeKey = "keyNew"
+        const attributeTransition = "transitionNew"
+        const attributeModifier = "modifierNew"
+
+        if(!(commandmap in newCommandMaps)) 
+          newCommandMaps[commandmap] = {}
+
+        switch (attribute) {
+          case attributeKey:
+            newCommandMaps[commandmap]["Key"] = value
+            break;
+
+          case attributeTransition:
+            newCommandMaps[commandmap]["Transition"] = value
+            break;
+            
+          case attributeModifier:
+            newCommandMaps[commandmap]["Modifiers"] = value
+            break;
+        
+          default:
+            break;
+        }
       }
     }
 
-    const lengthControls = Object.keys(newShortcuts).length
+    const lengthControls = Object.keys(newCommandMaps).length
     if (lengthControls > 0 && extractedData != undefined) {
       spinner.hidden = false
       // need to add delay or the spinner won't show
       delay(10).then(() => {
-        Download.downloadStringsFile(fileName, newShortcuts, extractedData)
+        Download.downloadCommandmapFile(fileName, newCommandMaps, extractedData)
         spinner.hidden = true
       })
     }
