@@ -66,6 +66,22 @@ function createFactionTreeStructure(game, version, arrayFile) {
   fs.writeFileSync(jsonPath + treeStructFile, JSON.stringify(controlsFactionTree))
 }
 
+function createCommandMapTree(arrayFile) {
+  const commandmap = {}
+
+  // for each row
+  for (const row of arrayFile) {
+    const columns = row.split(",")
+    const name = columns[0]
+    const notes = columns[1]
+
+    commandmap[name] = {}
+    commandmap[name]["notes"] = notes
+  }
+
+  fs.writeFileSync(jsonPath + "commandmap.json", JSON.stringify(commandmap))
+}
+
 const ROTWK = "rotwk"
 const BFME2 = "bfme2"
 const BFME1 = "bfme1"
@@ -76,13 +92,14 @@ const csvPath = {
   "bfme2 1.06": "./assets/data/csv/bfme2 1.06.csv",
   "bfme1 2.22": "./assets/data/csv/bfme1 2.22.csv",
   "bfme1 1.06": "./assets/data/csv/bfme1 1.06.csv",
+  "commandmap": "./assets/data/csv/CommandMap.csv",
 }
 
-const ROTWK_900 = "2.02 9.0.0"
-const fileROTWK_900 = fs.readFileSync(csvPath[ROTWK + " " + ROTWK_900], "utf-8")
-const arrayFileROTWK_900 = fileROTWK_900.split(/\r\n/)
-arrayFileROTWK_900.shift()
-createFactionTreeStructure(ROTWK, ROTWK_900, arrayFileROTWK_900)
+// const ROTWK_900 = "2.02 9.0.0"
+// const fileROTWK_900 = fs.readFileSync(csvPath[ROTWK + " " + ROTWK_900], "utf-8")
+// const arrayFileROTWK_900 = fileROTWK_900.split(/\r\n/)
+// arrayFileROTWK_900.shift()
+// createFactionTreeStructure(ROTWK, ROTWK_900, arrayFileROTWK_900)
 
 // const BFME2_106 = "1.06"
 // const fileBFME2_106 = fs.readFileSync(csvPath[BFME2 + " " + BFME2_106], "utf-8")
@@ -107,3 +124,8 @@ createFactionTreeStructure(ROTWK, ROTWK_900, arrayFileROTWK_900)
 // const arrayFileBFME1_106 = fileBFME1_106.split(/\r\n/)
 // arrayFileBFME1_106.shift()
 // createFactionTreeStructure(BFME1, BFME1_106, arrayFileBFME1_106)
+
+const fileCommandMap = fs.readFileSync(csvPath["commandmap"], "utf-8")
+const arrayFileCommandMap = fileCommandMap.split(/\r\n/)
+arrayFileCommandMap.shift()
+createCommandMapTree(arrayFileCommandMap)

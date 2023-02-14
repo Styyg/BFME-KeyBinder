@@ -5,7 +5,7 @@ let fileData = {} // contains, all files data, type, index
 let bufferData
 
 // return the content of the file as a string
-export async function extractStrData(buffer, extensionName) {
+export async function extractStrData(buffer, extensionName, searchFile) {
   bufferData = buffer
   fileData = {}
   const decoder = new TextDecoder("utf-8")
@@ -19,7 +19,7 @@ export async function extractStrData(buffer, extensionName) {
     case "BIGF":
     case "BIG4":
       fileData["type"] = fileType
-      data = await extractDataFromBIG(buffer)
+      data = await extractDataFromBIG(buffer, searchFile)
       break
     default:
       data = extractDataFromLotr(buffer, extensionName)
@@ -37,9 +37,14 @@ export async function extractStrData(buffer, extensionName) {
 
 // extract specified file as binary from the BIGF archive
 // big structure http://wiki.xentax.com/index.php/EA_BIG_BIGF_Archive
-async function extractDataFromBIG(buffer) {
+async function extractDataFromBIG(buffer, searchFile) {
   // const filesToExtract = ["lotr.csf", "data\\lotr.str"]
-  const filesToExtract = ["lotr.csf", "lotr.str"]
+  let filesToExtract
+  if (searchFile == "commandmap") {
+    filesToExtract = ["commandmap.ini"]
+  } else {
+    filesToExtract = ["lotr.csf", "lotr.str"]
+  }
 
   bufferData = buffer
 
