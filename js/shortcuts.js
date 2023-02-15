@@ -121,14 +121,14 @@ function getUrlParams() {
 //
 function selectGameAndVersion(game, version) {
   // select faction div corresponding to game and version
-  const selectFactDiv = document.querySelector('[name="div-version"][data-game="' + game + '"][data-version="' + version + '"]')
+  const selectFactDiv = document.querySelectorAll('[name="div-version"][data-game="' + game + '"][data-version="' + version + '"]')
   // div containing input file
   const divInput = document.getElementById("div-input")
   // global select faction div
   const mainSelectFactDiv = document.getElementById("div-game-select")
 
   // show the selected version and hide the rest
-  if (selectFactDiv != null) {
+  if (selectFactDiv.length > 0) {
     const iconFaction = document.querySelectorAll("[id ^= 'display']")
 
     let firstFaction = null
@@ -153,18 +153,14 @@ function selectGameAndVersion(game, version) {
       Utils.displayFaction(firstFaction)
     }
 
-    selectFactDiv.hidden = false
+    for (const div of selectFactDiv) {
+      div.hidden = false
+    }
+    // selectFactDiv.hidden = false
     divInput.hidden = false
     mainSelectFactDiv.hidden = true
     selectedGame = game
     selectedVersion = version
-
-    const divVersion = document.getElementsByName("div-version")
-    for (const elem of divVersion) {
-      if (elem != selectFactDiv) {
-        elem.hidden = true
-      }
-    }
   } else {
     // show the versions to select
     mainSelectFactDiv.hidden = false
