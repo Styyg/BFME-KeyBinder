@@ -668,9 +668,9 @@
         "CONTROLBAR:UpgradeMordorMumakilPenLevel2": {},
         "CONTROLBAR:UpgradeMordorMumakilPenLevel3": {}
       },
-      "CONTROLBAR:ConstructMordorUmbarTavern": {
+      "CONTROLBAR:ConstructMordorTavern": {
         "CONTROLBAR:ConstructMordorCorsairsOfUmbarHorde": {
-          "CONTROLBAR:ThrowFireBombs": {},
+          "CONTROLBAR:VolleyCorsairBomb": {},
           "CONTROLBAR:PurchaseUpgradeIsengardForgedBlades": {},
           "CONTROLBAR:PurchaseUpgradeMordorBasicTraining": {}
         },
@@ -764,7 +764,7 @@
       },
       "CONTROLBAR:ConstructWildGoblinFissure": {
         "CONTROLBAR:ConstructWildMarauderSwordHorde": {
-          "CONTROLBAR:AngmarTrollChargeAttack": {},
+          "CONTROLBAR:HTChargeAttack": {},
           "CONTROLBAR:PurchaseUpgradeWildForgedBlade": {},
           "CONTROLBAR:PurchaseUpgradeWildHeavyArmor": {},
           "CONTROLBAR:PurchaseUpgradeWildBasicTraining": {}
