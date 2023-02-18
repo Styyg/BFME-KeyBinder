@@ -97,7 +97,7 @@
         "CONTROLBAR:Command_MenWallUpgradeToTrebuchet": {}
       },
       "CONTROLBAR:ConstructMenFortress": {
-        "CONTROLBAR:ConstructMenPorter": {},
+        "CONTROLBAR:ConstructMenPorter": { "CONTROLBAR:PorterExtinguishFire": {} },
         "CONTROLBAR:SelectRevivablesMenFortress": {
           "CONTROLBAR:RohanEowynHotkey": { "CONTROLBAR:TheodenMount": {}, "CONTROLBAR:Smite": {}, "CONTROLBAR:Disguise": {}, "CONTROLBAR:ShieldMaiden": {} },
           "CONTROLBAR:RohanEomerHotkey": { "CONTROLBAR:TheodenMount": {}, "CONTROLBAR:ThrowSpear": {} },
@@ -249,7 +249,7 @@
         "CONTROLBAR:Command_ElvenWallUpgradeToRegularGate": { "CONTROLBAR:ToggleGateOpenClose": {} }
       },
       "CONTROLBAR:ConstructElvenFortress": {
-        "CONTROLBAR:ConstructElvenPorter": {},
+        "CONTROLBAR:ConstructElvenPorter": { "CONTROLBAR:PorterExtinguishFire": {} },
         "CONTROLBAR:SelectRevivablesElvenFortress": {
           "CONTROLBAR:ElvenArwenHotkey": { "CONTROLBAR:TheodenMount": {}, "CONTROLBAR:ElvenGrace": {}, "CONTROLBAR:PersonalFlood": {} },
           "CONTROLBAR:ElvenHaldirHotkey": { "CONTROLBAR:ToggleElvenWarriorWeapons": {}, "CONTROLBAR:HaldirGoldenArrow": {} },
@@ -386,7 +386,7 @@
         "CONTROLBAR:Command_DwarvenWallUpgradeToCatapult": {}
       },
       "CONTROLBAR:ConstructDwarvenFortress": {
-        "CONTROLBAR:ConstructDwarvenPorter": {},
+        "CONTROLBAR:ConstructDwarvenPorter": { "CONTROLBAR:PorterExtinguishFire": {} },
         "CONTROLBAR:SelectRevivablesDwarvenFortress": {
           "CONTROLBAR:DwarvenCaptainofDaleHotkey": {
             "CONTROLBAR:ToggleBrandWeapons": {},
@@ -532,7 +532,7 @@
         "CONTROLBAR:Command_IsengardWallUpgradeToRegularGate": { "CONTROLBAR:ToggleGateOpenClose": {} }
       },
       "CONTROLBAR:ConstructIsengardFortress": {
-        "CONTROLBAR:ConstructIsengardPorter": {},
+        "CONTROLBAR:ConstructIsengardPorter": { "CONTROLBAR:PorterExtinguishFire": {} },
         "CONTROLBAR:SelectRevivablesIsengardFortress": {
           "CONTROLBAR:IsengardWormtongueHotkey": {
             "CONTROLBAR:Escape": {},
@@ -680,7 +680,7 @@
       },
       "CONTROLBAR:ConstructMordorBattleTower": { "CONTROLBAR:PurchaseUpgradeSentryTowerFireArrows": {} },
       "CONTROLBAR:ConstructMordorFortress": {
-        "CONTROLBAR:ConstructMordorPorter": {},
+        "CONTROLBAR:ConstructMordorPorter": { "CONTROLBAR:PorterExtinguishFire": {} },
         "CONTROLBAR:SelectRevivablesMordorFortress": {
           "CONTROLBAR:MordorGothmogHotkey": { "CONTROLBAR:SpecialAbilityGothmogCarnage": {} },
           "CONTROLBAR:MordorMouthofSauronHotkey": {
@@ -817,7 +817,7 @@
         "CONTROLBAR:ConstructWildTreasureTroveLevel3Upgrade": {}
       },
       "CONTROLBAR:ConstructWildFortress": {
-        "CONTROLBAR:ConstructWildPorter": {},
+        "CONTROLBAR:ConstructWildPorter": { "CONTROLBAR:PorterExtinguishFire": {} },
         "CONTROLBAR:SelectRevivablesGoblinFortress": {
           "CONTROLBAR:WildAzogHotKey": { "CONTROLBAR:CAH_BattleRage_Level3": {}, "CONTROLBAR:AzogCracktheWhip": {} },
           "CONTROLBAR:WildGoblinKingHotkey": {
@@ -968,7 +968,7 @@
         "CONTROLBAR:Command_AngmarWallUpgradeToCatapult": {}
       },
       "CONTROLBAR:ConstructDwarvenFortress": {
-        "CONTROLBAR:ConstructAngmarPorter": {},
+        "CONTROLBAR:ConstructAngmarPorter": { "CONTROLBAR:PorterExtinguishFire": {} },
         "CONTROLBAR:SelectRevivablesDwarvenFortress": {
           "CONTROLBAR:AngmarHwaldarHotkey": { "CONTROLBAR:HwaldarSummonHillmen1": {}, "CONTROLBAR:HwaldarSummonHillmen2": {} },
           "CONTROLBAR:AngmarMorgramirHotkey": { "CONTROLBAR:BlackRiderMorgulBlade": {}, "CONTROLBAR:DarkGlory": {}, "CONTROLBAR:MorgramirRuin": {} },

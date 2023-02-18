@@ -85,6 +85,7 @@ CONTROLBAR:Command_MenWallUpgradeToTower,men,CONTROLBAR:ConstructMenWallHub,basi
 CONTROLBAR:Command_MenWallUpgradeToTrebuchet,men,CONTROLBAR:ConstructMenWallHub,basic,1
 CONTROLBAR:ConstructMenFortress,men,,basic,0
 CONTROLBAR:ConstructMenPorter,men,CONTROLBAR:ConstructMenFortress,basic,1
+CONTROLBAR:PorterExtinguishFire,men,CONTROLBAR:ConstructMenPorter,basic,2
 CONTROLBAR:SelectRevivablesMenFortress,men,CONTROLBAR:ConstructMenFortress,basic,1
 CONTROLBAR:RohanEowynHotkey,men,CONTROLBAR:SelectRevivablesMenFortress,basic,2
 CONTROLBAR:TheodenMount,men,CONTROLBAR:RohanEowynHotkey,basic,3
@@ -235,6 +236,7 @@ CONTROLBAR:Command_ElvenWallUpgradeToRegularGate,elves,CONTROLBAR:ConstructElven
 CONTROLBAR:ToggleGateOpenClose,elves,CONTROLBAR:Command_ElvenWallUpgradeToRegularGate,basic,2
 CONTROLBAR:ConstructElvenFortress,elves,,basic,0
 CONTROLBAR:ConstructElvenPorter,elves,CONTROLBAR:ConstructElvenFortress,basic,1
+CONTROLBAR:PorterExtinguishFire,elves,CONTROLBAR:ConstructElvenPorter,basic,2
 CONTROLBAR:SelectRevivablesElvenFortress,elves,CONTROLBAR:ConstructElvenFortress,basic,1
 CONTROLBAR:ElvenArwenHotkey,elves,CONTROLBAR:SelectRevivablesElvenFortress,basic,2
 CONTROLBAR:TheodenMount,elves,CONTROLBAR:ElvenArwenHotkey,basic,3
@@ -362,6 +364,7 @@ CONTROLBAR:Command_DwarvenWallUpgradeToTower,dwarves,CONTROLBAR:ConstructDwarven
 CONTROLBAR:Command_DwarvenWallUpgradeToCatapult,dwarves,CONTROLBAR:ConstructDwarvenWallHub,basic,1
 CONTROLBAR:ConstructDwarvenFortress,dwarves,,basic,0
 CONTROLBAR:ConstructDwarvenPorter,dwarves,CONTROLBAR:ConstructDwarvenFortress,basic,1
+CONTROLBAR:PorterExtinguishFire,dwarves,CONTROLBAR:ConstructDwarvenPorter,basic,2
 CONTROLBAR:SelectRevivablesDwarvenFortress,dwarves,CONTROLBAR:ConstructDwarvenFortress,basic,1
 CONTROLBAR:DwarvenCaptainofDaleHotkey,dwarves,CONTROLBAR:SelectRevivablesDwarvenFortress,basic,2
 CONTROLBAR:ToggleBrandWeapons,dwarves,CONTROLBAR:DwarvenCaptainofDaleHotkey,basic,3
@@ -505,6 +508,7 @@ CONTROLBAR:Command_IsengardWallUpgradeToRegularGate,isengard,CONTROLBAR:Command_
 CONTROLBAR:ToggleGateOpenClose,isengard,CONTROLBAR:Command_IsengardWallUpgradeToRegularGate,basic,2
 CONTROLBAR:ConstructIsengardFortress,isengard,,basic,0
 CONTROLBAR:ConstructIsengardPorter,isengard,CONTROLBAR:ConstructIsengardFortress,basic,1
+CONTROLBAR:PorterExtinguishFire,isengard,CONTROLBAR:ConstructIsengardPorter,basic,2
 CONTROLBAR:SelectRevivablesIsengardFortress,isengard,CONTROLBAR:ConstructIsengardFortress,basic,1
 CONTROLBAR:IsengardWormtongueHotkey,isengard,CONTROLBAR:SelectRevivablesIsengardFortress,basic,2
 CONTROLBAR:Escape,isengard,CONTROLBAR:IsengardWormtongueHotkey,basic,3
@@ -633,6 +637,7 @@ CONTROLBAR:ConstructMordorBattleTower,mordor,,basic,0
 CONTROLBAR:PurchaseUpgradeSentryTowerFireArrows,mordor,CONTROLBAR:ConstructMordorBattleTower,basic,1
 CONTROLBAR:ConstructMordorFortress,mordor,,basic,0
 CONTROLBAR:ConstructMordorPorter,mordor,CONTROLBAR:ConstructMordorFortress,basic,1
+CONTROLBAR:PorterExtinguishFire,mordor,CONTROLBAR:ConstructMordorPorter,basic,2
 CONTROLBAR:SelectRevivablesMordorFortress,mordor,CONTROLBAR:ConstructMordorFortress,basic,1
 CONTROLBAR:MordorGothmogHotkey,mordor,CONTROLBAR:SelectRevivablesMordorFortress,basic,2
 CONTROLBAR:SpecialAbilityGothmogCarnage,mordor,CONTROLBAR:MordorGothmogHotkey,basic,3
@@ -757,6 +762,7 @@ CONTROLBAR:ConstructWildTreasureTroveLevel2Upgrade,goblins,CONTROLBAR:ConstructW
 CONTROLBAR:ConstructWildTreasureTroveLevel3Upgrade,goblins,CONTROLBAR:ConstructWildTreasureTrove,basic,1
 CONTROLBAR:ConstructWildFortress,goblins,,basic,0
 CONTROLBAR:ConstructWildPorter,goblins,CONTROLBAR:ConstructWildFortress,basic,1
+CONTROLBAR:PorterExtinguishFire,goblins,CONTROLBAR:ConstructWildPorter,basic,2
 CONTROLBAR:SelectRevivablesGoblinFortress,goblins,CONTROLBAR:ConstructWildFortress,basic,1
 CONTROLBAR:WildAzogHotKey,goblins,CONTROLBAR:SelectRevivablesGoblinFortress,basic,2
 CONTROLBAR:CAH_BattleRage_Level3,goblins,CONTROLBAR:WildAzogHotKey,basic,3
@@ -884,6 +890,7 @@ CONTROLBAR:Command_AngmarWallUpgradeToTower,angmar,CONTROLBAR:ConstructDwarvenWa
 CONTROLBAR:Command_AngmarWallUpgradeToCatapult,angmar,CONTROLBAR:ConstructDwarvenWallHub,basic,1
 CONTROLBAR:ConstructDwarvenFortress,angmar,,basic,0
 CONTROLBAR:ConstructAngmarPorter,angmar,CONTROLBAR:ConstructDwarvenFortress,basic,1
+CONTROLBAR:PorterExtinguishFire,angmar,CONTROLBAR:ConstructAngmarPorter,basic,2
 CONTROLBAR:SelectRevivablesDwarvenFortress,angmar,CONTROLBAR:ConstructDwarvenFortress,basic,1
 CONTROLBAR:AngmarHwaldarHotkey,angmar,CONTROLBAR:SelectRevivablesDwarvenFortress,basic,2
 CONTROLBAR:HwaldarSummonHillmen1,angmar,CONTROLBAR:AngmarHwaldarHotkey,basic,3
