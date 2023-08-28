@@ -1,5 +1,5 @@
 export function testFile(files, errLabel) {
-  const maxFileSize = 50 * (1024 * 1024) //50MB
+  const maxFileSize = 100 * (1024 * 1024) //100MB
   const file = files[0]
   // const errLabel = document.getElementById("errInputFile")
 
