@@ -446,6 +446,7 @@
   "CONTROLBAR:CancelBuild": "misc/CancelBuild.png",
   "CONTROLBAR:SellBuilding": "misc/CancelBuild.png",
   "CONTROLBAR:GoHarvest": "generic/GoHarvest.png",
+  "CONTROLBAR:PurchaseUpgradeRohanElvenWarriorForgedBlades": "men/ForgedBlades.png",
   "bfme1 1.06": {
     "CONTROLBAR:Guard": "misc/Guard.png",
     "CONTROLBAR:ConstructRohanFarm": "men/ConstructMenFarm.png",
@@ -546,7 +547,6 @@
     "CONTROLBAR:ConstructRohanArcherRange": "dwarves/ConstructDwarvenArcheryRange.png",
     "CONTROLBAR:ConstructEntMoot": "elves/ConstructEntMoot.png",
     "CONTROLBAR:PurchaseUpgradeRohanForgedBlades": "men/ForgedBlades.png",
-    "CONTROLBAR:PurchaseUpgradeRohanElvenWarriorForgedBlades": "men/ForgedBlades.png",
     "CONTROLBAR:PurchaseTechnologyRohanForgedBlades": "men/ForgedBlades.png",
     "CONTROLBAR:PurchaseUpgradeRohanHeavyArmor": "men/HeavyArmor.png",
     "CONTROLBAR:PurchaseTechnologyRohanHeavyArmor": "men/HeavyArmor.png",

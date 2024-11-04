@@ -19,7 +19,7 @@
         },
         "CONTROLBAR:ConstructElvenWarriorHorde": {
           "CONTROLBAR:ToggleElvenWarriorWeapons": {},
-          "CONTROLBAR:PurchaseUpgradeRohanForgedBlades": {},
+          "CONTROLBAR:PurchaseUpgradeRohanElvenWarriorForgedBlades": {},
           "CONTROLBAR:PurchaseUpgradeRohanHeavyArmor": {},
           "CONTROLBAR:FireArrowUpgrade": {},
           "CONTROLBAR:PurchaseUpgradeRohanBasicTraining": {}
