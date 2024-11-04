@@ -7,7 +7,8 @@
           "CONTROLBAR:PurchaseUpgradeRohanForgedBlades": {},
           "CONTROLBAR:PurchaseUpgradeRohanHeavyArmor": {},
           "CONTROLBAR:PurchaseUpgradeRohanBasicTraining": {}
-        }
+        },
+        "CONTROLBAR:ConstructGrandHarvestUpgrade": {}
       },
       "CONTROLBAR:ConstructRohanArcherRange": {
         "CONTROLBAR:ConstructRohanArcherHorde": {
@@ -19,7 +20,7 @@
         },
         "CONTROLBAR:ConstructElvenWarriorHorde": {
           "CONTROLBAR:ToggleElvenWarriorWeapons": {},
-          "CONTROLBAR:PurchaseUpgradeRohanForgedBlades": {},
+          "CONTROLBAR:PurchaseUpgradeRohanElvenWarriorForgedBlades": {},
           "CONTROLBAR:PurchaseUpgradeRohanHeavyArmor": {},
           "CONTROLBAR:FireArrowUpgrade": {},
           "CONTROLBAR:PurchaseUpgradeRohanBasicTraining": {}

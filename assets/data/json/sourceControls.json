@@ -538,6 +538,7 @@
   },
   "bfme1 2.22": {
     "CONTROLBAR:Guard": "misc/Guard.png",
+    "CONTROLBAR:ConstructGrandHarvestUpgrade": "men/ConstructGrandHarvestUpgrade.png",
     "CONTROLBAR:ConstructRohanFarm": "men/ConstructMenFarm.png",
     "CONTROLBAR:UnpackRohanFarm": "men/ConstructMenFarm.png",
     "CONTROLBAR:ConstructGondorFarm": "men/ConstructMenFarm.png",
@@ -545,6 +546,7 @@
     "CONTROLBAR:ConstructRohanArcherRange": "dwarves/ConstructDwarvenArcheryRange.png",
     "CONTROLBAR:ConstructEntMoot": "elves/ConstructEntMoot.png",
     "CONTROLBAR:PurchaseUpgradeRohanForgedBlades": "men/ForgedBlades.png",
+    "CONTROLBAR:PurchaseUpgradeRohanElvenWarriorForgedBlades": "men/ForgedBlades.png",
     "CONTROLBAR:PurchaseTechnologyRohanForgedBlades": "men/ForgedBlades.png",
     "CONTROLBAR:PurchaseUpgradeRohanHeavyArmor": "men/HeavyArmor.png",
     "CONTROLBAR:PurchaseTechnologyRohanHeavyArmor": "men/HeavyArmor.png",
