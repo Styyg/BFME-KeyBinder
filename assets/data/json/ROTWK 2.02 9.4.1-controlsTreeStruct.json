@@ -272,9 +272,9 @@
             "CONTROLBAR:ArrowWind": {}
           },
           "CONTROLBAR:ElvenThranduilHotkey": {
+            "CONTROLBAR:ThranduilHiddenHunter": {},
             "CONTROLBAR:MoveUnseen": {},
             "CONTROLBAR:DeadEye": {},
-            "CONTROLBAR:WildWalk": {},
             "CONTROLBAR:ThornofVengeance": {}
           }
         },
@@ -357,7 +357,8 @@
           "CONTROLBAR:BattleWagonUpgradeHearth": {},
           "CONTROLBAR:BattleWagonUpgradeAxeThrowers": {},
           "CONTROLBAR:BattleWagonUpgradeBannerCarrier": {},
-          "CONTROLBAR:BattleWagonUpgradeMenOfDale": {}
+          "CONTROLBAR:BattleWagonUpgradeMenOfDale": {},
+          "CONTROLBAR:PurchaseUpgradeDwarvenMithrilMail": {}
         },
         "CONTROLBAR:ConstructDwarvenDemolisher": { "CONTROLBAR:SpecialAbilityDwarvenDemolisherDeploy": {}, "CONTROLBAR:PurchaseUpgradeDwarvenMithrilMail": {} },
         "CONTROLBAR:ConstructDwarvenCatapult": {
@@ -655,7 +656,6 @@
           "CONTROLBAR:AutoAcquire": {}
         },
         "CONTROLBAR:ConstructMordorSiegeTower": { "CONTROLBAR:SiegeRetract": {} },
-        "CONTROLBAR:BlackRiderRecruit": { "CONTROLBAR:BlackRiderMorgulBlade": {}, "CONTROLBAR:Screech": {} },
         "CONTROLBAR:UpgradeMordorSiegeWorksLevel2": {},
         "CONTROLBAR:UpgradeMordorSiegeWorksLevel3": {}
       },
@@ -670,7 +670,9 @@
       },
       "CONTROLBAR:ConstructMordorTavern": {
         "CONTROLBAR:ConstructMordorCorsairsOfUmbarHorde": {
-          "CONTROLBAR:VolleyCorsairBomb": {},
+          "CONTROLBAR:ThrowFireBombs": {},
+          "CONTROLBAR:Knife": {},
+          "CONTROLBAR:ArcherBarrage": {},
           "CONTROLBAR:PurchaseUpgradeIsengardForgedBlades": {},
           "CONTROLBAR:PurchaseUpgradeMordorBasicTraining": {}
         },
@@ -682,7 +684,7 @@
       "CONTROLBAR:ConstructMordorFortress": {
         "CONTROLBAR:ConstructMordorPorter": { "CONTROLBAR:PorterExtinguishFire": {} },
         "CONTROLBAR:SelectRevivablesMordorFortress": {
-          "CONTROLBAR:MordorGothmogHotkey": { "CONTROLBAR:SpecialAbilityGothmogCarnage": {} },
+          "CONTROLBAR:MordorGothmogHotkey": { "CONTROLBAR:LieutenantsFavor": {}, "CONTROLBAR:SpecialAbilityGothmogCarnage": {} },
           "CONTROLBAR:MordorMouthofSauronHotkey": {
             "CONTROLBAR:TheodenMount": {},
             "CONTROLBAR:MouthOfSauronDoubt": {},
@@ -707,6 +709,7 @@
           "CONTROLBAR:PurchaseUpgradeMordorFortressMorgulSorcery": {},
           "CONTROLBAR:PurchaseUpgradeMordorFortressGorgorothSpire": {}
         },
+        "CONTROLBAR:BlackRiderRecruit": { "CONTROLBAR:BlackRiderMorgulBlade": {}, "CONTROLBAR:Screech": {} },
         "CONTROLBAR:FireWeaponMordorFortressMagmaCauldrons": {},
         "CONTROLBAR:FireWeaponMordorFortressSpireFireball": {},
         "OBJECT:MordorBuildingFoundation": {
@@ -819,7 +822,7 @@
       "CONTROLBAR:ConstructWildFortress": {
         "CONTROLBAR:ConstructWildPorter": { "CONTROLBAR:PorterExtinguishFire": {} },
         "CONTROLBAR:SelectRevivablesGoblinFortress": {
-          "CONTROLBAR:WildAzogHotKey": { "CONTROLBAR:CAH_BattleRage_Level3": {}, "CONTROLBAR:AzogCracktheWhip": {} },
+          "CONTROLBAR:WildAzogHotKey": { "CONTROLBAR:AzogCracktheWhip": {}, "CONTROLBAR:CAH_BattleRage_Level3": {} },
           "CONTROLBAR:WildGoblinKingHotkey": {
             "CONTROLBAR:GoblinKingSkullTotem": {},
             "CONTROLBAR:GoblinKingMount": {},

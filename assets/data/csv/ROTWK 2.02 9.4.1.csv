@@ -261,9 +261,9 @@ CONTROLBAR:TrainArchers,elves,CONTROLBAR:RohanLegolasHotkey,basic,3
 CONTROLBAR:KnifeFighter,elves,CONTROLBAR:RohanLegolasHotkey,basic,3
 CONTROLBAR:ArrowWind,elves,CONTROLBAR:RohanLegolasHotkey,basic,3
 CONTROLBAR:ElvenThranduilHotkey,elves,CONTROLBAR:SelectRevivablesElvenFortress,basic,2
+CONTROLBAR:ThranduilHiddenHunter,elves,CONTROLBAR:ElvenThranduilHotkey,basic,3
 CONTROLBAR:MoveUnseen,elves,CONTROLBAR:ElvenThranduilHotkey,basic,3
 CONTROLBAR:DeadEye,elves,CONTROLBAR:ElvenThranduilHotkey,basic,3
-CONTROLBAR:WildWalk,elves,CONTROLBAR:ElvenThranduilHotkey,basic,3
 CONTROLBAR:ThornofVengeance,elves,CONTROLBAR:ElvenThranduilHotkey,basic,3
 CONTROLBAR:SelectUpgradesElvenFortress,elves,CONTROLBAR:ConstructElvenFortress,basic,1
 CONTROLBAR:PurchaseUpgradeElvenFortressEnchantedAnvil,elves,CONTROLBAR:SelectUpgradesElvenFortress,basic,2
@@ -334,6 +334,7 @@ CONTROLBAR:BattleWagonUpgradeHearth,dwarves,CONTROLBAR:ConstructDwarvenBattleWag
 CONTROLBAR:BattleWagonUpgradeAxeThrowers,dwarves,CONTROLBAR:ConstructDwarvenBattleWagon,basic,2
 CONTROLBAR:BattleWagonUpgradeBannerCarrier,dwarves,CONTROLBAR:ConstructDwarvenBattleWagon,basic,2
 CONTROLBAR:BattleWagonUpgradeMenOfDale,dwarves,CONTROLBAR:ConstructDwarvenBattleWagon,basic,2
+CONTROLBAR:PurchaseUpgradeDwarvenMithrilMail,dwarves,CONTROLBAR:ConstructDwarvenBattleWagon,basic,2
 CONTROLBAR:ConstructDwarvenDemolisher,dwarves,CONTROLBAR:ConstructDwarvenForgeWorks,basic,1
 CONTROLBAR:SpecialAbilityDwarvenDemolisherDeploy,dwarves,CONTROLBAR:ConstructDwarvenDemolisher,basic,2
 CONTROLBAR:PurchaseUpgradeDwarvenMithrilMail,dwarves,CONTROLBAR:ConstructDwarvenDemolisher,basic,2
@@ -613,9 +614,6 @@ CONTROLBAR:NoAutoAcquire,mordor,CONTROLBAR:ConstructMordorCatapult,basic,2
 CONTROLBAR:AutoAcquire,mordor,CONTROLBAR:ConstructMordorCatapult,basic,2
 CONTROLBAR:ConstructMordorSiegeTower,mordor,CONTROLBAR:ConstructMordorSiegeWorks,basic,1
 CONTROLBAR:SiegeRetract,mordor,CONTROLBAR:ConstructMordorSiegeTower,basic,2
-CONTROLBAR:BlackRiderRecruit,mordor,CONTROLBAR:ConstructMordorSiegeWorks,basic,1
-CONTROLBAR:BlackRiderMorgulBlade,mordor,CONTROLBAR:BlackRiderRecruit,basic,2
-CONTROLBAR:Screech,mordor,CONTROLBAR:BlackRiderRecruit,basic,2
 CONTROLBAR:UpgradeMordorSiegeWorksLevel2,mordor,CONTROLBAR:ConstructMordorSiegeWorks,basic,1
 CONTROLBAR:UpgradeMordorSiegeWorksLevel3,mordor,CONTROLBAR:ConstructMordorSiegeWorks,basic,1
 CONTROLBAR:ConstructMordorMumakilPen,mordor,,basic,0
@@ -627,7 +625,9 @@ CONTROLBAR:UpgradeMordorMumakilPenLevel2,mordor,CONTROLBAR:ConstructMordorMumaki
 CONTROLBAR:UpgradeMordorMumakilPenLevel3,mordor,CONTROLBAR:ConstructMordorMumakilPen,basic,1
 CONTROLBAR:ConstructMordorTavern,mordor,,basic,0
 CONTROLBAR:ConstructMordorCorsairsOfUmbarHorde,mordor,CONTROLBAR:ConstructMordorTavern,basic,1
-CONTROLBAR:VolleyCorsairBomb,mordor,CONTROLBAR:ConstructMordorCorsairsOfUmbarHorde,basic,2
+CONTROLBAR:ThrowFireBombs,mordor,CONTROLBAR:ConstructMordorCorsairsOfUmbarHorde,basic,2
+CONTROLBAR:Knife,mordor,CONTROLBAR:ConstructMordorCorsairsOfUmbarHorde,basic,2
+CONTROLBAR:ArcherBarrage,mordor,CONTROLBAR:ConstructMordorCorsairsOfUmbarHorde,basic,2
 CONTROLBAR:PurchaseUpgradeIsengardForgedBlades,mordor,CONTROLBAR:ConstructMordorCorsairsOfUmbarHorde,basic,2
 CONTROLBAR:PurchaseUpgradeMordorBasicTraining,mordor,CONTROLBAR:ConstructMordorCorsairsOfUmbarHorde,basic,2
 CONTROLBAR:PurchaseTechnologyMordorFireArrows,mordor,CONTROLBAR:ConstructMordorTavern,basic,1
@@ -640,6 +640,7 @@ CONTROLBAR:ConstructMordorPorter,mordor,CONTROLBAR:ConstructMordorFortress,basic
 CONTROLBAR:PorterExtinguishFire,mordor,CONTROLBAR:ConstructMordorPorter,basic,2
 CONTROLBAR:SelectRevivablesMordorFortress,mordor,CONTROLBAR:ConstructMordorFortress,basic,1
 CONTROLBAR:MordorGothmogHotkey,mordor,CONTROLBAR:SelectRevivablesMordorFortress,basic,2
+CONTROLBAR:LieutenantsFavor,mordor,CONTROLBAR:MordorGothmogHotkey,basic,3
 CONTROLBAR:SpecialAbilityGothmogCarnage,mordor,CONTROLBAR:MordorGothmogHotkey,basic,3
 CONTROLBAR:MordorMouthofSauronHotkey,mordor,CONTROLBAR:SelectRevivablesMordorFortress,basic,2
 CONTROLBAR:TheodenMount,mordor,CONTROLBAR:MordorMouthofSauronHotkey,basic,3
@@ -667,6 +668,9 @@ CONTROLBAR:PurchaseUpgradeMordorFortressMagmaCauldrons,mordor,CONTROLBAR:SelectU
 CONTROLBAR:PurchaseUpgradeMordorFortressFireArrows,mordor,CONTROLBAR:SelectUpgradesMordorFortress,basic,2
 CONTROLBAR:PurchaseUpgradeMordorFortressMorgulSorcery,mordor,CONTROLBAR:SelectUpgradesMordorFortress,basic,2
 CONTROLBAR:PurchaseUpgradeMordorFortressGorgorothSpire,mordor,CONTROLBAR:SelectUpgradesMordorFortress,basic,2
+CONTROLBAR:BlackRiderRecruit,mordor,CONTROLBAR:ConstructMordorFortress,basic,1
+CONTROLBAR:BlackRiderMorgulBlade,mordor,CONTROLBAR:BlackRiderRecruit,basic,2
+CONTROLBAR:Screech,mordor,CONTROLBAR:BlackRiderRecruit,basic,2
 CONTROLBAR:FireWeaponMordorFortressMagmaCauldrons,mordor,CONTROLBAR:ConstructMordorFortress,basic,1
 CONTROLBAR:FireWeaponMordorFortressSpireFireball,mordor,CONTROLBAR:ConstructMordorFortress,basic,1
 OBJECT:MordorBuildingFoundation,mordor,CONTROLBAR:ConstructMordorFortress,basic,1
@@ -765,8 +769,8 @@ CONTROLBAR:ConstructWildPorter,goblins,CONTROLBAR:ConstructWildFortress,basic,1
 CONTROLBAR:PorterExtinguishFire,goblins,CONTROLBAR:ConstructWildPorter,basic,2
 CONTROLBAR:SelectRevivablesGoblinFortress,goblins,CONTROLBAR:ConstructWildFortress,basic,1
 CONTROLBAR:WildAzogHotKey,goblins,CONTROLBAR:SelectRevivablesGoblinFortress,basic,2
-CONTROLBAR:CAH_BattleRage_Level3,goblins,CONTROLBAR:WildAzogHotKey,basic,3
 CONTROLBAR:AzogCracktheWhip,goblins,CONTROLBAR:WildAzogHotKey,basic,3
+CONTROLBAR:CAH_BattleRage_Level3,goblins,CONTROLBAR:WildAzogHotKey,basic,3
 CONTROLBAR:WildGoblinKingHotkey,goblins,CONTROLBAR:SelectRevivablesGoblinFortress,basic,2
 CONTROLBAR:GoblinKingSkullTotem,goblins,CONTROLBAR:WildGoblinKingHotkey,basic,3
 CONTROLBAR:GoblinKingMount,goblins,CONTROLBAR:WildGoblinKingHotkey,basic,3

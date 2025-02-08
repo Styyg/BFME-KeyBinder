@@ -812,7 +812,7 @@
     "CONTROLBAR:SpecialAbilityFiresOfDoom": "misc/SpecialAbilityFiresOfDoom2.png"
   },
   "rotwk 2.01": {},
-  "rotwk 2.02 9.0.0": {
+  "rotwk 2.02 9.4.1": {
     "CONTROLBAR:SpecialAbilityShieldBubble": "men/SpecialAbilityShieldBubble.png",
     "CONTROLBAR:TameTheBeast": "isengard/TameTheBeast2.png",
     "CONTROLBAR:PurchaseTechnologyMordorFireArrows": "generic/fire_arrow5.png",
@@ -848,6 +848,8 @@
     "CONTROLBAR:CAH_BattleRage_Level3": "goblins/AzogRage.png",
     "CONTROLBAR:ToggleSpiderRiderWeapons": "goblins/ToggleSpiderRiderWeapons2.png",
     "CONTROLBAR:HTChargeAttack": "angmar/Angmar_ChargeAttack.png",
-    "CONTROLBAR:PorterExtinguishFire": "misc/ExtinguishFire.png"
+    "CONTROLBAR:PorterExtinguishFire": "misc/ExtinguishFire.png",
+    "CONTROLBAR:LieutenantsFavor": "goblins/AzogCracktheWhip.png",
+    "CONTROLBAR:ThranduilHiddenHunter": "elves/ElvenCloak.png"
   }
 }
