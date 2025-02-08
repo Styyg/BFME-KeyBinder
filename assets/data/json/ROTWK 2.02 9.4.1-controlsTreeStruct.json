@@ -678,7 +678,9 @@
         },
         "CONTROLBAR:PurchaseTechnologyMordorFireArrows": {},
         "CONTROLBAR:PurchaseTechnologyMordorForgedBlades": {},
-        "CONTROLBAR:PurchaseTechnologyMordorHeavyArmor": {}
+        "CONTROLBAR:PurchaseTechnologyMordorHeavyArmor": {},
+        "CONTROLBAR:UpgradeMordorTavernLevel2": {},
+        "CONTROLBAR:UpgradeMordorTavernLevel3": {}
       },
       "CONTROLBAR:ConstructMordorBattleTower": { "CONTROLBAR:PurchaseUpgradeSentryTowerFireArrows": {} },
       "CONTROLBAR:ConstructMordorFortress": {

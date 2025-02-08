@@ -850,6 +850,8 @@
     "CONTROLBAR:HTChargeAttack": "angmar/Angmar_ChargeAttack.png",
     "CONTROLBAR:PorterExtinguishFire": "misc/ExtinguishFire.png",
     "CONTROLBAR:LieutenantsFavor": "goblins/AzogCracktheWhip.png",
-    "CONTROLBAR:ThranduilHiddenHunter": "elves/ElvenCloak.png"
+    "CONTROLBAR:ThranduilHiddenHunter": "elves/ElvenCloak.png",
+    "CONTROLBAR:UpgradeMordorTavernLevel2": "generic/upgrade2.png",
+    "CONTROLBAR:UpgradeMordorTavernLevel3": "generic/upgrade2.png"
   }
 }

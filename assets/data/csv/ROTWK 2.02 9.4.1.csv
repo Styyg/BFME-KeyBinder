@@ -633,6 +633,8 @@ CONTROLBAR:PurchaseUpgradeMordorBasicTraining,mordor,CONTROLBAR:ConstructMordorC
 CONTROLBAR:PurchaseTechnologyMordorFireArrows,mordor,CONTROLBAR:ConstructMordorTavern,basic,1
 CONTROLBAR:PurchaseTechnologyMordorForgedBlades,mordor,CONTROLBAR:ConstructMordorTavern,basic,1
 CONTROLBAR:PurchaseTechnologyMordorHeavyArmor,mordor,CONTROLBAR:ConstructMordorTavern,basic,1
+CONTROLBAR:UpgradeMordorTavernLevel2,mordor,CONTROLBAR:ConstructMordorTavern,basic,1
+CONTROLBAR:UpgradeMordorTavernLevel3,mordor,CONTROLBAR:ConstructMordorTavern,basic,1
 CONTROLBAR:ConstructMordorBattleTower,mordor,,basic,0
 CONTROLBAR:PurchaseUpgradeSentryTowerFireArrows,mordor,CONTROLBAR:ConstructMordorBattleTower,basic,1
 CONTROLBAR:ConstructMordorFortress,mordor,,basic,0
