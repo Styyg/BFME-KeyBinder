@@ -198,6 +198,7 @@
         "CONTROLBAR:ConstructElvenMirkwoodArcherHorde": {
           "CONTROLBAR:ArcherBarrage": {},
           "CONTROLBAR:ElvenCloak": {},
+          "CONTROLBAR:MirkwoodArcherHiddenHunter": {},
           "CONTROLBAR:PurchaseUpgradeElvenSilverthornArrows": {},
           "CONTROLBAR:PurchaseUpgradeElderRacesBasicTraining": {}
         },
@@ -915,6 +916,7 @@
       },
       "CONTROLBAR:ConstructAngmarDen": {
         "CONTROLBAR:ConstructAngmarDireWolfHorde": {
+          "CONTROLBAR:AngmarDireWolfHowl": {},
           "CONTROLBAR:PurchaseUpgradeAngmarSpikedCollars": {},
           "CONTROLBAR:PurchaseUpgradeDwarvenBasicTraining": {}
         },
