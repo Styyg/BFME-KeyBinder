@@ -514,7 +514,7 @@
           "CONTROLBAR:NoAutoAcquire": {},
           "CONTROLBAR:AutoAcquire": {}
         },
-        "CONTROLBAR:ConstructIsengardExplosiveMine": { "CONTROLBAR:DeployMine": {} },
+        "CONTROLBAR:ConstructIsengardExplosiveMine": { "CONTROLBAR:DeployMine": {}, "CONTROLBAR:IsengardMineDetonate": {} },
         "CONTROLBAR:UpgradeIsengardSiegeWorksLevel2": {},
         "CONTROLBAR:UpgradeIsengardSiegeWorksLevel3": {}
       },

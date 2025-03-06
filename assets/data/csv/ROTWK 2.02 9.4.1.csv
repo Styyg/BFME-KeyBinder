@@ -490,6 +490,7 @@ CONTROLBAR:NoAutoAcquire,isengard,CONTROLBAR:ConstructIsengardSiegeBallista,basi
 CONTROLBAR:AutoAcquire,isengard,CONTROLBAR:ConstructIsengardSiegeBallista,basic,2
 CONTROLBAR:ConstructIsengardExplosiveMine,isengard,CONTROLBAR:ConstructIsengardSiegeWorks,basic,1
 CONTROLBAR:DeployMine,isengard,CONTROLBAR:ConstructIsengardExplosiveMine,basic,2
+CONTROLBAR:IsengardMineDetonate,isengard,CONTROLBAR:ConstructIsengardExplosiveMine,basic,2
 CONTROLBAR:UpgradeIsengardSiegeWorksLevel2,isengard,CONTROLBAR:ConstructIsengardSiegeWorks,basic,1
 CONTROLBAR:UpgradeIsengardSiegeWorksLevel3,isengard,CONTROLBAR:ConstructIsengardSiegeWorks,basic,1
 CONTROLBAR:ConstructIsengardBattleTower,isengard,,basic,0
