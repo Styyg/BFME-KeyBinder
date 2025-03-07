@@ -72,9 +72,9 @@ CONTROLBAR:PurchaseTechnologyGondorHeavyArmor,men,CONTROLBAR:ConstructMenBlacksm
 CONTROLBAR:ConstructGondorForgeLevel2Upgrade,men,CONTROLBAR:ConstructMenBlacksmith,basic,1
 CONTROLBAR:ConstructGondorForgeLevel3Upgrade,men,CONTROLBAR:ConstructMenBlacksmith,basic,1
 CONTROLBAR:ConstructMenMarketPlace,men,,basic,0
+CONTROLBAR:ActivateGrandHarvest,men,CONTROLBAR:ConstructMenMarketPlace,basic,1
 CONTROLBAR:ConstructSiegeMaterialsUpgrade,men,CONTROLBAR:ConstructMenMarketPlace,basic,1
 CONTROLBAR:ConstructIronOreUpgrade,men,CONTROLBAR:ConstructMenMarketPlace,basic,1
-CONTROLBAR:ConstructGrandHarvestUpgrade,men,CONTROLBAR:ConstructMenMarketPlace,basic,1
 CONTROLBAR:ConstructMenWallHub,men,,basic,0
 CONTROLBAR:Command_GondorCastleWallHub_BeginWallSpan,men,CONTROLBAR:ConstructMenWallHub,basic,1
 CONTROLBAR:Command_MenWallUpgradeToHub,men,CONTROLBAR:Command_GondorCastleWallHub_BeginWallSpan,basic,2

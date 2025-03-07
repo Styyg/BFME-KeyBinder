@@ -853,6 +853,7 @@
     "CONTROLBAR:ThranduilHiddenHunter": "elves/ElvenCloak.png",
     "CONTROLBAR:UpgradeMordorTavernLevel2": "generic/upgrade2.png",
     "CONTROLBAR:UpgradeMordorTavernLevel3": "generic/upgrade2.png",
-    "CONTROLBAR:RadialBack": "generic/RadialBack.png"
+    "CONTROLBAR:RadialBack": "generic/RadialBack.png",
+    "CONTROLBAR:ActivateGrandHarvest": "men/ConstructGrandHarvestUpgrade.png"
   }
 }

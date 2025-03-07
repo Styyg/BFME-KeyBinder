@@ -84,9 +84,9 @@
         "CONTROLBAR:ConstructGondorForgeLevel3Upgrade": {}
       },
       "CONTROLBAR:ConstructMenMarketPlace": {
+        "CONTROLBAR:ActivateGrandHarvest": {},
         "CONTROLBAR:ConstructSiegeMaterialsUpgrade": {},
-        "CONTROLBAR:ConstructIronOreUpgrade": {},
-        "CONTROLBAR:ConstructGrandHarvestUpgrade": {}
+        "CONTROLBAR:ConstructIronOreUpgrade": {}
       },
       "CONTROLBAR:ConstructMenWallHub": {
         "CONTROLBAR:Command_GondorCastleWallHub_BeginWallSpan": {
