@@ -15,7 +15,7 @@
           "CONTROLBAR:ToggleLineFormation": {},
           "CONTROLBAR:PurchaseUpgradeGondorForgedBlades": {},
           "CONTROLBAR:PurchaseUpgradeGondorHeavyArmor": {},
-          "CONTROLBAR:PurchaseUpgradeRohanBasicTraining": {}
+          "CONTROLBAR:PurchaseUpgradeGondorBasicTraining": {}
         },
         "CONTROLBAR:ConstructGondorShieldGuardHorde": {
           "CONTROLBAR:TogglePorcupineFormation": {},
@@ -55,7 +55,7 @@
           "CONTROLBAR:FireArrowUpgrade": {},
           "CONTROLBAR:PurchaseUpgradeGondorForgedBlades": {},
           "CONTROLBAR:PurchaseUpgradeGondorHeavyArmor": {},
-          "CONTROLBAR:PurchaseUpgradeRohanBasicTraining": {}
+          "CONTROLBAR:PurchaseUpgradeGondorBasicTraining": {}
         },
         "CONTROLBAR:ConstructGondorKnightsofDolHorde": { "CONTROLBAR:KnightsofDolChargeofGlory": {} },
         "CONTROLBAR:ConstructGondorStable2Upgrade": {},
@@ -89,12 +89,13 @@
         "CONTROLBAR:ConstructGrandHarvestUpgrade": {}
       },
       "CONTROLBAR:ConstructMenWallHub": {
-        "CONTROLBAR:Command_GondorCastleWallHub_BeginWallSpan": {},
-        "CONTROLBAR:Command_MenWallUpgradeToHub": {},
-        "CONTROLBAR:Command_MenWallUpgradeToRegularGate": { "CONTROLBAR:ToggleGateOpenClose": {} },
-        "CONTROLBAR:Command_MenWallUpgradeToPosternGate": {},
-        "CONTROLBAR:Command_MenWallUpgradeToTower": {},
-        "CONTROLBAR:Command_MenWallUpgradeToTrebuchet": {}
+        "CONTROLBAR:Command_GondorCastleWallHub_BeginWallSpan": {
+          "CONTROLBAR:Command_MenWallUpgradeToHub": {},
+          "CONTROLBAR:Command_MenWallUpgradeToRegularGate": { "CONTROLBAR:ToggleGateOpenClose": {} },
+          "CONTROLBAR:Command_MenWallUpgradeToPosternGate": {},
+          "CONTROLBAR:Command_MenWallUpgradeToTower": {},
+          "CONTROLBAR:Command_MenWallUpgradeToTrebuchet": {}
+        }
       },
       "CONTROLBAR:ConstructMenFortress": {
         "CONTROLBAR:ConstructMenPorter": { "CONTROLBAR:PorterExtinguishFire": {} },
@@ -111,12 +112,12 @@
           "CONTROLBAR:GondorBoromirHotkey": { "CONTROLBAR:HornofGondor": {}, "CONTROLBAR:CaptainofGondor": {} },
           "CONTROLBAR:GondorAragornHotkey": { "CONTROLBAR:Athelas": {}, "CONTROLBAR:BladeMaster": {}, "CONTROLBAR:Elendil": {}, "CONTROLBAR:Oathbreakers": {} },
           "CONTROLBAR:GandalfTheWhiteHotkey": {
-            "CONTROLBAR:SpecialAbilityShieldBubble": {},
             "CONTROLBAR:WizardBlast": {},
             "CONTROLBAR:LightningSword": {},
             "CONTROLBAR:Shadowfax": {},
             "CONTROLBAR:IstariLight": {},
-            "CONTROLBAR:WordofPower": {}
+            "CONTROLBAR:WordofPower": {},
+            "CONTROLBAR:SpecialAbilityShieldBubble": {}
           }
         },
         "CONTROLBAR:SelectUpgradesMenFortress": {
@@ -129,6 +130,7 @@
         },
         "CONTROLBAR:FireWeaponMenFortressBoilingOil": {},
         "CONTROLBAR:IvoryTowerVision": {},
+        "CONTROLBAR:RadialBack": {},
         "OBJECT:MenBuildingFoundation": {
           "CONTROLBAR:Command_ConstructMenWallHubExpansion": {},
           "CONTROLBAR:ConstructMenDormitory": { "CONTROLBAR:GarrisonExit": {}, "CONTROLBAR:EvacuateAll": {} },
@@ -167,7 +169,7 @@
           "CONTROLBAR:FireArrowUpgrade": {},
           "CONTROLBAR:PurchaseUpgradeGondorForgedBlades": {},
           "CONTROLBAR:PurchaseUpgradeGondorHeavyArmor": {},
-          "CONTROLBAR:PurchaseUpgradeRohanBasicTraining": {}
+          "CONTROLBAR:PurchaseUpgradeGondorBasicTraining": {}
         }
       }
     },
@@ -245,9 +247,10 @@
         "CONTROLBAR:PurchaseUpgradeEregionForgeLevel3": {}
       },
       "CONTROLBAR:ConstructElvenWallHub": {
-        "CONTROLBAR:Command_ElvenCastleWallHub_BeginWallSpan": {},
-        "CONTROLBAR:Command_ElvenWallUpgradeToHub": {},
-        "CONTROLBAR:Command_ElvenWallUpgradeToRegularGate": { "CONTROLBAR:ToggleGateOpenClose": {} }
+        "CONTROLBAR:Command_ElvenCastleWallHub_BeginWallSpan": {
+          "CONTROLBAR:Command_ElvenWallUpgradeToHub": {},
+          "CONTROLBAR:Command_ElvenWallUpgradeToRegularGate": { "CONTROLBAR:ToggleGateOpenClose": {} }
+        }
       },
       "CONTROLBAR:ConstructElvenFortress": {
         "CONTROLBAR:ConstructElvenPorter": { "CONTROLBAR:PorterExtinguishFire": {} },
@@ -289,6 +292,7 @@
           "CONTROLBAR:PurchaseUpgradeElvenFortressEaglesNest": {}
         },
         "CONTROLBAR:PurchaseElvenEagle": { "CONTROLBAR:SpecialAbilityWingBlast": {} },
+        "CONTROLBAR:RadialBack": {},
         "OBJECT:ElvenBuildingFoundation": {
           "CONTROLBAR:Command_ConstructElvenWallHubExpansionCastle": {},
           "CONTROLBAR:ConstructElvenWatchtowerExpansion": {},
@@ -380,12 +384,13 @@
       "CONTROLBAR:ConstructDwarvenHearth": {},
       "CONTROLBAR:ConstructDwarvenStatue": {},
       "CONTROLBAR:ConstructDwarvenWallHub": {
-        "CONTROLBAR:Command_DwarvenCastleWallHub_BeginWallSpan": {},
-        "CONTROLBAR:Command_DwarvenWallUpgradeToHub": {},
-        "CONTROLBAR:Command_DwarvenWallUpgradeToRegularGate": { "CONTROLBAR:ToggleGateOpenClose": {} },
-        "CONTROLBAR:Command_DwarvenWallUpgradeToPosternGate": {},
-        "CONTROLBAR:Command_DwarvenWallUpgradeToTower": {},
-        "CONTROLBAR:Command_DwarvenWallUpgradeToCatapult": {}
+        "CONTROLBAR:Command_DwarvenCastleWallHub_BeginWallSpan": {
+          "CONTROLBAR:Command_DwarvenWallUpgradeToHub": {},
+          "CONTROLBAR:Command_DwarvenWallUpgradeToRegularGate": { "CONTROLBAR:ToggleGateOpenClose": {} },
+          "CONTROLBAR:Command_DwarvenWallUpgradeToPosternGate": {},
+          "CONTROLBAR:Command_DwarvenWallUpgradeToTower": {},
+          "CONTROLBAR:Command_DwarvenWallUpgradeToCatapult": {}
+        }
       },
       "CONTROLBAR:ConstructDwarvenFortress": {
         "CONTROLBAR:ConstructDwarvenPorter": { "CONTROLBAR:PorterExtinguishFire": {} },
@@ -410,6 +415,7 @@
         },
         "CONTROLBAR:FireWeaponDwarvenFortressOilCasks": {},
         "CONTROLBAR:FireWeaponMightyCatapult": {},
+        "CONTROLBAR:RadialBack": {},
         "OBJECT:DwarvenBuildingFoundation": {
           "CONTROLBAR:Command_ConstructDwarvenWallHubExpansion": {},
           "CONTROLBAR:ConstructDwarvenHallExpansion": { "CONTROLBAR:GarrisonExit": {}, "CONTROLBAR:EvacuateAll": {} },
@@ -529,9 +535,10 @@
         "CONTROLBAR:ConstructIsengardArmoryLevel3": {}
       },
       "CONTROLBAR:Command_ConstructIsengardCastleWallHub": {
-        "CONTROLBAR:Command_IsengardCastleWallHub_BeginWallSpan": {},
-        "CONTROLBAR:Command_IsengardWallUpgradeToHub": {},
-        "CONTROLBAR:Command_IsengardWallUpgradeToRegularGate": { "CONTROLBAR:ToggleGateOpenClose": {} }
+        "CONTROLBAR:Command_IsengardCastleWallHub_BeginWallSpan": {
+          "CONTROLBAR:Command_IsengardWallUpgradeToHub": {},
+          "CONTROLBAR:Command_IsengardWallUpgradeToRegularGate": { "CONTROLBAR:ToggleGateOpenClose": {} }
+        }
       },
       "CONTROLBAR:ConstructIsengardFortress": {
         "CONTROLBAR:ConstructIsengardPorter": { "CONTROLBAR:PorterExtinguishFire": {} },
@@ -565,6 +572,7 @@
           "CONTROLBAR:PurchaseUpgradeIsengardFortressWizardsTower": {}
         },
         "CONTROLBAR:WizardsTowerLightningStrike": {},
+        "CONTROLBAR:RadialBack": {},
         "OBJECT:IsengardBuildingFoundation": {
           "CONTROLBAR:ConstructIsengardWallHubExpansion": {},
           "CONTROLBAR:ConstructIsengardTowerExpansion": {},
@@ -715,6 +723,7 @@
         "CONTROLBAR:BlackRiderRecruit": { "CONTROLBAR:BlackRiderMorgulBlade": {}, "CONTROLBAR:Screech": {} },
         "CONTROLBAR:FireWeaponMordorFortressMagmaCauldrons": {},
         "CONTROLBAR:FireWeaponMordorFortressSpireFireball": {},
+        "CONTROLBAR:RadialBack": {},
         "OBJECT:MordorBuildingFoundation": {
           "CONTROLBAR:ConstructMordorBarricadeExpansion": {},
           "CONTROLBAR:ConstructMordorGateWatchersExpansion": {},
@@ -853,6 +862,7 @@
           "CONTROLBAR:PurchaseUpgradeWildFortressDragonNest": {}
         },
         "CONTROLBAR:PurchaseWildFireDrake": { "CONTROLBAR:SpecialAbilityFireDrakeInferno": {} },
+        "CONTROLBAR:RadialBack": {},
         "OBJECT:WildBuildingFoundation": {
           "CONTROLBAR:ConstructWildBurrowsExpansion": { "CONTROLBAR:GarrisonExit": {}, "CONTROLBAR:EvacuateAll": {} },
           "CONTROLBAR:ConstructWildArrowDenExpansion": {},
@@ -876,9 +886,9 @@
     "inn": {
       "OBJECT:InnTavern": {
         "CONTROLBAR:ConstructMordorCorsairsOfUmbarHorde": {
-          "CONTROLBAR:ArcherBarrage": {},
           "CONTROLBAR:ThrowFireBombs": {},
           "CONTROLBAR:Knife": {},
+          "CONTROLBAR:ArcherBarrage": {},
           "CONTROLBAR:PurchaseUpgradeWildForgedBlade": {},
           "CONTROLBAR:PurchaseUpgradeWildBasicTraining": {}
         }
@@ -967,12 +977,13 @@
       },
       "CONTROLBAR:ConstructAngmarBattleTower": { "CONTROLBAR:GarrisonExit": {}, "CONTROLBAR:PurchaseTechnologyAngmarIceArrowsForBattleTower": {} },
       "CONTROLBAR:ConstructDwarvenWallHub": {
-        "CONTROLBAR:Command_DwarvenCastleWallHub_BeginWallSpan": {},
-        "CONTROLBAR:Command_AngmarWallUpgradeToHub": {},
-        "CONTROLBAR:Command_AngmarWallUpgradeToRegularGate": { "CONTROLBAR:ToggleGateOpenClose": {} },
-        "CONTROLBAR:Command_AngmarWallUpgradeToPosternGate": {},
-        "CONTROLBAR:Command_AngmarWallUpgradeToTower": {},
-        "CONTROLBAR:Command_AngmarWallUpgradeToCatapult": {}
+        "CONTROLBAR:Command_DwarvenCastleWallHub_BeginWallSpan": {
+          "CONTROLBAR:Command_AngmarWallUpgradeToHub": {},
+          "CONTROLBAR:Command_AngmarWallUpgradeToRegularGate": { "CONTROLBAR:ToggleGateOpenClose": {} },
+          "CONTROLBAR:Command_AngmarWallUpgradeToPosternGate": {},
+          "CONTROLBAR:Command_AngmarWallUpgradeToTower": {},
+          "CONTROLBAR:Command_AngmarWallUpgradeToCatapult": {}
+        }
       },
       "CONTROLBAR:ConstructDwarvenFortress": {
         "CONTROLBAR:ConstructAngmarPorter": { "CONTROLBAR:PorterExtinguishFire": {} },
@@ -997,6 +1008,7 @@
           "CONTROLBAR:PurchaseUpgradeAngmarFortressSanctum": {}
         },
         "CONTROLBAR:FireWeaponAngmarFortressSanctumFrostball": {},
+        "CONTROLBAR:RadialBack": {},
         "OBJECT:AngmarBuildingFoundation": {
           "CONTROLBAR:Command_ConstructAngmarWallHubExpansion": {},
           "CONTROLBAR:ConstructAngmarBattleTowerExpansion": {},
