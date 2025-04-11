@@ -66,6 +66,10 @@ export async function getSrcControl(game, version, controlName, faction, parent)
   }
 
   let genericControl
+  if(objGenericSrc[gameV] === undefined) {
+    throw new Error("Game version not found in sourceControls.json : " + gameV)
+  }
+
   if (objGenericSrc[gameV][controlName] !== undefined) {
     genericControl = objGenericSrc[gameV][controlName]
   } else {
@@ -106,6 +110,9 @@ export function displayFaction(faction) {
 export async function readFile(path) {
   let response = await fetch(path)
   // read response stream as text
+  if(!response.ok) {
+    throw new Error(`${response.status} ${response.statusText}, file : ${path}`)
+  }
   let text_data = await response.text()
   return text_data
 }

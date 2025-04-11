@@ -112,11 +112,11 @@ const csvPath = {
 // arrayFileBFME2_106.shift()
 // createFactionTreeStructure(BFME2, BFME2_106, arrayFileBFME2_106)
 
-// const BFME2_109v2 = "1.09v2"
-// const fileBFME2_109v2 = fs.readFileSync(csvPath[BFME2 + " " + BFME2_109v2], "utf-8")
-// const arrayFileBFME2_109v2 = fileBFME2_109v2.split(/\r\n/)
-// arrayFileBFME2_109v2.shift()
-// createFactionTreeStructure(BFME2, BFME2_109v2, arrayFileBFME2_109v2)
+// const BFME2_109 = "1.09"
+// const fileBFME2_109 = fs.readFileSync(csvPath[BFME2 + " " + BFME2_109], "utf-8")
+// const arrayFileBFME2_109 = fileBFME2_109.split(/\r\n/)
+// arrayFileBFME2_109.shift()
+// createFactionTreeStructure(BFME2, BFME2_109, arrayFileBFME2_109)
 
 // const BFME1_222 = "2.22"
 // const fileBFME1_222 = fs.readFileSync(csvPath[BFME1 + " " + BFME1_222], "utf-8")
