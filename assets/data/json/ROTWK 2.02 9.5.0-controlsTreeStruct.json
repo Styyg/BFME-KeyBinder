@@ -109,7 +109,7 @@
             "CONTROLBAR:FaramirKnightRanger": {},
             "CONTROLBAR:CaptainofGondor": {}
           },
-          "CONTROLBAR:GondorBoromirHotkey": { "CONTROLBAR:HornofGondor": {}, "CONTROLBAR:CaptainofGondor": {} },
+          "CONTROLBAR:GondorBoromirHotkey": { "CONTROLBAR:HornofGondor": {}, "CONTROLBAR:CaptainofGondorBoromir": {} },
           "CONTROLBAR:GondorAragornHotkey": { "CONTROLBAR:Athelas": {}, "CONTROLBAR:BladeMaster": {}, "CONTROLBAR:Elendil": {}, "CONTROLBAR:Oathbreakers": {} },
           "CONTROLBAR:GandalfTheWhiteHotkey": {
             "CONTROLBAR:WizardBlast": {},
@@ -152,7 +152,7 @@
           "OBJECT:RohanSam": {
             "CONTROLBAR:tooltipCommand_ToggleEntRockThrow": {},
             "CONTROLBAR:UseStick": {},
-            "CONTROLBAR:ElvenCloak": {},
+            "CONTROLBAR:ElvenCloakSam": {},
             "CONTROLBAR:FryingPan": {}
           },
           "OBJECT:RohanMerry": { "CONTROLBAR:tooltipCommand_ToggleEntRockThrow": {}, "CONTROLBAR:UseStick": {}, "CONTROLBAR:ElvenCloak": {} },
@@ -265,13 +265,13 @@
           },
           "CONTROLBAR:ElvenElrondHotkey": {
             "CONTROLBAR:ElrondFarsight": {},
-            "CONTROLBAR:ElvenGrace": {},
+            "CONTROLBAR:ElrondAthelas": {},
             "CONTROLBAR:ElrondRestoration": {},
             "CONTROLBAR:ElrondWhirlwind": {}
           },
           "CONTROLBAR:RohanLegolasHotkey": {
             "CONTROLBAR:HawkStrike": {},
-            "CONTROLBAR:TrainArchers": {},
+            "CONTROLBAR:TrainArchersLegolas": {},
             "CONTROLBAR:KnifeFighter": {},
             "CONTROLBAR:ArrowWind": {}
           },
@@ -291,7 +291,7 @@
           "CONTROLBAR:PurchaseUpgradeElvenFortressEncasingVines": {},
           "CONTROLBAR:PurchaseUpgradeElvenFortressEaglesNest": {}
         },
-        "CONTROLBAR:PurchaseElvenEagle": { "CONTROLBAR:SpecialAbilityWingBlast": {} },
+        "CONTROLBAR:PurchaseElvenEagle": { "CONTROLBAR:SpecialAbilityEagleWingBlast": {} },
         "CONTROLBAR:RadialBack": {},
         "OBJECT:ElvenBuildingFoundation": {
           "CONTROLBAR:Command_ConstructElvenWallHubExpansionCastle": {},
@@ -584,7 +584,7 @@
     "power": { "CONTROLBAR:EvilPlayerExperienceMenu": { "CONTROLBAR:DragonAlly": { "CONTROLBAR:SpecialAbilitySummonedDragonReposition": {} } } },
     "inn": {
       "OBJECT:InnTavern": {
-        "CONTROLBAR:ConstructMordorBlackOrcHorde": {
+        "CONTROLBAR:ConstructMordorBlackOrcHordeInn": {
           "CONTROLBAR:PurchaseUpgradeIsengardForgedBlades": {},
           "CONTROLBAR:PurchaseUpgradeIsengardHeavyArmor": {},
           "CONTROLBAR:PurchaseUpgradeIsengardBasicTraining": {}
@@ -702,13 +702,13 @@
             "CONTROLBAR:SpecialAbilityMouthOfSauronEvilEye": {},
             "CONTROLBAR:MouthOfSauronDissent": {}
           },
-          "CONTROLBAR:MordorKhamulHotkey": { "CONTROLBAR:TheodenMount": {}, "CONTROLBAR:Screech": {}, "CONTROLBAR:BlackRiderMorgulBlade": {} },
-          "CONTROLBAR:MordorMorgomirHotkey": { "CONTROLBAR:TheodenMount": {}, "CONTROLBAR:Screech": {}, "CONTROLBAR:BlackRiderMorgulBlade": {} },
+          "CONTROLBAR:MordorKhamulHotkey": { "CONTROLBAR:TheodenMount": {}, "CONTROLBAR:ScreechFellbeast": {}, "CONTROLBAR:BlackRiderMorgulBlade": {} },
+          "CONTROLBAR:MordorMorgomirHotkey": { "CONTROLBAR:TheodenMount": {}, "CONTROLBAR:ScreechFellbeast": {}, "CONTROLBAR:BlackRiderMorgulBlade": {} },
           "CONTROLBAR:MordorWitchKingOnFellBeastHotkey": {
             "CONTROLBAR:TheodenMount": {},
             "CONTROLBAR:ToggleWitchkingWeapons": {},
             "CONTROLBAR:MordorWitchkingMorgulCorruption": {},
-            "CONTROLBAR:Screech": {},
+            "CONTROLBAR:ScreechWitchking": {},
             "CONTROLBAR:HourOfTheWitchKing": {}
           }
         },

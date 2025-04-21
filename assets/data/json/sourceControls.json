@@ -256,6 +256,7 @@
     "CONTROLBAR:ConstructIsengardWargRider": "isengard/ForgedBlades.png",
     "CONTROLBAR:ConstructMordorOrcFighterHorde": "mordor/ForgedBlades.png",
     "CONTROLBAR:ConstructMordorBlackOrcHorde": "mordor/ForgedBlades.png",
+    "CONTROLBAR:ConstructMordorBlackOrcHordeInn": "mordor/ForgedBlades.png",
     "CONTROLBAR:ConstructMordorEasterlingHorde": "mordor/ForgedBlades.png",
     "CONTROLBAR:ConstructMordorCorsairsOfUmbarHorde": "mordor/ForgedBlades.png",
     "CONTROLBAR:ConstructMordorHaradrimRiderHorde": "mordor/ForgedBlades.png",
@@ -922,16 +923,13 @@
     "CONTROLBAR:SpecialAbilityFiresOfDoom": "misc/SpecialAbilityFiresOfDoom2.png"
   },
   "rotwk 2.01": {},
-  "rotwk 2.02 9.4.1": {
+  "rotwk 2.02 9.5.0": {
     "CONTROLBAR:SpecialAbilityShieldBubble": "men/SpecialAbilityShieldBubble.png",
     "CONTROLBAR:TameTheBeast": "isengard/TameTheBeast2.png",
     "CONTROLBAR:PurchaseTechnologyMordorFireArrows": "generic/fire_arrow5.png",
-    "CONTROLBAR:Screech": {
-      "CONTROLBAR:MordorWitchKingOnFellBeastHotkey": "mordor/Screech_WK.png",
-      "CONTROLBAR:MordorMorgomirHotkey": "mordor/Screech.png",
-      "CONTROLBAR:MordorKhamulHotkey": "mordor/Screech.png",
-      "CONTROLBAR:BlackRiderRecruit": "mordor/Screech.png"
-    },
+    "CONTROLBAR:Screech": "mordor/Screech.png",
+    "CONTROLBAR:ScreechWitchking": "mordor/Screech_WK.png",
+    "CONTROLBAR:ScreechFellbeast": "mordor/Screech.png",
     "CONTROLBAR:MordorKhamulHotkey": "mordor/FellBeast.png",
     "CONTROLBAR:MordorMorgomirHotkey": "mordor/FellBeast.png",
     "CONTROLBAR:WkTerribleFury": "mordor/Screech_WK.png",
@@ -961,9 +959,16 @@
     "CONTROLBAR:PorterExtinguishFire": "misc/ExtinguishFire.png",
     "CONTROLBAR:LieutenantsFavor": "goblins/AzogCracktheWhip.png",
     "CONTROLBAR:ThranduilHiddenHunter": "elves/ElvenCloak.png",
+    "CONTROLBAR:ElvenCloakSam": "elves/ElvenCloak.png",
     "CONTROLBAR:UpgradeMordorTavernLevel2": "generic/upgrade2.png",
     "CONTROLBAR:UpgradeMordorTavernLevel3": "generic/upgrade2.png",
     "CONTROLBAR:RadialBack": "generic/RadialBack.png",
-    "CONTROLBAR:ActivateGrandHarvest": "men/ConstructGrandHarvestUpgrade.png"
+    "CONTROLBAR:ActivateGrandHarvest": "men/ConstructGrandHarvestUpgrade.png",
+    "CONTROLBAR:CaptainofGondor": "men/CaptainOfGondor_Faramir.png",
+    "CONTROLBAR:CaptainofGondorBoromir": "men/CaptainOfGondor_Boromir.png",
+    "CONTROLBAR:ConstructMordorBlackOrcHordeInn": "mordor/ConstructMordorBlackOrcHorde.png",
+    "CONTROLBAR:ElrondAthelas": "elves/ElvenGrace.png",
+    "CONTROLBAR:TrainArchersLegolas": "generic/TrainArchers.png",
+    "CONTROLBAR:SpecialAbilityEagleWingBlast": "elves/SpecialAbilityWingBlast.png"
   }
 }
