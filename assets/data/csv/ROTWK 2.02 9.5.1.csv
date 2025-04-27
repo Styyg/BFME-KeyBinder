@@ -211,6 +211,7 @@ CONTROLBAR:PurchaseUpgradeElderRacesBasicTraining,elves,CONTROLBAR:BuildElvenRiv
 CONTROLBAR:ConstructElvenGreenPastureLevel2Upgrade,elves,CONTROLBAR:ConstructElvenStable,basic,1
 CONTROLBAR:ConstructElvenGreenPastureLevel3Upgrade,elves,CONTROLBAR:ConstructElvenStable,basic,1
 CONTROLBAR:ConstructEntMoot,elves,,basic,0
+CONTROLBAR:ConstructEntAshMelee,elves,CONTROLBAR:ConstructEntMoot,basic,1
 CONTROLBAR:ConstructEnt,elves,CONTROLBAR:ConstructEntMoot,basic,1
 CONTROLBAR:KickAndPunch,elves,CONTROLBAR:ConstructEnt,basic,2
 CONTROLBAR:ThrowRocks,elves,CONTROLBAR:ConstructEnt,basic,2
