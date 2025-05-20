@@ -212,9 +212,12 @@ CONTROLBAR:ConstructElvenGreenPastureLevel2Upgrade,elves,CONTROLBAR:ConstructElv
 CONTROLBAR:ConstructElvenGreenPastureLevel3Upgrade,elves,CONTROLBAR:ConstructElvenStable,basic,1
 CONTROLBAR:ConstructEntMoot,elves,,basic,0
 CONTROLBAR:ConstructEntAshMelee,elves,CONTROLBAR:ConstructEntMoot,basic,1
+CONTROLBAR:EntStomp,elves,CONTROLBAR:ConstructEntAshMelee,basic,2
 CONTROLBAR:ConstructEnt,elves,CONTROLBAR:ConstructEntMoot,basic,1
 CONTROLBAR:KickAndPunch,elves,CONTROLBAR:ConstructEnt,basic,2
 CONTROLBAR:ThrowRocks,elves,CONTROLBAR:ConstructEnt,basic,2
+CONTROLBAR:ToggleTrebWeapon,elves,CONTROLBAR:ConstructEnt,basic,2
+CONTROLBAR:StopBombard,elves,CONTROLBAR:ConstructEnt,basic,2
 CONTROLBAR:ConstructTreebeard,elves,CONTROLBAR:ConstructEntMoot,basic,1
 CONTROLBAR:KickAndPunch,elves,CONTROLBAR:ConstructTreebeard,basic,2
 CONTROLBAR:ThrowRocks,elves,CONTROLBAR:ConstructTreebeard,basic,2
@@ -659,11 +662,11 @@ CONTROLBAR:MouthOfSauronDissent,mordor,CONTROLBAR:MordorMouthofSauronHotkey,basi
 CONTROLBAR:MordorKhamulHotkey,mordor,CONTROLBAR:SelectRevivablesMordorFortress,basic,2
 CONTROLBAR:TheodenMount,mordor,CONTROLBAR:MordorKhamulHotkey,basic,3
 CONTROLBAR:ScreechFellbeast,mordor,CONTROLBAR:MordorKhamulHotkey,basic,3
-CONTROLBAR:BlackRiderMorgulBlade,mordor,CONTROLBAR:MordorKhamulHotkey,basic,3
+CONTROLBAR:FellbeastBlade,mordor,CONTROLBAR:MordorKhamulHotkey,basic,3
 CONTROLBAR:MordorMorgomirHotkey,mordor,CONTROLBAR:SelectRevivablesMordorFortress,basic,2
 CONTROLBAR:TheodenMount,mordor,CONTROLBAR:MordorMorgomirHotkey,basic,3
 CONTROLBAR:ScreechFellbeast,mordor,CONTROLBAR:MordorMorgomirHotkey,basic,3
-CONTROLBAR:BlackRiderMorgulBlade,mordor,CONTROLBAR:MordorMorgomirHotkey,basic,3
+CONTROLBAR:FellbeastBlade,mordor,CONTROLBAR:MordorMorgomirHotkey,basic,3
 CONTROLBAR:MordorWitchKingOnFellBeastHotkey,mordor,CONTROLBAR:SelectRevivablesMordorFortress,basic,2
 CONTROLBAR:TheodenMount,mordor,CONTROLBAR:MordorWitchKingOnFellBeastHotkey,basic,3
 CONTROLBAR:ToggleWitchkingWeapons,mordor,CONTROLBAR:MordorWitchKingOnFellBeastHotkey,basic,3
@@ -678,6 +681,8 @@ CONTROLBAR:PurchaseUpgradeMordorFortressFireArrows,mordor,CONTROLBAR:SelectUpgra
 CONTROLBAR:PurchaseUpgradeMordorFortressMorgulSorcery,mordor,CONTROLBAR:SelectUpgradesMordorFortress,basic,2
 CONTROLBAR:PurchaseUpgradeMordorFortressGorgorothSpire,mordor,CONTROLBAR:SelectUpgradesMordorFortress,basic,2
 CONTROLBAR:BlackRiderRecruit,mordor,CONTROLBAR:ConstructMordorFortress,basic,1
+CONTROLBAR:ToggleBlackRiderLineFormation,mordor,CONTROLBAR:BlackRiderRecruit,basic,2
+CONTROLBAR:ToggleWedgeFormation,mordor,CONTROLBAR:BlackRiderRecruit,basic,2
 CONTROLBAR:BlackRiderMorgulBlade,mordor,CONTROLBAR:BlackRiderRecruit,basic,2
 CONTROLBAR:Screech,mordor,CONTROLBAR:BlackRiderRecruit,basic,2
 CONTROLBAR:FireWeaponMordorFortressMagmaCauldrons,mordor,CONTROLBAR:ConstructMordorFortress,basic,1
@@ -912,7 +917,7 @@ CONTROLBAR:AngmarHwaldarHotkey,angmar,CONTROLBAR:SelectRevivablesDwarvenFortress
 CONTROLBAR:HwaldarSummonHillmen1,angmar,CONTROLBAR:AngmarHwaldarHotkey,basic,3
 CONTROLBAR:HwaldarSummonHillmen2,angmar,CONTROLBAR:AngmarHwaldarHotkey,basic,3
 CONTROLBAR:AngmarMorgramirHotkey,angmar,CONTROLBAR:SelectRevivablesDwarvenFortress,basic,2
-CONTROLBAR:BlackRiderMorgulBlade,angmar,CONTROLBAR:AngmarMorgramirHotkey,basic,3
+CONTROLBAR:MorgulBladeMorgomir,angmar,CONTROLBAR:AngmarMorgramirHotkey,basic,3
 CONTROLBAR:DarkGlory,angmar,CONTROLBAR:AngmarMorgramirHotkey,basic,3
 CONTROLBAR:MorgramirRuin,angmar,CONTROLBAR:AngmarMorgramirHotkey,basic,3
 CONTROLBAR:AngmarKarshHotkey,angmar,CONTROLBAR:SelectRevivablesDwarvenFortress,basic,2

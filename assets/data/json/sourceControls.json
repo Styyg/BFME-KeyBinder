@@ -134,6 +134,7 @@
   "CONTROLBAR:StopBombard": {
     "CONTROLBAR:ConstructGondorTrebuchet": "generic/stop_bombard.png",
     "CONTROLBAR:ConstructTreebeard": "generic/stop_bombard.png",
+    "CONTROLBAR:ConstructEnt": "generic/stop_bombard.png",
     "CONTROLBAR:ConstructDwarvenCatapult": "generic/stop_bombard.png",
     "CONTROLBAR:ConstructGoodBombardShip": "generic/stop_bombard.png",
     "CONTROLBAR:ConstructIsengardSiegeBallista": "generic/stop_bombard2.png",
@@ -923,7 +924,7 @@
     "CONTROLBAR:SpecialAbilityFiresOfDoom": "misc/SpecialAbilityFiresOfDoom2.png"
   },
   "rotwk 2.01": {},
-  "rotwk 2.02 9.5.1": {
+  "rotwk 2.02 9.5.2": {
     "CONTROLBAR:SpecialAbilityShieldBubble": "men/SpecialAbilityShieldBubble.png",
     "CONTROLBAR:TameTheBeast": "isengard/TameTheBeast2.png",
     "CONTROLBAR:PurchaseTechnologyMordorFireArrows": "generic/fire_arrow5.png",
@@ -969,6 +970,9 @@
     "CONTROLBAR:ConstructMordorBlackOrcHordeInn": "mordor/ConstructMordorBlackOrcHorde.png",
     "CONTROLBAR:ElrondAthelas": "elves/ElvenGrace.png",
     "CONTROLBAR:TrainArchersLegolas": "generic/TrainArchers.png",
-    "CONTROLBAR:SpecialAbilityEagleWingBlast": "elves/SpecialAbilityWingBlast.png"
+    "CONTROLBAR:SpecialAbilityEagleWingBlast": "elves/SpecialAbilityWingBlast.png",
+    "CONTROLBAR:MorgulBladeMorgomir": "mordor/BlackRiderMorgulBlade.png",
+    "CONTROLBAR:FellbeastBlade": "mordor/BlackRiderMorgulBlade.png",
+    "CONTROLBAR:ToggleBlackRiderLineFormation": "generic/lineFormation.png"
   }
 }
