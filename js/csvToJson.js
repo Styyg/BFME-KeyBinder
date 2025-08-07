@@ -93,7 +93,7 @@ const BFME1 = "bfme1"
 const csvPath = {
   "rotwk 2.02 9.5.2": "./assets/data/csv/rotwk 2.02 9.5.2.csv",
   "rotwk 2.02 9.4.1": "./assets/data/csv/rotwk 2.02 9.4.1.csv",
-  "bfme2 1.09v2": "./assets/data/csv/bfme2 1.09v2.csv",
+  "bfme2 1.09": "./assets/data/csv/BFME2 1.09.csv",
   "bfme2 1.06": "./assets/data/csv/bfme2 1.06.csv",
   "bfme1 2.22": "./assets/data/csv/bfme1 2.22.csv",
   "bfme1 1.08": "./assets/data/csv/bfme1 1.08.csv",

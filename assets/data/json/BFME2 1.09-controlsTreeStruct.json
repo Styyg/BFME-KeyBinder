@@ -825,6 +825,7 @@
       "CONTROLBAR:CancelBuild": {},
       "CONTROLBAR:SelectAllHeroes": {},
       "CONTROLBAR:AttackMove": {},
+      "CONTROLBAR:Stop": {},
       "CONTROLBAR:SauronHotkey": {
         "CONTROLBAR:SummonBalrogSauron09v2": {},
         "CONTROLBAR:SpecialAbilityFiresOfDoom": {},

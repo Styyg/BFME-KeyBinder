@@ -964,6 +964,7 @@ CONTROLBAR:SelectNearestBuilder,misc,,basic,0
 CONTROLBAR:CancelBuild,misc,,basic,0
 CONTROLBAR:SelectAllHeroes,misc,,basic,0
 CONTROLBAR:AttackMove,misc,,basic,0
+CONTROLBAR:Stop,misc,,basic,0
 CONTROLBAR:SauronHotkey,misc,,basic,0
 CONTROLBAR:SpecialAbilityFiresOfDoom,misc,CONTROLBAR:SauronHotkey,basic,1
 CONTROLBAR:TerribleFury,misc,CONTROLBAR:SauronHotkey,basic,1
