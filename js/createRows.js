@@ -4,12 +4,14 @@ export const arrayFaction = {
   rotwk: ["men", "elves", "dwarves", "isengard", "mordor", "goblins", "angmar", "misc"],
   bfme2: ["men", "elves", "dwarves", "isengard", "mordor", "goblins", "misc"],
   bfme1: ["rohan", "men", "isengard", "mordor", "misc"],
+  aotr: ["gondor", "rohan", "erebor", "lothlorien", "rivendell", "woodland realm", "mordor", "isengard", "misty mountains", "dol guldur", "haradwaith", "misc"],
   any: [],
 }
 const arrayBranch = {
   rotwk: ["basic", "power", "inn", "port"],
   bfme2: ["basic", "power", "inn", "port"],
   bfme1: ["basic", "power"],
+  aotr: ["basic", "power", "inn", "port"],
   any: [],
 }
 
@@ -179,22 +181,21 @@ async function extractData(game, version, arrayData) {
 }
 
 async function extractCommandmapData(objCommandmap, arrayData) {
-  
-  let i= 0
+  let i = 0
   while (i < arrayData.length) {
     let row = arrayData[i].trim()
 
     if (row.toLowerCase().startsWith("commandmap")) {
-      const commandMap = row.slice("CommandMap".length +1,)
+      const commandMap = row.slice("CommandMap".length + 1)
       i++
       row = arrayData[i].trim()
       while (!row.toUpperCase().startsWith("END")) {
-        if(row.includes("=")) {
+        if (row.includes("=")) {
           const arr = row.split("=")
           const attribute = arr[0].trim()
           const value = arr[1].trim()
 
-          if(!(commandMap in objCommandmap)) {
+          if (!(commandMap in objCommandmap)) {
             objCommandmap[commandMap] = {}
             objCommandmap[commandMap]["notes"] = ""
           }
@@ -249,7 +250,14 @@ async function createRowControl(game, version, obj, faction, controlName, HTMLpa
   const nameNew = nameMain + "-new"
   const nameDesc = nameMain + "-desc"
 
-  const srcControl = await Utils.getSrcControl(game, version, controlName, faction, parent)
+  let srcControl
+  // Temp fix for AOTR missing icons
+  if (game === "aotr") {
+    srcControl = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+    faction = ""
+  } else {
+    srcControl = await Utils.getSrcControl(game, version, controlName, faction, parent)
+  }
   // const label = controlName.split(":")[1]
 
   const numberOfChilds = Object.keys(obj[controlName]).length
@@ -262,7 +270,7 @@ async function createRowControl(game, version, obj, faction, controlName, HTMLpa
     toggleClick = "toggleClick"
   }
 
-  const newDiv = `<div name="${nameMain}" class="control-main ${faction}" ${hidden}>
+  const newDiv = `<div name="${nameMain}" class="control-main basic-row ${faction}" ${hidden}>
       <div class="${toggleClick}">
         <div class="control-row">
           <img class="icon" src="${srcControl}" loading="lazy">
@@ -298,7 +306,6 @@ async function createRowCommandMap(objCommandmap) {
   document.getElementById("main-faction").innerHTML = ""
 
   for (const commandMap in objCommandmap) {
-
     const id_KeyCurrent = commandMap + "-keyCurrent"
     const id_KeyNew = commandMap + "-keyNew"
     const id_TransitionCurrent = commandMap + "-transitionCurrent"
@@ -331,7 +338,7 @@ async function createRowCommandMap(objCommandmap) {
     const notes = objCommandmap[commandMap]["notes"]
 
     let disabled, htmlName
-    if("found" in objCommandmap[commandMap]) {
+    if ("found" in objCommandmap[commandMap]) {
       disabled = ""
       htmlName = "new-shortcuts"
     } else {

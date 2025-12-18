@@ -10,8 +10,9 @@
   color: #207feb;
 }
 
-.text-uncategorized {
-  color: #858585;
+.text-uncategorized,
+.text-aotr {
+  color: #b8b8b8;
 }
 
 #bfme {
@@ -35,9 +36,12 @@
   border-color: #207feb;
 }
 
+#aotr,
 #uncategorized {
   border-color: #797979;
 }
+
+#aotr .select-version,
 #uncategorized .select-version {
   border-color: #797979;
 }
@@ -45,6 +49,7 @@
 #bfme .select-version:hover,
 #bfme2 .select-version:hover,
 #rotwk .select-version:hover,
+#aotr .select-version:hover,
 #uncategorized .select-version:hover {
   border-color: #cacaca;
 }
@@ -143,10 +148,12 @@
   background-color: rgb(189, 129, 230);
 }
 
+.basic-row,
 .control-main.misc {
   background-color: rgb(204, 204, 204);
 }
 
+.basic-row > .basic-row,
 .control-main.misc > .control-main.misc {
   background-color: rgb(241, 241, 241);
 }

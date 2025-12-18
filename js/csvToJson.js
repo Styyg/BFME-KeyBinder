@@ -3,15 +3,17 @@ const fs = require("fs")
 const arrayFaction = {
   rotwk: ["men", "elves", "dwarves", "isengard", "mordor", "goblins", "angmar", "misc"],
   bfme2: ["men", "elves", "dwarves", "isengard", "mordor", "goblins", "misc"],
-  bfme1: ["rohan", "men", "isengard", "mordor", "misc"],
+  bfme1: ["rohan", "men", "isengard", "mordor", "misc"],  
+  aotr: ["gondor", "rohan", "erebor", "lothlorien", "rivendell", "woodland realm", "mordor", "isengard", "misty mountains", "dol guldur", "haradwaith", "misc"],
 }
 const arrayBranch = {
   rotwk: ["basic", "power", "inn", "port"],
   bfme2: ["basic", "power", "inn", "port"],
   bfme1: ["basic", "power"],
+  aotr: ["basic", "power", "inn", "port"],
 }
 
-const jsonPath = "./assets/data/json/"
+const jsonPath = "../assets/data/json/"
 
 function createFactionTreeStructure(game, version, arrayFile) {
   const controlsList = {}
@@ -59,7 +61,9 @@ function createFactionTreeStructure(game, version, arrayFile) {
           break
       }
     } catch (error) {
-      console.log("error", error)
+      console.log("error", error.message)
+      console.log("row", row)
+      console.log("")
     }
   }
 
@@ -86,26 +90,35 @@ function createCommandMapTree(arrayFile) {
   fs.writeFileSync(jsonPath + "commandmap.json", JSON.stringify(commandmap))
 }
 
+const AOTR = "aotr"
 const ROTWK = "rotwk"
 const BFME2 = "bfme2"
 const BFME1 = "bfme1"
 
+const csvFolder = "../assets/data/csv/"
 const csvPath = {
-  "rotwk 2.02 9.5.2": "./assets/data/csv/rotwk 2.02 9.5.2.csv",
-  "rotwk 2.02 9.4.1": "./assets/data/csv/rotwk 2.02 9.4.1.csv",
-  "bfme2 1.09": "./assets/data/csv/BFME2 1.09.csv",
-  "bfme2 1.06": "./assets/data/csv/bfme2 1.06.csv",
-  "bfme1 2.22": "./assets/data/csv/bfme1 2.22.csv",
-  "bfme1 1.08": "./assets/data/csv/bfme1 1.08.csv",
-  "bfme1 1.06": "./assets/data/csv/bfme1 1.06.csv",
-  "commandmap": "./assets/data/csv/CommandMap.csv",
+  "aotr 9.2": csvFolder + "aotr 9.2.csv",
+  "rotwk 2.02 9.5.2": csvFolder + "rotwk 2.02 9.5.2.csv",
+  "rotwk 2.02 9.4.1": csvFolder + "rotwk 2.02 9.4.1.csv",
+  "bfme2 1.09": csvFolder + "BFME2 1.09.csv",
+  "bfme2 1.06": csvFolder + "bfme2 1.06.csv",
+  "bfme1 2.22": csvFolder + "bfme1 2.22.csv",
+  "bfme1 1.08": csvFolder + "bfme1 1.08.csv",
+  "bfme1 1.06": csvFolder + "bfme1 1.06.csv",
+  "commandmap": csvFolder + "CommandMap.csv",
 }
 
-const ROTWK_202 = "2.02 9.5.2"
-const fileROTWK_202 = fs.readFileSync(csvPath[ROTWK + " " + ROTWK_202], "utf-8")
-const arrayFileROTWK_202 = fileROTWK_202.split(/\r\n/)
-arrayFileROTWK_202.shift()
-createFactionTreeStructure(ROTWK, ROTWK_202, arrayFileROTWK_202)
+// const ROTWK_202 = "2.02 9.5.2"
+// const fileROTWK_202 = fs.readFileSync(csvPath[ROTWK + " " + ROTWK_202], "utf-8")
+// const arrayFileROTWK_202 = fileROTWK_202.split(/\r\n/)
+// arrayFileROTWK_202.shift()
+// createFactionTreeStructure(ROTWK, ROTWK_202, arrayFileROTWK_202)
+
+const AOTR_92 = "9.2"
+const fileAOTR = fs.readFileSync(csvPath[AOTR + " " + AOTR_92], "utf-8")
+const arrayFileAOTR = fileAOTR.split(/\r\n/)
+arrayFileAOTR.shift()
+createFactionTreeStructure(AOTR, AOTR_92, arrayFileAOTR)
 
 // const BFME2_106 = "1.06"
 // const fileBFME2_106 = fs.readFileSync(csvPath[BFME2 + " " + BFME2_106], "utf-8")

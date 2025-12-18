@@ -74,8 +74,8 @@
           <h3 class="fw-bolder display-5">Select a version</h3>
         </div>
 
-        <!-- SELECT BFME 1 -->
         <div class="center game-list">
+          <!-- SELECT BFME 1 -->
           <div id="bfme" class="game-select">
             <div>
               <img src="../assets/images/games-icons/bfme.png" />
@@ -125,6 +125,18 @@
               <!-- 2.02 9.5.2 -->
               <a id="rotwk-2.02 9.5.2" class="select-version" data-game="rotwk" data-version="2.02 9.5.2">
                 <h6 class="text-rotwk">2.02 9.5.2</h6>
+              </a>
+            </div>
+          </div>
+
+          <!-- SELECT AOTR -->
+          <div id="aotr" class="game-select">
+            <img src="../assets/images/games-icons/aotr.png" />
+            <h5>The Age of the Ring</h5>
+            <div style="display: flex; justify-content: space-evenly">
+              <!-- 2.02 9.5.2 -->
+              <a id="aotr-9.2" class="select-version" data-game="aotr" data-version="9.2">
+                <h6 class="text-aotr">9.2</h6>
               </a>
             </div>
           </div>
@@ -252,6 +264,22 @@
           <div class="lead text-white mb-5">lotr.str &emsp; lotr.csf</div>
         </div>
 
+        <!-- AOTR 9.2 -->
+        <div name="div-version" data-game="aotr" data-version="9.2" hidden>
+          <div class="center mb-4">
+            <h1>⚠️ Work in progress</h1>
+          </div>
+          <div class="center mb-4">
+            <img class="title-game-icon" src="../assets/images/games-icons/aotr.png" />
+            <h1 class="display-5 fw-bolder text-white">The Age of the Ring 9.2</h1>
+          </div>
+          <div class="lead text-white-50 mb-4">Import your language file and change your shortcuts.</div>
+          <div class="lead text-white mb-1 fw-bolder">Default file path</div>
+          <div class="lead text-white mb-4">
+            C:\AgeoftheRing\aotr\data\<b>lotr.str</b>
+          </div>
+        </div>
+
         <!-- Uncategorized -->
         <!-- <div name="div-version" data-game="any" data-version="any" hidden>
           <div class="center mb-4">
@@ -317,11 +345,41 @@
           <h5>Select a faction:</h5>
 
           <div>
+            <div id="displayGondor">
+              <div class="icon-faction center">
+                <img src="" alt="" />
+              </div>
+              <h6 class="center">Gondor</h6>
+            </div>
             <div id="displayRohan">
               <div class="icon-faction center">
                 <img src="../assets/images/faction/rohan.webp" alt="" />
               </div>
               <h6 class="center">Rohan</h6>
+            </div>
+            <div id="displayErebor">
+              <div class="icon-faction center">
+                <img src="" alt="" />
+              </div>
+              <h6 class="center">Erebor</h6>
+            </div>
+            <div id="displayLothlorien">
+              <div class="icon-faction center">
+                <img src="" alt="" />
+              </div>
+              <h6 class="center">Lothlorien</h6>
+            </div>
+            <div id="displayRivendell">
+              <div class="icon-faction center">
+                <img src="" alt="" />
+              </div>
+              <h6 class="center">Rivendell</h6>
+            </div>
+            <div id="displayWoodland Realm">
+              <div class="icon-faction center">
+                <img src="" alt="" />
+              </div>
+              <h6 class="center">Woodland Realm</h6>
             </div>
 
             <div id="displayMen">
@@ -358,6 +416,24 @@
               </div>
               <h6 class="center">Mordor</h6>
             </div>
+            <div id="displayMisty Mountains">
+              <div class="icon-faction center">
+                <img src="" alt="" />
+              </div>
+              <h6 class="center">Misty Mountains</h6>
+            </div>
+            <div id="displayDol Guldur">
+              <div class="icon-faction center">
+                <img src="" alt="" />
+              </div>
+              <h6 class="center">Dol Guldur</h6>
+            </div>
+            <div id="displayHaradwaith">
+              <div class="icon-faction center">
+                <img src="" alt="" />
+              </div>
+              <h6 class="center">Haradwaith</h6>
+            </div>
 
             <div id="displayGoblins">
               <div class="icon-faction center">
@@ -389,6 +465,11 @@
         <!-- Controls list -->
         <div id="main-faction" class="container-xxl bgdark">
           <div id="div-faction">
+            <div id="gondor" hidden>
+              <div id="gondor-basic" name="branch"></div>
+              <div id="gondor-power" name="branch"></div>
+              <div id="gondor-inn" name="branch"></div>
+            </div>
             <div id="rohan" hidden>
               <div id="rohan-basic" name="branch"></div>
               <div id="rohan-power" name="branch"></div>
@@ -404,6 +485,27 @@
               <div id="elves-power" name="branch"></div>
               <div id="elves-inn" name="branch"></div>
             </div>
+            <div id="erebor" hidden>
+              <div id="erebor-basic" name="branch"></div>
+              <div id="erebor-power" name="branch"></div>
+              <div id="erebor-inn" name="branch"></div>
+            </div>
+            <div id="lothlorien" hidden>
+              <div id="lothlorien-basic" name="branch"></div>
+              <div id="lothlorien-power" name="branch"></div>
+              <div id="lothlorien-inn" name="branch"></div>
+            </div>
+            <div id="rivendell" hidden>
+              <div id="rivendell-basic" name="branch"></div>
+              <div id="rivendell-power" name="branch"></div>
+              <div id="rivendell-inn" name="branch"></div>
+            </div>
+            <div id="woodland realm" hidden>
+              <div id="woodland realm-basic" name="branch"></div>
+              <div id="woodland realm-power" name="branch"></div>
+              <div id="woodland realm-inn" name="branch"></div>
+            </div>
+
             <div id="dwarves" hidden>
               <div id="dwarves-basic" name="branch"></div>
               <div id="dwarves-power" name="branch"></div>
@@ -419,6 +521,16 @@
               <div id="mordor-power" name="branch"></div>
               <div id="mordor-inn" name="branch"></div>
             </div>
+            <div id="misty mountains" hidden>
+              <div id="misty mountains-basic" name="branch"></div>
+              <div id="misty mountains-power" name="branch"></div>
+              <div id="misty mountains-inn" name="branch"></div>
+            </div>
+            <div id="dol guldur" hidden>
+              <div id="dol guldur-basic" name="branch"></div>
+              <div id="dol guldur-power" name="branch"></div>
+              <div id="dol guldur-inn" name="branch"></div>
+            </div>
             <div id="goblins" hidden>
               <div id="goblins-basic" name="branch"></div>
               <div id="goblins-power" name="branch"></div>
@@ -428,6 +540,11 @@
               <div id="angmar-basic" name="branch"></div>
               <div id="angmar-power" name="branch"></div>
               <div id="angmar-inn" name="branch"></div>
+            </div>
+            <div id="haradwaith" hidden>
+              <div id="haradwaith-basic" name="branch"></div>
+              <div id="haradwaith-power" name="branch"></div>
+              <div id="haradwaith-inn" name="branch"></div>
             </div>
             <div id="misc" hidden>
               <div id="misc-basic" name="branch"></div>
