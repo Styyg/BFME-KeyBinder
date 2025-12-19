@@ -194,8 +194,8 @@ CONTROLBAR:ElessarToggleMount,gondor,OBJECT:GondorElessar,power,2,FALSE
 CONTROLBAR:ElessarAthelas,gondor,OBJECT:GondorElessar,power,2,FALSE
 CONTROLBAR:ElessarBladeMaster,gondor,OBJECT:GondorElessar,power,2,FALSE
 CONTROLBAR:ElessarOathbreaker,gondor,OBJECT:GondorElessar,power,2,FALSE
-CONTROLBAR:ConstrucMenFarm,rohan,,basic,0,FALSE
-CONTROLBAR:RohanPeasantry,rohan,CONTROLBAR:ConstrucMenFarm,basic,1,FALSE
+CONTROLBAR:ConstructMenFarm,rohan,,basic,0,FALSE
+CONTROLBAR:RohanPeasantry,rohan,CONTROLBAR:ConstructMenFarm,basic,1,FALSE
 CONTROLBAR:RohanFarmProduction,rohan,CONTROLBAR:RohanPeasantry,basic,2,FALSE
 CONTROLBAR:ConstructRohanPeasant,rohan,CONTROLBAR:RohanPeasantry,basic,2,FALSE
 CONTROLBAR:RohanPeasantHasDraft,rohan,CONTROLBAR:ConstructRohanPeasant,basic,3,FALSE
@@ -858,11 +858,11 @@ CONTROLBAR:CustodianCharge,erebor,CONTROLBAR:DurinVIIKingsCustodians,power,2,FAL
 CONTROLBAR:EreborCustodianDuty,erebor,CONTROLBAR:DurinVIIKingsCustodians,power,2,FALSE,,,
 CONTROLBAR:DurinVIIHammer,erebor,OBJECT:DurinTheLast,power,1,FALSE,,,
 CONTROLBAR:DurinDeathless,erebor,OBJECT:DurinTheLast,power,1,FALSE,,,
-CONTROLBAR:ConstructangmarMill,haradwaith,,basic,0,FALSE
-CONTROLBAR:ConstructTradeCaravan,haradwaith,CONTROLBAR:ConstructangmarMill,basic,1,FALSE
+CONTROLBAR:ConstructAngmarMill,haradwaith,,basic,0,FALSE
+CONTROLBAR:ConstructTradeCaravan,haradwaith,CONTROLBAR:ConstructAngmarMill,basic,1,FALSE
 CONTROLBAR:SpecialAbilityHaradCaravanDeploy,haradwaith,CONTROLBAR:ConstructTradeCaravan,basic,2,FALSE
 CONTROLBAR:SpecialAbilityHaradCaravanUnDeploy,haradwaith,CONTROLBAR:ConstructTradeCaravan,basic,2,FALSE
-CONTROLBAR:ConstructHaradNomad,haradwaith,CONTROLBAR:ConstructangmarMill,basic,1,FALSE
+CONTROLBAR:ConstructHaradNomad,haradwaith,CONTROLBAR:ConstructAngmarMill,basic,1,FALSE
 CONTROLBAR:SpecialAbilityHaradNomadDeploy,haradwaith,CONTROLBAR:ConstructHaradNomad,basic,2,FALSE
 CONTROLBAR:SpecialAbilityHaradCaravanUnDeploy,haradwaith,CONTROLBAR:ConstructHaradNomad,basic,2,FALSE
 CONTROLBAR:SpecialAbilityNomadHeal,haradwaith,CONTROLBAR:ConstructHaradNomad,basic,2,FALSE
