@@ -163,9 +163,9 @@ CONTROLBAR:FountainGuardTwo,gondor,CONTROLBAR:ConstructGondorFountainGuardHorde,
 CONTROLBAR:IvoryTowerVision,gondor,CONTROLBAR:ConstructMenFortress,basic,1,FALSE
 OBJECT:MenBuildingFoundation,gondor,,basic,0,TRUE
 CONTROLBAR:Command_ConstructMenWallHubExpansion,gondor,OBJECT:MenBuildingFoundation,basic,1,FALSE
-CONTROLBAR:Command_ConstructMenArrowTowerExpansion,gondor,OBJECT:MenBuildingFoundation,basic,1,FALSE
-CONTROLBAR:Command_ConstructMenTrebuchetExpansion,gondor,OBJECT:MenBuildingFoundation,basic,1,FALSE
-CONTROLBAR:Command_ConstructMenSolemnStatueExpansion,gondor,OBJECT:MenBuildingFoundation,basic,1,FALSE
+CONTROLBAR:ConstructMenArrowTowerExpansion,gondor,OBJECT:MenBuildingFoundation,basic,1,FALSE
+CONTROLBAR:ConstructMenTrebuchetExpansion,gondor,OBJECT:MenBuildingFoundation,basic,1,FALSE
+CONTROLBAR:ConstructMenSolemnStatueExpansion,gondor,OBJECT:MenBuildingFoundation,basic,1,FALSE
 CONTROLBAR:SummonSpawnTrebuchet,gondor,,power,0,TRUE
 CONTROLBAR:NoAutoAcquire,gondor,CONTROLBAR:SummonSpawnTrebuchet,power,1,FALSE
 CONTROLBAR:AutoAcquire,gondor,CONTROLBAR:SummonSpawnTrebuchet,power,1,FALSE
@@ -552,12 +552,12 @@ CONTROLBAR:SpecialAbilityGuldurSaenathraTunnel,dol guldur,CONTROLBAR:GuldurSaena
 CONTROLBAR:GuldurSaenathraFeast,dol guldur,CONTROLBAR:GuldurSaenathraHotKey,basic,3,FALSE
 CONTROLBAR:GuldurSaenathraWebOfLies,dol guldur,CONTROLBAR:GuldurSaenathraHotKey,basic,3,FALSE
 CONTROLBAR:GuldurSaenathraEndlessHunger,dol guldur,CONTROLBAR:GuldurSaenathraHotKey,basic,3,FALSE
-CONTROLBAR:GuldurKhamulHotkey,dol guldur,CONTROLBAR:SelectRevivablesGoblinFortress,basic,2,FALSE
-CONTROLBAR:NineAreAbroad,dol guldur,CONTROLBAR:GuldurKhamulHotkey,basic,3,FALSE
-CONTROLBAR:ScreechKhamul,dol guldur,CONTROLBAR:GuldurKhamulHotkey,basic,3,FALSE
-CONTROLBAR:KhamulLieutnant,dol guldur,CONTROLBAR:GuldurKhamulHotkey,basic,3,FALSE
-CONTROLBAR:WordsofDeath,dol guldur,CONTROLBAR:GuldurKhamulHotkey,basic,3,FALSE
-CONTROLBAR:BlackEasterling,dol guldur,CONTROLBAR:GuldurKhamulHotkey,basic,3,FALSE
+CONTROLBAR:MordorKhamulHotkey,dol guldur,CONTROLBAR:SelectRevivablesGoblinFortress,basic,2,FALSE
+CONTROLBAR:NineAreAbroad,dol guldur,CONTROLBAR:MordorKhamulHotkey,basic,3,FALSE
+CONTROLBAR:ScreechKhamul,dol guldur,CONTROLBAR:MordorKhamulHotkey,basic,3,FALSE
+CONTROLBAR:KhamulLieutnant,dol guldur,CONTROLBAR:MordorKhamulHotkey,basic,3,FALSE
+CONTROLBAR:WordsofDeath,dol guldur,CONTROLBAR:MordorKhamulHotkey,basic,3,FALSE
+CONTROLBAR:BlackEasterling,dol guldur,CONTROLBAR:MordorKhamulHotkey,basic,3,FALSE
 CONTROLBAR:NecromancerHotkey,dol guldur,CONTROLBAR:SelectRevivablesGoblinFortress,basic,2,FALSE
 CONTROLBAR:DarkPresence,dol guldur,CONTROLBAR:NecromancerHotkey,basic,3,FALSE
 CONTROLBAR:NecromancerWolvesSummon,dol guldur,CONTROLBAR:NecromancerHotkey,basic,3,FALSE
@@ -637,6 +637,7 @@ CONTROLBAR:ConstructDwarvenAssembly,erebor,,basic,0,FALSE,,,
 CONTROLBAR:ConstructEredLuinTraderHorde,erebor,CONTROLBAR:ConstructDwarvenAssembly,basic,1,FALSE,,,
 CONTROLBAR:TraderMerchantsLeadership,erebor,CONTROLBAR:ConstructEredLuinTraderHorde,basic,2,FALSE,,,
 CONTROLBAR:TraderToymakers1,erebor,CONTROLBAR:ConstructEredLuinTraderHorde,basic,2,FALSE,,,
+CONTROLBAR:TraderToymakers2,erebor,CONTROLBAR:ConstructEredLuinTraderHorde,basic,2,FALSE,,,
 CONTROLBAR:PurchaseUpgradeDwarvenBasicTrainingEredLuin,erebor,CONTROLBAR:ConstructEredLuinTraderHorde,basic,2,FALSE,,,
 CONTROLBAR:ConstructDwarvenDaleGuardHorde,erebor,CONTROLBAR:ConstructDwarvenAssembly,basic,1,FALSE,lotr,,
 CONTROLBAR:TogglePhalanxFormation,erebor,CONTROLBAR:ConstructDwarvenDaleGuardHorde,basic,2,FALSE,lotr,,

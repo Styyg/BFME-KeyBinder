@@ -85,6 +85,38 @@ async function createCategorizedRows(game, version, arrayData) {
                 gen,
                 controlName_2
               )
+              const HTMLparent4 = HTMLparent3.lastChild
+              // generation 4
+              for (const controlName_4 in objControlsFactionTree[faction][branch][controlName_0][controlName_1][controlName_2][controlName_3]) {
+                const gen = 4
+                await createRowControl(
+                  game,
+                  version,
+                  objControlsFactionTree[faction][branch][controlName_0][controlName_1][controlName_2][controlName_3],
+                  faction,
+                  controlName_4,
+                  HTMLparent4,
+                  gen,
+                  controlName_3
+                )
+                const HTMLparent5 = HTMLparent4.lastChild
+                // generation 5
+                for (const controlName_5 in objControlsFactionTree[faction][branch][controlName_0][controlName_1][controlName_2][controlName_3][
+                  controlName_4
+                ]) {
+                  const gen = 5
+                  await createRowControl(
+                    game,
+                    version,
+                    objControlsFactionTree[faction][branch][controlName_0][controlName_1][controlName_2][controlName_3][controlName_4],
+                    faction,
+                    controlName_5,
+                    HTMLparent5,
+                    gen,
+                    controlName_4
+                  )
+                }
+              }
             }
           }
         }
@@ -138,7 +170,11 @@ async function extractData(game, version, arrayData) {
           element.querySelector(".shortcuts").innerHTML = ""
         }
 
-        document.getElementById(controlName + "-new").remove()
+        const newElem = document.getElementById(controlName + "-new")
+        if (newElem != null) newElem.remove()
+        else {
+          console.log("No input to remove for: " + controlName)
+        }
       }
       // control is NOT found
     } else {

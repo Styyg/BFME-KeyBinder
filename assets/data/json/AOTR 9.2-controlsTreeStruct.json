@@ -130,7 +130,7 @@
             "CONTROLBAR:DenethorPalantir": {},
             "CONTROLBAR:DenethorHighAuthority": {},
             "CONTROLBAR:DenethorSummon": {},
-            "OBJECT:GondorBerethor": {},
+            "OBJECT:GondorBerethor": { "CONTROLBAR:ShatteringStrike": {}, "CONTROLBAR:ChallengeofGondor": {} },
             "CONTROLBAR:DenethorContest": {}
           },
           "CONTROLBAR:GondorFaramirHotkey": {
@@ -177,9 +177,9 @@
       },
       "OBJECT:MenBuildingFoundation": {
         "CONTROLBAR:Command_ConstructMenWallHubExpansion": {},
-        "CONTROLBAR:Command_ConstructMenArrowTowerExpansion": {},
-        "CONTROLBAR:Command_ConstructMenTrebuchetExpansion": {},
-        "CONTROLBAR:Command_ConstructMenSolemnStatueExpansion": {}
+        "CONTROLBAR:ConstructMenArrowTowerExpansion": {},
+        "CONTROLBAR:ConstructMenTrebuchetExpansion": {},
+        "CONTROLBAR:ConstructMenSolemnStatueExpansion": {}
       }
     },
     "power": {
@@ -406,7 +406,7 @@
           },
           "CONTROLBAR:RohanTheodenHotkey": {
             "CONTROLBAR:TheodenNewMount": {},
-            "CONTROLBAR:StrengthRemembered": {},
+            "CONTROLBAR:StrengthRemembered": { "OBJECT:RohanGamling": { "CONTROLBAR:GamlingWhateverEnd": {} } },
             "CONTROLBAR:GloriousCharge": {},
             "CONTROLBAR:KingsFavor": {}
           },
@@ -502,6 +502,7 @@
         "CONTROLBAR:ConstructEredLuinTraderHorde": {
           "CONTROLBAR:TraderMerchantsLeadership": {},
           "CONTROLBAR:TraderToymakers1": {},
+          "CONTROLBAR:TraderToymakers2": {},
           "CONTROLBAR:PurchaseUpgradeDwarvenBasicTrainingEredLuin": {}
         },
         "CONTROLBAR:ConstructDwarvenDaleGuardHorde": {
@@ -634,7 +635,7 @@
             "CONTROLBAR:HadhodSabotage": {},
             "CONTROLBAR:HadhodStoneHewer": {},
             "CONTROLBAR:BondsofFriendship": {},
-            "OBJECT:EreborElegost": {}
+            "OBJECT:EreborElegost": { "CONTROLBAR:ElegostTrueShot": {}, "CONTROLBAR:ElegostHeal": {}, "CONTROLBAR:ElegostRangerCraft": {} }
           },
           "CONTROLBAR:GloinHotkey": {
             "CONTROLBAR:GloinHeal": {},
@@ -653,7 +654,7 @@
             "CONTROLBAR:ToggleGimliWeapons": {},
             "CONTROLBAR:FellowshipLeap": {},
             "CONTROLBAR:FellowshipSlayer": {},
-            "CONTROLBAR:GimliElfFriend": {}
+            "CONTROLBAR:GimliElfFriend": { "OBJECT:RohanLegolas": {}, "CONTROLBAR:ToggleLegolasEreborWeapons": {}, "CONTROLBAR:FellowshipHawkStrike": {} }
           },
           "CONTROLBAR:DwarvenThorinHelmHotkey": { "CONTROLBAR:DwarvenGrudge": {}, "CONTROLBAR:DurinsChosen": {}, "CONTROLBAR:Stonehelm": {} },
           "CONTROLBAR:DwarvenKingDainHotkey": {
@@ -1093,12 +1094,16 @@
             "CONTROLBAR:ArwenImage": {},
             "CONTROLBAR:ArwenEvenstar": {}
           },
-          "CONTROLBAR:GildorHotkey": { "CONTROLBAR:GildorLeadership": {}, "CONTROLBAR:GildorExiles": {}, "CONTROLBAR:GildorTelperion": {} },
+          "CONTROLBAR:GildorHotkey": {
+            "CONTROLBAR:GildorLeadership": {},
+            "CONTROLBAR:GildorExiles": { "CONTROLBAR:SongToElbereth": {} },
+            "CONTROLBAR:GildorTelperion": {}
+          },
           "CONTROLBAR:GondorHalbaradHotkey": {
             "CONTROLBAR:ToggleFaramirWeapons": {},
             "CONTROLBAR:HalbaradUnerringLoyalty": {},
             "CONTROLBAR:HalbaradMuster": {},
-            "CONTROLBAR:HalbaradPerseverance": {},
+            "CONTROLBAR:HalbaradPerseverance": { "CONTROLBAR:ToggleFaramirWeapons": {}, "CONTROLBAR:GreyCompanyGrimResolve": {} },
             "CONTROLBAR:HalbaradBannerOfArwen": {}
           },
           "CONTROLBAR:RivendellAragornHotkey": {
@@ -1334,7 +1339,9 @@
             "CONTROLBAR:FellowshipHawkStrike": {},
             "CONTROLBAR:PrinceMirkwood": {},
             "CONTROLBAR:FellowshipLegolasSlayer": {},
-            "CONTROLBAR:LegolasDwarfFriend": {}
+            "CONTROLBAR:LegolasDwarfFriend": {
+              "OBJECT:RohanGimli": { "CONTROLBAR:FellowshipLeap": {}, "CONTROLBAR:ToggleGimliWeapons": {}, "CONTROLBAR:AxeThrow": {} }
+            }
           },
           "CONTROLBAR:ElvenThranduilHotkey": {
             "CONTROLBAR:ThranduilNewMount": {},
@@ -1514,7 +1521,11 @@
           "CONTROLBAR:MordorGothmogHotkey": {
             "CONTROLBAR:GothmogToggleMounted": {},
             "CONTROLBAR:GothmogIronHand": {},
-            "CONTROLBAR:GothmogOrcSummon": {},
+            "CONTROLBAR:GothmogOrcSummon": {
+              "OBJECT:HordeMordorMorgulOrcPike": {},
+              "CONTROLBAR:ToggleMorgulPikeFormation": {},
+              "CONTROLBAR:ToggleLineFormation": {}
+            },
             "CONTROLBAR:GothmogSiegeMaster": {},
             "CONTROLBAR:GothmogIntoTheFray": {}
           },
@@ -1892,7 +1903,7 @@
             "CONTROLBAR:LugScorchedEarth": {}
           },
           "CONTROLBAR:WildGreatGoblinHotkey": {
-            "CONTROLBAR:GreatGoblinDemand": {},
+            "CONTROLBAR:GreatGoblinDemand": { "CONTROLBAR:ConstructGoblinTownFighterHorde": {} },
             "CONTROLBAR:GreatGoblinLeadership": {},
             "CONTROLBAR:GreatGoblinSwarm": {},
             "CONTROLBAR:GreatGoblinAntiquarian": {},
@@ -2064,7 +2075,10 @@
           "CONTROLBAR:GuldurKrimpulHotKey": {
             "CONTROLBAR:KrimpulOrcSummon": {},
             "CONTROLBAR:KrimpulCommand": {},
-            "CONTROLBAR:KrimpulGaol": {},
+            "CONTROLBAR:KrimpulGaol": {
+              "CONTROLBAR:DarkPresence": {},
+              "CONTROLBAR:ConstructGuldurBrokenRabbleHordeKrimpul": { "CONTROLBAR:GuldurDrain": {}, "CONTROLBAR:EternalServitude": {} }
+            },
             "CONTROLBAR:KrimpulCripple": {}
           },
           "CONTROLBAR:GuldurCargastHotkey": {
@@ -2072,7 +2086,7 @@
             "CONTROLBAR:CargastLeadership": {},
             "CONTROLBAR:CargastCursedTreasure": {},
             "CONTROLBAR:CargastSpell": {},
-            "CONTROLBAR:CargastDarkAwakening": {}
+            "CONTROLBAR:CargastDarkAwakening": { "CONTROLBAR:IntrepidCorpse": {} }
           },
           "CONTROLBAR:GuldurSaenathraHotKey": {
             "CONTROLBAR:SpecialAbilityGuldurSaenathraTunnel": {},
@@ -2080,7 +2094,7 @@
             "CONTROLBAR:GuldurSaenathraWebOfLies": {},
             "CONTROLBAR:GuldurSaenathraEndlessHunger": {}
           },
-          "CONTROLBAR:GuldurKhamulHotkey": {
+          "CONTROLBAR:MordorKhamulHotkey": {
             "CONTROLBAR:NineAreAbroad": {},
             "CONTROLBAR:ScreechKhamul": {},
             "CONTROLBAR:KhamulLieutnant": {},
@@ -2089,7 +2103,7 @@
           },
           "CONTROLBAR:NecromancerHotkey": {
             "CONTROLBAR:DarkPresence": {},
-            "CONTROLBAR:NecromancerWolvesSummon": {},
+            "CONTROLBAR:NecromancerWolvesSummon": { "CONTROLBAR:GuldurWargLunge": {} },
             "CONTROLBAR:NecromancerAbhorredDread": {},
             "CONTROLBAR:NecromancerShapelessMalice": {},
             "CONTROLBAR:NecromancerWreathed": {}
@@ -2291,7 +2305,7 @@
             "CONTROLBAR:TakeAllYouCan": {},
             "CONTROLBAR:SpecialAbilityGiveNothingBack": {},
             "CONTROLBAR:WateryGraves": {},
-            "CONTROLBAR:HornofKarna": {}
+            "CONTROLBAR:HornofKarna": { "CONTROLBAR:SoundHornofKarna": {} }
           },
           "CONTROLBAR:HaradSuladanHotkey": {
             "CONTROLBAR:SuladanMount": {},

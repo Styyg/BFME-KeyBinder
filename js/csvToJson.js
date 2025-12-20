@@ -28,7 +28,7 @@ function createFactionTreeStructure(game, version, arrayFile) {
   }
 
   // if we're in gen2 / gen3, it allows to know the name of parents in the tree until oldest parent
-  let storeParent0, storeParent1
+  let storeParent0, storeParent1, storeParent2, storeParent3
   // for each row
   for (const row of arrayFile) {
     const columns = row.split(",")
@@ -50,11 +50,19 @@ function createFactionTreeStructure(game, version, arrayFile) {
           storeParent1 = name
           controlsFactionTree[faction][branch][parent][name] = {}
           break
-        case 2:
+        case 2:          
+          storeParent2 = name
           controlsFactionTree[faction][branch][storeParent0][parent][name] = {}
           break
         case 3:
+          storeParent3 = name
           controlsFactionTree[faction][branch][storeParent0][storeParent1][parent][name] = {}
+          break
+        case 4:
+          controlsFactionTree[faction][branch][storeParent0][storeParent1][storeParent2][parent][name] = {}
+          break
+        case 5:
+          controlsFactionTree[faction][branch][storeParent0][storeParent1][storeParent2][storeParent3][parent][name] = {}
           break
   
         default:
