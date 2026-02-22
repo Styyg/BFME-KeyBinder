@@ -220,9 +220,9 @@
         "CONTROLBAR:ConstructTreebeard": {
           "CONTROLBAR:KickAndPunch": {},
           "CONTROLBAR:ThrowRocks": {},
+          "CONTROLBAR:EvacuateHobbits09v301": {},
           "CONTROLBAR:ToggleTrebWeapon": {},
-          "CONTROLBAR:StopBombard": {},
-          "CONTROLBAR:EvacuateAll": {}
+          "CONTROLBAR:StopBombard": {}
         }
       },
       "CONTROLBAR:ConstructElvenBattleTower": { "CONTROLBAR:GarrisonExit": {}, "CONTROLBAR:PurchaseUpgradeElvenSilverthornArrows": {} },
@@ -244,7 +244,7 @@
       "CONTROLBAR:ConstructElvenFortress": {
         "CONTROLBAR:ConstructElvenPorter": {},
         "CONTROLBAR:SelectRevivablesElvenFortress": {
-          "CONTROLBAR:ElvenArwenHotkey": { "CONTROLBAR:TheodenMount": {}, "CONTROLBAR:PersonalFlood": {} },
+          "CONTROLBAR:ElvenArwenHotkey": { "CONTROLBAR:TheodenMount": {}, "CONTROLBAR:PersonalFlood": {}, "CONTROLBAR:ArwenElvenGrace09v3": {} },
           "CONTROLBAR:ElvenHaldirHotkey": { "CONTROLBAR:ToggleElvenWarriorWeapons": {}, "CONTROLBAR:HaldirGoldenArrow": {} },
           "CONTROLBAR:ElvenGlorfindelHotkey": {
             "CONTROLBAR:TheodenMount": {},
@@ -291,7 +291,9 @@
       }
     },
     "power": { "CONTROLBAR:GoodPlayerExperienceMenu": { "OBJECT:TomBombadil": { "CONTROLBAR:SonicSong": {} } } },
-    "inn": { "OBJECT:InnTavern": { "CONTROLBAR:ConstructRohanPeasant": { "CONTROLBAR:PurchaseUpgradeElderRacesBasicTraining": {} } } },
+    "inn": {
+      "OBJECT:InnTavern": { "CONTROLBAR:ConstructRohanPeasant": { "CONTROLBAR:Draft09v3": {}, "CONTROLBAR:PurchaseUpgradeElderRacesBasicTraining": {} } }
+    },
     "port": {}
   },
   "dwarves": {
@@ -509,7 +511,7 @@
             "CONTROLBAR:SpecialAbilityLurtzCarnage": {},
             "CONTROLBAR:SpecialAbilityLurtzCripple": {}
           },
-          "CONTROLBAR:IsengardSharkuHotkey": { "CONTROLBAR:SharkuManEater": {}, "CONTROLBAR:TameTheBeast": {} },
+          "CONTROLBAR:IsengardSharkuHotkey": { "CONTROLBAR:SharkuManEater": {}, "CONTROLBAR:TameTheBeast": {}, "CONTROLBAR:SummonWargAllies09v3": {} },
           "CONTROLBAR:IsengardWormtongueHotkey": {
             "CONTROLBAR:VenomousWords": {},
             "CONTROLBAR:Escape": {},
@@ -602,11 +604,11 @@
       "CONTROLBAR:ConstructMordorSiegeWorks": {
         "CONTROLBAR:ConstructMordorBatteringRam": {},
         "CONTROLBAR:ConstructMordorCatapult": {
-          "CONTROLBAR:ToggleTrebWeapon": {},
-          "CONTROLBAR:StopBombard": {},
-          "CONTROLBAR:ToggleCatapultWeapons": {},
+          "CONTROLBAR:SpecialAbilityHumanHeads09v301": {},
           "CONTROLBAR:NoAutoAcquire": {},
-          "CONTROLBAR:AutoAcquire": {}
+          "CONTROLBAR:AutoAcquire": {},
+          "CONTROLBAR:ToggleTrebWeapon": {},
+          "CONTROLBAR:StopBombard": {}
         },
         "CONTROLBAR:ConstructMordorSiegeTower": { "CONTROLBAR:SiegeRetract": {} },
         "CONTROLBAR:ConstructMordorGrond": {},
@@ -618,20 +620,7 @@
         "CONTROLBAR:UpgradeMordorMumakilPenLevel2": {},
         "CONTROLBAR:UpgradeMordorMumakilPenLevel3": {}
       },
-      "CONTROLBAR:ConstructMordorUmbarTavern": {
-        "CONTROLBAR:ConstructMordorCorsairsOfUmbarHorde": {
-          "CONTROLBAR:ThrowFireBombs": {},
-          "CONTROLBAR:Knife": {},
-          "CONTROLBAR:PurchaseUpgradeMordorBasicTraining": {},
-          "CONTROLBAR:PurchaseUpgradeIsengardForgedBlades": {},
-          "CONTROLBAR:ArcherBarrage": {}
-        },
-        "CONTROLBAR:PurchaseTechnologyMordorHeavyArmor": {},
-        "CONTROLBAR:PurchaseTechnologyMordorForgedBlades": {},
-        "CONTROLBAR:PurchaseTechnologyMordorFireArrows": {},
-        "CONTROLBAR:UpgradeMordorTavernLevel2": {},
-        "CONTROLBAR:UpgradeMordorTavernLevel3": {}
-      },
+      "CONTROLBAR:ConstructMordorTavern": {},
       "CONTROLBAR:ConstructMordorBattleTower": { "CONTROLBAR:GarrisonExit": {}, "CONTROLBAR:PurchaseUpgradeSentryTowerFireArrows": {} },
       "CONTROLBAR:Command_ConstructMordorCastleWallHub09v2": {
         "CONTROLBAR:Command_IsengardCastleWallHub_BeginWallSpan": {},
@@ -643,7 +632,7 @@
       "CONTROLBAR:ConstructMordorFortress": {
         "CONTROLBAR:ConstructMordorPorter": {},
         "CONTROLBAR:SelectRevivablesMordorFortress": {
-          "CONTROLBAR:BlackRiderHotkey": { "CONTROLBAR:TheodenMount": {}, "CONTROLBAR:BlackRiderMorgulBlade": {}, "CONTROLBAR:Screech": {} },
+          "CONTROLBAR:BlackRiderHotkey": { "CONTROLBAR:TheodenMount": {}, "CONTROLBAR:BlackRiderMorgulBlade": {}, "CONTROLBAR:ScreechBlackRider": {} },
           "CONTROLBAR:MordorMouthofSauronHotkey": {
             "CONTROLBAR:TheodenMount": {},
             "CONTROLBAR:SpecialAbilityMouthOfSauronEvilEye": {},
@@ -651,7 +640,12 @@
             "CONTROLBAR:MouthOfSauronDissent": {}
           },
           "CONTROLBAR:MordorFellBeastHotkey": { "CONTROLBAR:Screech": {} },
-          "CONTROLBAR:MordorWitchKingOnFellBeastHotkey": { "CONTROLBAR:TheodenMount": {}, "CONTROLBAR:Screech": {}, "CONTROLBAR:HourOfTheWitchKing": {} }
+          "CONTROLBAR:MordorWitchKingOnFellBeastHotkey": {
+            "CONTROLBAR:TheodenMount": {},
+            "CONTROLBAR:ScreechWitchKing": {},
+            "CONTROLBAR:WitchKingBlackRiderMorgulBlade09v3": {},
+            "CONTROLBAR:HourOfTheWitchKing": {}
+          }
         },
         "CONTROLBAR:SelectUpgradesMordorFortress": {
           "CONTROLBAR:PurchaseUpgradeMordorFortressDoomPyres": {},
@@ -772,7 +766,8 @@
           "CONTROLBAR:ShelobHotkey": {
             "CONTROLBAR:WildShelobInstillTerror": {},
             "CONTROLBAR:WildShelobPoisonedStinger": {},
-            "CONTROLBAR:SpecialAbilityWildShelobTunnel": {}
+            "CONTROLBAR:SpecialAbilityWildShelobTunnel": {},
+            "CONTROLBAR:ShelobWebbing09v2": {}
           },
           "CONTROLBAR:WildDrogothHotkey": {
             "CONTROLBAR:SpecialAbilityDrogothFireball": {},

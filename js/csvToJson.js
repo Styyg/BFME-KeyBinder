@@ -3,7 +3,7 @@ const fs = require("fs")
 const arrayFaction = {
   rotwk: ["men", "elves", "dwarves", "isengard", "mordor", "goblins", "angmar", "misc"],
   bfme2: ["men", "elves", "dwarves", "isengard", "mordor", "goblins", "misc"],
-  bfme1: ["rohan", "men", "isengard", "mordor", "misc"],  
+  bfme1: ["rohan", "men", "isengard", "mordor", "misc"],
   aotr: ["gondor", "rohan", "erebor", "lothlorien", "rivendell", "woodland realm", "mordor", "isengard", "misty mountains", "dol guldur", "haradwaith", "misc"],
 }
 const arrayBranch = {
@@ -13,7 +13,7 @@ const arrayBranch = {
   aotr: ["basic", "power", "inn", "port"],
 }
 
-const jsonPath = "../assets/data/json/"
+const jsonPath = "assets/data/json/"
 
 function createFactionTreeStructure(game, version, arrayFile) {
   const controlsList = {}
@@ -50,7 +50,7 @@ function createFactionTreeStructure(game, version, arrayFile) {
           storeParent1 = name
           controlsFactionTree[faction][branch][parent][name] = {}
           break
-        case 2:          
+        case 2:
           storeParent2 = name
           controlsFactionTree[faction][branch][storeParent0][parent][name] = {}
           break
@@ -64,7 +64,7 @@ function createFactionTreeStructure(game, version, arrayFile) {
         case 5:
           controlsFactionTree[faction][branch][storeParent0][storeParent1][storeParent2][storeParent3][parent][name] = {}
           break
-  
+
         default:
           break
       }
@@ -103,7 +103,7 @@ const ROTWK = "rotwk"
 const BFME2 = "bfme2"
 const BFME1 = "bfme1"
 
-const csvFolder = "../assets/data/csv/"
+const csvFolder = "./assets/data/csv/"
 const csvPath = {
   "aotr 9.2": csvFolder + "aotr 9.2.csv",
   "rotwk 2.02 9.5.2": csvFolder + "rotwk 2.02 9.5.2.csv",
@@ -113,7 +113,7 @@ const csvPath = {
   "bfme1 2.22": csvFolder + "bfme1 2.22.csv",
   "bfme1 1.08": csvFolder + "bfme1 1.08.csv",
   "bfme1 1.06": csvFolder + "bfme1 1.06.csv",
-  "commandmap": csvFolder + "CommandMap.csv",
+  commandmap: csvFolder + "CommandMap.csv",
 }
 
 // const ROTWK_202 = "2.02 9.5.2"
@@ -122,11 +122,11 @@ const csvPath = {
 // arrayFileROTWK_202.shift()
 // createFactionTreeStructure(ROTWK, ROTWK_202, arrayFileROTWK_202)
 
-const AOTR_92 = "9.2"
-const fileAOTR = fs.readFileSync(csvPath[AOTR + " " + AOTR_92], "utf-8")
-const arrayFileAOTR = fileAOTR.split(/\r\n/)
-arrayFileAOTR.shift()
-createFactionTreeStructure(AOTR, AOTR_92, arrayFileAOTR)
+// const AOTR_92 = "9.2"
+// const fileAOTR = fs.readFileSync(csvPath[AOTR + " " + AOTR_92], "utf-8")
+// const arrayFileAOTR = fileAOTR.split(/\r\n/)
+// arrayFileAOTR.shift()
+// createFactionTreeStructure(AOTR, AOTR_92, arrayFileAOTR)
 
 // const BFME2_106 = "1.06"
 // const fileBFME2_106 = fs.readFileSync(csvPath[BFME2 + " " + BFME2_106], "utf-8")
@@ -134,11 +134,11 @@ createFactionTreeStructure(AOTR, AOTR_92, arrayFileAOTR)
 // arrayFileBFME2_106.shift()
 // createFactionTreeStructure(BFME2, BFME2_106, arrayFileBFME2_106)
 
-// const BFME2_109 = "1.09"
-// const fileBFME2_109 = fs.readFileSync(csvPath[BFME2 + " " + BFME2_109], "utf-8")
-// const arrayFileBFME2_109 = fileBFME2_109.split(/\r\n/)
-// arrayFileBFME2_109.shift()
-// createFactionTreeStructure(BFME2, BFME2_109, arrayFileBFME2_109)
+const BFME2_109 = "1.09"
+const fileBFME2_109 = fs.readFileSync(csvPath["bfme2 1.09"], "utf-8")
+const arrayFileBFME2_109 = fileBFME2_109.split(/\r\n/)
+arrayFileBFME2_109.shift()
+createFactionTreeStructure(BFME2, BFME2_109, arrayFileBFME2_109)
 
 // const BFME1_222 = "2.22"
 // const fileBFME1_222 = fs.readFileSync(csvPath[BFME1 + " " + BFME1_222], "utf-8")

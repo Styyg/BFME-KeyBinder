@@ -647,7 +647,6 @@
     "CONTROLBAR:ConstructIsengardWargSentry": "isengard/ConstructIsengardWargSentry108.png",
     "CONTROLBAR:PurchaseIsengardWargSentry": "isengard/ConstructIsengardWargSentry.png",
     "CONTROLBAR:IsengardWargSentryUnleash": "isengard/IsengardWargSentryUnleash108.png"
-
   },
   "bfme1 2.22": {
     "CONTROLBAR:Guard": "misc/Guard.png",
@@ -921,7 +920,14 @@
     "CONTROLBAR:SpecialAbilityFireDrakeInferno": "goblins/SpecialAbilityFireDrakeInferno2.png",
     "CONTROLBAR:PurchaseUpgradeIsengardTorches": "goblins/PurchaseUpgradeIsengardTorches.png",
     "CONTROLBAR:SauronHotkey": "misc/SauronHotkey2.png",
-    "CONTROLBAR:SpecialAbilityFiresOfDoom": "misc/SpecialAbilityFiresOfDoom2.png"
+    "CONTROLBAR:SpecialAbilityFiresOfDoom": "misc/SpecialAbilityFiresOfDoom2.png",
+    "CONTROLBAR:ArwenElvenGrace09v3": "elves/ElvenGrace.png",
+    "CONTROLBAR:ScreechBlackRider": "mordor/Screech2.png",
+    "CONTROLBAR:ScreechWitchKing": "mordor/Screech2.png",
+    "CONTROLBAR:SpecialAbilityHumanHeads09v301": "mordor/SpecialAbilityHumanHeads.png",
+    "CONTROLBAR:WitchKingBlackRiderMorgulBlade09v3": "mordor/BlackRiderMorgulBlade2.png",
+    "CONTROLBAR:ShelobWebbing09v2": "goblins/ShelobWebbing2.png",
+    "CONTROLBAR:SummonWargAllies09v3": "isengard/ConstructIsengardWargRider.png"
   },
   "rotwk 2.01": {},
   "rotwk 2.02 9.5.2": {

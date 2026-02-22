@@ -200,9 +200,9 @@ CONTROLBAR:ThrowRocks,elves,CONTROLBAR:ConstructEnt,basic,2
 CONTROLBAR:ConstructTreebeard,elves,CONTROLBAR:ConstructEntMoot,basic,1
 CONTROLBAR:KickAndPunch,elves,CONTROLBAR:ConstructTreebeard,basic,2
 CONTROLBAR:ThrowRocks,elves,CONTROLBAR:ConstructTreebeard,basic,2
+CONTROLBAR:EvacuateHobbits09v301,elves,CONTROLBAR:ConstructTreebeard,basic,2
 CONTROLBAR:ToggleTrebWeapon,elves,CONTROLBAR:ConstructTreebeard,basic,2
 CONTROLBAR:StopBombard,elves,CONTROLBAR:ConstructTreebeard,basic,2
-CONTROLBAR:EvacuateAll,elves,CONTROLBAR:ConstructTreebeard,basic,2
 CONTROLBAR:ConstructElvenBattleTower,elves,,basic,0
 CONTROLBAR:GarrisonExit,elves,CONTROLBAR:ConstructElvenBattleTower,basic,1
 CONTROLBAR:PurchaseUpgradeElvenSilverthornArrows,elves,CONTROLBAR:ConstructElvenBattleTower,basic,1
@@ -226,6 +226,7 @@ CONTROLBAR:SelectRevivablesElvenFortress,elves,CONTROLBAR:ConstructElvenFortress
 CONTROLBAR:ElvenArwenHotkey,elves,CONTROLBAR:SelectRevivablesElvenFortress,basic,2
 CONTROLBAR:TheodenMount,elves,CONTROLBAR:ElvenArwenHotkey,basic,3
 CONTROLBAR:PersonalFlood,elves,CONTROLBAR:ElvenArwenHotkey,basic,3
+CONTROLBAR:ArwenElvenGrace09v3,elves,CONTROLBAR:ElvenArwenHotkey,basic,3
 CONTROLBAR:ElvenHaldirHotkey,elves,CONTROLBAR:SelectRevivablesElvenFortress,basic,2
 CONTROLBAR:ToggleElvenWarriorWeapons,elves,CONTROLBAR:ElvenHaldirHotkey,basic,3
 CONTROLBAR:HaldirGoldenArrow,elves,CONTROLBAR:ElvenHaldirHotkey,basic,3
@@ -266,6 +267,7 @@ CONTROLBAR:ConstructElvenVigilantEntExpansion,elves,OBJECT:ElvenBuildingFoundati
 CONTROLBAR:ConstructElvenFloodgateExpansion,elves,OBJECT:ElvenBuildingFoundation,basic,2
 OBJECT:InnTavern,elves,,inn,0
 CONTROLBAR:ConstructRohanPeasant,elves,OBJECT:InnTavern,inn,1
+CONTROLBAR:Draft09v3,elves,CONTROLBAR:ConstructRohanPeasant,inn,2
 CONTROLBAR:PurchaseUpgradeElderRacesBasicTraining,elves,CONTROLBAR:ConstructRohanPeasant,inn,2
 CONTROLBAR:GoodPlayerExperienceMenu,elves,,power,0
 OBJECT:TomBombadil,elves,CONTROLBAR:GoodPlayerExperienceMenu,power,1
@@ -476,6 +478,7 @@ CONTROLBAR:SpecialAbilityLurtzCripple,isengard,CONTROLBAR:IsengardLurtzHotkey,ba
 CONTROLBAR:IsengardSharkuHotkey,isengard,CONTROLBAR:SelectRevivablesIsengardFortress,basic,2
 CONTROLBAR:SharkuManEater,isengard,CONTROLBAR:IsengardSharkuHotkey,basic,3
 CONTROLBAR:TameTheBeast,isengard,CONTROLBAR:IsengardSharkuHotkey,basic,3
+CONTROLBAR:SummonWargAllies09v3,isengard,CONTROLBAR:IsengardSharkuHotkey,basic,3
 CONTROLBAR:IsengardWormtongueHotkey,isengard,CONTROLBAR:SelectRevivablesIsengardFortress,basic,2
 CONTROLBAR:VenomousWords,isengard,CONTROLBAR:IsengardWormtongueHotkey,basic,3
 CONTROLBAR:Escape,isengard,CONTROLBAR:IsengardWormtongueHotkey,basic,3
@@ -554,11 +557,11 @@ CONTROLBAR:UpgradeMordorTrollCageLevel3,mordor,CONTROLBAR:ConstructMordorTrollCa
 CONTROLBAR:ConstructMordorSiegeWorks,mordor,,basic,0
 CONTROLBAR:ConstructMordorBatteringRam,mordor,CONTROLBAR:ConstructMordorSiegeWorks,basic,1
 CONTROLBAR:ConstructMordorCatapult,mordor,CONTROLBAR:ConstructMordorSiegeWorks,basic,1
-CONTROLBAR:ToggleTrebWeapon,mordor,CONTROLBAR:ConstructMordorCatapult,basic,2
-CONTROLBAR:StopBombard,mordor,CONTROLBAR:ConstructMordorCatapult,basic,2
-CONTROLBAR:ToggleCatapultWeapons,mordor,CONTROLBAR:ConstructMordorCatapult,basic,2
+CONTROLBAR:SpecialAbilityHumanHeads09v301,mordor,CONTROLBAR:ConstructMordorCatapult,basic,2
 CONTROLBAR:NoAutoAcquire,mordor,CONTROLBAR:ConstructMordorCatapult,basic,2
 CONTROLBAR:AutoAcquire,mordor,CONTROLBAR:ConstructMordorCatapult,basic,2
+CONTROLBAR:ToggleTrebWeapon,mordor,CONTROLBAR:ConstructMordorCatapult,basic,2
+CONTROLBAR:StopBombard,mordor,CONTROLBAR:ConstructMordorCatapult,basic,2
 CONTROLBAR:ConstructMordorSiegeTower,mordor,CONTROLBAR:ConstructMordorSiegeWorks,basic,1
 CONTROLBAR:SiegeRetract,mordor,CONTROLBAR:ConstructMordorSiegeTower,basic,2
 CONTROLBAR:ConstructMordorGrond,mordor,CONTROLBAR:ConstructMordorSiegeWorks,basic,1
@@ -570,7 +573,7 @@ CONTROLBAR:ChargeAttack,mordor,CONTROLBAR:ConstructMordorMumakil,basic,2
 CONTROLBAR:PurchaseUpgradeMordorBasicTraining,mordor,CONTROLBAR:ConstructMordorMumakil,basic,2
 CONTROLBAR:UpgradeMordorMumakilPenLevel2,mordor,CONTROLBAR:ConstructMordorMumakilPen,basic,1
 CONTROLBAR:UpgradeMordorMumakilPenLevel3,mordor,CONTROLBAR:ConstructMordorMumakilPen,basic,1
-CONTROLBAR:ConstructMordorUmbarTavern,mordor,,basic,0
+CONTROLBAR:ConstructMordorTavern,mordor,,basic,0
 CONTROLBAR:ConstructMordorCorsairsOfUmbarHorde,mordor,CONTROLBAR:ConstructMordorUmbarTavern,basic,1
 CONTROLBAR:ThrowFireBombs,mordor,CONTROLBAR:ConstructMordorCorsairsOfUmbarHorde,basic,2
 CONTROLBAR:Knife,mordor,CONTROLBAR:ConstructMordorCorsairsOfUmbarHorde,basic,2
@@ -598,7 +601,7 @@ CONTROLBAR:SelectRevivablesMordorFortress,mordor,CONTROLBAR:ConstructMordorFortr
 CONTROLBAR:BlackRiderHotkey,mordor,CONTROLBAR:SelectRevivablesMordorFortress,basic,2
 CONTROLBAR:TheodenMount,mordor,CONTROLBAR:BlackRiderHotkey,basic,3
 CONTROLBAR:BlackRiderMorgulBlade,mordor,CONTROLBAR:BlackRiderHotkey,basic,3
-CONTROLBAR:Screech,mordor,CONTROLBAR:BlackRiderHotkey,basic,3
+CONTROLBAR:ScreechBlackRider,mordor,CONTROLBAR:BlackRiderHotkey,basic,3
 CONTROLBAR:MordorMouthofSauronHotkey,mordor,CONTROLBAR:SelectRevivablesMordorFortress,basic,2
 CONTROLBAR:TheodenMount,mordor,CONTROLBAR:MordorMouthofSauronHotkey,basic,3
 CONTROLBAR:SpecialAbilityMouthOfSauronEvilEye,mordor,CONTROLBAR:MordorMouthofSauronHotkey,basic,3
@@ -608,7 +611,8 @@ CONTROLBAR:MordorFellBeastHotkey,mordor,CONTROLBAR:SelectRevivablesMordorFortres
 CONTROLBAR:Screech,mordor,CONTROLBAR:MordorFellBeastHotkey,basic,3
 CONTROLBAR:MordorWitchKingOnFellBeastHotkey,mordor,CONTROLBAR:SelectRevivablesMordorFortress,basic,2
 CONTROLBAR:TheodenMount,mordor,CONTROLBAR:MordorWitchKingOnFellBeastHotkey,basic,3
-CONTROLBAR:Screech,mordor,CONTROLBAR:MordorWitchKingOnFellBeastHotkey,basic,3
+CONTROLBAR:ScreechWitchKing,mordor,CONTROLBAR:MordorWitchKingOnFellBeastHotkey,basic,3
+CONTROLBAR:WitchKingBlackRiderMorgulBlade09v3,mordor,CONTROLBAR:MordorWitchKingOnFellBeastHotkey,basic,3
 CONTROLBAR:HourOfTheWitchKing,mordor,CONTROLBAR:MordorWitchKingOnFellBeastHotkey,basic,3
 CONTROLBAR:SelectUpgradesMordorFortress,mordor,CONTROLBAR:ConstructMordorFortress,basic,1
 CONTROLBAR:PurchaseUpgradeMordorFortressDoomPyres,mordor,CONTROLBAR:SelectUpgradesMordorFortress,basic,2
@@ -711,6 +715,7 @@ CONTROLBAR:ShelobHotkey,goblins,CONTROLBAR:SelectRevivablesGoblinFortress,basic,
 CONTROLBAR:WildShelobInstillTerror,goblins,CONTROLBAR:ShelobHotkey,basic,3
 CONTROLBAR:WildShelobPoisonedStinger,goblins,CONTROLBAR:ShelobHotkey,basic,3
 CONTROLBAR:SpecialAbilityWildShelobTunnel,goblins,CONTROLBAR:ShelobHotkey,basic,3
+CONTROLBAR:ShelobWebbing09v2,goblins,CONTROLBAR:ShelobHotkey,basic,3
 CONTROLBAR:WildDrogothHotkey,goblins,CONTROLBAR:SelectRevivablesGoblinFortress,basic,2
 CONTROLBAR:SpecialAbilityDrogothFireball,goblins,CONTROLBAR:WildDrogothHotkey,basic,3
 CONTROLBAR:SpecialAbilityWingBlast,goblins,CONTROLBAR:WildDrogothHotkey,basic,3
