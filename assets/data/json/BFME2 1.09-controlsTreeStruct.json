@@ -620,7 +620,20 @@
         "CONTROLBAR:UpgradeMordorMumakilPenLevel2": {},
         "CONTROLBAR:UpgradeMordorMumakilPenLevel3": {}
       },
-      "CONTROLBAR:ConstructMordorTavern": {},
+      "CONTROLBAR:ConstructMordorTavern": {
+        "CONTROLBAR:ConstructMordorCorsairsOfUmbarHorde": {
+          "CONTROLBAR:ThrowFireBombs": {},
+          "CONTROLBAR:Knife": {},
+          "CONTROLBAR:PurchaseUpgradeMordorBasicTraining": {},
+          "CONTROLBAR:PurchaseUpgradeIsengardForgedBlades": {},
+          "CONTROLBAR:ArcherBarrage": {}
+        },
+        "CONTROLBAR:PurchaseTechnologyMordorHeavyArmor": {},
+        "CONTROLBAR:PurchaseTechnologyMordorForgedBlades": {},
+        "CONTROLBAR:PurchaseTechnologyMordorFireArrows": {},
+        "CONTROLBAR:UpgradeMordorTavernLevel2": {},
+        "CONTROLBAR:UpgradeMordorTavernLevel3": {}
+      },
       "CONTROLBAR:ConstructMordorBattleTower": { "CONTROLBAR:GarrisonExit": {}, "CONTROLBAR:PurchaseUpgradeSentryTowerFireArrows": {} },
       "CONTROLBAR:Command_ConstructMordorCastleWallHub09v2": {
         "CONTROLBAR:Command_IsengardCastleWallHub_BeginWallSpan": {},
