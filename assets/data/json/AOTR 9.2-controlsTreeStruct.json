@@ -97,9 +97,15 @@
         "CONTROLBAR:ConstructGondorWorkshop2Upgrade": {},
         "CONTROLBAR:ConstructGondorWorkshopLevel3Upgrade": {}
       },
-      "CONTROLBAR:ConstructMenSentryTower": { "CONTROLBAR:GarrisonExit": {}, "CONTROLBAR:GondorBattleTowerGarrison": {} },
+      "CONTROLBAR:ConstructMenSentryTower": {
+        "CONTROLBAR:GarrisonExit": {},
+        "CONTROLBAR:GondorBattleTowerGarrison": {}
+      },
       "CONTROLBAR:ConstructMonumenttoElendil": {},
-      "CONTROLBAR:ConstructMenMarketPlace": { "CONTROLBAR:ConstructGrandHarvestUpgrade": {}, "CONTROLBAR:ConstructSiegeMaterialsUpgrade": {} },
+      "CONTROLBAR:ConstructMenMarketPlace": {
+        "CONTROLBAR:ConstructGrandHarvestUpgrade": {},
+        "CONTROLBAR:ConstructSiegeMaterialsUpgrade": {}
+      },
       "CONTROLBAR:ConstructMenStoneMaker": {},
       "CONTROLBAR:ConstructMenWallHub": {
         "CONTROLBAR:Command_GondorCastleWallHub_BeginWallSpan": {
@@ -112,7 +118,10 @@
         }
       },
       "CONTROLBAR:ConstructMenFortress": {
-        "CONTROLBAR:ConstructMenPorter": { "CONTROLBAR:Stop": {}, "CONTROLBAR:PorterExtinguishFire": {} },
+        "CONTROLBAR:ConstructMenPorter": {
+          "CONTROLBAR:Stop": {},
+          "CONTROLBAR:PorterExtinguishFire": {}
+        },
         "CONTROLBAR:SelectRevivablesMenFortress": {
           "CONTROLBAR:RohanPippinHotkey": {
             "CONTROLBAR:tooltipCommand_ToggleEntRockThrow": {},
@@ -120,7 +129,10 @@
             "CONTROLBAR:ElvenCloak": {},
             "CONTROLBAR:Trollbane": {}
           },
-          "CONTROLBAR:GondorForlongHotkey": { "CONTROLBAR:ForlongVitality": {}, "CONTROLBAR:ForlongTrueHeartTrueFriend": {} },
+          "CONTROLBAR:GondorForlongHotkey": {
+            "CONTROLBAR:ForlongVitality": {},
+            "CONTROLBAR:ForlongTrueHeartTrueFriend": {}
+          },
           "CONTROLBAR:GondorBeregondHotkey": {
             "CONTROLBAR:ToggleBeregondWeapons": {},
             "CONTROLBAR:DefenderoftheWhiteCityS": {},
@@ -130,7 +142,10 @@
             "CONTROLBAR:DenethorPalantir": {},
             "CONTROLBAR:DenethorHighAuthority": {},
             "CONTROLBAR:DenethorSummon": {},
-            "OBJECT:GondorBerethor": { "CONTROLBAR:ShatteringStrike": {}, "CONTROLBAR:ChallengeofGondor": {} },
+            "OBJECT:GondorBerethor": {
+              "CONTROLBAR:ShatteringStrike": {},
+              "CONTROLBAR:ChallengeofGondor": {}
+            },
             "CONTROLBAR:DenethorContest": {}
           },
           "CONTROLBAR:GondorFaramirHotkey": {
@@ -195,7 +210,9 @@
           "CONTROLBAR:PurchaseUpgradeGondorForgedBlades": {},
           "CONTROLBAR:PurchaseUpgradeGondorBasicTraining": {}
         },
-        "CONTROLBAR:ConstructGondorKnightsofDolHorde": { "CONTROLBAR:KnightsofDolChargeofGlory": {} },
+        "CONTROLBAR:ConstructGondorKnightsofDolHorde": {
+          "CONTROLBAR:KnightsofDolChargeofGlory": {}
+        },
         "CONTROLBAR:PurchaseUpgradeDolFortressBanners": {},
         "CONTROLBAR:PurchaseUpgradeDolFortressMoat": {},
         "CONTROLBAR:GondorImrahilHotKey": {
@@ -205,7 +222,11 @@
           "CONTROLBAR:ImrahilAmroth": {}
         }
       },
-      "CONTROLBAR:SummonEagleAlliesGondor": { "OBJECT:Gwaihir": { "CONTROLBAR:SpecialAbilityWingBlastGwaihir": {} } },
+      "CONTROLBAR:SummonEagleAlliesGondor": {
+        "OBJECT:Gwaihir": {
+          "CONTROLBAR:SpecialAbilityWingBlastGwaihir": {}
+        }
+      },
       "CONTROLBAR:SummonElessar": {
         "OBJECT:GondorElessar": {
           "CONTROLBAR:ElessarToggleMount": {},
@@ -348,7 +369,10 @@
         "CONTROLBAR:ConstructRohanWorkshop2Upgrade": {},
         "CONTROLBAR:ConstructRohanWorkshopLevel3Upgrade": {}
       },
-      "CONTROLBAR:ConstructMenSentryTower": { "CONTROLBAR:GarrisonExit": {}, "CONTROLBAR:RohanBattleTowerGarrison": {} },
+      "CONTROLBAR:ConstructMenSentryTower": {
+        "CONTROLBAR:GarrisonExit": {},
+        "CONTROLBAR:RohanBattleTowerGarrison": {}
+      },
       "CONTROLBAR:ConstructRohanDraftTower": {
         "CONTROLBAR:DraftTowerOathPeasants": {},
         "CONTROLBAR:DraftTowerOath": {},
@@ -397,7 +421,11 @@
             "CONTROLBAR:ErkenbrandShieldCrush": {},
             "CONTROLBAR:ErkenbrandReinforcements": {}
           },
-          "CONTROLBAR:RohanTheodredHotkey": { "CONTROLBAR:TheodredNewMount": {}, "CONTROLBAR:TheodredLuck": {}, "CONTROLBAR:TheodredDetermination": {} },
+          "CONTROLBAR:RohanTheodredHotkey": {
+            "CONTROLBAR:TheodredNewMount": {},
+            "CONTROLBAR:TheodredLuck": {},
+            "CONTROLBAR:TheodredDetermination": {}
+          },
           "CONTROLBAR:RohanEomerHotkey": {
             "CONTROLBAR:ThrowSpear": {},
             "CONTROLBAR:EomerNewMount": {},
@@ -406,7 +434,11 @@
           },
           "CONTROLBAR:RohanTheodenHotkey": {
             "CONTROLBAR:TheodenNewMount": {},
-            "CONTROLBAR:StrengthRemembered": { "OBJECT:RohanGamling": { "CONTROLBAR:GamlingWhateverEnd": {} } },
+            "CONTROLBAR:StrengthRemembered": {
+              "OBJECT:RohanGamling": {
+                "CONTROLBAR:GamlingWhateverEnd": {}
+              }
+            },
             "CONTROLBAR:GloriousCharge": {},
             "CONTROLBAR:KingsFavor": {}
           },
@@ -422,7 +454,9 @@
           "CONTROLBAR:PurchaseUpgradeRohanFortressRideofRohirrim": {}
         },
         "CONTROLBAR:HornofHammerhand": {},
-        "CONTROLBAR:RohanFortressRideofRohirrim": { "CONTROLBAR:RadialBack": {} }
+        "CONTROLBAR:RohanFortressRideofRohirrim": {
+          "CONTROLBAR:RadialBack": {}
+        }
       },
       "OBJECT:MenBuildingFoundation": {
         "CONTROLBAR:Command_ConstructMenWallHubExpansion": {},
@@ -431,10 +465,19 @@
       }
     },
     "power": {
-      "CONTROLBAR:PukelStatue": { "CONTROLBAR:PukelMoveUnseen": {}, "CONTROLBAR:PukelStoneSkin": {}, "CONTROLBAR:PukelFaithfulStone": {} },
+      "CONTROLBAR:PukelStatue": {
+        "CONTROLBAR:PukelMoveUnseen": {},
+        "CONTROLBAR:PukelStoneSkin": {},
+        "CONTROLBAR:PukelFaithfulStone": {}
+      },
       "CONTROLBAR:SummonCirionOath": {
-        "OBJECT:RohanHirgon": { "CONTROLBAR:TheRedArrow": {} },
-        "OBJECT:HordeGondorSpearmen": { "CONTROLBAR:ToggleFountainGuardFormation": {}, "CONTROLBAR:ToggleLineFormation": {} }
+        "OBJECT:RohanHirgon": {
+          "CONTROLBAR:TheRedArrow": {}
+        },
+        "OBJECT:HordeGondorSpearmen": {
+          "CONTROLBAR:ToggleFountainGuardFormation": {},
+          "CONTROLBAR:ToggleLineFormation": {}
+        }
       },
       "CONTROLBAR:SummonLastMarch": {
         "OBJECT:RohanTreeBeard": {
@@ -444,18 +487,33 @@
           "CONTROLBAR:StopBombard": {},
           "CONTROLBAR:TransportExitTreebeard": {}
         },
-        "OBJECT:RohanEnt": { "CONTROLBAR:KickAndPunch": {}, "CONTROLBAR:ThrowRocks": {}, "CONTROLBAR:ToggleTrebWeapon": {}, "CONTROLBAR:StopBombard": {} }
+        "OBJECT:RohanEnt": {
+          "CONTROLBAR:KickAndPunch": {},
+          "CONTROLBAR:ThrowRocks": {},
+          "CONTROLBAR:ToggleTrebWeapon": {},
+          "CONTROLBAR:StopBombard": {}
+        }
       },
       "CONTROLBAR:SummonStormcrow": {
-        "OBJECT:GandalfTheWhite": { "CONTROLBAR:WizardBlastStormcrow": {}, "CONTROLBAR:GandalfFirstLight": {}, "CONTROLBAR:GandalfNewMountStormcrow": {} },
-        "OBJECT:GondorAragorn": { "CONTROLBAR:Athelas": {}, "CONTROLBAR:AragornLeaderofMen": {}, "CONTROLBAR:AragornToggleMount": {} },
+        "OBJECT:GandalfTheWhite": {
+          "CONTROLBAR:WizardBlastStormcrow": {},
+          "CONTROLBAR:GandalfFirstLight": {},
+          "CONTROLBAR:GandalfNewMountStormcrow": {}
+        },
+        "OBJECT:GondorAragorn": {
+          "CONTROLBAR:Athelas": {},
+          "CONTROLBAR:AragornLeaderofMen": {},
+          "CONTROLBAR:AragornToggleMount": {}
+        },
         "OBJECT:RohanLegolas": {
           "CONTROLBAR:HawkStrike_Summoned": {},
           "CONTROLBAR:ArrowWind": {},
           "CONTROLBAR:LegolasToggleMount": {},
           "CONTROLBAR:GarrisonExit": {}
         },
-        "OBJECT:RohanGimli": { "CONTROLBAR:Leap_Summoned": {} }
+        "OBJECT:RohanGimli": {
+          "CONTROLBAR:Leap_Summoned": {}
+        }
       }
     },
     "inn": {},
@@ -463,7 +521,11 @@
   },
   "erebor": {
     "basic": {
-      "CONTROLBAR:ConstructDwarvenMineShaft": { "CONTROLBAR:PurchaseTunnelCollapse": {}, "CONTROLBAR:TunnelCollaspe": {}, "CONTROLBAR:EvacuateAll": {} },
+      "CONTROLBAR:ConstructDwarvenMineShaft": {
+        "CONTROLBAR:PurchaseTunnelCollapse": {},
+        "CONTROLBAR:TunnelCollaspe": {},
+        "CONTROLBAR:EvacuateAll": {}
+      },
       "CONTROLBAR:ConstructDwarvenForgeWorks": {
         "CONTROLBAR:PurchaseTechnologyDwarvenBasicTraining": {},
         "CONTROLBAR:PurchaseTechnologyDwarvenSiegeHammer": {},
@@ -494,7 +556,10 @@
           "CONTROLBAR:PurchaseUpgradeDwarvenFireArrows": {},
           "CONTROLBAR:PurchaseUpgradeDwarvenBasicTraining": {}
         },
-        "CONTROLBAR:ConstructGrimHammerHorde": { "CONTROLBAR:PurchaseUpgradeDwarvenForgedBlades": {}, "CONTROLBAR:PurchaseUpgradeDwarvenBasicTraining": {} },
+        "CONTROLBAR:ConstructGrimHammerHorde": {
+          "CONTROLBAR:PurchaseUpgradeDwarvenForgedBlades": {},
+          "CONTROLBAR:PurchaseUpgradeDwarvenBasicTraining": {}
+        },
         "CONTROLBAR:UpgradeDwarvenBarracksLevel2": {},
         "CONTROLBAR:UpgradeDwarvenBarracksLevel3": {}
       },
@@ -584,7 +649,10 @@
       },
       "CONTROLBAR:ConstructDwarvenWorkshop": {
         "CONTROLBAR:ConstructDwarfBatteringRam": {},
-        "CONTROLBAR:ConstructDwarvenBattleWagon": { "CONTROLBAR:SpecialAbilityOilBarrels": {}, "CONTROLBAR:PurchaseUpgradeDwarvenBasicTrainingBW": {} },
+        "CONTROLBAR:ConstructDwarvenBattleWagon": {
+          "CONTROLBAR:SpecialAbilityOilBarrels": {},
+          "CONTROLBAR:PurchaseUpgradeDwarvenBasicTrainingBW": {}
+        },
         "CONTROLBAR:ConstructDwarfMangonel": {
           "CONTROLBAR:NoAutoAcquire": {},
           "CONTROLBAR:AutoAcquire": {},
@@ -611,7 +679,9 @@
       "CONTROLBAR:ConstructDwarvenWallHub": {
         "CONTROLBAR:Command_DwarvenCastleWallHub_BeginWallSpan": {
           "CONTROLBAR:Command_DwarvenWallUpgradeToHub": {},
-          "CONTROLBAR:Command_DwarvenWallUpgradeToRegularGate": { "CONTROLBAR:ToggleGateOpenClose": {} },
+          "CONTROLBAR:Command_DwarvenWallUpgradeToRegularGate": {
+            "CONTROLBAR:ToggleGateOpenClose": {}
+          },
           "CONTROLBAR:Command_DwarvenWallUpgradeToPosternGate": {},
           "CONTROLBAR:Command_DwarvenWallUpgradeToTower": {},
           "CONTROLBAR:Command_DwarvenWallUpgradeToBanners": {},
@@ -620,7 +690,10 @@
         }
       },
       "CONTROLBAR:ConstructDwarvenFortress": {
-        "CONTROLBAR:ConstructDwarvenPorter": { "CONTROLBAR:Stop": {}, "CONTROLBAR:PorterExtinguishFire": {} },
+        "CONTROLBAR:ConstructDwarvenPorter": {
+          "CONTROLBAR:Stop": {},
+          "CONTROLBAR:PorterExtinguishFire": {}
+        },
         "CONTROLBAR:PurchaseUpgradeDwarvenFortressLotREra": {},
         "CONTROLBAR:PurchaseUpgradeDwarvenFortressHobbitEra": {},
         "CONTROLBAR:SelectRevivablesDwarvenFortress": {
@@ -635,7 +708,11 @@
             "CONTROLBAR:HadhodSabotage": {},
             "CONTROLBAR:HadhodStoneHewer": {},
             "CONTROLBAR:BondsofFriendship": {},
-            "OBJECT:EreborElegost": { "CONTROLBAR:ElegostTrueShot": {}, "CONTROLBAR:ElegostHeal": {}, "CONTROLBAR:ElegostRangerCraft": {} }
+            "OBJECT:EreborElegost": {
+              "CONTROLBAR:ElegostTrueShot": {},
+              "CONTROLBAR:ElegostHeal": {},
+              "CONTROLBAR:ElegostRangerCraft": {}
+            }
           },
           "CONTROLBAR:GloinHotkey": {
             "CONTROLBAR:GloinHeal": {},
@@ -654,9 +731,17 @@
             "CONTROLBAR:ToggleGimliWeapons": {},
             "CONTROLBAR:FellowshipLeap": {},
             "CONTROLBAR:FellowshipSlayer": {},
-            "CONTROLBAR:GimliElfFriend": { "OBJECT:RohanLegolas": {}, "CONTROLBAR:ToggleLegolasEreborWeapons": {}, "CONTROLBAR:FellowshipHawkStrike": {} }
+            "CONTROLBAR:GimliElfFriend": {
+              "OBJECT:RohanLegolas": {},
+              "CONTROLBAR:ToggleLegolasEreborWeapons": {},
+              "CONTROLBAR:FellowshipHawkStrike": {}
+            }
           },
-          "CONTROLBAR:DwarvenThorinHelmHotkey": { "CONTROLBAR:DwarvenGrudge": {}, "CONTROLBAR:DurinsChosen": {}, "CONTROLBAR:Stonehelm": {} },
+          "CONTROLBAR:DwarvenThorinHelmHotkey": {
+            "CONTROLBAR:DwarvenGrudge": {},
+            "CONTROLBAR:DurinsChosen": {},
+            "CONTROLBAR:Stonehelm": {}
+          },
           "CONTROLBAR:DwarvenKingDainHotkey": {
             "CONTROLBAR:MightyRage": {},
             "CONTROLBAR:DainRestoration": {},
@@ -675,8 +760,15 @@
             "CONTROLBAR:LaketownCallGuard": {},
             "CONTROLBAR:AncientStatute": {}
           },
-          "CONTROLBAR:DwarvenKiliHotkey": { "CONTROLBAR:ToggleLurtzWeapon": {}, "CONTROLBAR:KiliQuickshot": {}, "CONTROLBAR:KiliHighSpirits": {} },
-          "CONTROLBAR:DwarvenFiliHotkey": { "CONTROLBAR:FiliAxeThrow": {}, "CONTROLBAR:FiliSlayer": {} },
+          "CONTROLBAR:DwarvenKiliHotkey": {
+            "CONTROLBAR:ToggleLurtzWeapon": {},
+            "CONTROLBAR:KiliQuickshot": {},
+            "CONTROLBAR:KiliHighSpirits": {}
+          },
+          "CONTROLBAR:DwarvenFiliHotkey": {
+            "CONTROLBAR:FiliAxeThrow": {},
+            "CONTROLBAR:FiliSlayer": {}
+          },
           "CONTROLBAR:DwarvenBalinHotkey": {
             "CONTROLBAR:BalinLookout": {},
             "CONTROLBAR:BalinFlag": {},
@@ -723,7 +815,9 @@
       }
     },
     "power": {
-      "OBJECT:HordeKhazadGuard": { "CONTROLBAR:SongOfDurin": {} },
+      "OBJECT:HordeKhazadGuard": {
+        "CONTROLBAR:SongOfDurin": {}
+      },
       "OBJECT:DurinTheLast": {
         "CONTROLBAR:DurinVIILeadership": {},
         "CONTROLBAR:DurinVIILitany": {},
@@ -852,7 +946,10 @@
       "CONTROLBAR:ConstructElvenHiddenSanctum": {
         "CONTROLBAR:LongMemory": {},
         "CONTROLBAR:ArmorofDoriath": {},
-        "CONTROLBAR:ConstructHandmaidenHorde": { "CONTROLBAR:HandmaidenGoldenWoodGlaive": {}, "CONTROLBAR:GleamOfNenya": {} },
+        "CONTROLBAR:ConstructHandmaidenHorde": {
+          "CONTROLBAR:HandmaidenGoldenWoodGlaive": {},
+          "CONTROLBAR:GleamOfNenya": {}
+        },
         "CONTROLBAR:ConstructElvenAmrothKnightHorde": {
           "CONTROLBAR:AmrothPastGlories": {},
           "CONTROLBAR:PurchaseUpgradeAngmarSpikedCollars": {},
@@ -906,15 +1003,25 @@
         }
       },
       "CONTROLBAR:ConstructElvenFortress": {
-        "CONTROLBAR:ConstructLorilinde": { "CONTROLBAR:Stop": {}, "CONTROLBAR:PorterExtinguishFire": {} },
+        "CONTROLBAR:ConstructLorilinde": {
+          "CONTROLBAR:Stop": {},
+          "CONTROLBAR:PorterExtinguishFire": {}
+        },
         "CONTROLBAR:SelectRevivablesElvenFortress": {
           "CONTROLBAR:ElvenOrophinHotkey": {
             "CONTROLBAR:OrophinBladeMaster": {},
             "CONTROLBAR:OrophinGloriousCharge": {},
             "CONTROLBAR:OrophinBorderGuardsJudgement": {}
           },
-          "CONTROLBAR:ElvenRumilHotkey": { "CONTROLBAR:RumilWoundingArrow": {}, "CONTROLBAR:RumilSummon": {} },
-          "CONTROLBAR:ElvenIdrialHotkey": { "CONTROLBAR:Fluidstrike": {}, "CONTROLBAR:CleanseShadow": {}, "CONTROLBAR:GiftofGaladriel": {} },
+          "CONTROLBAR:ElvenRumilHotkey": {
+            "CONTROLBAR:RumilWoundingArrow": {},
+            "CONTROLBAR:RumilSummon": {}
+          },
+          "CONTROLBAR:ElvenIdrialHotkey": {
+            "CONTROLBAR:Fluidstrike": {},
+            "CONTROLBAR:CleanseShadow": {},
+            "CONTROLBAR:GiftofGaladriel": {}
+          },
           "CONTROLBAR:ElvenHaldirHotkey": {
             "CONTROLBAR:HaldirLeadership": {},
             "CONTROLBAR:ToggleHaldirWeaponsLorien": {},
@@ -949,11 +1056,21 @@
         "CONTROLBAR:EarendilVision": {},
         "OBJECT:ElvenBuildingFoundation": {
           "CONTROLBAR:ConstructElvenWatchtowerExpansion": {},
-          "CONTROLBAR:ConstructElvenAxeElfGarrisonExpansion": { "CONTROLBAR:PurchaseForthAxeElves": {}, "CONTROLBAR:ForthAxeElves": {} }
+          "CONTROLBAR:ConstructElvenAxeElfGarrisonExpansion": {
+            "CONTROLBAR:PurchaseForthAxeElves": {},
+            "CONTROLBAR:ForthAxeElves": {}
+          }
         }
       }
     },
-    "power": { "OBJECT:NimrodelStatue": { "CONTROLBAR:NimrodelRebuild": {} }, "OBJECT:ElvenHuorn": { "CONTROLBAR:HuornRoots": {} } },
+    "power": {
+      "OBJECT:NimrodelStatue": {
+        "CONTROLBAR:NimrodelRebuild": {}
+      },
+      "OBJECT:ElvenHuorn": {
+        "CONTROLBAR:HuornRoots": {}
+      }
+    },
     "inn": {},
     "port": {}
   },
@@ -985,8 +1102,14 @@
         },
         "CONTROLBAR:ConstructArnorBatteringRam": {},
         "CONTROLBAR:DancingHobbits": {},
-        "CONTROLBAR:ArnorFattyBolgerHotkey": { "CONTROLBAR:FattyBolgerSpeed": {}, "CONTROLBAR:HornofBuckland": {} },
-        "CONTROLBAR:ArnorFarmerMaggotHotkey": { "CONTROLBAR:MaggotsHoundsLeadership": {}, "CONTROLBAR:MaggotsFarm": {} },
+        "CONTROLBAR:ArnorFattyBolgerHotkey": {
+          "CONTROLBAR:FattyBolgerSpeed": {},
+          "CONTROLBAR:HornofBuckland": {}
+        },
+        "CONTROLBAR:ArnorFarmerMaggotHotkey": {
+          "CONTROLBAR:MaggotsHoundsLeadership": {},
+          "CONTROLBAR:MaggotsFarm": {}
+        },
         "CONTROLBAR:ConstructArnorArcheryRangeLevel2Upgrade": {},
         "CONTROLBAR:ConstructArnorArcheryRangeLevel3Upgrade": {}
       },
@@ -1072,7 +1195,10 @@
         "CONTROLBAR:PurchaseTechnologyRivendellDagorlad": {},
         "CONTROLBAR:PurchaseTechnologyRivendellMalice": {}
       },
-      "CONTROLBAR:ConstructArnorSentryTower": { "CONTROLBAR:GarrisonExit": {}, "CONTROLBAR:UpgradeArnorFireArrowsBattleTower": {} },
+      "CONTROLBAR:ConstructArnorSentryTower": {
+        "CONTROLBAR:GarrisonExit": {},
+        "CONTROLBAR:UpgradeArnorFireArrowsBattleTower": {}
+      },
       "CONTROLBAR:ConstructArnorWell": {},
       "CONTROLBAR:ConstructArnorStatue": {},
       "CONTROLBAR:ConstructElvenWallHub": {
@@ -1085,7 +1211,10 @@
         }
       },
       "CONTROLBAR:ConstructArnorFortress": {
-        "CONTROLBAR:ConstructMenPorter": { "CONTROLBAR:Stop": {}, "CONTROLBAR:PorterExtinguishFire": {} },
+        "CONTROLBAR:ConstructMenPorter": {
+          "CONTROLBAR:Stop": {},
+          "CONTROLBAR:PorterExtinguishFire": {}
+        },
         "CONTROLBAR:SelectRevivablesArnorFortress": {
           "CONTROLBAR:ElvenArwenHotkey": {
             "CONTROLBAR:DaughterElrond": {},
@@ -1096,14 +1225,19 @@
           },
           "CONTROLBAR:GildorHotkey": {
             "CONTROLBAR:GildorLeadership": {},
-            "CONTROLBAR:GildorExiles": { "CONTROLBAR:SongToElbereth": {} },
+            "CONTROLBAR:GildorExiles": {
+              "CONTROLBAR:SongToElbereth": {}
+            },
             "CONTROLBAR:GildorTelperion": {}
           },
           "CONTROLBAR:GondorHalbaradHotkey": {
             "CONTROLBAR:ToggleFaramirWeapons": {},
             "CONTROLBAR:HalbaradUnerringLoyalty": {},
             "CONTROLBAR:HalbaradMuster": {},
-            "CONTROLBAR:HalbaradPerseverance": { "CONTROLBAR:ToggleFaramirWeapons": {}, "CONTROLBAR:GreyCompanyGrimResolve": {} },
+            "CONTROLBAR:HalbaradPerseverance": {
+              "CONTROLBAR:ToggleFaramirWeapons": {},
+              "CONTROLBAR:GreyCompanyGrimResolve": {}
+            },
             "CONTROLBAR:HalbaradBannerOfArwen": {}
           },
           "CONTROLBAR:RivendellAragornHotkey": {
@@ -1167,17 +1301,31 @@
         "CONTROLBAR:GandalfYouShallNotPass": {}
       },
       "CONTROLBAR:SummonHallOfFire": {
-        "CONTROLBAR:HallOfFireSpawnGilGalad": { "CONTROLBAR:GilGaladHOFLeadership": {} },
-        "CONTROLBAR:HallOfFireSpawnTurin": { "CONTROLBAR:GilGaladHOFLeadership": {} },
-        "CONTROLBAR:HallOfFireSpawnFingolfin": { "CONTROLBAR:GilGaladHOFLeadership": {} },
-        "CONTROLBAR:HallOfFireSpawnCelebrimbor": { "CONTROLBAR:GilGaladHOFLeadership": {} },
-        "CONTROLBAR:HallOfFireSpawnElendil": { "CONTROLBAR:GilGaladHOFLeadership": {} },
-        "CONTROLBAR:HallOfFireSpawnAmroth": { "CONTROLBAR:GilGaladHOFLeadership": {} }
+        "CONTROLBAR:HallOfFireSpawnGilGalad": {
+          "CONTROLBAR:GilGaladHOFLeadership": {}
+        },
+        "CONTROLBAR:HallOfFireSpawnTurin": {
+          "CONTROLBAR:GilGaladHOFLeadership": {}
+        },
+        "CONTROLBAR:HallOfFireSpawnFingolfin": {
+          "CONTROLBAR:GilGaladHOFLeadership": {}
+        },
+        "CONTROLBAR:HallOfFireSpawnCelebrimbor": {
+          "CONTROLBAR:GilGaladHOFLeadership": {}
+        },
+        "CONTROLBAR:HallOfFireSpawnElendil": {
+          "CONTROLBAR:GilGaladHOFLeadership": {}
+        },
+        "CONTROLBAR:HallOfFireSpawnAmroth": {
+          "CONTROLBAR:GilGaladHOFLeadership": {}
+        }
       },
       "CONTROLBAR:SummonTomBombadil": {
         "CONTROLBAR:SonicSong": {},
         "CONTROLBAR:SpecialPowerIncorruptable": {},
-        "CONTROLBAR:SummonWillow": { "CONTROLBAR:WillowSleep": {} }
+        "CONTROLBAR:SummonWillow": {
+          "CONTROLBAR:WillowSleep": {}
+        }
       }
     },
     "inn": {},
@@ -1186,7 +1334,10 @@
   "woodland realm": {
     "basic": {
       "CONTROLBAR:ConstructMirkwoodHuntingLodge": {
-        "CONTROLBAR:ConstructMirkwoodSilvanHunter": { "CONTROLBAR:WoodlandAttire": {}, "CONTROLBAR:HuntingSnare": {} }
+        "CONTROLBAR:ConstructMirkwoodSilvanHunter": {
+          "CONTROLBAR:WoodlandAttire": {},
+          "CONTROLBAR:HuntingSnare": {}
+        }
       },
       "CONTROLBAR:ConstructMirkwoodVineyard": {},
       "CONTROLBAR:ConstructMirkwoodTrainingGrounds": {
@@ -1236,7 +1387,10 @@
           "CONTROLBAR:RitualofOak": {},
           "CONTROLBAR:PotionofPotency": {}
         },
-        "CONTROLBAR:ConstructBeorningBerserker": { "CONTROLBAR:RoughExterior": {}, "CONTROLBAR:BeorningRage": {} },
+        "CONTROLBAR:ConstructBeorningBerserker": {
+          "CONTROLBAR:RoughExterior": {},
+          "CONTROLBAR:BeorningRage": {}
+        },
         "CONTROLBAR:PurchaseUpgradeBeekeeping": {},
         "CONTROLBAR:ConstructMirkwoodBeorningCabinLevel2Upgrade": {},
         "CONTROLBAR:ConstructMirkwoodBeorningCabinLevel3Upgrade": {}
@@ -1300,15 +1454,28 @@
       "CONTROLBAR:ConstructMirkwoodCellarDoor": {
         "CONTROLBAR:EvacuateAll": {},
         "CONTROLBAR:PurchasePrisonGuards": {},
-        "CONTROLBAR:PrisonGuards": { "CONTROLBAR:ArcherBarrage": {}, "CONTROLBAR:TogglePrisonGuardWeapons": {}, "CONTROLBAR:StopRightThereMirkwood": {} }
+        "CONTROLBAR:PrisonGuards": {
+          "CONTROLBAR:ArcherBarrage": {},
+          "CONTROLBAR:TogglePrisonGuardWeapons": {},
+          "CONTROLBAR:StopRightThereMirkwood": {}
+        }
       },
-      "CONTROLBAR:ConstructMirkwoodBattleTower": { "CONTROLBAR:GarrisonExit": {}, "CONTROLBAR:PurchaseUpgradeMirkwoodSilverthornArrowsForBattleTower": {} },
-      "CONTROLBAR:ConstructMirkwoodWell": { "CONTROLBAR:Feast": {} },
+      "CONTROLBAR:ConstructMirkwoodBattleTower": {
+        "CONTROLBAR:GarrisonExit": {},
+        "CONTROLBAR:PurchaseUpgradeMirkwoodSilverthornArrowsForBattleTower": {}
+      },
+      "CONTROLBAR:ConstructMirkwoodWell": {
+        "CONTROLBAR:Feast": {}
+      },
       "CONTROLBAR:ConstructMirkwoodStatue": {},
       "CONTROLBAR:ConstructElvenFortress": {
         "CONTROLBAR:ConstructElvenPorter": {},
         "CONTROLBAR:SelectRevivablesElvenFortress": {
-          "CONTROLBAR:MirkwoodGalionHotkey": { "CONTROLBAR:GalionMiruvor": {}, "CONTROLBAR:GalionDorwinionRed": {}, "CONTROLBAR:GalionBadBatch": {} },
+          "CONTROLBAR:MirkwoodGalionHotkey": {
+            "CONTROLBAR:GalionMiruvor": {},
+            "CONTROLBAR:GalionDorwinionRed": {},
+            "CONTROLBAR:GalionBadBatch": {}
+          },
           "CONTROLBAR:MirkwoodTaurielHotkey": {
             "CONTROLBAR:TaurielSummon": {},
             "CONTROLBAR:TaurielFleetFooted": {},
@@ -1340,7 +1507,11 @@
             "CONTROLBAR:PrinceMirkwood": {},
             "CONTROLBAR:FellowshipLegolasSlayer": {},
             "CONTROLBAR:LegolasDwarfFriend": {
-              "OBJECT:RohanGimli": { "CONTROLBAR:FellowshipLeap": {}, "CONTROLBAR:ToggleGimliWeapons": {}, "CONTROLBAR:AxeThrow": {} }
+              "OBJECT:RohanGimli": {
+                "CONTROLBAR:FellowshipLeap": {},
+                "CONTROLBAR:ToggleGimliWeapons": {},
+                "CONTROLBAR:AxeThrow": {}
+              }
             }
           },
           "CONTROLBAR:ElvenThranduilHotkey": {
@@ -1359,7 +1530,11 @@
           "CONTROLBAR:PurchaseUpgradeMirkwoodFortressGarrison": {},
           "CONTROLBAR:PurchaseUpgradeMirkwoodFortressOromeTribute": {}
         },
-        "CONTROLBAR:ConstructGildedGuardHorde": { "CONTROLBAR:CallOfTheWild": {}, "CONTROLBAR:WeepingBlades": {}, "CONTROLBAR:FuryOfNahar": {} },
+        "CONTROLBAR:ConstructGildedGuardHorde": {
+          "CONTROLBAR:CallOfTheWild": {},
+          "CONTROLBAR:WeepingBlades": {},
+          "CONTROLBAR:FuryOfNahar": {}
+        },
         "CONTROLBAR:EmperorProtection": {},
         "CONTROLBAR:HornOfTauron": {},
         "OBJECT:ElvenBuildingFoundation": {
@@ -1374,10 +1549,21 @@
       }
     },
     "power": {
-      "OBJECT:MirkwoodWaystone": { "CONTROLBAR:WaystoneTeleport": {} },
-      "OBJECT:WoodlandFeast": { "CONTROLBAR:FeastReposition": {} },
-      "CONTROLBAR:SummonEotheodAllies": { "OBJECT:MirkwoodFrumgar": { "CONTROLBAR:OrcWarVeteran": {}, "CONTROLBAR:FeatofLegends": {} } },
-      "OBJECT:MirkwoodWhiteStag": { "CONTROLBAR:FeyWisdom": {} }
+      "OBJECT:MirkwoodWaystone": {
+        "CONTROLBAR:WaystoneTeleport": {}
+      },
+      "OBJECT:WoodlandFeast": {
+        "CONTROLBAR:FeastReposition": {}
+      },
+      "CONTROLBAR:SummonEotheodAllies": {
+        "OBJECT:MirkwoodFrumgar": {
+          "CONTROLBAR:OrcWarVeteran": {},
+          "CONTROLBAR:FeatofLegends": {}
+        }
+      },
+      "OBJECT:MirkwoodWhiteStag": {
+        "CONTROLBAR:FeyWisdom": {}
+      }
     },
     "inn": {
       "CONTROLBAR:ConstructKinnLaiHorde": {
@@ -1393,7 +1579,11 @@
   "mordor": {
     "basic": {
       "CONTROLBAR:ConstructSlaughterHouse": {},
-      "CONTROLBAR:ConstructMordorLumberMill": { "CONTROLBAR:BuildMordorWorker": { "CONTROLBAR:GoHarvest": {} } },
+      "CONTROLBAR:ConstructMordorLumberMill": {
+        "CONTROLBAR:BuildMordorWorker": {
+          "CONTROLBAR:GoHarvest": {}
+        }
+      },
       "CONTROLBAR:ConstructMordorArmory": {
         "CONTROLBAR:PurchaseTechnologyMordorBasicTraining": {},
         "CONTROLBAR:PurchaseTechnologyMordorFireArrows": {},
@@ -1401,7 +1591,9 @@
         "CONTROLBAR:PurchaseTechnologyMordorHeavyArmor": {}
       },
       "CONTROLBAR:ConstructMordorOrcPit": {
-        "CONTROLBAR:ConstructMordorOrcFighterHorde": { "CONTROLBAR:PurchaseUpgradeMordorBasicTraining": {} },
+        "CONTROLBAR:ConstructMordorOrcFighterHorde": {
+          "CONTROLBAR:PurchaseUpgradeMordorBasicTraining": {}
+        },
         "CONTROLBAR:ConstructMordorPikeHorde": {
           "CONTROLBAR:TogglePorcupineFormation": {},
           "CONTROLBAR:ToggleLineFormation": {},
@@ -1447,7 +1639,10 @@
           "CONTROLBAR:PurchaseUpgradeMordorForgedBlades": {},
           "CONTROLBAR:PurchaseUpgradeMordorBasicTraining": {}
         },
-        "CONTROLBAR:ConstructEasterlingAxemenHorde": { "CONTROLBAR:EasterlingSplash": {}, "CONTROLBAR:NoQuarter": {} },
+        "CONTROLBAR:ConstructEasterlingAxemenHorde": {
+          "CONTROLBAR:EasterlingSplash": {},
+          "CONTROLBAR:NoQuarter": {}
+        },
         "CONTROLBAR:UpgradeMordorHaradrimPalaceLevel2": {},
         "CONTROLBAR:UpgradeMordorHaradrimPalaceLevel3": {}
       },
@@ -1460,8 +1655,12 @@
           "CONTROLBAR:TrollFindTastyOrc": {},
           "CONTROLBAR:TrollFindTree": {}
         },
-        "CONTROLBAR:ConstructMordorDrummerTrolls": { "CONTROLBAR:Roar": {} },
-        "CONTROLBAR:ConstructMordorAttackTroll": { "CONTROLBAR:DominateTroll": {} },
+        "CONTROLBAR:ConstructMordorDrummerTrolls": {
+          "CONTROLBAR:Roar": {}
+        },
+        "CONTROLBAR:ConstructMordorAttackTroll": {
+          "CONTROLBAR:DominateTroll": {}
+        },
         "CONTROLBAR:UpgradeMordorTrollCageLevel2": {},
         "CONTROLBAR:UpgradeMordorTrollCageLevel3": {}
       },
@@ -1501,7 +1700,10 @@
             "CONTROLBAR:GorbagBleedWeapon": {},
             "CONTROLBAR:GorbagLoyaltyWeapon": {}
           },
-          "CONTROLBAR:MordorShagratHotkey": { "CONTROLBAR:ShagratPillagers": {}, "CONTROLBAR:ShagratLeadership": {} },
+          "CONTROLBAR:MordorShagratHotkey": {
+            "CONTROLBAR:ShagratPillagers": {},
+            "CONTROLBAR:ShagratLeadership": {}
+          },
           "CONTROLBAR:AkhorahilHotkey": {
             "CONTROLBAR:NineAreAbroad": {},
             "CONTROLBAR:ScreechKhamul": {},
@@ -1536,7 +1738,10 @@
             "CONTROLBAR:MOSLieutenant": {},
             "CONTROLBAR:MouthOfSauronDissent": {}
           },
-          "CONTROLBAR:MordorMollokHotKey": { "CONTROLBAR:MordorMollokLeap": {}, "CONTROLBAR:MordorMollokReapingSlash": {} },
+          "CONTROLBAR:MordorMollokHotKey": {
+            "CONTROLBAR:MordorMollokLeap": {},
+            "CONTROLBAR:MordorMollokReapingSlash": {}
+          },
           "CONTROLBAR:MordorWitchKingOnFellBeastHotkey": {
             "CONTROLBAR:ChiefoftheNine": {},
             "CONTROLBAR:DreadWrath": {},
@@ -1561,7 +1766,10 @@
           "CONTROLBAR:PurchaseUpgradeMordorForgedBlades": {},
           "CONTROLBAR:PurchaseUpgradeMordorBasicTraining": {}
         },
-        "CONTROLBAR:ConstructMordorVangaurdHorde": { "CONTROLBAR:TheodenMountW": {}, "CONTROLBAR:VanguardWitchKingCommand": {} },
+        "CONTROLBAR:ConstructMordorVangaurdHorde": {
+          "CONTROLBAR:TheodenMountW": {},
+          "CONTROLBAR:VanguardWitchKingCommand": {}
+        },
         "CONTROLBAR:MordorFortressMorgulSpire": {},
         "OBJECT:MordorBuildingFoundation": {
           "CONTROLBAR:ConstructMordorWallCatapultExpansion": {
@@ -1577,16 +1785,27 @@
       }
     },
     "power": {
-      "OBJECT:SummonedFellBeast": { "CONTROLBAR:ScreechSummonedFellbeasts": {} },
-      "OBJECT:WildShelob": { "CONTROLBAR:ShelobDarkDeterrent": {}, "CONTROLBAR:ShelobFellStinger": {} }
+      "OBJECT:SummonedFellBeast": {
+        "CONTROLBAR:ScreechSummonedFellbeasts": {}
+      },
+      "OBJECT:WildShelob": {
+        "CONTROLBAR:ShelobDarkDeterrent": {},
+        "CONTROLBAR:ShelobFellStinger": {}
+      }
     },
     "inn": {},
     "port": {}
   },
   "isengard": {
     "basic": {
-      "CONTROLBAR:ConstructFurnace": { "CONTROLBAR:HeatBlast": {} },
-      "CONTROLBAR:ConstructIsengardLumberMill": { "CONTROLBAR:BuildMordorWorker": { "CONTROLBAR:GoHarvest": {} } },
+      "CONTROLBAR:ConstructFurnace": {
+        "CONTROLBAR:HeatBlast": {}
+      },
+      "CONTROLBAR:ConstructIsengardLumberMill": {
+        "CONTROLBAR:BuildMordorWorker": {
+          "CONTROLBAR:GoHarvest": {}
+        }
+      },
       "CONTROLBAR:ConstructIsengardArmory": {
         "CONTROLBAR:PurchaseTechnologyIsengardBasicTraining": {},
         "CONTROLBAR:PurchaseTechnologyIsengardHeavyArmor": {},
@@ -1635,7 +1854,10 @@
           "CONTROLBAR:PurchaseUpgradeIronFist": {}
         },
         "CONTROLBAR:UpgradeIsengardUrukPitLevel3": {},
-        "CONTROLBAR:ConstructIsengardManSlayerHorde": { "CONTROLBAR:FanaticDeathWish": {}, "CONTROLBAR:ScourgeofMan": {} },
+        "CONTROLBAR:ConstructIsengardManSlayerHorde": {
+          "CONTROLBAR:FanaticDeathWish": {},
+          "CONTROLBAR:ScourgeofMan": {}
+        },
         "CONTROLBAR:ConstructIsengardMineBerserker": {}
       },
       "CONTROLBAR:ConstructIsengardTavern": {
@@ -1648,7 +1870,9 @@
           "CONTROLBAR:PurchaseUpgradeIsengardHeavyArmor": {},
           "CONTROLBAR:PurchaseUpgradeIsengardBasicTrainingDunland": {}
         },
-        "CONTROLBAR:UpgradeIsengardTavernLevel2": { "CONTROLBAR:ConstructIsengardWildmanAxeHorde": {} },
+        "CONTROLBAR:UpgradeIsengardTavernLevel2": {
+          "CONTROLBAR:ConstructIsengardWildmanAxeHorde": {}
+        },
         "CONTROLBAR:UpgradeIsengardTavernLevel3": {}
       },
       "CONTROLBAR:ConstructIsengardLonghouse": {
@@ -1671,7 +1895,9 @@
           "CONTROLBAR:PurchaseUpgradeIsengardForgedBlades": {},
           "CONTROLBAR:PurchaseUpgradeIsengardBasicTrainingDunland": {}
         },
-        "CONTROLBAR:ConstructIsengardDunlandHuskarlHorde": { "CONTROLBAR:DunlandMordhauGrip": {} }
+        "CONTROLBAR:ConstructIsengardDunlandHuskarlHorde": {
+          "CONTROLBAR:DunlandMordhauGrip": {}
+        }
       },
       "CONTROLBAR:ConstructIsengardWargPit": {
         "CONTROLBAR:ConstructIsengardWargRider": {
@@ -1692,13 +1918,24 @@
           "CONTROLBAR:StopBombard": {}
         },
         "CONTROLBAR:UpgradeIsengardSiegeWorksLevel3": {},
-        "CONTROLBAR:ConstructIsengardExplosiveMine": { "CONTROLBAR:DeployMine": {}, "CONTROLBAR:IsengardMineDetonate": {} }
+        "CONTROLBAR:ConstructIsengardExplosiveMine": {
+          "CONTROLBAR:DeployMine": {},
+          "CONTROLBAR:IsengardMineDetonate": {}
+        }
       },
-      "CONTROLBAR:ConstructIsengardBattleTower": { "CONTROLBAR:GarrisonExit": {}, "CONTROLBAR:PurchaseUpgradeSentryTowerFireArrows": {} },
+      "CONTROLBAR:ConstructIsengardBattleTower": {
+        "CONTROLBAR:GarrisonExit": {},
+        "CONTROLBAR:PurchaseUpgradeSentryTowerFireArrows": {}
+      },
       "CONTROLBAR:ConstructIsengardWargSentry": {},
-      "CONTROLBAR:Command_ConstructIsengardCastleWallHub": { "CONTROLBAR:Command_IsengardCastleWallHub_BeginWallSpan": {} },
+      "CONTROLBAR:Command_ConstructIsengardCastleWallHub": {
+        "CONTROLBAR:Command_IsengardCastleWallHub_BeginWallSpan": {}
+      },
       "CONTROLBAR:ConstructIsengardFortress": {
-        "CONTROLBAR:ConstructIsengardPorter": { "CONTROLBAR:Stop": {}, "CONTROLBAR:PorterExtinguishFire": {} },
+        "CONTROLBAR:ConstructIsengardPorter": {
+          "CONTROLBAR:Stop": {},
+          "CONTROLBAR:PorterExtinguishFire": {}
+        },
         "CONTROLBAR:SelectRevivablesIsengardFortress": {},
         "CONTROLBAR:GenericRecruitHero": {
           "CONTROLBAR:IsengardWormtongueHotkey": {
@@ -1763,12 +2000,18 @@
             "CONTROLBAR:StopBombard": {}
           },
           "CONTROLBAR:ConstructIsengardMineLauncherExpansion": {},
-          "CONTROLBAR:ConstructIsengardWallHubExpansion": { "CONTROLBAR:Command_IsengardCastleWallHub_BeginWallSpan": {} }
+          "CONTROLBAR:ConstructIsengardWallHubExpansion": {
+            "CONTROLBAR:Command_IsengardCastleWallHub_BeginWallSpan": {}
+          }
         }
       }
     },
     "power": {
-      "CONTROLBAR:MordorAllies": { "OBJECT:IsengardGrishnakh": { "CONTROLBAR:GrishnakhWickedJab": {} } },
+      "CONTROLBAR:MordorAllies": {
+        "OBJECT:IsengardGrishnakh": {
+          "CONTROLBAR:GrishnakhWickedJab": {}
+        }
+      },
       "CONTROLBAR:Buildmeanarmy": {
         "OBJECT:BuildmeanArmyStructure": {
           "CONTROLBAR:BuildmeanarmyDeactivate": {},
@@ -1801,8 +2044,14 @@
   },
   "misty mountains": {
     "basic": {
-      "CONTROLBAR:ConstructWildMineShaft": { "CONTROLBAR:EvacuateAll": {} },
-      "CONTROLBAR:ConstructWildLumberMill": { "CONTROLBAR:BuildWildWorker": { "CONTROLBAR:GoHarvest": {} } },
+      "CONTROLBAR:ConstructWildMineShaft": {
+        "CONTROLBAR:EvacuateAll": {}
+      },
+      "CONTROLBAR:ConstructWildLumberMill": {
+        "CONTROLBAR:BuildWildWorker": {
+          "CONTROLBAR:GoHarvest": {}
+        }
+      },
       "CONTROLBAR:ConstructWildTreasureTrove": {
         "CONTROLBAR:PurchaseTechnologyWildBasicTraining": {},
         "CONTROLBAR:PurchaseTechnologyWildFireArrows": {},
@@ -1838,22 +2087,38 @@
           "CONTROLBAR:PurchaseUpgradeWildForgedBlade": {},
           "CONTROLBAR:PurchaseUpgradeWildBasicTraining": {}
         },
-        "CONTROLBAR:ConstructWildBodyGuardHorde": { "CONTROLBAR:BodyguardBoom": {}, "CONTROLBAR:BodyguardDeathWish": {} }
+        "CONTROLBAR:ConstructWildBodyGuardHorde": {
+          "CONTROLBAR:BodyguardBoom": {},
+          "CONTROLBAR:BodyguardDeathWish": {}
+        }
       },
       "CONTROLBAR:ConstructWildGoblinCave": {
-        "CONTROLBAR:ConstructGoblinFighterHorde": { "CONTROLBAR:SpecialAbilityGoblinFighterPoisonedBlades": {} },
-        "CONTROLBAR:ConstructGoblinArcherHorde": { "CONTROLBAR:ArcherBarrage": {}, "CONTROLBAR:PoisonArrows": {} },
+        "CONTROLBAR:ConstructGoblinFighterHorde": {
+          "CONTROLBAR:SpecialAbilityGoblinFighterPoisonedBlades": {}
+        },
+        "CONTROLBAR:ConstructGoblinArcherHorde": {
+          "CONTROLBAR:ArcherBarrage": {},
+          "CONTROLBAR:PoisonArrows": {}
+        },
         "CONTROLBAR:ConstructWildCaveLevel2Upgrade": {},
         "CONTROLBAR:ConstructWildCaveLevel3Upgrade": {}
       },
       "CONTROLBAR:ConstructWildWildSpiderPit": {
-        "CONTROLBAR:ConstructIsengardWargPack": { "CONTROLBAR:WargRiderHowl": {} },
+        "CONTROLBAR:ConstructIsengardWargPack": {
+          "CONTROLBAR:WargRiderHowl": {}
+        },
         "CONTROLBAR:ConstructWildSpiderPitLevel2Upgrade": {},
-        "CONTROLBAR:ConstructWildWargRider": { "CONTROLBAR:WargRiderHowl": {} },
+        "CONTROLBAR:ConstructWildWargRider": {
+          "CONTROLBAR:WargRiderHowl": {}
+        },
         "CONTROLBAR:ConstructWildSpiderPitLevel3Upgrade": {}
       },
       "CONTROLBAR:ConstructWildGoblinFissure": {
-        "CONTROLBAR:ConstructGoblinCaveTroll": { "CONTROLBAR:ThrowRocks": {}, "CONTROLBAR:Trollfindunittothrow": {}, "CONTROLBAR:TrollFindTree": {} },
+        "CONTROLBAR:ConstructGoblinCaveTroll": {
+          "CONTROLBAR:ThrowRocks": {},
+          "CONTROLBAR:Trollfindunittothrow": {},
+          "CONTROLBAR:TrollFindTree": {}
+        },
         "CONTROLBAR:UpgradeWildFissureLevel2": {},
         "CONTROLBAR:ConstructAngmarSnowTrollHorde": {
           "CONTROLBAR:ArcherBarrage": {},
@@ -1878,18 +2143,36 @@
         }
       },
       "CONTROLBAR:ConstructFireWyrmLair": {
-        "CONTROLBAR:PurchaseWildFireDrake": { "CONTROLBAR:SpecialAbilityFireDrakeInferno": {}, "CONTROLBAR:PurchaseUpgradeHardenedSkin": {} },
+        "CONTROLBAR:PurchaseWildFireDrake": {
+          "CONTROLBAR:SpecialAbilityFireDrakeInferno": {},
+          "CONTROLBAR:PurchaseUpgradeHardenedSkin": {}
+        },
         "CONTROLBAR:UpgradeFireWyrmLairLevel2": {},
         "CONTROLBAR:PurchaseTechnologyHardenedSkin": {},
-        "CONTROLBAR:PurchaseWildColdDrake": { "CONTROLBAR:ColdDrakeScreech": {} },
+        "CONTROLBAR:PurchaseWildColdDrake": {
+          "CONTROLBAR:ColdDrakeScreech": {}
+        },
         "CONTROLBAR:UpgradeFireWyrmLairLevel3": {}
       },
-      "CONTROLBAR:ConstructWildSentryTower": { "CONTROLBAR:GarrisonExit": {}, "CONTROLBAR:PurchaseUpgradeSentryTowerFireArrows": {} },
+      "CONTROLBAR:ConstructWildSentryTower": {
+        "CONTROLBAR:GarrisonExit": {},
+        "CONTROLBAR:PurchaseUpgradeSentryTowerFireArrows": {}
+      },
       "CONTROLBAR:ConstructWildFortress": {
-        "CONTROLBAR:ConstructWildPorter": { "CONTROLBAR:Stop": {}, "CONTROLBAR:PorterExtinguishFire": {} },
+        "CONTROLBAR:ConstructWildPorter": {
+          "CONTROLBAR:Stop": {},
+          "CONTROLBAR:PorterExtinguishFire": {}
+        },
         "CONTROLBAR:SelectRevivablesGoblinFortress": {
-          "CONTROLBAR:WildMuzgashHotKey": { "CONTROLBAR:MuzgashPutridBlade": {}, "CONTROLBAR:MuzgashDiscipline": {}, "CONTROLBAR:MuzgashSupremacy": {} },
-          "CONTROLBAR:WildGolfimbulHotkey": { "CONTROLBAR:GolfimbulWargSummon": {}, "CONTROLBAR:GolfimbulHatred": {} },
+          "CONTROLBAR:WildMuzgashHotKey": {
+            "CONTROLBAR:MuzgashPutridBlade": {},
+            "CONTROLBAR:MuzgashDiscipline": {},
+            "CONTROLBAR:MuzgashSupremacy": {}
+          },
+          "CONTROLBAR:WildGolfimbulHotkey": {
+            "CONTROLBAR:GolfimbulWargSummon": {},
+            "CONTROLBAR:GolfimbulHatred": {}
+          },
           "CONTROLBAR:WildUrshakHotkey": {
             "CONTROLBAR:UrshakShakeFoundation": {},
             "CONTROLBAR:UrshakSoulFreeze": {},
@@ -1903,7 +2186,9 @@
             "CONTROLBAR:LugScorchedEarth": {}
           },
           "CONTROLBAR:WildGreatGoblinHotkey": {
-            "CONTROLBAR:GreatGoblinDemand": { "CONTROLBAR:ConstructGoblinTownFighterHorde": {} },
+            "CONTROLBAR:GreatGoblinDemand": {
+              "CONTROLBAR:ConstructGoblinTownFighterHorde": {}
+            },
             "CONTROLBAR:GreatGoblinLeadership": {},
             "CONTROLBAR:GreatGoblinSwarm": {},
             "CONTROLBAR:GreatGoblinAntiquarian": {},
@@ -1926,21 +2211,36 @@
           "CONTROLBAR:PurchaseUpgradeWildFortressDrumsInTheDeep": {}
         },
         "CONTROLBAR:WildAllegiance": {},
-        "CONTROLBAR:SpecialAbilityDrumsInTheDeep": { "CONTROLBAR:SpecialAbilityGoblinFighterPoisonedBlades": {}, "CONTROLBAR:SpecialAbilitySummonWyrm": {} },
+        "CONTROLBAR:SpecialAbilityDrumsInTheDeep": {
+          "CONTROLBAR:SpecialAbilityGoblinFighterPoisonedBlades": {},
+          "CONTROLBAR:SpecialAbilitySummonWyrm": {}
+        },
         "OBJECT:WildBuildingFoundation": {
           "CONTROLBAR:ConstructWildArrowDenExpansion": {},
           "CONTROLBAR:ConstructWildSpiderHolesExpansion": {},
           "CONTROLBAR:ConstructWildTrollSentryExpansion": {},
-          "CONTROLBAR:ConstructWildBurrowsExpansion": { "CONTROLBAR:EvacuateAll": {} }
+          "CONTROLBAR:ConstructWildBurrowsExpansion": {
+            "CONTROLBAR:EvacuateAll": {}
+          }
         }
       }
     },
     "power": {
       "OBJECT:AngmarCitadel": {
-        "CONTROLBAR:ConstructWildRisenDeadHorde": { "CONTROLBAR:SpecialAbilityTouchofRuin": {} },
-        "CONTROLBAR:ConstructWhiteWargPack": { "CONTROLBAR:WargRiderHowl": {} }
+        "CONTROLBAR:ConstructWildRisenDeadHorde": {
+          "CONTROLBAR:SpecialAbilityTouchofRuin": {}
+        },
+        "CONTROLBAR:ConstructWhiteWargPack": {
+          "CONTROLBAR:WargRiderHowl": {}
+        }
       },
-      "OBJECT:Wyrm": { "CONTROLBAR:SpecialAbilityWyrmReposition": { "OBJECT:WerewormHole": { "CONTROLBAR:EvacuateAll": {} } } },
+      "OBJECT:Wyrm": {
+        "CONTROLBAR:SpecialAbilityWyrmReposition": {
+          "OBJECT:WerewormHole": {
+            "CONTROLBAR:EvacuateAll": {}
+          }
+        }
+      },
       "OBJECT:Balrog": {
         "CONTROLBAR:SpecialAbilityIgnite": {},
         "CONTROLBAR:SpecialAbilityFireWhip": {},
@@ -1957,7 +2257,10 @@
       "CONTROLBAR:ConstructGuldurSlaveMill": {
         "CONTROLBAR:DarkPresence": {},
         "CONTROLBAR:GuldurInfestation": {},
-        "CONTROLBAR:RefreshSlaves": { "CONTROLBAR:GuldurDrain": {}, "CONTROLBAR:EternalServitude": {} }
+        "CONTROLBAR:RefreshSlaves": {
+          "CONTROLBAR:GuldurDrain": {},
+          "CONTROLBAR:EternalServitude": {}
+        }
       },
       "CONTROLBAR:ConstructGuldurFountOfCorruption": {
         "CONTROLBAR:DarkPresence": {},
@@ -1982,17 +2285,28 @@
       "CONTROLBAR:ConstructGuldurGaol": {
         "CONTROLBAR:DarkPresence": {},
         "CONTROLBAR:GuldurInfestation": {},
-        "CONTROLBAR:ConstructGuldurBrokenRabbleHorde": { "CONTROLBAR:GuldurDrain": {}, "CONTROLBAR:EternalServitude": {} },
+        "CONTROLBAR:ConstructGuldurBrokenRabbleHorde": {
+          "CONTROLBAR:GuldurDrain": {},
+          "CONTROLBAR:EternalServitude": {}
+        },
         "CONTROLBAR:ConstructGuldurOrcPikemanHorde": {
           "CONTROLBAR:TogglePorcupineFormation": {},
           "CONTROLBAR:GuldurDrain": {},
-          "CONTROLBAR:NecromancySummon": { "CONTROLBAR:IntrepidCorpse": {}, "CONTROLBAR:DarkSustenance": {}, "CONTROLBAR:RDSickness": {} },
+          "CONTROLBAR:NecromancySummon": {
+            "CONTROLBAR:IntrepidCorpse": {},
+            "CONTROLBAR:DarkSustenance": {},
+            "CONTROLBAR:RDSickness": {}
+          },
           "CONTROLBAR:PurchaseUpgradeGuldurBasicTraining": {}
         },
         "CONTROLBAR:ConstructGuldurOrcArcherHorde": {
           "CONTROLBAR:ArcherBarrage": {},
           "CONTROLBAR:GuldurDrain": {},
-          "CONTROLBAR:NecromancySummon": { "CONTROLBAR:IntrepidCorpse": {}, "CONTROLBAR:DarkSustenance": {}, "CONTROLBAR:RDSickness": {} },
+          "CONTROLBAR:NecromancySummon": {
+            "CONTROLBAR:IntrepidCorpse": {},
+            "CONTROLBAR:DarkSustenance": {},
+            "CONTROLBAR:RDSickness": {}
+          },
           "CONTROLBAR:GuldurFireArrowUpgrade": {},
           "CONTROLBAR:PurchaseUpgradeGuldurBasicTraining": {}
         },
@@ -2053,9 +2367,16 @@
       },
       "CONTROLBAR:ConstructGuldurRuinousTower": {
         "CONTROLBAR:DarkPresence": {},
-        "CONTROLBAR:ConstructGuldurPorter": { "CONTROLBAR:Stop": {}, "CONTROLBAR:GuldurShade": {} },
-        "CONTROLBAR:PurchaseUpgradeSentryTowerHiddenSentry": { "CONTROLBAR:PurchaseUpgradeSentryTowerFireArrowsRuinousTower": {} },
-        "CONTROLBAR:PurchaseUpgradeSentryTowerDarkPresence": { "CONTROLBAR:DreadfulPresence": {} }
+        "CONTROLBAR:ConstructGuldurPorter": {
+          "CONTROLBAR:Stop": {},
+          "CONTROLBAR:GuldurShade": {}
+        },
+        "CONTROLBAR:PurchaseUpgradeSentryTowerHiddenSentry": {
+          "CONTROLBAR:PurchaseUpgradeSentryTowerFireArrowsRuinousTower": {}
+        },
+        "CONTROLBAR:PurchaseUpgradeSentryTowerDarkPresence": {
+          "CONTROLBAR:DreadfulPresence": {}
+        }
       },
       "CONTROLBAR:ConstructGuldurRestlessBarrow": {
         "CONTROLBAR:DarkPresence": {},
@@ -2069,15 +2390,25 @@
       },
       "CONTROLBAR:ConstructGuldurFortress": {
         "CONTROLBAR:DarkPresence": {},
-        "CONTROLBAR:ConstructGuldurPorter": { "CONTROLBAR:Stop": {}, "CONTROLBAR:GuldurShade": {} },
+        "CONTROLBAR:ConstructGuldurPorter": {
+          "CONTROLBAR:Stop": {},
+          "CONTROLBAR:GuldurShade": {}
+        },
         "CONTROLBAR:SelectRevivablesGoblinFortress": {
-          "CONTROLBAR:GuldurThrainHotKey": { "CONTROLBAR:ThrainDiminished": {}, "CONTROLBAR:ThrainLeadership": {}, "CONTROLBAR:ThrainNoEscape": {} },
+          "CONTROLBAR:GuldurThrainHotKey": {
+            "CONTROLBAR:ThrainDiminished": {},
+            "CONTROLBAR:ThrainLeadership": {},
+            "CONTROLBAR:ThrainNoEscape": {}
+          },
           "CONTROLBAR:GuldurKrimpulHotKey": {
             "CONTROLBAR:KrimpulOrcSummon": {},
             "CONTROLBAR:KrimpulCommand": {},
             "CONTROLBAR:KrimpulGaol": {
               "CONTROLBAR:DarkPresence": {},
-              "CONTROLBAR:ConstructGuldurBrokenRabbleHordeKrimpul": { "CONTROLBAR:GuldurDrain": {}, "CONTROLBAR:EternalServitude": {} }
+              "CONTROLBAR:ConstructGuldurBrokenRabbleHordeKrimpul": {
+                "CONTROLBAR:GuldurDrain": {},
+                "CONTROLBAR:EternalServitude": {}
+              }
             },
             "CONTROLBAR:KrimpulCripple": {}
           },
@@ -2086,7 +2417,9 @@
             "CONTROLBAR:CargastLeadership": {},
             "CONTROLBAR:CargastCursedTreasure": {},
             "CONTROLBAR:CargastSpell": {},
-            "CONTROLBAR:CargastDarkAwakening": { "CONTROLBAR:IntrepidCorpse": {} }
+            "CONTROLBAR:CargastDarkAwakening": {
+              "CONTROLBAR:IntrepidCorpse": {}
+            }
           },
           "CONTROLBAR:GuldurSaenathraHotKey": {
             "CONTROLBAR:SpecialAbilityGuldurSaenathraTunnel": {},
@@ -2103,7 +2436,9 @@
           },
           "CONTROLBAR:NecromancerHotkey": {
             "CONTROLBAR:DarkPresence": {},
-            "CONTROLBAR:NecromancerWolvesSummon": { "CONTROLBAR:GuldurWargLunge": {} },
+            "CONTROLBAR:NecromancerWolvesSummon": {
+              "CONTROLBAR:GuldurWargLunge": {}
+            },
             "CONTROLBAR:NecromancerAbhorredDread": {},
             "CONTROLBAR:NecromancerShapelessMalice": {},
             "CONTROLBAR:NecromancerWreathed": {}
@@ -2124,13 +2459,21 @@
         "OBJECT:WildBuildingFoundation": {
           "CONTROLBAR:ConstructGuldurBarricadeExpansion": {},
           "CONTROLBAR:ConstructGuldurBoneyardExpansion": {},
-          "CONTROLBAR:ConstructGuldurStatueExpansion": { "CONTROLBAR:PurchaseGuldurRestlessBones": {}, "CONTROLBAR:GuldurRestlessBones": {} }
+          "CONTROLBAR:ConstructGuldurStatueExpansion": {
+            "CONTROLBAR:PurchaseGuldurRestlessBones": {},
+            "CONTROLBAR:GuldurRestlessBones": {}
+          }
         }
       }
     },
     "power": {
-      "OBJECT:BlackWargAlpha": { "CONTROLBAR:GuldurWargLunge": {} },
-      "OBJECT:GuldurUndeadTroll": { "CONTROLBAR:ToxicBile": {}, "CONTROLBAR:UndeadTrollHooked": {} },
+      "OBJECT:BlackWargAlpha": {
+        "CONTROLBAR:GuldurWargLunge": {}
+      },
+      "OBJECT:GuldurUndeadTroll": {
+        "CONTROLBAR:ToxicBile": {},
+        "CONTROLBAR:UndeadTrollHooked": {}
+      },
       "OBJECT:GuldurGwanthaur": {
         "CONTROLBAR:GwanthaurSoulTrap": {},
         "CONTROLBAR:GwanthaurSacrifice": {},
@@ -2152,7 +2495,10 @@
   "haradwaith": {
     "basic": {
       "CONTROLBAR:ConstructAngmarMill": {
-        "CONTROLBAR:ConstructTradeCaravan": { "CONTROLBAR:SpecialAbilityHaradCaravanDeploy": {}, "CONTROLBAR:SpecialAbilityHaradCaravanUnDeploy": {} },
+        "CONTROLBAR:ConstructTradeCaravan": {
+          "CONTROLBAR:SpecialAbilityHaradCaravanDeploy": {},
+          "CONTROLBAR:SpecialAbilityHaradCaravanUnDeploy": {}
+        },
         "CONTROLBAR:ConstructHaradNomad": {
           "CONTROLBAR:SpecialAbilityHaradNomadDeploy": {},
           "CONTROLBAR:SpecialAbilityHaradCaravanUnDeploy": {},
@@ -2161,8 +2507,12 @@
       },
       "CONTROLBAR:ConstructAngmarBarracks": {
         "CONTROLBAR:ConstructHaradWarlord": {
-          "CONTROLBAR:ThrallMasterUpgradeOrcWarriors": { "CONTROLBAR:Submit": {} },
-          "CONTROLBAR:ThrallMasterUpgradeRhudaurSlingers": { "CONTROLBAR:Submit": {} },
+          "CONTROLBAR:ThrallMasterUpgradeOrcWarriors": {
+            "CONTROLBAR:Submit": {}
+          },
+          "CONTROLBAR:ThrallMasterUpgradeRhudaurSlingers": {
+            "CONTROLBAR:Submit": {}
+          },
           "CONTROLBAR:ThrallMasterUpgradeRhudaurSpearmen": {
             "CONTROLBAR:Submit": {},
             "CONTROLBAR:ToggleTribalPorcupineFormation": {},
@@ -2193,17 +2543,26 @@
           "CONTROLBAR:PurchaseUpgradeAngmarIceArrows": {},
           "CONTROLBAR:PurchaseUpgradeAngmarBasicTraining": {}
         },
-        "CONTROLBAR:ConstructGuardoftheSerpentHorde": { "CONTROLBAR:TheodenMountW": {}, "CONTROLBAR:SerpentsSting": {}, "CONTROLBAR:BlackSerpentBanner": {} }
+        "CONTROLBAR:ConstructGuardoftheSerpentHorde": {
+          "CONTROLBAR:TheodenMountW": {},
+          "CONTROLBAR:SerpentsSting": {},
+          "CONTROLBAR:BlackSerpentBanner": {}
+        }
       },
       "CONTROLBAR:ConstructAngmarDen": {
-        "CONTROLBAR:ConstructHaradwaithMahudWarriorHorde": { "CONTROLBAR:MahudWarchant": {}, "CONTROLBAR:PurchaseUpgradeAngmarBasicTrainingMahud": {} },
+        "CONTROLBAR:ConstructHaradwaithMahudWarriorHorde": {
+          "CONTROLBAR:MahudWarchant": {},
+          "CONTROLBAR:PurchaseUpgradeAngmarBasicTrainingMahud": {}
+        },
         "CONTROLBAR:ConstructHaradwaithMahudHeadhunterHorde": {
           "CONTROLBAR:MahudHeadhuntersTwilightsMistress": {},
           "CONTROLBAR:MahudHeadhuntersRedSerpentsVenom": {},
           "CONTROLBAR:PurchaseUpgradeAngmarBasicTrainingMahud": {}
         },
         "CONTROLBAR:ConstructAngmarDen2Upgrade": {},
-        "CONTROLBAR:ConstructHaradwaithMahudChief": { "CONTROLBAR:PurchaseChiefTametheBeast": {} },
+        "CONTROLBAR:ConstructHaradwaithMahudChief": {
+          "CONTROLBAR:PurchaseChiefTametheBeast": {}
+        },
         "CONTROLBAR:ConstructHaradMumakil": {
           "CONTROLBAR:ChargeAttackHaradwaith": {},
           "CONTROLBAR:MumakUpgrades": {},
@@ -2272,13 +2631,27 @@
         }
       },
       "CONTROLBAR:ConstructAngmarForgeWorks": {
-        "CONTROLBAR:ConstructHaradVulture": { "CONTROLBAR:PutridTalons": {} },
-        "CONTROLBAR:ConstructHaradwaithGiantScorpion": { "CONTROLBAR:ScorpionCamouflage": {}, "CONTROLBAR:VenomSpray": {} },
+        "CONTROLBAR:ConstructHaradVulture": {
+          "CONTROLBAR:PutridTalons": {}
+        },
+        "CONTROLBAR:ConstructHaradwaithGiantScorpion": {
+          "CONTROLBAR:ScorpionCamouflage": {},
+          "CONTROLBAR:VenomSpray": {}
+        },
         "CONTROLBAR:UpgradeAngmarForgeWorksLevel2": {},
-        "CONTROLBAR:ConstructHaradwaithKaradd": { "CONTROLBAR:KaraddHowl": {}, "CONTROLBAR:KaraddLeap": {} },
-        "CONTROLBAR:ConstructHaradBeastmaster": { "CONTROLBAR:BeastmasterKillCommand": {}, "CONTROLBAR:BeastmasterWargTamer": {} },
+        "CONTROLBAR:ConstructHaradwaithKaradd": {
+          "CONTROLBAR:KaraddHowl": {},
+          "CONTROLBAR:KaraddLeap": {}
+        },
+        "CONTROLBAR:ConstructHaradBeastmaster": {
+          "CONTROLBAR:BeastmasterKillCommand": {},
+          "CONTROLBAR:BeastmasterWargTamer": {}
+        },
         "CONTROLBAR:UpgradeAngmarForgeWorksLevel3": {},
-        "CONTROLBAR:ConstructHaradwaithNafaratiMarauderHorde": { "CONTROLBAR:AnaemicEmbrace": {}, "CONTROLBAR:AccursedBastion": {} }
+        "CONTROLBAR:ConstructHaradwaithNafaratiMarauderHorde": {
+          "CONTROLBAR:AnaemicEmbrace": {},
+          "CONTROLBAR:AccursedBastion": {}
+        }
       },
       "CONTROLBAR:ConstructHaradwaithSentryTower": {
         "CONTROLBAR:GarrisonExit": {},
@@ -2286,7 +2659,10 @@
         "CONTROLBAR:PurchaseUpgradeHaradSentryTowerFireArrows": {}
       },
       "CONTROLBAR:ConstructDwarvenFortress": {
-        "CONTROLBAR:ConstructAngmarPorter": { "CONTROLBAR:Stop": {}, "CONTROLBAR:PorterExtinguishFire": {} },
+        "CONTROLBAR:ConstructAngmarPorter": {
+          "CONTROLBAR:Stop": {},
+          "CONTROLBAR:PorterExtinguishFire": {}
+        },
         "CONTROLBAR:SelectRevivablesDwarvenFortress": {
           "CONTROLBAR:HaradBeruthielHotkey": {
             "CONTROLBAR:SpecialPowerRiseToPower": {},
@@ -2305,7 +2681,9 @@
             "CONTROLBAR:TakeAllYouCan": {},
             "CONTROLBAR:SpecialAbilityGiveNothingBack": {},
             "CONTROLBAR:WateryGraves": {},
-            "CONTROLBAR:HornofKarna": { "CONTROLBAR:SoundHornofKarna": {} }
+            "CONTROLBAR:HornofKarna": {
+              "CONTROLBAR:SoundHornofKarna": {}
+            }
           },
           "CONTROLBAR:HaradSuladanHotkey": {
             "CONTROLBAR:SuladanMount": {},
@@ -2356,7 +2734,9 @@
       }
     },
     "power": {
-      "CONTROLBAR:HaradOasis": { "CONTROLBAR:CleansingWaters": {} },
+      "CONTROLBAR:HaradOasis": {
+        "CONTROLBAR:CleansingWaters": {}
+      },
       "CONTROLBAR:TribesofHarad": {
         "CONTROLBAR:ConstructHaradwaithTribalAxemenHordeCamp": {},
         "CONTROLBAR:ConstructHaradwaithTribalJavelineersHordeCamp": {},

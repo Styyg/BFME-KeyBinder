@@ -52,30 +52,66 @@
         "CONTROLBAR:PurchaseTechnologyRohanForgedBlades": {}
       },
       "OBJECT:RohanCastleBaseKeep": {
-        "CONTROLBAR:RohanTheodenHotkey": { "CONTROLBAR:GloriousCharge": {}, "CONTROLBAR:KingsFavor": {}, "CONTROLBAR:TheodenMount": {} },
-        "CONTROLBAR:RohanEomerHotkey": { "CONTROLBAR:ThrowSpear": {}, "CONTROLBAR:EomerMount": {} },
-        "CONTROLBAR:RohanEowynHotkey": { "CONTROLBAR:Smite": {}, "CONTROLBAR:Disguise": {}, "CONTROLBAR:ShieldMaiden": {}, "CONTROLBAR:EowynMount": {} },
-        "CONTROLBAR:RohanGimliHotkey": { "CONTROLBAR:AxeThrow": {}, "CONTROLBAR:Leap": {}, "CONTROLBAR:Slayer": {} },
+        "CONTROLBAR:RohanTheodenHotkey": {
+          "CONTROLBAR:GloriousCharge": {},
+          "CONTROLBAR:KingsFavor": {},
+          "CONTROLBAR:TheodenMount": {}
+        },
+        "CONTROLBAR:RohanEomerHotkey": {
+          "CONTROLBAR:ThrowSpear": {},
+          "CONTROLBAR:EomerMount": {}
+        },
+        "CONTROLBAR:RohanEowynHotkey": {
+          "CONTROLBAR:Smite": {},
+          "CONTROLBAR:Disguise": {},
+          "CONTROLBAR:ShieldMaiden": {},
+          "CONTROLBAR:EowynMount": {}
+        },
+        "CONTROLBAR:RohanGimliHotkey": {
+          "CONTROLBAR:AxeThrow": {},
+          "CONTROLBAR:Leap": {},
+          "CONTROLBAR:Slayer": {}
+        },
         "CONTROLBAR:RohanLegolasHotkey": {
           "CONTROLBAR:HawkStrike": {},
           "CONTROLBAR:KnifeFighter": {},
           "CONTROLBAR:TrainArchers": {},
           "CONTROLBAR:ArrowWind": {}
         },
-        "CONTROLBAR:GondorAragornHotkey": { "CONTROLBAR:Athelas": {}, "CONTROLBAR:BladeMaster": {}, "CONTROLBAR:Elendil": {}, "CONTROLBAR:Oathbreakers": {} },
-        "CONTROLBAR:RohanMerryHotkey": { "CONTROLBAR:ThrowRocks": {}, "CONTROLBAR:UseSword": {}, "CONTROLBAR:ElvenCloak": {} },
+        "CONTROLBAR:GondorAragornHotkey": {
+          "CONTROLBAR:Athelas": {},
+          "CONTROLBAR:BladeMaster": {},
+          "CONTROLBAR:Elendil": {},
+          "CONTROLBAR:Oathbreakers": {}
+        },
+        "CONTROLBAR:RohanMerryHotkey": {
+          "CONTROLBAR:ThrowRocks": {},
+          "CONTROLBAR:UseSword": {},
+          "CONTROLBAR:ElvenCloak": {}
+        },
         "CONTROLBAR:StartCitadelSelfRepair": {}
       },
       "OBJECT:EconomyFlag": {
         "CONTROLBAR:UnpackRohanFarm": {},
         "CONTROLBAR:ConstructEntMoot": {
-          "CONTROLBAR:ConstructTreebeard": { "CONTROLBAR:GrabBuildingChunk": {}, "CONTROLBAR:ThrowRocks": {}, "CONTROLBAR:KickAndPunch": {} },
-          "CONTROLBAR:ConstructEnt": { "CONTROLBAR:GrabBuildingChunk": {}, "CONTROLBAR:ThrowRocks": {}, "CONTROLBAR:KickAndPunch": {} }
+          "CONTROLBAR:ConstructTreebeard": {
+            "CONTROLBAR:GrabBuildingChunk": {},
+            "CONTROLBAR:ThrowRocks": {},
+            "CONTROLBAR:KickAndPunch": {}
+          },
+          "CONTROLBAR:ConstructEnt": {
+            "CONTROLBAR:GrabBuildingChunk": {},
+            "CONTROLBAR:ThrowRocks": {},
+            "CONTROLBAR:KickAndPunch": {}
+          }
         },
         "CONTROLBAR:ConstructOutpost": {},
         "CONTROLBAR:ConstructCastle": {}
       },
-      "OBJECT:RohanCastleGate": { "CONTROLBAR:ToggleGateOpenClose": {}, "CONTROLBAR:StartSelfRepair": {} },
+      "OBJECT:RohanCastleGate": {
+        "CONTROLBAR:ToggleGateOpenClose": {},
+        "CONTROLBAR:StartSelfRepair": {}
+      },
       "OBJECT:RohanCastleWall": {
         "CONTROLBAR:FlagsUpgrade": {},
         "CONTROLBAR:BattleTowerUpgrade": {},
@@ -168,7 +204,10 @@
           "CONTROLBAR:IstariLight": {},
           "CONTROLBAR:WordofPower": {}
         },
-        "CONTROLBAR:GondorBoromirHotkey": { "CONTROLBAR:HornofGondor": {}, "CONTROLBAR:CaptainofGondor": {} },
+        "CONTROLBAR:GondorBoromirHotkey": {
+          "CONTROLBAR:HornofGondor": {},
+          "CONTROLBAR:CaptainofGondor": {}
+        },
         "CONTROLBAR:GondorFaramirHotkey": {
           "CONTROLBAR:ToggleFaramirWeapons": {},
           "CONTROLBAR:WoundingArrow": {},
@@ -177,11 +216,22 @@
           "CONTROLBAR:NoAutoAcquire": {},
           "CONTROLBAR:AutoAcquire": {}
         },
-        "CONTROLBAR:RohanPippinHotkey": { "CONTROLBAR:ThrowRocks": {}, "CONTROLBAR:UseSword": {}, "CONTROLBAR:ElvenCloak": {} },
+        "CONTROLBAR:RohanPippinHotkey": {
+          "CONTROLBAR:ThrowRocks": {},
+          "CONTROLBAR:UseSword": {},
+          "CONTROLBAR:ElvenCloak": {}
+        },
         "CONTROLBAR:StartCitadelSelfRepair": {}
       },
-      "OBJECT:EconomyFlag": { "CONTROLBAR:UnpackGondorFarm": {}, "CONTROLBAR:ConstructOutpost": {}, "CONTROLBAR:ConstructCastle": {} },
-      "OBJECT:GondorCastleGate": { "CONTROLBAR:ToggleGateOpenClose": {}, "CONTROLBAR:StartSelfRepair": {} },
+      "OBJECT:EconomyFlag": {
+        "CONTROLBAR:UnpackGondorFarm": {},
+        "CONTROLBAR:ConstructOutpost": {},
+        "CONTROLBAR:ConstructCastle": {}
+      },
+      "OBJECT:GondorCastleGate": {
+        "CONTROLBAR:ToggleGateOpenClose": {},
+        "CONTROLBAR:StartSelfRepair": {}
+      },
       "OBJECT:GondorCastleWall": {
         "CONTROLBAR:TrebuchetUpgrade": {},
         "CONTROLBAR:BattleTowerUpgrade": {},
@@ -218,7 +268,10 @@
           "CONTROLBAR:PurchaseUpgradeIsengardHeavyArmor": {},
           "CONTROLBAR:PurchaseUpgradeIsengardBasicTraining": {}
         },
-        "CONTROLBAR:ConstructIsengardBerserker": { "CONTROLBAR:LightTorch": {}, "CONTROLBAR:ExtinguishTorch": {} }
+        "CONTROLBAR:ConstructIsengardBerserker": {
+          "CONTROLBAR:LightTorch": {},
+          "CONTROLBAR:ExtinguishTorch": {}
+        }
       },
       "CONTROLBAR:ConstructIsengardBattleTower": {},
       "CONTROLBAR:ConstructIsengardWargPit": {
@@ -238,10 +291,18 @@
         "CONTROLBAR:PurchaseTechnologyIsengardBasicTraining": {}
       },
       "CONTROLBAR:ConstructIsengardSiegeWorks": {
-        "CONTROLBAR:ConstructIsengardSiegeLadder": { "CONTROLBAR:SiegeRetract": {} },
+        "CONTROLBAR:ConstructIsengardSiegeLadder": {
+          "CONTROLBAR:SiegeRetract": {}
+        },
         "CONTROLBAR:ConstructIsengardBatteringRam": {},
-        "CONTROLBAR:ConstructIsengardSiegeBallista": { "CONTROLBAR:ToggleTrebWeapon": {}, "CONTROLBAR:NoAutoAcquire": {}, "CONTROLBAR:AutoAcquire": {} },
-        "CONTROLBAR:ConstructIsengardExplosiveMine": { "CONTROLBAR:DeployMine": {} }
+        "CONTROLBAR:ConstructIsengardSiegeBallista": {
+          "CONTROLBAR:ToggleTrebWeapon": {},
+          "CONTROLBAR:NoAutoAcquire": {},
+          "CONTROLBAR:AutoAcquire": {}
+        },
+        "CONTROLBAR:ConstructIsengardExplosiveMine": {
+          "CONTROLBAR:DeployMine": {}
+        }
       },
       "CONTROLBAR:ConstructEvilSentryTower": {},
       "OBJECT:IsengardCampKeep": {
@@ -259,7 +320,11 @@
         "CONTROLBAR:StartCitadelSelfRepair": {}
       },
       "OBJECT:EconomyFlag": {
-        "CONTROLBAR:UnpackLumbermill": { "CONTROLBAR:BuildMordorWorker": { "CONTROLBAR:GoHarvest": {} } },
+        "CONTROLBAR:UnpackLumbermill": {
+          "CONTROLBAR:BuildMordorWorker": {
+            "CONTROLBAR:GoHarvest": {}
+          }
+        },
         "CONTROLBAR:UnpackSlaughterhouse": {},
         "CONTROLBAR:ConstructOutpost": {},
         "CONTROLBAR:ConstructCastle": {}
@@ -282,8 +347,14 @@
       "CONTROLBAR:ConstructSlaughterHouse": {},
       "CONTROLBAR:ConstructFurnace": {},
       "CONTROLBAR:ConstructMordorOrcPit": {
-        "CONTROLBAR:ConstructMordorOrcFighterHorde": { "CONTROLBAR:PurchaseUpgradeMordorBasicTraining": {}, "CONTROLBAR:Bloodthirsty": {} },
-        "CONTROLBAR:ConstructMordorOrcArcherHorde": { "CONTROLBAR:FireArrowUpgrade": {}, "CONTROLBAR:PurchaseUpgradeMordorBasicTraining": {} },
+        "CONTROLBAR:ConstructMordorOrcFighterHorde": {
+          "CONTROLBAR:PurchaseUpgradeMordorBasicTraining": {},
+          "CONTROLBAR:Bloodthirsty": {}
+        },
+        "CONTROLBAR:ConstructMordorOrcArcherHorde": {
+          "CONTROLBAR:FireArrowUpgrade": {},
+          "CONTROLBAR:PurchaseUpgradeMordorBasicTraining": {}
+        },
         "CONTROLBAR:PurchaseTechnologyMordorFireArrows": {},
         "CONTROLBAR:PurchaseTechnologyMordorBasicTraining": {}
       },
@@ -316,19 +387,36 @@
           "CONTROLBAR:NoAutoAcquire": {},
           "CONTROLBAR:AutoAcquire": {}
         },
-        "CONTROLBAR:ConstructMordorSiegeTower": { "CONTROLBAR:SiegeRetract": {} },
+        "CONTROLBAR:ConstructMordorSiegeTower": {
+          "CONTROLBAR:SiegeRetract": {}
+        },
         "CONTROLBAR:ConstructMordorBatteringRam": {}
       },
-      "CONTROLBAR:ConstructMordorMumakilPen": { "CONTROLBAR:ConstructMordorMumakil": { "CONTROLBAR:ChargeAttack": {}, "CONTROLBAR:TransportEvacuate": {} } },
+      "CONTROLBAR:ConstructMordorMumakilPen": {
+        "CONTROLBAR:ConstructMordorMumakil": {
+          "CONTROLBAR:ChargeAttack": {},
+          "CONTROLBAR:TransportEvacuate": {}
+        }
+      },
       "CONTROLBAR:ConstructEvilSentryTower": {},
       "OBJECT:MordorCampKeep": {
-        "CONTROLBAR:MordorWitchKingOnFellBeastHotkey": { "CONTROLBAR:Screech": {} },
-        "CONTROLBAR:MordorFellBeastHotkey": { "CONTROLBAR:Screech": {} },
-        "CONTROLBAR:MordorGollumHotkey": { "CONTROLBAR:Stop": {} },
+        "CONTROLBAR:MordorWitchKingOnFellBeastHotkey": {
+          "CONTROLBAR:Screech": {}
+        },
+        "CONTROLBAR:MordorFellBeastHotkey": {
+          "CONTROLBAR:Screech": {}
+        },
+        "CONTROLBAR:MordorGollumHotkey": {
+          "CONTROLBAR:Stop": {}
+        },
         "CONTROLBAR:StartCitadelSelfRepair": {}
       },
       "OBJECT:EconomyFlag": {
-        "CONTROLBAR:UnpackLumbermill": { "CONTROLBAR:BuildMordorWorker": { "CONTROLBAR:GoHarvest": {} } },
+        "CONTROLBAR:UnpackLumbermill": {
+          "CONTROLBAR:BuildMordorWorker": {
+            "CONTROLBAR:GoHarvest": {}
+          }
+        },
         "CONTROLBAR:UnpackSlaughterhouse": {},
         "CONTROLBAR:ConstructOutpost": {},
         "CONTROLBAR:ConstructCastle": {}

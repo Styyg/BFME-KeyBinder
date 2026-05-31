@@ -930,7 +930,27 @@
     "CONTROLBAR:SummonWargAllies09v3": "isengard/ConstructIsengardWargRider.png"
   },
   "rotwk 2.01": {},
-  "rotwk 2.02 9.5.2": {
+  "rotwk 2.02 9.7.4": {
+    "CONTROLBAR:MordorWitchkingMorgulCorruption": "mordor/WitchKingMorgulCorruption2.png",
+    "CONTROLBAR:WitchkingMorgulCorruption": "mordor/WitchKingMorgulCorruption.png",
+    "CONTROLBAR:HourOfTheWitchKing": {
+      "CONTROLBAR:MordorWitchKingOnFellBeastHotkey": "mordor/HourOfTheWitchKing.png",
+      "CONTROLBAR:AngmarWitchKingHotkey": "angmar/HourOfTheWitchKing2.png"
+    },
+    "CONTROLBAR:TrainArchers": {
+      "CONTROLBAR:DwarvenCaptainofDaleHotkey": "dwarves/TrainArchers.png"
+    },
+    "CONTROLBAR:AxeThrow": {
+      "CONTROLBAR:ConstructDwarvenZerkerHorde": "dwarves/AxeThrow3.png"
+    },
+    "CONTROLBAR:FireWeaponMordorFortressSpireFireball": "mordor/FireWeaponMordorFortressSpireFireball2.png",
+    "CONTROLBAR:BarricadeOrcFireMunitions": "generic/fire_arrow2.png",
+    "OBJECT:MordorBarricade": "mordor/ConstructMordorBarricadeExpansion.png",
+    "CONTROLBAR:EvilMenNazgulHotkey": "mordor/BlackRiderRecruit.png",
+    "CONTROLBAR:SpecialAbilityFiresOfDoom": "misc/SpecialAbilityFiresOfDoom3.png",
+    "CONTROLBAR:GaladrielTornado": "misc/GaladrielTornado2.png",
+    "CONTROLBAR:LoneTowerMasterworkMunitions": "dwarves/Dwarves_ForgedBlades.png",
+    "CONTROLBAR:LoneTowerFlamingMunitions": "generic/fire_arrow.png",
     "CONTROLBAR:SpecialAbilityShieldBubble": "men/SpecialAbilityShieldBubble.png",
     "CONTROLBAR:TameTheBeast": "isengard/TameTheBeast2.png",
     "CONTROLBAR:PurchaseTechnologyMordorFireArrows": "generic/fire_arrow5.png",
@@ -939,7 +959,6 @@
     "CONTROLBAR:ScreechFellbeast": "mordor/Screech.png",
     "CONTROLBAR:MordorKhamulHotkey": "mordor/FellBeast.png",
     "CONTROLBAR:MordorMorgomirHotkey": "mordor/FellBeast.png",
-    "CONTROLBAR:WkTerribleFury": "mordor/Screech_WK.png",
     "CONTROLBAR:PurchaseUpgradeRohirrimShields": "rohan/HorseShield.png",
     "CONTROLBAR:ConstructMordorBlackOrcHorde": "mordor/ConstructMordorBlackOrcHorde.png",
     "CONTROLBAR:TheodenMount": {

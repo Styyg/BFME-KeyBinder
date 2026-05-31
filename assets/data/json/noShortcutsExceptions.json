@@ -56,7 +56,10 @@
     "OBJECT:IsengardBuildingFoundation": "",
     "OBJECT:MordorBuildingFoundation": "",
     "OBJECT:WildBuildingFoundation": "",
-    "OBJECT:AngmarBuildingFoundation": ""
+    "OBJECT:AngmarBuildingFoundation": "",
+    "OBJECT:GondorSentryTower": "",
+    "OBJECT:DwarvenLoneTower": "",
+    "OBJECT:MordorBarricade": ""
   },
   "aotr": {
     "OBJECT:MenBuildingFoundation": "",

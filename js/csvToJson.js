@@ -78,8 +78,8 @@ function createFactionTreeStructure(game, version, arrayFile) {
   const listFile = game.toUpperCase() + " " + version + "-controlsList.json"
   const treeStructFile = game.toUpperCase() + " " + version + "-controlsTreeStruct.json"
 
-  fs.writeFileSync(jsonPath + listFile, JSON.stringify(controlsList))
-  fs.writeFileSync(jsonPath + treeStructFile, JSON.stringify(controlsFactionTree))
+  fs.writeFileSync(jsonPath + listFile, JSON.stringify(controlsList, null, 2))
+  fs.writeFileSync(jsonPath + treeStructFile, JSON.stringify(controlsFactionTree, null, 2))
 }
 
 function createCommandMapTree(arrayFile) {
@@ -95,7 +95,7 @@ function createCommandMapTree(arrayFile) {
     commandmap[name]["notes"] = notes
   }
 
-  fs.writeFileSync(jsonPath + "commandmap.json", JSON.stringify(commandmap))
+  fs.writeFileSync(jsonPath + "commandmap.json", JSON.stringify(commandmap, null, 2))
 }
 
 const AOTR = "aotr"
@@ -106,6 +106,7 @@ const BFME1 = "bfme1"
 const csvFolder = "./assets/data/csv/"
 const csvPath = {
   "aotr 9.2": csvFolder + "aotr 9.2.csv",
+  "rotwk 2.02 9.7.4": csvFolder + "rotwk 2.02 9.7.4.csv",
   "rotwk 2.02 9.5.2": csvFolder + "rotwk 2.02 9.5.2.csv",
   "rotwk 2.02 9.4.1": csvFolder + "rotwk 2.02 9.4.1.csv",
   "bfme2 1.09": csvFolder + "BFME2 1.09.csv",
@@ -116,23 +117,23 @@ const csvPath = {
   commandmap: csvFolder + "CommandMap.csv",
 }
 
-// const ROTWK_202 = "2.02 9.5.2"
-// const fileROTWK_202 = fs.readFileSync(csvPath[ROTWK + " " + ROTWK_202], "utf-8")
-// const arrayFileROTWK_202 = fileROTWK_202.split(/\r\n/)
-// arrayFileROTWK_202.shift()
-// createFactionTreeStructure(ROTWK, ROTWK_202, arrayFileROTWK_202)
+const ROTWK_202 = "2.02 9.7.4"
+const fileROTWK_202 = fs.readFileSync(csvPath[ROTWK + " " + ROTWK_202], "utf-8")
+const arrayFileROTWK_202 = fileROTWK_202.split(/\r\n/)
+arrayFileROTWK_202.shift()
+createFactionTreeStructure(ROTWK, ROTWK_202, arrayFileROTWK_202)
 
-// const AOTR_92 = "9.2"
-// const fileAOTR = fs.readFileSync(csvPath[AOTR + " " + AOTR_92], "utf-8")
-// const arrayFileAOTR = fileAOTR.split(/\r\n/)
-// arrayFileAOTR.shift()
-// createFactionTreeStructure(AOTR, AOTR_92, arrayFileAOTR)
+const AOTR_92 = "9.2"
+const fileAOTR = fs.readFileSync(csvPath[AOTR + " " + AOTR_92], "utf-8")
+const arrayFileAOTR = fileAOTR.split(/\r\n/)
+arrayFileAOTR.shift()
+createFactionTreeStructure(AOTR, AOTR_92, arrayFileAOTR)
 
-// const BFME2_106 = "1.06"
-// const fileBFME2_106 = fs.readFileSync(csvPath[BFME2 + " " + BFME2_106], "utf-8")
-// const arrayFileBFME2_106 = fileBFME2_106.split(/\r\n/)
-// arrayFileBFME2_106.shift()
-// createFactionTreeStructure(BFME2, BFME2_106, arrayFileBFME2_106)
+const BFME2_106 = "1.06"
+const fileBFME2_106 = fs.readFileSync(csvPath[BFME2 + " " + BFME2_106], "utf-8")
+const arrayFileBFME2_106 = fileBFME2_106.split(/\r\n/)
+arrayFileBFME2_106.shift()
+createFactionTreeStructure(BFME2, BFME2_106, arrayFileBFME2_106)
 
 const BFME2_109 = "1.09"
 const fileBFME2_109 = fs.readFileSync(csvPath["bfme2 1.09"], "utf-8")
@@ -140,25 +141,25 @@ const arrayFileBFME2_109 = fileBFME2_109.split(/\r\n/)
 arrayFileBFME2_109.shift()
 createFactionTreeStructure(BFME2, BFME2_109, arrayFileBFME2_109)
 
-// const BFME1_222 = "2.22"
-// const fileBFME1_222 = fs.readFileSync(csvPath[BFME1 + " " + BFME1_222], "utf-8")
-// const arrayFileBFME1_222 = fileBFME1_222.split(/\r\n/)
-// arrayFileBFME1_222.shift()
-// createFactionTreeStructure(BFME1, BFME1_222, arrayFileBFME1_222)
+const BFME1_222 = "2.22"
+const fileBFME1_222 = fs.readFileSync(csvPath[BFME1 + " " + BFME1_222], "utf-8")
+const arrayFileBFME1_222 = fileBFME1_222.split(/\r\n/)
+arrayFileBFME1_222.shift()
+createFactionTreeStructure(BFME1, BFME1_222, arrayFileBFME1_222)
 
-// const BFME1_108 = "1.08"
-// const fileBFME1_108 = fs.readFileSync(csvPath[BFME1 + " " + BFME1_108], "utf-8")
-// const arrayFileBFME1_108 = fileBFME1_108.split(/\r\n/)
-// arrayFileBFME1_108.shift()
-// createFactionTreeStructure(BFME1, BFME1_108, arrayFileBFME1_108)
+const BFME1_108 = "1.08"
+const fileBFME1_108 = fs.readFileSync(csvPath[BFME1 + " " + BFME1_108], "utf-8")
+const arrayFileBFME1_108 = fileBFME1_108.split(/\r\n/)
+arrayFileBFME1_108.shift()
+createFactionTreeStructure(BFME1, BFME1_108, arrayFileBFME1_108)
 
-// const BFME1_106 = "1.06"
-// const fileBFME1_106 = fs.readFileSync(csvPath[BFME1 + " " + BFME1_106], "utf-8")
-// const arrayFileBFME1_106 = fileBFME1_106.split(/\r\n/)
-// arrayFileBFME1_106.shift()
-// createFactionTreeStructure(BFME1, BFME1_106, arrayFileBFME1_106)
+const BFME1_106 = "1.06"
+const fileBFME1_106 = fs.readFileSync(csvPath[BFME1 + " " + BFME1_106], "utf-8")
+const arrayFileBFME1_106 = fileBFME1_106.split(/\r\n/)
+arrayFileBFME1_106.shift()
+createFactionTreeStructure(BFME1, BFME1_106, arrayFileBFME1_106)
 
-// const fileCommandMap = fs.readFileSync(csvPath["commandmap"], "utf-8")
-// const arrayFileCommandMap = fileCommandMap.split(/\r\n/)
-// arrayFileCommandMap.shift()
-// createCommandMapTree(arrayFileCommandMap)
+const fileCommandMap = fs.readFileSync(csvPath["commandmap"], "utf-8")
+const arrayFileCommandMap = fileCommandMap.split(/\r\n/)
+arrayFileCommandMap.shift()
+createCommandMapTree(arrayFileCommandMap)
