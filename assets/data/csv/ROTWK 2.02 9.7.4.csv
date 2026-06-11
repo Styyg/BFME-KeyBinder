@@ -230,6 +230,8 @@ CONTROLBAR:ToggleTrebWeapon,elves,CONTROLBAR:ConstructTreebeard,basic,2
 CONTROLBAR:StopBombard,elves,CONTROLBAR:ConstructTreebeard,basic,2
 CONTROLBAR:BecomeEnraged,elves,CONTROLBAR:ConstructTreebeard,basic,2
 CONTROLBAR:GrabBuildingChunk,elves,CONTROLBAR:ConstructTreebeard,basic,2
+CONTROLBAR:PurchaseUpgradeElvenEntMootLevel2,elves,CONTROLBAR:ConstructEntMoot,basic,1
+CONTROLBAR:PurchaseUpgradeElvenEntMootLevel3,elves,CONTROLBAR:ConstructEntMoot,basic,1
 CONTROLBAR:ConstructElvenBattleTower,elves,,basic,0
 CONTROLBAR:GarrisonExit,elves,CONTROLBAR:ConstructElvenBattleTower,basic,1
 CONTROLBAR:PurchaseUpgradeElvenSilverthornArrowsForBattleTower,elves,CONTROLBAR:ConstructElvenBattleTower,basic,1

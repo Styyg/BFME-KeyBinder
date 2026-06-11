@@ -998,7 +998,9 @@
     "CONTROLBAR:SpecialAbilityEagleWingBlast": "elves/SpecialAbilityWingBlast.png",
     "CONTROLBAR:MorgulBladeMorgomir": "mordor/BlackRiderMorgulBlade.png",
     "CONTROLBAR:FellbeastBlade": "mordor/BlackRiderMorgulBlade.png",
-    "CONTROLBAR:ToggleBlackRiderLineFormation": "generic/lineFormation.png"
+    "CONTROLBAR:ToggleBlackRiderLineFormation": "generic/lineFormation.png",
+    "CONTROLBAR:PurchaseUpgradeElvenEntMootLevel2": "generic/upgrade.png",
+    "CONTROLBAR:PurchaseUpgradeElvenEntMootLevel3": "generic/upgrade.png"
   },
   "aotr 9.2": {}
 }

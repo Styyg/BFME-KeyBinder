@@ -296,7 +296,9 @@
           "CONTROLBAR:StopBombard": {},
           "CONTROLBAR:BecomeEnraged": {},
           "CONTROLBAR:GrabBuildingChunk": {}
-        }
+        },
+        "CONTROLBAR:PurchaseUpgradeElvenEntMootLevel2": {},
+        "CONTROLBAR:PurchaseUpgradeElvenEntMootLevel3": {}
       },
       "CONTROLBAR:ConstructElvenBattleTower": {
         "CONTROLBAR:GarrisonExit": {},
